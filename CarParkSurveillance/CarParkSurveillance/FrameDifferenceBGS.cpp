@@ -57,9 +57,10 @@ void FrameDifferenceBGS::process(const cv::Mat &img_input, cv::Mat &img_output, 
 
 
 	cv::erode(img_foreground, img_foreground, structuringElement3x3);
-	cv::dilate(img_foreground, img_foreground, structuringElement3x3);
+	cv::dilate(img_foreground, img_foreground, structuringElement10x10);
 
-	//cv::erode(img_foreground, img_foreground, structuringElement3x3);
+	
+//	cv::erode(img_foreground, img_foreground, structuringElement3x3);
 	//cv::dilate(img_foreground, img_foreground, structuringElement7x7);
 
 	//cv::erode(img_foreground, img_foreground, structuringElement3x3);
@@ -93,7 +94,7 @@ void FrameDifferenceBGS::process(const cv::Mat &img_input, cv::Mat &img_output, 
 	}
 
 
-
+//	img_input.copyTo(img_input_prev);
 	firstTime = false;
 
 

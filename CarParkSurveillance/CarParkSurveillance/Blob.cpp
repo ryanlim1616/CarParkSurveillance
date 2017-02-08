@@ -4,6 +4,9 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 Blob::Blob(std::vector<cv::Point> _contour) {
+	
+
+
 	addornot = false;
 	currentContour = _contour;
 
@@ -115,25 +118,27 @@ void Blob::predictNextPosition(void) {
 void Blob::storeImage(cv::Mat rawImage) {
 	this->rawImage = rawImage.clone();
 
-	cv::Mat image(rawImage.size(), CV_8UC3, cv::Scalar(0.0, 0.0, 0.0));
+	image = cv::Mat(rawImage.size(), CV_8U, cv::Scalar(0.0, 0.0, 0.0));
 
 	std::vector<std::vector<cv::Point> > contourVec;
 	contourVec.push_back(currentContour);
 	cv::drawContours(image, contourVec, -1, cv::Scalar(255.0, 255.0, 255.0), -1);
 
-
 	cv::Mat colorForegrounds = cv::Mat::zeros(image.size(), image.type());
 	rawImage.copyTo(colorForegrounds, image);
-
 	cv::cvtColor(colorForegrounds, colorForegrounds, CV_BGR2GRAY);
-
 	maskImage = colorForegrounds.clone();
 
-	useORBGPU();
-
+	//useORBGPU();
 	//getFeatures();
 	//desFeatures();
-	//	drawMaskImage();
+    //drawMaskImage(rawImage, image);
+	//getAverageColor(rawImage, image);
+}
+
+void Blob::getAverageColor() {
+	cv::Scalar average = cv::mean(rawImage, image);
+	AvgColor.push_back(average);
 }
 
 void Blob::drawMaskImage() {
@@ -250,7 +255,7 @@ cv::Mat Blob::getRawImage() {
 }
 
 void Blob::useORBGPU() {
-	cv::gpu::ORB_GPU orb(100);
+	cv::gpu::ORB_GPU orb(1000);
 
 
 	cv::Mat image(rawImage.size(), CV_8UC3, cv::Scalar(0.0, 0.0, 0.0));
@@ -274,6 +279,19 @@ void Blob::useORBGPU() {
 
 
 
+
+}
+
+void Blob::setEnter() {
+	enter = true;
+}
+
+void Blob::setExit(){
+	exit = true;
+}
+
+void Blob::setPark() {
+	park = true;
 
 }
 

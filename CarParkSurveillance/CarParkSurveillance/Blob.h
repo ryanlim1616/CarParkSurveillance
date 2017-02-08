@@ -19,6 +19,19 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 class Blob {
 public:
+
+	bool enter = false;
+	bool exit = false;
+	bool park = false;
+	
+	int parkframe = 0;
+	int parkLocation = 0;
+
+
+
+	int unitID = 0;
+	int existInSceen = 0;
+
 	int counter = 0;
 	// member variables ///////////////////////////////////////////////////////////////////////////
 	std::vector<cv::Point> currentContour;
@@ -28,6 +41,9 @@ public:
 
 
 	std::vector<cv::Point> centerPositions;
+	std::vector<cv::Scalar> AvgColor;
+
+	cv::Mat image;
 
 	double dblCurrentDiagonalSize;
 	double dblCurrentAspectRatio;
@@ -68,6 +84,10 @@ public:
 	cv::Mat getRawImage();
 	cv::gpu::GpuMat getGpuDes();
 	void useORBGPU();
+	void setEnter();
+	void setExit();
+	void setPark();
+	void getAverageColor();
 
 };
 
