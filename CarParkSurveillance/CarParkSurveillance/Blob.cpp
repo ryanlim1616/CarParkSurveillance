@@ -46,6 +46,7 @@ void Blob::predictNextPosition(void) {
 		predictedNextPosition.y = centerPositions.back().y;
 
 	}
+	
 	else if (numPositions == 2) {
 
 		int deltaX = centerPositions[1].x - centerPositions[0].x;
@@ -89,19 +90,21 @@ void Blob::predictNextPosition(void) {
 		predictedNextPosition.y = centerPositions.back().y + deltaY;
 
 	}
-	else if (numPositions >= 5) {
+	else if (numPositions == 5) {
 
-		int sumOfXChanges = ((centerPositions[numPositions - 1].x - centerPositions[numPositions - 2].x) * 4) +
-			((centerPositions[numPositions - 2].x - centerPositions[numPositions - 3].x) * 3) +
-			((centerPositions[numPositions - 3].x - centerPositions[numPositions - 4].x) * 2) +
-			((centerPositions[numPositions - 4].x - centerPositions[numPositions - 5].x) * 1);
+
+
+		int sumOfXChanges = ((centerPositions[4].x - centerPositions[3].x) * 4) +
+			((centerPositions[3].x - centerPositions[2].x) * 3) +
+			((centerPositions[2].x - centerPositions[1].x) * 2) +
+			((centerPositions[1].x - centerPositions[0].x) * 1);
 
 		int deltaX = (int)std::round((float)sumOfXChanges / 10.0);
 
-		int sumOfYChanges = ((centerPositions[numPositions - 1].y - centerPositions[numPositions - 2].y) * 4) +
-			((centerPositions[numPositions - 2].y - centerPositions[numPositions - 3].y) * 3) +
-			((centerPositions[numPositions - 3].y - centerPositions[numPositions - 4].y) * 2) +
-			((centerPositions[numPositions - 4].y - centerPositions[numPositions - 5].y) * 1);
+		int sumOfYChanges = ((centerPositions[4].y - centerPositions[3].y) * 4) +
+			((centerPositions[3].y - centerPositions[2].y) * 3) +
+			((centerPositions[2].y - centerPositions[1].y) * 2) +
+			((centerPositions[1].y - centerPositions[0].y) * 1);
 
 		int deltaY = (int)std::round((float)sumOfYChanges / 10.0);
 
@@ -109,8 +112,127 @@ void Blob::predictNextPosition(void) {
 		predictedNextPosition.y = centerPositions.back().y + deltaY;
 
 	}
-	else {
-		// should never get here
+	else if (numPositions == 6) {
+		int sumOfXChanges = ((centerPositions[5].x - centerPositions[4].x) * 5) +
+			((centerPositions[4].x - centerPositions[3].x) * 4) +
+			((centerPositions[3].x - centerPositions[2].x) * 3) +
+			((centerPositions[2].x - centerPositions[1].x) * 2) +
+			((centerPositions[1].x - centerPositions[0].x) * 1);
+
+		int deltaX = (int)std::round((float)sumOfXChanges / 15.0);
+
+		int sumOfYChanges = ((centerPositions[5].y - centerPositions[4].y) * 5) +
+			((centerPositions[4].y - centerPositions[3].y) * 4) +
+			((centerPositions[3].y - centerPositions[2].y) * 3) +
+			((centerPositions[2].y - centerPositions[1].y) * 2) +
+			((centerPositions[1].y - centerPositions[0].y) * 1);
+
+		int deltaY = (int)std::round((float)sumOfYChanges / 15.0);
+
+		predictedNextPosition.x = centerPositions.back().x + deltaX;
+		predictedNextPosition.y = centerPositions.back().y + deltaY;
+	}
+	else if (numPositions == 7) {
+		int sumOfXChanges = ((centerPositions[6].x - centerPositions[5].x) * 6) +
+			((centerPositions[5].x - centerPositions[4].x) * 5) +
+			((centerPositions[4].x - centerPositions[3].x) * 4) +
+			((centerPositions[3].x - centerPositions[2].x) * 3) +
+			((centerPositions[2].x - centerPositions[1].x) * 2) +
+			((centerPositions[1].x - centerPositions[0].x) * 1);
+
+		int deltaX = (int)std::round((float)sumOfXChanges / 21.0);
+
+		int sumOfYChanges = ((centerPositions[6].y - centerPositions[5].y) * 6) +
+			((centerPositions[5].y - centerPositions[4].y) * 5) +
+			((centerPositions[4].y - centerPositions[3].y) * 4) +
+			((centerPositions[3].y - centerPositions[2].y) * 3) +
+			((centerPositions[2].y - centerPositions[1].y) * 2) +
+			((centerPositions[1].y - centerPositions[0].y) * 1);
+
+		int deltaY = (int)std::round((float)sumOfYChanges / 21.0);
+
+		predictedNextPosition.x = centerPositions.back().x + deltaX;
+		predictedNextPosition.y = centerPositions.back().y + deltaY;
+	}
+
+	else if (numPositions == 8) {
+		int sumOfXChanges = ((centerPositions[7].x - centerPositions[6].x) * 7) +
+			((centerPositions[6].x - centerPositions[5].x) * 6) +
+			((centerPositions[5].x - centerPositions[4].x) * 5) +
+			((centerPositions[4].x - centerPositions[3].x) * 4) +
+			((centerPositions[3].x - centerPositions[2].x) * 3) +
+			((centerPositions[2].x - centerPositions[1].x) * 2) +
+			((centerPositions[1].x - centerPositions[0].x) * 1);
+
+		int deltaX = (int)std::round((float)sumOfXChanges / 28.0);
+
+		int sumOfYChanges = ((centerPositions[7].y - centerPositions[6].y) * 7) +
+			((centerPositions[6].y - centerPositions[5].y) * 6) +
+			((centerPositions[5].y - centerPositions[4].y) * 5) +
+			((centerPositions[4].y - centerPositions[3].y) * 4) +
+			((centerPositions[3].y - centerPositions[2].y) * 3) +
+			((centerPositions[2].y - centerPositions[1].y) * 2) +
+			((centerPositions[1].y - centerPositions[0].y) * 1);
+
+		int deltaY = (int)std::round((float)sumOfYChanges / 28.0);
+
+		predictedNextPosition.x = centerPositions.back().x + deltaX;
+		predictedNextPosition.y = centerPositions.back().y + deltaY;
+	}
+
+	else if (numPositions == 9) {
+		int sumOfXChanges = ((centerPositions[8].x - centerPositions[7].x) * 8) +
+			((centerPositions[7].x - centerPositions[6].x) * 7) +
+			((centerPositions[6].x - centerPositions[5].x) * 6) +
+			((centerPositions[5].x - centerPositions[4].x) * 5) +
+			((centerPositions[4].x - centerPositions[3].x) * 4) +
+			((centerPositions[3].x - centerPositions[2].x) * 3) +
+			((centerPositions[2].x - centerPositions[1].x) * 2) +
+			((centerPositions[1].x - centerPositions[0].x) * 1);
+
+		int deltaX = (int)std::round((float)sumOfXChanges / 36.0);
+
+		int sumOfYChanges = ((centerPositions[8].y - centerPositions[7].y) * 8) +
+			((centerPositions[7].y - centerPositions[6].y) * 7) +
+			((centerPositions[6].y - centerPositions[5].y) * 6) +
+			((centerPositions[5].y - centerPositions[4].y) * 5) +
+			((centerPositions[4].y - centerPositions[3].y) * 4) +
+			((centerPositions[3].y - centerPositions[2].y) * 3) +
+			((centerPositions[2].y - centerPositions[1].y) * 2) +
+			((centerPositions[1].y - centerPositions[0].y) * 1);
+
+		int deltaY = (int)std::round((float)sumOfYChanges / 36.0);
+
+		predictedNextPosition.x = centerPositions.back().x + deltaX;
+		predictedNextPosition.y = centerPositions.back().y + deltaY;
+	}
+	else if (numPositions >= 10) {
+		int sumOfXChanges = ((centerPositions[numPositions - 1].x - centerPositions[numPositions - 2].x) * 9) +
+			((centerPositions[numPositions - 2].x - centerPositions[numPositions - 3].x) * 8) +
+			((centerPositions[numPositions - 3].x - centerPositions[numPositions - 4].x) * 7) +
+			((centerPositions[numPositions - 4].x - centerPositions[numPositions - 5].x) * 6) +
+			((centerPositions[numPositions - 5].x - centerPositions[numPositions - 6].x) * 5) +
+			((centerPositions[numPositions - 6].x - centerPositions[numPositions - 7].x) * 4) +
+			((centerPositions[numPositions - 7].x - centerPositions[numPositions - 8].x) * 3) +
+			((centerPositions[numPositions - 8].x - centerPositions[numPositions - 9].x) * 2) +
+			((centerPositions[numPositions - 9].x - centerPositions[numPositions - 10].x) * 1);
+
+		int deltaX = (int)std::round((float)sumOfXChanges / 45.0);
+
+		int sumOfYChanges = ((centerPositions[numPositions - 1].y - centerPositions[numPositions - 2].y) * 9) +
+			((centerPositions[numPositions - 2].y - centerPositions[numPositions - 3].y) * 8) +
+			((centerPositions[numPositions - 3].y - centerPositions[numPositions - 4].y) * 7) +
+			((centerPositions[numPositions - 4].y - centerPositions[numPositions - 5].y) * 6) +
+			((centerPositions[numPositions - 5].y - centerPositions[numPositions - 6].y) * 5) +
+			((centerPositions[numPositions - 6].y - centerPositions[numPositions - 7].y) * 4) +
+			((centerPositions[numPositions - 7].y - centerPositions[numPositions - 8].y) * 3) +
+			((centerPositions[numPositions - 8].y - centerPositions[numPositions - 9].y) * 2) +
+			((centerPositions[numPositions - 9].y - centerPositions[numPositions - 10].y) * 1);
+
+		int deltaY = (int)std::round((float)sumOfYChanges / 45.0);
+
+		predictedNextPosition.x = centerPositions.back().x + deltaX;
+		predictedNextPosition.y = centerPositions.back().y + deltaY;
 	}
 
 }
@@ -139,7 +261,12 @@ void Blob::storeImage(cv::Mat rawImage) {
 void Blob::getAverageColor() {
 	cv::Scalar average = cv::mean(rawImage, image);
 	AvgColor.push_back(average);
+}	
+
+void Blob::getAverageColorLast() {
+	avgColorBeforeMerge = cv::mean(rawImage, image);
 }
+
 
 void Blob::drawMaskImage() {
 
@@ -280,6 +407,11 @@ void Blob::useORBGPU() {
 
 
 
+}
+
+cv::Scalar Blob::getAverageColorOnce() {
+	cv::Scalar average = cv::mean(rawImage, image);
+	return average;
 }
 
 void Blob::setEnter() {

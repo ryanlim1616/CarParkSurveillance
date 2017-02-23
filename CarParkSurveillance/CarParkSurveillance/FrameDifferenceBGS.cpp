@@ -85,24 +85,27 @@ void FrameDifferenceBGS::process(const cv::Mat &img_input, cv::Mat &img_output, 
 	//	couter = 0;
 	//}
 
-	if (couter < 100) {
+	/*if (couter < 100) {
 		couter++;
 	}
 	else {
 		img_input.copyTo(img_input_prev);
 		couter = 0;
+	}*/
+
+	if (update == true) {
+		img_input.copyTo(img_input_prev);
+		update = false;
 	}
 
 
 //	img_input.copyTo(img_input_prev);
 	firstTime = false;
 
+}
 
-
-
-
-
-
+void FrameDifferenceBGS::updatemask() {
+	update = true;
 }
 
 void FrameDifferenceBGS::saveConfig()

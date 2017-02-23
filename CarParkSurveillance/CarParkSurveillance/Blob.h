@@ -25,6 +25,8 @@ public:
 	bool park = false;
 	
 	int parkframe = 0;
+
+
 	int parkLocation = 0;
 
 
@@ -33,6 +35,15 @@ public:
 	int existInSceen = 0;
 
 	int counter = 0;
+
+	int mergeid = 0;
+
+	bool merge = false;
+
+
+
+
+
 	// member variables ///////////////////////////////////////////////////////////////////////////
 	std::vector<cv::Point> currentContour;
 
@@ -42,7 +53,7 @@ public:
 
 	std::vector<cv::Point> centerPositions;
 	std::vector<cv::Scalar> AvgColor;
-
+	cv::Scalar avgColorBeforeMerge;
 	cv::Mat image;
 
 	double dblCurrentDiagonalSize;
@@ -88,6 +99,8 @@ public:
 	void setExit();
 	void setPark();
 	void getAverageColor();
+	void getAverageColorLast();
+	cv::Scalar getAverageColorOnce();
 
 };
 

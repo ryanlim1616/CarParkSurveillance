@@ -9,6 +9,7 @@ public:
 	/*virtual void process(const cv::Mat &img_input, cv::Mat &img_foreground){
 	process(img_input, img_foreground, cv::Mat());
 	}*/
+	virtual void updatemask() = 0;
 	virtual ~IBGS() {}
 
 private:
