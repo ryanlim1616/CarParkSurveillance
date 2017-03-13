@@ -160,6 +160,7 @@
     <ClInclude Include="Blob.h" />
     <ClInclude Include="FrameDifferenceBGS.h" />
     <ClInclude Include="IBGS.h" />
+    <ClInclude Include="ParkingLot.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

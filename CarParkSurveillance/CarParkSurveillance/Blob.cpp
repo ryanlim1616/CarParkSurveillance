@@ -237,6 +237,10 @@ void Blob::predictNextPosition(void) {
 
 }
 
+void Blob::predictNextPositionPark(void) {
+	predictedNextPosition.x = centerPositions.back().x;
+	predictedNextPosition.y = centerPositions.back().y;
+}
 void Blob::storeImage(cv::Mat rawImage) {
 	this->rawImage = rawImage.clone();
 

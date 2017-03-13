@@ -44,5 +44,8 @@
     <ClInclude Include="FrameDifferenceBGS.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ParkingLot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

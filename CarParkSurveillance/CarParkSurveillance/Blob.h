@@ -28,7 +28,7 @@ public:
 
 
 	int parkLocation = 0;
-
+	int parkinglot = -1;
 
 
 	int unitID = 0;
@@ -39,6 +39,15 @@ public:
 	int mergeid = 0;
 
 	bool merge = false;
+
+	int leavingcarpark = 0;
+
+	bool matchBack = false;
+	int matchbackid = -1;
+
+	bool nonTrackParkingZone = false;
+	int nonTrackParkingZoneLocation = -1;
+	bool leavingNonTrackzone = false;
 
 
 
@@ -86,6 +95,7 @@ public:
 	// function prototypes ////////////////////////////////////////////////////////////////////////
 	Blob(std::vector<cv::Point> _contour);
 	void predictNextPosition(void);
+	void predictNextPositionPark(void);
 	void storeImage(cv::Mat rawImage);
 	void drawMaskImage();
 	void getFeatures();
