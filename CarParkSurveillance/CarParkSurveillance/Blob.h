@@ -49,6 +49,8 @@ public:
 	int nonTrackParkingZoneLocation = -1;
 	bool leavingNonTrackzone = false;
 
+	int nonTrackZoneDelay = 0;
+
 
 
 
