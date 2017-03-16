@@ -66,9 +66,9 @@ void AdaptiveBackgroundLearning::process(const cv::Mat &img_input, cv::Mat &img_
 	//if (showBackground)
 	//cv::imshow("A-Learning BG", img_background);
 	cv::erode(img_foreground, img_foreground, structuringElement3x3);
-	cv::dilate(img_foreground, img_foreground, structuringElement3x3);
-	cv::erode(img_foreground, img_foreground, structuringElement3x3);
 	cv::dilate(img_foreground, img_foreground, structuringElement5x5);
+	//cv::erode(img_foreground, img_foreground, structuringElement3x3);
+	//cv::dilate(img_foreground, img_foreground, structuringElement5x5);
 
 	img_foreground.copyTo(img_output);
 	img_background.copyTo(img_bgmodel);
