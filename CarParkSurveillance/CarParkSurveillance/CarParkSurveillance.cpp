@@ -62,7 +62,7 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 //clarence changed the following function to include write to db:
 //void drawBlobInfoOnImage(std::vector<Blob> &blobs, cv::Mat &imgFrame2Copy);
 void drawBlobInfoOnImage(std::vector<Blob> &blobs, cv::Mat &imgFrame2Copy, CarParkTrackExporter &openDB, int &frameCount, int &vidLength);
-void vehicleIO(std::vector<Blob> &blobs, CarParkTrackExporter &openDB);
+//void vehicleIO(std::vector<Blob> &blobs, CarParkTrackExporter &openDB);
 
 void drawCarCountOnImage(int &carCount, cv::Mat &imgFrame2Copy);
 void drawCarDensityOnImage(double &carCount, cv::Mat &imgFrame2Copy);
