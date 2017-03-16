@@ -185,8 +185,8 @@ bool CarParkTrackExporter::writeToDB_park(std::vector<Blob> &blobs, unsigned int
 				+ std::to_string(frameCount) + "', '" + "Park: " + parkzone + std::to_string(blobs[i].parkinglot) + "');");
 
 
-			success &= mSQLManager->executeStatement("UPDATE objects SET parked_at = zone" + std::to_string(blobs[i].parkinglot)
-				+ " where filename = " + '"' + GlobalClass::instance()->get_InputFileName() + '"' + " and obj_id = " + std::to_string(blobs[i].unitID) + ";");
+			success &= mSQLManager->executeStatement("UPDATE objects SET parked_at = \"zone"  +  std::to_string(blobs[i].parkinglot)
+				+ "\" where filename = " + '"' + GlobalClass::instance()->get_InputFileName() + '"' + " and obj_id = " + std::to_string(blobs[i].unitID) + ";");
 
 			success &= mSQLManager->executeStatement("INSERT into objects (obj_id, filename, obj_type, obj_color, enter_from, parked_at,  parked_duration) SELECT '"
 				+ std::to_string(blobs[i].unitID) + "', '" + GlobalClass::instance()->get_InputFileName() + "', '" + "defaulted-car" + "', '" + "color-kiv" + "', '"
