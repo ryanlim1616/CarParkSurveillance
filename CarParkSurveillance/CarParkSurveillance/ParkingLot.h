@@ -16,7 +16,11 @@ public:
 	int lot;
 	bool parked;
 	cv::Mat image;
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> refs/remotes/ryanlim1616/master
 	int countNZero = 0;
 	int featurePoint;
 	int vehicleId = 0;

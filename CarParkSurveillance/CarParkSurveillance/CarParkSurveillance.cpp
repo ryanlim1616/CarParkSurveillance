@@ -279,15 +279,7 @@ int main(void) {
 
 	int carCount = 0;
 
-	cv::FastFeatureDetector detector(minHessian);
-	std::vector<cv::KeyPoint> keypoints_new, keypoints_old;
-	cv::Mat newImg, oldImg;
-
-	cv::SiftDescriptorExtractor descriptor;
-	cv::Mat newDes, oldDes;
-
-
-
+	
 
 	cv::Mat mask;
 	mask = cv::imread("mask.jpg");
