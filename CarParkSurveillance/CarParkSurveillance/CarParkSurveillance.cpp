@@ -54,11 +54,15 @@ double distanceBetweenPoints(cv::Point point1, cv::Point point2);
 void drawAndShowContours(cv::Size imageSize, std::vector<std::vector<cv::Point> > contours, std::string strImageName);
 cv::Mat drawAndShowContoursProccess(cv::Size imageSize, std::vector<std::vector<cv::Point> > contours, std::string strImageName);
 void drawAndShowContours(cv::Size imageSize, std::vector<Blob> blobs, std::string strImageName, cv::Mat colourImage);
-bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLinePosition, int &carCount);
+
+//clarence changed the following function to include write to db:
+//bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLinePosition, int &carCount);
+bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLinePosition, int &carCount, CarParkTrackExporter &openDB, int &frameCount, int &vidLength);
 
 //clarence changed the following function to include write to db:
 //void drawBlobInfoOnImage(std::vector<Blob> &blobs, cv::Mat &imgFrame2Copy);
 void drawBlobInfoOnImage(std::vector<Blob> &blobs, cv::Mat &imgFrame2Copy, CarParkTrackExporter &openDB, int &frameCount, int &vidLength);
+void vehicleIO(std::vector<Blob> &blobs, CarParkTrackExporter &openDB);
 
 void drawCarCountOnImage(int &carCount, cv::Mat &imgFrame2Copy);
 void drawCarDensityOnImage(double &carCount, cv::Mat &imgFrame2Copy);
@@ -427,6 +431,10 @@ int main(void) {
 		std::cout << results.size() << " files were found:" << std::endl;
 		for (unsigned int i = 0; i < results.size(); ++i)	// used unsigned to appease compiler warnings
 		{
+
+			//UPDATE i to change video, eg:
+			//i = 2;
+
 			//performing loop over all 100 videos to keep the obj_ID
 			//obtain the time difference between 2 videos as well.
 			std::cout << i + 1 << ": " << results[i] << std::endl;
@@ -897,7 +905,11 @@ int main(void) {
 
 
 
-				bool blnAtLeastOneBlobCrossedTheLine = checkIfBlobsCrossedTheLine(blobs, intHorizontalLinePosition2, carCount);
+				//bool blnAtLeastOneBlobCrossedTheLine = checkIfBlobsCrossedTheLine(blobs, intHorizontalLinePosition2, carCount);
+				//bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLinePosition, int &carCount, CarParkTrackExporter &openDB, int &frameCount, int &vidLength, int entrance, bool entExt) {
+				bool blnAtLeastOneBlobCrossedTheLine = checkIfBlobsCrossedTheLine(blobs, intHorizontalLinePosition2, carCount, openDB, frameCount, vidLength);
+				
+
 				addBack(blobs);
 
 				cv::line(imgFrame2Copy, crossingLine[0], crossingLine[1], SCALAR_RED, 2);
@@ -1998,7 +2010,9 @@ void drawAndShowContours(cv::Size imageSize, std::vector<Blob> blobs, std::strin
 	cv::imshow(strImageName, image);
 }
 
-bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLinePosition, int &carCount) {
+//bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLinePosition, int &carCount) {
+bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLinePosition, int &carCount, CarParkTrackExporter &openDB, int &frameCount, int &vidLength){
+
 	
 	std::vector<Blob> tempBb;
 	for (int r = 0; r < blobs.size(); r++) {
@@ -2008,7 +2022,7 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 	bool blnAtLeastOneBlobCrossedTheLine = false;
 
 	//for (auto blob : blobs) {
-	for(int i = 0; i < blobs.size(); i ++) {
+	for(unsigned int i = 0; i < blobs.size(); i ++) {
 
 		std::vector<std::vector<cv::Point> > contourVec;
 		contourVec.push_back(blobs[i].currentContour);
@@ -2038,6 +2052,10 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 
 						printNumberofCar(1, true);
 						blobs[i].enter = true;
+						blobs[i].entExt = 1;
+						blobs[i].changed = true;
+						blobs[i].IO_indicator = true;
+
 
 					}
 					else if (blobs[i].centerPositions[prevFrameIndex].y > blobs[i].centerPositions[currFrameIndex].y
@@ -2049,6 +2067,11 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 
 						printNumberofCar(1, false);
 						blobs[i].exit = true;
+						blobs[i].entExt = 1;
+						blobs[i].changed = true;
+						blobs[i].IO_indicator = false;
+						
+						
 
 					}
 				}
@@ -2065,6 +2088,9 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 							&& blobs[i].centerPositions[prevprevprevFrameIndex].y < blobs[i].centerPositions[prevprevFrameIndex].y) {
 							printNumberofCar(2, true);
 							blobs[i].enter = true;
+							blobs[i].entExt = 2;
+							blobs[i].changed = true;
+							blobs[i].IO_indicator = true;
 
 						}
 						else if (blobs[i].centerPositions[prevFrameIndex].y > blobs[i].centerPositions[currFrameIndex].y
@@ -2075,6 +2101,9 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 
 							printNumberofCar(2, false);
 							blobs[i].exit = true;
+							blobs[i].entExt = 2;
+							blobs[i].changed = true;
+							blobs[i].IO_indicator = false;
 
 						}
 					}
@@ -2091,6 +2120,9 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 								&& blobs[i].centerPositions[prevprevprevFrameIndex].x < blobs[i].centerPositions[prevFrameIndex].x) {
 								printNumberofCar(3, true);
 								blobs[i].enter = true;
+								blobs[i].entExt = 3;
+								blobs[i].changed = true;
+								blobs[i].IO_indicator = true;
 
 							}
 							else if (blobs[i].centerPositions[prevFrameIndex].x > blobs[i].centerPositions[currFrameIndex].x
@@ -2101,6 +2133,9 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 
 								printNumberofCar(3, false);
 								blobs[i].exit = true;
+								blobs[i].entExt = 3;
+								blobs[i].changed = true;
+								blobs[i].IO_indicator = false;
 
 							}
 						}
@@ -2118,7 +2153,9 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 									&& blobs[i].centerPositions[prevprevprevFrameIndex].y > blobs[i].centerPositions[prevFrameIndex].y) {
 									printNumberofCar(4, true);
 									blobs[i].enter = true;
-
+									blobs[i].entExt = 4;
+									blobs[i].changed = true;
+									blobs[i].IO_indicator = true;
 								}
 								else if (blobs[i].centerPositions[prevFrameIndex].y < blobs[i].centerPositions[currFrameIndex].y
 									&& blobs[i].enter == true
@@ -2129,6 +2166,9 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 									printNumberofCar(4, false);
 									blobs[i].exit = true;
 									blobs[i].enter = false;
+									blobs[i].entExt = 4;
+									blobs[i].changed = true;
+									blobs[i].IO_indicator = false;
 								}
 
 							}
@@ -2146,6 +2186,9 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 										printNumberofCar(5, true);
 										blobs[i].enter = true;
 										blobs[i].exit = false;
+										blobs[i].entExt = 5;
+										blobs[i].changed = true;
+										blobs[i].IO_indicator = true;
 									}
 									else if (blobs[i].centerPositions[prevFrameIndex].x < blobs[i].centerPositions[currFrameIndex].x
 										&& blobs[i].enter == true
@@ -2155,7 +2198,9 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 
 										printNumberofCar(5, false);
 										blobs[i].exit = true;
-
+										blobs[i].entExt = 5;
+										blobs[i].changed = true;
+										blobs[i].IO_indicator = false;
 									}
 								}
 
@@ -2172,6 +2217,9 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 											&& blobs[i].centerPositions[prevprevprevFrameIndex].x < blobs[i].centerPositions[prevFrameIndex].x) {
 											printNumberofCar(6, true);
 											blobs[i].enter = true;
+											blobs[i].entExt = 6;
+											blobs[i].changed = true;
+											blobs[i].IO_indicator = true;
 
 										}
 										else if (blobs[i].centerPositions[prevFrameIndex].x > blobs[i].centerPositions[currFrameIndex].x
@@ -2182,6 +2230,9 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 
 											printNumberofCar(6, false);
 											blobs[i].exit = true;
+											blobs[i].entExt = 6;
+											blobs[i].changed = true;
+											blobs[i].IO_indicator = false;
 
 										}
 									}
@@ -2215,6 +2266,10 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 												blobs[i].leavingNonTrackzone = false;
 												
 												std::cout << "vehicle " << blobs[i].unitID << " : non tracking zone 2\n";
+
+												blobs[i].entExt = 888;
+												blobs[i].changed = true;
+												blobs[i].IO_indicator = true;
 												
 												
 												
@@ -2253,6 +2308,10 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 												//printNumberofCar(1, false);
 												//blobs[i].exit = true;
 
+												blobs[i].entExt = 888;
+												blobs[i].changed = true;
+												blobs[i].IO_indicator = false;
+
 											}
 
 
@@ -2287,6 +2346,10 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 													blobs[i].enter = true;
 													blobs[i].leavingNonTrackzone = false;
 													std::cout << "vehicle " << blobs[i].unitID << " : non tracking zone 1\n";
+
+													blobs[i].entExt = 999;
+													blobs[i].changed = true;
+													blobs[i].IO_indicator = true;
 												
 												}
 												else if (blobs[i].centerPositions[prevFrameIndex].x > blobs[i].centerPositions[currFrameIndex].x
@@ -2319,6 +2382,10 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 
 													}
 													std::cout << "vehicle " << blobs[i].unitID << " : leaving non tracking zone 1\n";
+
+													blobs[i].entExt = 999;
+													blobs[i].changed = true;
+													blobs[i].IO_indicator = false;
 												
 												}
 											}
@@ -2536,6 +2603,8 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 							std::cout << "Park - Vehicle " << blobs[i].unitID << "Lot A" << blobs[i].parkinglot << "\n";
 
 							blobs[i].park = true;
+							openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot A");
+
 						}
 						else {
 							blobs[i].parkframe = 0;
@@ -2564,6 +2633,7 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 							std::cout << "Park - Vehicle " << blobs[i].unitID << "Lot B" << blobs[i].parkinglot << "\n";
 
 							blobs[i].park = true;
+							openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot B");
 						}
 						else {
 							blobs[i].parkframe = 0;
@@ -2588,6 +2658,7 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 							std::cout << "Park - Vehicle " << blobs[i].unitID << "Lot C" << blobs[i].parkinglot << "\n";
 
 							blobs[i].park = true;
+							openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot C");
 						}
 						else {
 							blobs[i].parkframe = 0;
@@ -2615,6 +2686,7 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 							std::cout << "Park - Vehicle " << blobs[i].unitID << "Lot D" << blobs[i].parkinglot << "\n";
 
 							blobs[i].park = true;
+							openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot D");
 						}
 						else {
 							blobs[i].parkframe = 0;
@@ -2642,6 +2714,7 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 							std::cout << "Park - Vehicle " << blobs[i].unitID << "Lot E" << blobs[i].parkinglot << "\n";
 
 							blobs[i].park = true;
+							openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot E");
 						}
 						else {
 							blobs[i].parkframe = 0;
@@ -2653,6 +2726,7 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 						if (blobs[i].parkframe > 70) {
 							std::cout << "Park - Vehicle " << blobs[i].unitID << "DANGER ZONE!\n";
 							blobs[i].park = true;
+							openDB.writeToDB_park(blobs, i, frameCount, vidLength, "DANGER ZONE!");
 						}
 					}
 
@@ -2897,7 +2971,23 @@ void drawBlobInfoOnImage(std::vector<Blob> &blobs, cv::Mat &imgFrame2Copy, CarPa
 				cv::rectangle(imgFrame2Copy, blobs[i].currentBoundingRect, SCALAR_RED, 2);
 				cv::putText(imgFrame2Copy, std::to_string(blobs[i].unitID), blobs[i].centerPositions.back(), intFontFace, dblFontScale, SCALAR_GREEN, 2);
 				//write to db
-				openDB.writeToDB(blobs, i, frameCount, vidLength);
+				//if (blobs[i].enter == true && blobs[i].exit == false && blobs[i].changed == true) 
+				if (blobs[i].enter == true && blobs[i].changed == true) 
+				{
+					openDB.writeToDB_entExt(blobs, i, frameCount, vidLength, blobs[i].entExt, true);
+					blobs[i].changed = false;
+				}
+				//else if (blobs[i].enter == false && blobs[i].exit == true && blobs[i].changed == true)
+				else if (blobs[i].exit == true && blobs[i].changed == true)
+				{
+					openDB.writeToDB_entExt(blobs, i, frameCount, vidLength, blobs[i].entExt, false);
+					blobs[i].changed = false;
+				}
+				else
+				{
+					openDB.writeToDB(blobs, i, frameCount, vidLength);
+				}
+				
 			}
 		}
 	}

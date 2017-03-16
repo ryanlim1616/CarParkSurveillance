@@ -154,6 +154,15 @@ bool SQLiteManager::executeStatement(const std::string& statement)
 	char* errMsg = nullptr;
 	int status = sqlite3_exec(mDatabase, statement.c_str(),0,0, &errMsg);
 	showError(status,errMsg);
+
+	if (status != SQLITE_OK)
+	{
+		//display SQL statements:
+		std::cout << "\n\n****************************** S Q L  D E B U G  O N ****************************** \n";
+		std::cout << "SQL query: " << statement << std::endl;
+		std::cout << "*********************************************************************************** \n\n";
+	}
+
 	return status == SQLITE_OK;
 }
 

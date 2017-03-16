@@ -59,7 +59,7 @@ public:
 	}
 	std::string get_InputDate()
 	{
-		InputDate_new = InputDate_old.substr(0, 4) + "-" + InputDate_old.substr(5, 2) + "-" + InputDate_old.substr(6, 2);
+		InputDate_new = InputDate_old.substr(0, 4) + "-" + InputDate_old.substr(4, 2) + "-" + InputDate_old.substr(6, 2);
 		//std::cout << InputDate_new;
 		return InputDate_new;
 	}
