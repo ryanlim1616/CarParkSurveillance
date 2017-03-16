@@ -16,7 +16,7 @@ public:
 	int lot;
 	bool parked;
 	cv::Mat image;
-	
+
 	int countNZero = 0;
 	int featurePoint;
 	int vehicleId = 0;
