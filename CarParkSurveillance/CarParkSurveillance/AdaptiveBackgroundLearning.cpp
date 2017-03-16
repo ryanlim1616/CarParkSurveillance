@@ -66,7 +66,11 @@ void AdaptiveBackgroundLearning::process(const cv::Mat &img_input, cv::Mat &img_
 	//if (showBackground)
 	//cv::imshow("A-Learning BG", img_background);
 	cv::erode(img_foreground, img_foreground, structuringElement3x3);
+<<<<<<< HEAD
+	cv::dilate(img_foreground, img_foreground, structuringElement3x3);
+=======
 	cv::dilate(img_foreground, img_foreground, structuringElement5x5);
+>>>>>>> refs/remotes/ryanlim1616/master
 	//cv::erode(img_foreground, img_foreground, structuringElement3x3);
 	//cv::dilate(img_foreground, img_foreground, structuringElement5x5);
 

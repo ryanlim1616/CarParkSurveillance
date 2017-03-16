@@ -23,6 +23,10 @@ public:
 	bool enter = false;
 	bool exit = false;
 	bool park = false;
+
+	int entExt = 0;
+	bool changed = false;
+	bool IO_indicator = false;
 	
 	int parkframe = 0;
 
@@ -50,8 +54,6 @@ public:
 	bool leavingNonTrackzone = false;
 
 	int nonTrackZoneDelay = 0;
-
-
 
 
 
