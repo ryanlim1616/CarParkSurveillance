@@ -412,15 +412,22 @@ int main(void) {
 	//get list of files in directory
 	DIR *pd = NULL;
 
+	std::string user = "Clarence";
 
 	std::string cinDate;
 	std::string myRoot = "D:\\Videos Database\\Carpark Data\\";
 
-	//std::cout << "Please enter processing date (CCYYMMDD): ";
-	//std::cin >> cinDate;
-	cinDate = "20161018";
+
+	if (user == "Clarence") {
+		std::cout << "Please enter processing date (CCYYMMDD): ";
+		std::cin >> cinDate;
+	}
+	else if (user == "Ryan")
+	{
+		cinDate = "20161018";
+	}
 	//check if root directory is correct
-	std::cout << "Kindly confirm your video database root directory: \nie: " << myRoot << "CCYYMMDD\\c2 (Y/n)";
+	//std::cout << "Kindly confirm your video database root directory: \nie: " << myRoot << "CCYYMMDD\\c2 (Y/n)";
 	//bbcc!!!!: else update 
 	//std::cout << "TO BE IMPLEMENTED!\n";
 
@@ -457,9 +464,16 @@ int main(void) {
 			//performing loop over all 100 videos to keep the obj_ID
 			//obtain the time difference between 2 videos as well.
 			std::cout << i + 1 << ": " << results[i] << std::endl;
-		//	int vidLength = stoi(results[i + 1].substr(53, 4)) - stoi(results[i].substr(53, 4));
-			int vidLength = 6;
 
+			int vidLength;
+			if (user == "Clarence") {
+
+				vidLength = stoi(results[i + 1].substr(53, 4)) - stoi(results[i].substr(53, 4));
+			}
+			else if (user == "Ryan")
+			{
+				vidLength = 6;
+			}
 			//BBCC! temp use 2nd video to start and try to reproduce error
 			GlobalClass::instance()->set_InputFileName(results[i+1].c_str());
 			std::string InputFile = GlobalClass::instance()->get_InputFileName();
@@ -467,9 +481,6 @@ int main(void) {
 			capVideo.open(InputFile.c_str());
 			std::cout << "Processing file: " << InputFile.c_str() << std::endl;
 
-
-			//commented out
-			//capVideo.open("20170228_084200.mp4");
 
 			if (!capVideo.isOpened()) {                                                 // if unable to open video file
 				std::cout << "error reading video file" << std::endl << std::endl;      // show error message
