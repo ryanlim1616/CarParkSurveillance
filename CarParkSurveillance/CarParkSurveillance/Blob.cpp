@@ -3,6 +3,21 @@
 #include "Blob.h"
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+Blob::~Blob() {
+	currentContour.clear();
+	centerPositions.clear();
+	AvgColor.clear();
+	image.release();
+	rawImage.release();
+	maskImage.release();
+	keypoints_new.clear();
+
+	points.clear();
+	des.release();
+	desNoGpu.release();
+	
+}
+
 Blob::Blob(std::vector<cv::Point> _contour) {
 	
 
@@ -249,17 +264,16 @@ void Blob::storeImage(cv::Mat rawImage) {
 	std::vector<std::vector<cv::Point> > contourVec;
 	contourVec.push_back(currentContour);
 	cv::drawContours(image, contourVec, -1, cv::Scalar(255.0, 255.0, 255.0), -1);
+	contourVec.clear();
 
 	cv::Mat colorForegrounds = cv::Mat::zeros(image.size(), image.type());
 	rawImage.copyTo(colorForegrounds, image);
 	cv::cvtColor(colorForegrounds, colorForegrounds, CV_BGR2GRAY);
 	maskImage = colorForegrounds.clone();
 
-	//useORBGPU();
-	//getFeatures();
-	//desFeatures();
-    //drawMaskImage(rawImage, image);
-	//getAverageColor(rawImage, image);
+	colorForegrounds.release();
+
+	
 }
 
 void Blob::getAverageColor() {

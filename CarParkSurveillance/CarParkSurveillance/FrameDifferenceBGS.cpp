@@ -32,12 +32,8 @@ void FrameDifferenceBGS::process(const cv::Mat &img_input, cv::Mat &img_output, 
 	}
 
 	cv::Mat structuringElement1x1 = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(2, 2));
-	cv::Mat structuringElement3x3 = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(3, 3));
-	cv::Mat structuringElement5x5 = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(5, 5));
-	cv::Mat structuringElement7x7 = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(7, 7));
-	cv::Mat structuringElement10x10 = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(10, 10));
 	cv::Mat structuringElement12x12 = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(12, 12));
-	cv::Mat structuringElement15x15 = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(15, 15));
+
 
 	if (img_input.empty())
 		return;
@@ -103,6 +99,11 @@ void FrameDifferenceBGS::process(const cv::Mat &img_input, cv::Mat &img_output, 
 
 	//	img_input.copyTo(img_input_prev);
 	firstTime = false;
+
+	structuringElement1x1.release();
+	structuringElement12x12.release();
+	
+
 
 }
 

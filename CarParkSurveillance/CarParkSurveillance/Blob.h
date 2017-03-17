@@ -98,6 +98,7 @@ public:
 
 	// function prototypes ////////////////////////////////////////////////////////////////////////
 	Blob(std::vector<cv::Point> _contour);
+	~Blob();
 	void predictNextPosition(void);
 	void predictNextPositionPark(void);
 	void storeImage(cv::Mat rawImage);

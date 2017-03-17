@@ -11,6 +11,9 @@ public:
 		this->image = image;
 		this->countNZero = countNZero;
 	};
+	~ParkingLot() {
+		
+	};
 
 	int zone;
 	int lot;
