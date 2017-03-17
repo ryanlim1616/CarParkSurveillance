@@ -159,7 +159,7 @@ bool SQLiteManager::executeStatement(const std::string& statement)
 	{
 		//display SQL statements:
 		std::cout << "\n\n****************************** S Q L  D E B U G  O N ****************************** \n";
-		std::cout << "SQL query: " << statement << std::endl;
+		std::cout << "SQL query: \n" << statement << std::endl;
 		std::cout << "*********************************************************************************** \n\n";
 	}
 

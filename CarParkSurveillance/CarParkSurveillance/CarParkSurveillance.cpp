@@ -410,9 +410,9 @@ int main(void) {
 	std::cin >> cinDate;
 
 	//check if root directory is correct
-	std::cout << "Kindly confirm your video database root directory: \nie: " << myRoot << "CCYYMMDD\\c2\n (Y/n)";
+	std::cout << "Kindly confirm your video database root directory: \nie: " << myRoot << "CCYYMMDD\\c2 (Y/n)";
 	//bbcc!!!!: else update 
-	std::cout << "TO BE IMPLEMENTED!\n";
+	//std::cout << "TO BE IMPLEMENTED!\n";
 
 
 	std::string myRoot2 = myRoot + cinDate + "\\c2\\";
@@ -450,7 +450,7 @@ int main(void) {
 			int vidLength = stoi(results[i + 1].substr(53, 4)) - stoi(results[i].substr(53, 4));
 
 			//BBCC! temp use 2nd video to start and try to reproduce error
-			GlobalClass::instance()->set_InputFileName(results[i].c_str());
+			GlobalClass::instance()->set_InputFileName(results[i+1].c_str());
 			std::string InputFile = GlobalClass::instance()->get_InputFileName();
 
 			capVideo.open(InputFile.c_str());
@@ -877,15 +877,14 @@ int main(void) {
 
 
 
-															//write blob info into DB as well when tracked.
-															//drawBlobInfoOnImage(blobs, imgFrame2Copy);
+				//write blob info into DB as well when tracked.
+				//drawBlobInfoOnImage(blobs, imgFrame2Copy);
 				drawBlobInfoOnImage(blobs, imgFrame2Copy, openDB, frameCount, vidLength);
 
 
 
 
 				//bool blnAtLeastOneBlobCrossedTheLine = checkIfBlobsCrossedTheLine(blobs, intHorizontalLinePosition2, carCount);
-				//bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLinePosition, int &carCount, CarParkTrackExporter &openDB, int &frameCount, int &vidLength, int entrance, bool entExt) {
 				bool blnAtLeastOneBlobCrossedTheLine = checkIfBlobsCrossedTheLine(blobs, intHorizontalLinePosition2, carCount, openDB, frameCount, vidLength);
 
 
@@ -1017,6 +1016,7 @@ int main(void) {
 	else
 	{
 		std::cout << "No files ending in '" << extension << "' were found." << std::endl;
+		std::cin.get();
 	}
 	return(0);
 }
@@ -2248,10 +2248,10 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 
 												std::cout << "vehicle " << blobs[i].unitID << " : non tracking zone 2\n";
 
-												blobs[i].entExt = 888;
-												blobs[i].changed = true;
-												blobs[i].IO_indicator = true;
-
+												//temporary set park to true to write into database
+												blobs[i].park = true;
+												openDB.writeToDB_park(blobs, i, frameCount, vidLength, "NTZ 2");
+												blobs[i].park = false;
 
 
 											}
@@ -2289,9 +2289,9 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 												//printNumberofCar(1, false);
 												//blobs[i].exit = true;
 
-												blobs[i].entExt = 888;
-												blobs[i].changed = true;
-												blobs[i].IO_indicator = false;
+												//temporary set park to true to write into database
+												openDB.writeToDB_park(blobs, i, frameCount, vidLength, "NTZ 2");
+
 
 											}
 
@@ -2329,9 +2329,13 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 													blobs[i].leavingNonTrackzone = false;
 													std::cout << "vehicle " << blobs[i].unitID << " : non tracking zone 1\n";
 
-													blobs[i].entExt = 999;
-													blobs[i].changed = true;
-													blobs[i].IO_indicator = true;
+													//blobs[i].entExt = 999;
+													//blobs[i].changed = true;
+													//blobs[i].IO_indicator = true;
+													//temporary set park to true to write into database
+													blobs[i].park = true;
+													openDB.writeToDB_park(blobs, i, frameCount, vidLength, "NTZ 1");
+													blobs[i].park = false;
 
 												}
 												else if (blobs[i].centerPositions[prevFrameIndex].x > blobs[i].centerPositions[currFrameIndex].x
@@ -2365,9 +2369,9 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 													}
 													std::cout << "vehicle " << blobs[i].unitID << " : leaving non tracking zone 1\n";
 
-													blobs[i].entExt = 999;
-													blobs[i].changed = true;
-													blobs[i].IO_indicator = false;
+													//temporary set park to true to write into database
+													openDB.writeToDB_park(blobs, i, frameCount, vidLength, "NTZ 1");
+
 
 												}
 											}
@@ -2852,26 +2856,32 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 				if (blobs[i].parkLocation == 1) {
 					zoneAlot[blobs[i].parkinglot - 1].parked = false;
 					std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "Lot A" << blobs[i].parkinglot << "\n";
+					openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot A");
 				}
 				else if (blobs[i].parkLocation == 2) {
 					zoneBlot[blobs[i].parkinglot - 1].parked = false;
 					std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "Lot B" << blobs[i].parkinglot << "\n";
+					openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot B");
 				}
 				else if (blobs[i].parkLocation == 3) {
 					zoneClot[blobs[i].parkinglot - 1].parked = false;
 					std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "Lot C" << blobs[i].parkinglot << "\n";
+					openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot C");
 				}
 				else if (blobs[i].parkLocation == 4) {
 					zoneDlot[blobs[i].parkinglot - 1].parked = false;
 					std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "Lot D" << blobs[i].parkinglot << "\n";
+					openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot D");
 				}
 				else if (blobs[i].parkLocation == 5) {
 					zoneElot[blobs[i].parkinglot - 1].parked = false;
 					std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "Lot E" << blobs[i].parkinglot << "\n";
+					openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot E");
 				}
 				else if (blobs[i].parkLocation == 6) {
 
 					std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "DANGER ZONE" << blobs[i].parkinglot << "\n";
+					openDB.writeToDB_park(blobs, i, frameCount, vidLength, "DANGER ZONE");
 				}
 
 

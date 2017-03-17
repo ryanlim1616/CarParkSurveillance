@@ -17,7 +17,7 @@ class GlobalClass
 	std::string ifn = "NULL";
 	double time_diff = 0;
 	time_t InputTime_time;
-	struct tm *timeinfo = new struct tm();
+	//struct tm *timeinfo = new struct tm();
 
 	static GlobalClass *s_instance;
 	//GlobalClass(std::string ifn="20161018_182400.mp4")
@@ -33,18 +33,19 @@ class GlobalClass
 	}
 public:
 
-	std::istringstream exec(const char* cmd) {
-		std::array<char, 512> buffer;
-		std::string result;
-		std::shared_ptr<FILE> pipe(_popen(cmd, "r"), _pclose);
-		if (!pipe) throw std::runtime_error("popen() failed!");
-		while (!feof(pipe.get())) {
-			if (fgets(buffer.data(), 512, pipe.get()) != NULL)
-				result += buffer.data();
-		}
-		std::istringstream iss (result);
-		return iss;
-	}
+	//Commented out: not using cmd commands to get filenames
+	//std::istringstream exec(const char* cmd) {
+	//	std::array<char, 512> buffer;
+	//	std::string result;
+	//	std::shared_ptr<FILE> pipe(_popen(cmd, "r"), _pclose);
+	//	if (!pipe) throw std::runtime_error("popen() failed!");
+	//	while (!feof(pipe.get())) {
+	//		if (fgets(buffer.data(), 512, pipe.get()) != NULL)
+	//			result += buffer.data();
+	//	}
+	//	std::istringstream iss (result);
+	//	return iss;
+	//}
 
 	void set_InputFileName(std::string inp_name)
 	{
@@ -65,6 +66,8 @@ public:
 	}
 	std::string get_InputTime(int vframeCount, int vidLength)
 	{
+		struct tm *timeinfo = new struct tm();
+
 		double vidDuration = vidLength * 60;
 		int temp_time = vframeCount * (vidDuration / double(TotalFrames));
 		time(&InputTime_time);
@@ -109,6 +112,8 @@ public:
 		
 		//std::cout << strftime(buffer, 80, "%I:%M%:%S", timeinfo) << std::endl;
 
+		//delete timeinfo;
+
 		return InputTime_new;
 	}
 	void set_TotalFrames(int vTotalFrames)
@@ -124,8 +129,12 @@ public:
 
 	static GlobalClass *instance()
 	{
-		if (!s_instance)
+		if (!s_instance) {
+			std::cout << "--- [Creating new GlobalClass instance]---\n";
 			s_instance = new GlobalClass;
+		}
 		return s_instance;
 	}
+
+
 };
