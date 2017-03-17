@@ -17,8 +17,7 @@ void AdaptiveBackgroundLearning::process(const cv::Mat &img_input, cv::Mat &img_
 
 	cv::Mat structuringElement3x3 = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(3, 3));
 	cv::Mat structuringElement5x5 = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(5, 5));
-	cv::Mat structuringElement7x7 = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(7, 7));
-	cv::Mat structuringElement15x15 = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(15, 15));
+	
 	if (img_input.empty())
 		return;
 
@@ -49,6 +48,8 @@ void AdaptiveBackgroundLearning::process(const cv::Mat &img_input, cv::Mat &img_
 
 		if (limit > 0 && limit < counter)
 			counter++;
+
+		img_new_background.release();
 	}
 
 	cv::Mat img_foreground(img_input.size(), CV_8U);
@@ -60,11 +61,7 @@ void AdaptiveBackgroundLearning::process(const cv::Mat &img_input, cv::Mat &img_
 	//if (enableThreshold)
 	cv::threshold(img_foreground, img_foreground, threshold, 255, cv::THRESH_BINARY);
 
-	//if (showForeground)
-	//cv::imshow("A-Learning FG", img_foreground);
-
-	//if (showBackground)
-	//cv::imshow("A-Learning BG", img_background);
+	
 	cv::erode(img_foreground, img_foreground, structuringElement3x3);
 	cv::dilate(img_foreground, img_foreground, structuringElement3x3);
 	cv::erode(img_foreground, img_foreground, structuringElement3x3);
@@ -74,6 +71,17 @@ void AdaptiveBackgroundLearning::process(const cv::Mat &img_input, cv::Mat &img_
 	img_background.copyTo(img_bgmodel);
 
 	firstTime = false;
+
+
+	structuringElement3x3.release();
+	structuringElement5x5.release();
+
+	img_input_f.release();
+	img_background_f.release();
+	img_diff_f.release();
+	img_foreground.release();
+
+
 }
 
 void AdaptiveBackgroundLearning::saveConfig()
