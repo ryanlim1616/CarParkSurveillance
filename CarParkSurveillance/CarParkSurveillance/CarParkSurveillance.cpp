@@ -76,6 +76,7 @@ void checkLeaveWithNoEnter();
 void addBack(std::vector<Blob> &blobs);
 void addBlobToExistingBlobsMissMatch(Blob &currentFrameBlob, std::vector<Blob> &existingBlobs, int &intIndex);
 bool checkIfPedestrain(cv::Mat tempCropImage);
+void removeBlobMemory(std::vector<Blob> &blobs);
 
 int carDensity = 0;
 
@@ -450,6 +451,9 @@ int main(void) {
 		std::cout << results.size() << " files were found:" << std::endl;
 		for (unsigned int i = 0; i < results.size(); ++i)	// used unsigned to appease compiler warnings
 		{
+			if (!first_video) {
+				removeBlobMemory(blobs);
+			}
 
 			//UPDATE i to change video, eg:
 			//i = 2;
@@ -3414,4 +3418,21 @@ bool checkIfPedestrain(cv::Mat tempCropImage) {
 		return false;
 	}
 	
+}
+
+void removeBlobMemory(std::vector<Blob> &blobs) {
+	for (int i = 0; i < blobs.size(); i++) {
+		if (blobs[i].currentContour.size() > 10) {
+			int todel = blobs[i].currentContour.size() - 10;
+			blobs[i].currentContour.erase(blobs[i].currentContour.begin(), blobs[i].currentContour.begin() + todel);
+		}
+		if (blobs[i].centerPositions.size() > 10) {
+			int todel = blobs[i].centerPositions.size() - 10;
+			blobs[i].centerPositions.erase(blobs[i].centerPositions.begin(), blobs[i].centerPositions.begin() + todel);
+		}
+		if (blobs[i].AvgColor.size() > 10) {
+			int todel = blobs[i].AvgColor.size() - 10;
+			blobs[i].AvgColor.erase(blobs[i].AvgColor.begin(), blobs[i].AvgColor.begin() + todel);
+		}
+	}
 }
