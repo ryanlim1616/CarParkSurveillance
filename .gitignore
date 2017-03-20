@@ -250,3 +250,6 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+/CarParkSurveillance/CarParkSurveillance/20160725_084800.mp4
+*.db
+*.db

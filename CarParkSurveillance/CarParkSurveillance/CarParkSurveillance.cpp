@@ -1,6 +1,4 @@
 // CarCounting.cpp : Defines the entry point for the console application.
-//
-
 
 
 #include<opencv2/core/core.hpp>
@@ -36,6 +34,10 @@
 #include <regex>
 #include "dirent.h"
 #include <vector>
+
+ 
+
+
 
 #define SHOW_STEPS            // un-comment or comment this line to show steps or not
 
@@ -252,6 +254,7 @@ void search(std::string curr_directory, std::string extension) {
 
 int main(void) {
 
+
 	//initialize DB
 	CarParkTrackExporter openDB;
 	openDB.run();
@@ -413,17 +416,25 @@ int main(void) {
 	//get list of files in directory
 	DIR *pd = NULL;
 
+	//Just need to change here to set each user's pc to be able to do what they need to do.. temporary solution
+	std::string user = "Clarence";
 
 	std::string cinDate;
 	std::string myRoot = "D:\\Videos Database\\Carpark Data\\";
 
-	//std::cout << "Please enter processing date (CCYYMMDD): ";
-	//std::cin >> cinDate;
-	cinDate = "20161018";
+
+	if (user == "Clarence") {
+		std::cout << "Please enter processing date (CCYYMMDD): ";
+		std::cin >> cinDate;
+	}
+	else if (user == "Ryan")
+	{
+		cinDate = "20161018";
+	}
 	//check if root directory is correct
-	std::cout << "Kindly confirm your video database root directory: \nie: " << myRoot << "CCYYMMDD\\c2\n (Y/n)";
+	//std::cout << "Kindly confirm your video database root directory: \nie: " << myRoot << "CCYYMMDD\\c2 (Y/n)";
 	//bbcc!!!!: else update 
-	std::cout << "TO BE IMPLEMENTED!\n";
+	//std::cout << "TO BE IMPLEMENTED!\n";
 
 
 	std::string myRoot2 = myRoot + cinDate + "\\c2\\";
@@ -455,25 +466,42 @@ int main(void) {
 				removeBlobMemory(blobs);
 			}
 
+			if (!first_video) {
+				std::cout << "clear blob memory \n";
+				removeBlobMemory(blobs);
+				
+			}
+
 			//UPDATE i to change video, eg:
 			//i = 2;
 
 			//performing loop over all 100 videos to keep the obj_ID
 			//obtain the time difference between 2 videos as well.
 			std::cout << i + 1 << ": " << results[i] << std::endl;
-		//	int vidLength = stoi(results[i + 1].substr(53, 4)) - stoi(results[i].substr(53, 4));
-			int vidLength = 6;
 
-			//BBCC! temp use 2nd video to start and try to reproduce error
+			int vidLength;
+			if (user == "Clarence") {
+
+				vidLength = stoi(results[i + 1].substr(53, 4)) - stoi(results[i].substr(53, 4));
+			}
+			else if (user == "Ryan")
+			{
+				vidLength = 6;
+			}
+			
+			// 	 __                     ___     ___ 
+			//	|__) |  | |\ |    |\ | |__  \_/  |  
+			//	|  \ \__/ | \|    | \| |___ / \  |  
+			//                                        
+
+
+
 			GlobalClass::instance()->set_InputFileName(results[i].c_str());
 			std::string InputFile = GlobalClass::instance()->get_InputFileName();
 
 			capVideo.open(InputFile.c_str());
 			std::cout << "Processing file: " << InputFile.c_str() << std::endl;
 
-
-			//commented out
-			//capVideo.open("20170228_084200.mp4");
 
 			if (!capVideo.isOpened()) {                                                 // if unable to open video file
 				std::cout << "error reading video file" << std::endl << std::endl;      // show error message
@@ -838,7 +866,7 @@ int main(void) {
 						possibleBlob.dblCurrentAspectRatio < 4.0 &&
 						possibleBlob.currentBoundingRect.width > 25 &&
 						possibleBlob.currentBoundingRect.height > 25 &&
-						possibleBlob.dblCurrentDiagonalSize > 45.0 && possibleBlob.dblCurrentDiagonalSize < 200.0 &&
+						possibleBlob.dblCurrentDiagonalSize > 40.0 && possibleBlob.dblCurrentDiagonalSize < 200.0 &&
 						(cv::contourArea(possibleBlob.currentContour) / (double)possibleBlob.currentBoundingRect.area()) > 0.50) {
 						//cv::cvtColor(colorForeground, colorForeground, CV_BGR2GRAY);
 
@@ -885,9 +913,9 @@ int main(void) {
 							bgs2->updatemask();
 
 						}
-						else {
+						//else {
 							matchCurrentFrameBlobsToExistingBlobs2(blobs, currentFrameBlobs);
-						}
+						//}
 
 					}
 				}
@@ -911,15 +939,14 @@ int main(void) {
 
 
 
-															//write blob info into DB as well when tracked.
-															//drawBlobInfoOnImage(blobs, imgFrame2Copy);
+				//write blob info into DB as well when tracked.
+				//drawBlobInfoOnImage(blobs, imgFrame2Copy);
 				drawBlobInfoOnImage(blobs, imgFrame2Copy, openDB, frameCount, vidLength);
 
 
 
 
 				//bool blnAtLeastOneBlobCrossedTheLine = checkIfBlobsCrossedTheLine(blobs, intHorizontalLinePosition2, carCount);
-				//bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLinePosition, int &carCount, CarParkTrackExporter &openDB, int &frameCount, int &vidLength, int entrance, bool entExt) {
 				bool blnAtLeastOneBlobCrossedTheLine = checkIfBlobsCrossedTheLine(blobs, intHorizontalLinePosition2, carCount, openDB, frameCount, vidLength);
 
 
@@ -983,31 +1010,34 @@ int main(void) {
 				currentFrameBlobs.clear();
 
 
-				imgFrame1 = imgFrame2.clone();           // move frame 1 up to where frame 2 is
+				imgFrame1 = imgFrame2.clone();           
+				
+				// move frame 1 up to where frame 2 is
 
-														 //cv::Mat temp_frame;
-														 //capVideo >> temp_frame;
-														 //if (temp_frame.empty())
-														 //{
-														 //	std::cout << "EOF: Processing next video\n";
-														 //	chCheckForEscKey = 27;
-														 //	break;
-														 //}
-														 //else
-														 //{
-														 //	capVideo.read(imgFrame2);
-														 //	if (imgFrame2.empty())
-														 //	{
-														 //		std::cout << "imgFrame2.empty() - breaking from loop\n";
-														 //		chCheckForEscKey = 27;
-														 //		break;
-														 //	}
+				 //cv::Mat temp_frame;
+				 //capVideo >> temp_frame;
+				 //if (temp_frame.empty())
+				 //{
+				 //	std::cout << "EOF: Processing next video\n";
+				 //	chCheckForEscKey = 27;
+				 //	break;
+				 //}
+				 //else
+				 //{
+				 //	capVideo.read(imgFrame2);
+				 //	if (imgFrame2.empty())
+				 //	{
+				 //		std::cout << "imgFrame2.empty() - breaking from loop\n";
+				 //		chCheckForEscKey = 27;
+				 //		break;
+				 //	}
 
-														 //	//std::cout << "next frame:" << capVideo.get(CV_CAP_PROP_POS_FRAMES) << "/" << capVideo.get(CV_CAP_PROP_FRAME_COUNT) << std::endl;
-														 //}
+				 //	//std::cout << "next frame:" << capVideo.get(CV_CAP_PROP_POS_FRAMES) << "/" << capVideo.get(CV_CAP_PROP_FRAME_COUNT) << std::endl;
+				 //}
 
 
-														 //clarence commented out, using the above method instead
+				//The above method uses 2x frames 
+
 				if ((capVideo.get(CV_CAP_PROP_POS_FRAMES) + 1) < (capVideo.get(CV_CAP_PROP_FRAME_COUNT))) {
 
 					capVideo.read(imgFrame2);
@@ -1051,7 +1081,9 @@ int main(void) {
 	else
 	{
 		std::cout << "No files ending in '" << extension << "' were found." << std::endl;
+		std::cin.get();
 	}
+	//_CrtDumpMemoryLeaks();
 	return(0);
 }
 
@@ -2282,10 +2314,10 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 
 												std::cout << "vehicle " << blobs[i].unitID << " : non tracking zone 2\n";
 
-												blobs[i].entExt = 888;
-												blobs[i].changed = true;
-												blobs[i].IO_indicator = true;
-
+												//temporary set park to true to write into database
+												blobs[i].park = true;
+												openDB.writeToDB_park(blobs, i, frameCount, vidLength, "NTZ 2");
+												blobs[i].park = false;
 
 
 											}
@@ -2323,9 +2355,9 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 												//printNumberofCar(1, false);
 												//blobs[i].exit = true;
 
-												blobs[i].entExt = 888;
-												blobs[i].changed = true;
-												blobs[i].IO_indicator = false;
+												//temporary set park to true to write into database
+												openDB.writeToDB_park(blobs, i, frameCount, vidLength, "NTZ 2");
+
 
 											}
 
@@ -2363,9 +2395,13 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 													blobs[i].leavingNonTrackzone = false;
 													std::cout << "vehicle " << blobs[i].unitID << " : non tracking zone 1\n";
 
-													blobs[i].entExt = 999;
-													blobs[i].changed = true;
-													blobs[i].IO_indicator = true;
+													//blobs[i].entExt = 999;
+													//blobs[i].changed = true;
+													//blobs[i].IO_indicator = true;
+													//temporary set park to true to write into database
+													blobs[i].park = true;
+													openDB.writeToDB_park(blobs, i, frameCount, vidLength, "NTZ 1");
+													blobs[i].park = false;
 
 												}
 												else if (blobs[i].centerPositions[prevFrameIndex].x > blobs[i].centerPositions[currFrameIndex].x
@@ -2399,9 +2435,9 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 													}
 													std::cout << "vehicle " << blobs[i].unitID << " : leaving non tracking zone 1\n";
 
-													blobs[i].entExt = 999;
-													blobs[i].changed = true;
-													blobs[i].IO_indicator = false;
+													//temporary set park to true to write into database
+													openDB.writeToDB_park(blobs, i, frameCount, vidLength, "NTZ 1");
+
 
 												}
 											}
@@ -2881,26 +2917,32 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 				if (blobs[i].parkLocation == 1) {
 					zoneAlot[blobs[i].parkinglot - 1].parked = false;
 					std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "Lot A" << blobs[i].parkinglot << "\n";
+					openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot A");
 				}
 				else if (blobs[i].parkLocation == 2) {
 					zoneBlot[blobs[i].parkinglot - 1].parked = false;
 					std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "Lot B" << blobs[i].parkinglot << "\n";
+					openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot B");
 				}
 				else if (blobs[i].parkLocation == 3) {
 					zoneClot[blobs[i].parkinglot - 1].parked = false;
 					std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "Lot C" << blobs[i].parkinglot << "\n";
+					openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot C");
 				}
 				else if (blobs[i].parkLocation == 4) {
 					zoneDlot[blobs[i].parkinglot - 1].parked = false;
 					std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "Lot D" << blobs[i].parkinglot << "\n";
+					openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot D");
 				}
 				else if (blobs[i].parkLocation == 5) {
 					zoneElot[blobs[i].parkinglot - 1].parked = false;
 					std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "Lot E" << blobs[i].parkinglot << "\n";
+					openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot E");
 				}
 				else if (blobs[i].parkLocation == 6) {
 
 					std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "DANGER ZONE" << blobs[i].parkinglot << "\n";
+					openDB.writeToDB_park(blobs, i, frameCount, vidLength, "DANGER ZONE");
 				}
 
 
@@ -3425,14 +3467,29 @@ void removeBlobMemory(std::vector<Blob> &blobs) {
 		if (blobs[i].currentContour.size() > 10) {
 			int todel = blobs[i].currentContour.size() - 10;
 			blobs[i].currentContour.erase(blobs[i].currentContour.begin(), blobs[i].currentContour.begin() + todel);
+
+			blobs[i].currentContour.shrink_to_fit();
+
 		}
+    
 		if (blobs[i].centerPositions.size() > 10) {
 			int todel = blobs[i].centerPositions.size() - 10;
 			blobs[i].centerPositions.erase(blobs[i].centerPositions.begin(), blobs[i].centerPositions.begin() + todel);
+
+			blobs[i].centerPositions.shrink_to_fit();
+
+
 		}
+    
 		if (blobs[i].AvgColor.size() > 10) {
 			int todel = blobs[i].AvgColor.size() - 10;
 			blobs[i].AvgColor.erase(blobs[i].AvgColor.begin(), blobs[i].AvgColor.begin() + todel);
+
+			blobs[i].AvgColor.shrink_to_fit();
+
 		}
-	}
+
+
+		}
+
 }
