@@ -47,7 +47,7 @@ bool CarParkTrackExporter::createTables()
 	bool success = mSQLManager->beginTransaction();
 	//success &= mSQLManager->executeStatement("create table tracks ( id INT, date DATE, time DATETIME, track_id INT, frame_num INT, pos_x INT, pos_y INT, width INT, height INT, filename TEXT, PRIMARY KEY(filename, id) )");
 
-	success &= mSQLManager->executeStatement("create table tracks ( track_id INTEGER PRIMARY KEY ASC, filename VARCHAR(20), track_date DATE, track_time TIME, obj_id INT, frame_num INT, obj_state VARCHAR(25), pos_x INT, pos_y INT, width INT, height INT)");
+	success &= mSQLManager->executeStatement("create table tracks ( track_id INTEGER PRIMARY KEY ASC, filename VARCHAR(20), track_date DATE, track_time TIME, obj_id INT, frame_num INT, obj_state VARCHAR(35), pos_x INT, pos_y INT, width INT, height INT)");
 	//success &= mSQLManager->executeStatement("create table objects ( object_id INTEGER PRIMARY KEY ASC, filename VARCHAR(20), obj_id INT, obj_type VARCHAR(10), obj_color VARCHAR(10), enter_from INT, parked_at VARCHAR(10), exit_from INT, parked_duration TIME )");
 	success &= mSQLManager->executeStatement("create table objects ( object_id INT, filename VARCHAR(20), obj_id INT, obj_type VARCHAR(10), obj_color VARCHAR(10), enter_from INT, parked_at VARCHAR(10), exit_from INT, parked_duration TIME, PRIMARY KEY( filename, obj_id) )");
 	success &= mSQLManager->executeStatement("create table weather ( weather_id INTEGER PRIMARY KEY ASC, weather_date DATE, weather_time TIME, weather_condition VARCHAR(10))");

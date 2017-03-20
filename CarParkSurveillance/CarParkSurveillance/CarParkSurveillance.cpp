@@ -1,14 +1,4 @@
 // CarCounting.cpp : Defines the entry point for the console application.
-// hello world
-
-
-//visual leak detector
-//reference from: https://msdn.microsoft.com/en-us/library/x98tx3cf(v=vs.140).aspx
-//
-//
-//#define _CRTDBG_MAP_ALLOC  
-//#include <stdlib.h>  
-//#include <crtdbg.h> 
 
 
 #include<opencv2/core/core.hpp>
@@ -265,10 +255,6 @@ void search(std::string curr_directory, std::string extension) {
 int main(void) {
 
 
-	// visual leak debugger
-	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
-
-
 	//initialize DB
 	CarParkTrackExporter openDB;
 	openDB.run();
@@ -430,6 +416,7 @@ int main(void) {
 	//get list of files in directory
 	DIR *pd = NULL;
 
+	//Just need to change here to set each user's pc to be able to do what they need to do.. temporary solution
 	std::string user = "Clarence";
 
 	std::string cinDate;
@@ -1093,7 +1080,7 @@ int main(void) {
 		std::cout << "No files ending in '" << extension << "' were found." << std::endl;
 		std::cin.get();
 	}
-	_CrtDumpMemoryLeaks();
+	//_CrtDumpMemoryLeaks();
 	return(0);
 }
 
