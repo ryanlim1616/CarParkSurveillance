@@ -66,6 +66,7 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 void drawBlobInfoOnImage(std::vector<Blob> &blobs, cv::Mat &imgFrame2Copy, CarParkTrackExporter &openDB, int &frameCount, int &vidLength);
 //void vehicleIO(std::vector<Blob> &blobs, CarParkTrackExporter &openDB);
 
+void getIOU(std::vector<Blob> &identifiedBlob, std::vector<Blob> &newBlob0, int &intIndex);
 void drawCarCountOnImage(int &carCount, cv::Mat &imgFrame2Copy);
 void drawCarDensityOnImage(double &carCount, cv::Mat &imgFrame2Copy);
 void drawRegion(cv::Size imageSize, cv::vector<cv::Point2f> points, cv::Mat imageCopy);
@@ -478,8 +479,19 @@ int main(void) {
 
 			int vidLength;
 			if (user == "Clarence") {
-
-				vidLength = stoi(results[i + 1].substr(53, 4)) - stoi(results[i].substr(53, 4));
+				
+				//if last file name ~= 182400, automatically set time = 6
+				if (i + 1 > results.size()) {
+					if (results[i].substr(53, 4) == "182400")
+					{
+						vidLength = 6;
+					}
+				}
+				else
+				{
+					vidLength = stoi(results[i + 1].substr(53, 4)) - stoi(results[i].substr(53, 4));
+				}
+				
 			}
 			else if (user == "Ryan")
 			{
@@ -876,7 +888,8 @@ int main(void) {
 							currentFrameBlobs.push_back(possibleBlob);
 						}
 
-
+						//check IOU before determining?
+						
 					}
 
 					
@@ -1085,6 +1098,45 @@ int main(void) {
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+void getIOU(std::vector<Blob> &identifiedBlob, std::vector<Blob> &newBlob0,  int &intIndex)
+{
+
+	//idea: if blob center position is very close .. give a parameter 
+	//then compare the IOU of the blobs, if the above a certain threshold, assume that it's the same item
+	//do not let the blob be added
+
+	/*def bb_intersection_over_union(boxA, boxB) :
+		# determine the(x, y) - coordinates of the intersection rectangle
+		xA = max(boxA[0], boxB[0])
+		yA = max(boxA[1], boxB[1])
+		xB = min(boxA[2], boxB[2])
+		yB = min(boxA[3], boxB[3])
+
+		# compute the area of intersection rectangle
+		interArea = (xB - xA + 1) * (yB - yA + 1)
+
+		# compute the area of both the prediction and ground - truth
+		# rectangles
+		boxAArea = (boxA[2] - boxA[0] + 1) * (boxA[3] - boxA[1] + 1)
+		boxBArea = (boxB[2] - boxB[0] + 1) * (boxB[3] - boxB[1] + 1)
+
+		# compute the intersection over union by taking the intersection
+		# area and dividing it by the sum of prediction + ground - truth
+		# areas - the interesection area
+		iou = interArea / float(boxAArea + boxBArea - interArea)
+
+		# return the intersection over union value
+		return iou*/
+
+
+
+
+}
+
+
+
+
 void drawRegion(cv::Size imageSize, cv::vector<cv::Point2f> points, cv::Mat imageCopy) {
 
 	//cv::Mat countingRegion(imageSize, CV_8UC3, SCALAR_BLACK);
