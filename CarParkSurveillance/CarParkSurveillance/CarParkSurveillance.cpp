@@ -463,6 +463,9 @@ int main(void) {
 		std::cout << results.size() << " files were found:" << std::endl;
 		for (unsigned int i = 0; i < results.size(); ++i)	// used unsigned to appease compiler warnings
 		{
+			if (!first_video) {
+				removeBlobMemory(blobs);
+			}
 
 			if (!first_video) {
 				std::cout << "clear blob memory \n";
@@ -3516,21 +3519,29 @@ void removeBlobMemory(std::vector<Blob> &blobs) {
 		if (blobs[i].currentContour.size() > 10) {
 			int todel = blobs[i].currentContour.size() - 10;
 			blobs[i].currentContour.erase(blobs[i].currentContour.begin(), blobs[i].currentContour.begin() + todel);
+
 			blobs[i].currentContour.shrink_to_fit();
 
 		}
+    
 		if (blobs[i].centerPositions.size() > 10) {
 			int todel = blobs[i].centerPositions.size() - 10;
 			blobs[i].centerPositions.erase(blobs[i].centerPositions.begin(), blobs[i].centerPositions.begin() + todel);
+
 			blobs[i].centerPositions.shrink_to_fit();
 
+
 		}
+    
 		if (blobs[i].AvgColor.size() > 10) {
 			int todel = blobs[i].AvgColor.size() - 10;
 			blobs[i].AvgColor.erase(blobs[i].AvgColor.begin(), blobs[i].AvgColor.begin() + todel);
+
 			blobs[i].AvgColor.shrink_to_fit();
 
 		}
 
-	}
+
+		}
+
 }
