@@ -66,6 +66,9 @@ public:
 	}
 	std::string get_InputTime(int vframeCount, int vidLength)
 	{
+		//let's see if this is causing some memory leak issue? -- tested, 17/3/17 - no leak here
+
+		//****************** START ******************
 		struct tm *timeinfo = new struct tm();
 
 		double vidDuration = vidLength * 60;
@@ -109,11 +112,11 @@ public:
 		}
 
 		InputTime_new = temp_hour + ":" + temp_minute + ":" + temp_sec;
+
+		//****************** END ******************
+		//InputTime_new = "00:00:00";
+
 		
-		//std::cout << strftime(buffer, 80, "%I:%M%:%S", timeinfo) << std::endl;
-
-		//delete timeinfo;
-
 		return InputTime_new;
 	}
 	void set_TotalFrames(int vTotalFrames)

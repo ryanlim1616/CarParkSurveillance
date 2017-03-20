@@ -2,6 +2,14 @@
 // hello world
 
 
+//visual leak detector
+//reference from: https://msdn.microsoft.com/en-us/library/x98tx3cf(v=vs.140).aspx
+//
+//
+//#define _CRTDBG_MAP_ALLOC  
+//#include <stdlib.h>  
+//#include <crtdbg.h> 
+
 
 #include<opencv2/core/core.hpp>
 #include<opencv2/highgui/highgui.hpp>
@@ -36,6 +44,10 @@
 #include <regex>
 #include "dirent.h"
 #include <vector>
+
+ 
+
+
 
 #define SHOW_STEPS            // un-comment or comment this line to show steps or not
 
@@ -76,6 +88,7 @@ void checkLeaveWithNoEnter();
 void addBack(std::vector<Blob> &blobs);
 void addBlobToExistingBlobsMissMatch(Blob &currentFrameBlob, std::vector<Blob> &existingBlobs, int &intIndex);
 bool checkIfPedestrain(cv::Mat tempCropImage);
+void removeBlobMemory(std::vector<Blob> &blobs);
 
 int carDensity = 0;
 
@@ -250,6 +263,11 @@ void search(std::string curr_directory, std::string extension) {
 
 
 int main(void) {
+
+
+	// visual leak debugger
+	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+
 
 	//initialize DB
 	CarParkTrackExporter openDB;
@@ -458,6 +476,12 @@ int main(void) {
 		for (unsigned int i = 0; i < results.size(); ++i)	// used unsigned to appease compiler warnings
 		{
 
+			if (!first_video) {
+				std::cout << "clear blob memory \n";
+				removeBlobMemory(blobs);
+				
+			}
+
 			//UPDATE i to change video, eg:
 			//i = 2;
 
@@ -474,8 +498,15 @@ int main(void) {
 			{
 				vidLength = 6;
 			}
-			//BBCC! temp use 2nd video to start and try to reproduce error
-			GlobalClass::instance()->set_InputFileName(results[i+1].c_str());
+			
+			// 	 __                     ___     ___ 
+			//	|__) |  | |\ |    |\ | |__  \_/  |  
+			//	|  \ \__/ | \|    | \| |___ / \  |  
+			//                                        
+
+
+
+			GlobalClass::instance()->set_InputFileName(results[i].c_str());
 			std::string InputFile = GlobalClass::instance()->get_InputFileName();
 
 			capVideo.open(InputFile.c_str());
@@ -845,7 +876,7 @@ int main(void) {
 						possibleBlob.dblCurrentAspectRatio < 4.0 &&
 						possibleBlob.currentBoundingRect.width > 25 &&
 						possibleBlob.currentBoundingRect.height > 25 &&
-						possibleBlob.dblCurrentDiagonalSize > 45.0 && possibleBlob.dblCurrentDiagonalSize < 200.0 &&
+						possibleBlob.dblCurrentDiagonalSize > 40.0 && possibleBlob.dblCurrentDiagonalSize < 200.0 &&
 						(cv::contourArea(possibleBlob.currentContour) / (double)possibleBlob.currentBoundingRect.area()) > 0.50) {
 						//cv::cvtColor(colorForeground, colorForeground, CV_BGR2GRAY);
 
@@ -892,9 +923,9 @@ int main(void) {
 							bgs2->updatemask();
 
 						}
-						else {
+						//else {
 							matchCurrentFrameBlobsToExistingBlobs2(blobs, currentFrameBlobs);
-						}
+						//}
 
 					}
 				}
@@ -989,31 +1020,34 @@ int main(void) {
 				currentFrameBlobs.clear();
 
 
-				imgFrame1 = imgFrame2.clone();           // move frame 1 up to where frame 2 is
+				imgFrame1 = imgFrame2.clone();           
+				
+				// move frame 1 up to where frame 2 is
 
-														 //cv::Mat temp_frame;
-														 //capVideo >> temp_frame;
-														 //if (temp_frame.empty())
-														 //{
-														 //	std::cout << "EOF: Processing next video\n";
-														 //	chCheckForEscKey = 27;
-														 //	break;
-														 //}
-														 //else
-														 //{
-														 //	capVideo.read(imgFrame2);
-														 //	if (imgFrame2.empty())
-														 //	{
-														 //		std::cout << "imgFrame2.empty() - breaking from loop\n";
-														 //		chCheckForEscKey = 27;
-														 //		break;
-														 //	}
+				 //cv::Mat temp_frame;
+				 //capVideo >> temp_frame;
+				 //if (temp_frame.empty())
+				 //{
+				 //	std::cout << "EOF: Processing next video\n";
+				 //	chCheckForEscKey = 27;
+				 //	break;
+				 //}
+				 //else
+				 //{
+				 //	capVideo.read(imgFrame2);
+				 //	if (imgFrame2.empty())
+				 //	{
+				 //		std::cout << "imgFrame2.empty() - breaking from loop\n";
+				 //		chCheckForEscKey = 27;
+				 //		break;
+				 //	}
 
-														 //	//std::cout << "next frame:" << capVideo.get(CV_CAP_PROP_POS_FRAMES) << "/" << capVideo.get(CV_CAP_PROP_FRAME_COUNT) << std::endl;
-														 //}
+				 //	//std::cout << "next frame:" << capVideo.get(CV_CAP_PROP_POS_FRAMES) << "/" << capVideo.get(CV_CAP_PROP_FRAME_COUNT) << std::endl;
+				 //}
 
 
-														 //clarence commented out, using the above method instead
+				//The above method uses 2x frames 
+
 				if ((capVideo.get(CV_CAP_PROP_POS_FRAMES) + 1) < (capVideo.get(CV_CAP_PROP_FRAME_COUNT))) {
 
 					capVideo.read(imgFrame2);
@@ -1059,6 +1093,7 @@ int main(void) {
 		std::cout << "No files ending in '" << extension << "' were found." << std::endl;
 		std::cin.get();
 	}
+	_CrtDumpMemoryLeaks();
 	return(0);
 }
 
@@ -3435,4 +3470,28 @@ bool checkIfPedestrain(cv::Mat tempCropImage) {
 		return false;
 	}
 	
+}
+
+void removeBlobMemory(std::vector<Blob> &blobs) {
+	for (int i = 0; i < blobs.size(); i++) {
+		if (blobs[i].currentContour.size() > 10) {
+			int todel = blobs[i].currentContour.size() - 10;
+			blobs[i].currentContour.erase(blobs[i].currentContour.begin(), blobs[i].currentContour.begin() + todel);
+			blobs[i].currentContour.shrink_to_fit();
+
+		}
+		if (blobs[i].centerPositions.size() > 10) {
+			int todel = blobs[i].centerPositions.size() - 10;
+			blobs[i].centerPositions.erase(blobs[i].centerPositions.begin(), blobs[i].centerPositions.begin() + todel);
+			blobs[i].centerPositions.shrink_to_fit();
+
+		}
+		if (blobs[i].AvgColor.size() > 10) {
+			int todel = blobs[i].AvgColor.size() - 10;
+			blobs[i].AvgColor.erase(blobs[i].AvgColor.begin(), blobs[i].AvgColor.begin() + todel);
+			blobs[i].AvgColor.shrink_to_fit();
+
+		}
+
+	}
 }

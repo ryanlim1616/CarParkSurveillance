@@ -11,6 +11,7 @@
 
 
 CarParkTrackExporter::CarParkTrackExporter(void)
+:mSQLManager(nullptr)
 {
 	std::cout << "CarParkTrackExporter()" << std::endl;
 }
@@ -97,13 +98,16 @@ bool CarParkTrackExporter::writeToDB(std::vector<Blob> &blobs, unsigned int &i, 
 		}
 
 		success &= mSQLManager->endTransaction();
+		delete mSQLManager;
 		return success;
 	}
 	else
 	{
 		std::cout << "NOT CONNECTED TO DB \n";
+		delete mSQLManager;
 	}
-	delete mSQLManager;
+
+	
 
 }
 
@@ -160,13 +164,15 @@ bool CarParkTrackExporter::writeToDB_entExt(std::vector<Blob> &blobs, unsigned i
 
 
 		success &= mSQLManager->endTransaction();
+		delete mSQLManager;
 		return success;
 	}
 	else
 	{
 		std::cout << "NOT CONNECTED TO DB \n";
+		delete mSQLManager;
 	}
-	delete mSQLManager;
+	
 
 }
 
@@ -222,13 +228,15 @@ bool CarParkTrackExporter::writeToDB_park(std::vector<Blob> &blobs, unsigned int
 
 
 		success &= mSQLManager->endTransaction();
+		delete mSQLManager;
 		return success;
 	}
 	else
 	{
 		std::cout << "NOT CONNECTED TO DB \n";
+		delete mSQLManager;
 	}
-	delete mSQLManager;
+	
 
 }
 
