@@ -277,8 +277,12 @@ void Blob::storeImage(cv::Mat rawImage) {
 }
 
 void Blob::getAverageColor() {
-	cv::Scalar average = cv::mean(rawImage, image);
+	
+	cv::Mat cropImage = rawImage(currentBoundingRect);
+	cv::Scalar average = cv::mean(cropImage);
 	AvgColor.push_back(average);
+	cropImage.release();
+
 }	
 
 void Blob::getAverageColorLast() {

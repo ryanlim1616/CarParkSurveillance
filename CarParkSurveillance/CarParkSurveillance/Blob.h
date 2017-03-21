@@ -23,6 +23,7 @@ public:
 	bool enter = false;
 	bool exit = false;
 	bool park = false;
+	//bool leaveParkSpace = false;
 
 	int entExt = 0;
 	bool changed = false;
@@ -39,9 +40,7 @@ public:
 	int existInSceen = 0;
 
 	int counter = 0;
-
 	int mergeid = 0;
-
 	bool merge = false;
 
 	int leavingcarpark = 0;
