@@ -158,6 +158,7 @@
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="sqlite3.c" />
     <ClCompile Include="SQLiteManager.cpp" />
+    <ClCompile Include="Switches.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AdaptiveBackgroundLearning.h" />
@@ -172,6 +173,7 @@
     <ClInclude Include="sqlite3.h" />
     <ClInclude Include="SQLiteManager.h" />
     <ClInclude Include="StringHelpers.h" />
+    <ClInclude Include="Switches.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
