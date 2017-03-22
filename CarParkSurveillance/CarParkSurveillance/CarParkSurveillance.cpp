@@ -475,8 +475,8 @@ int main(void) {
 	if (resumeFromError)
 	{
 
-		resume_from = 99;
-		unitObjCounter = 383;
+		resume_from = 0;
+		unitObjCounter = 390;
 
 		std::cout << "**************************** ATTENTION ****************************\n";
 		std::cout << "*******************************************************************\n\n";
