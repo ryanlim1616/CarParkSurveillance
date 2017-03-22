@@ -253,3 +253,5 @@ paket-files/
 *.mp4
 *.db
 
+*.html
+*.csv
