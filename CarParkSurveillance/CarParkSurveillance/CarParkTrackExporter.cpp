@@ -8,7 +8,6 @@
 #include <iostream>
 #include "GlobalClass.h"
 #include "Blob.h"
-#include "Switches.h"
 
 
 CarParkTrackExporter::CarParkTrackExporter(void)
@@ -30,13 +29,10 @@ void CarParkTrackExporter::run()
 	if (mSQLManager->isConnected())
 	{
 		std::cout << mFilePath << ": ";
-		if(!resumeFromError)
-		{ 
-			dropTables();
-			createTables();
-			std::cout << "Initialized db tables" << std::endl;
-		}	
-		
+		dropTables();
+		createTables();
+		saveCurrentContext();
+		std::cout << "Initialized db tables" << std::endl;
 	}
 	else
 	{

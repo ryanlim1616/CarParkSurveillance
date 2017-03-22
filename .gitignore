@@ -250,9 +250,21 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
-*.mp4
+/CarParkSurveillance/CarParkSurveillance/20160725_084800.mp4
 *.db
-
-*.html
-*.csv
-CarParkSurveillance/CarParkSurveillance/DBSurveillance.db
+*.db
+*.db
+/CarParkSurveillance/CarParkSurveillance/20170228_105400.mp4
+/CarParkSurveillance/CarParkSurveillance/20170228_104800.mp4
+/CarParkSurveillance/CarParkSurveillance/20170228_084200.mp4
+/CarParkSurveillance/CarParkSurveillance/20170228_083000.mp4
+/CarParkSurveillance/CarParkSurveillance/20170112_164200.mp4
+/CarParkSurveillance/CarParkSurveillance/20170112_164200 00_03_35-.mp4
+/CarParkSurveillance/CarParkSurveillance/20170112_102400.mp4
+/CarParkSurveillance/CarParkSurveillance/20170111_083000.mp4
+/CarParkSurveillance/CarParkSurveillance/20161230_085400.mp4
+/CarParkSurveillance/CarParkSurveillance/20161223_090000.mp4
+/CarParkSurveillance/CarParkSurveillance/20161220_083000.mp4
+/CarParkSurveillance/CarParkSurveillance/20161116_083000.mp4
+/CarParkSurveillance/CarParkSurveillance/20161018_084200.mp4
+/CarParkSurveillance/CarParkSurveillance/20160810_084800.mp4
