@@ -7,3 +7,5 @@ CarParkSurveillance/CarParkSurveillance/x64/Debug/CarParkSurveillance.log
 CarParkSurveillance/CarParkSurveillance/x64/Debug/vc140.pdb
 *.exe
 CarParkSurveillance/x64/Debug/CarParkSurveillance.ilk
+*.opendb
+CarParkSurveillance/x64/Debug/CarParkSurveillance.pdb

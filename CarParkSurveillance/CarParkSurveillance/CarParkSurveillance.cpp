@@ -254,15 +254,6 @@ void search(std::string curr_directory, std::string extension) {
 }
 
 
-////defining switches
-//bool imshow_display;
-//
-//// set resumeFromError = 1 to resume from a particular video
-//bool resumeFromError;
-//
-////for debugging purpose - 1(true)(on)/0(false)(off)
-//bool debug_on;
-
 
 int main(void) {
 
@@ -475,8 +466,8 @@ int main(void) {
 	if (resumeFromError)
 	{
 
-		resume_from = 99;
-		unitObjCounter = 383;
+		resume_from = 0;
+		unitObjCounter = 390;
 
 		std::cout << "**************************** ATTENTION ****************************\n";
 		std::cout << "*******************************************************************\n\n";
