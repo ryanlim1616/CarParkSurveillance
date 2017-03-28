@@ -907,7 +907,7 @@ int main(void) {
 				}
 
 
-			
+				std::cout << "aa\n";
 				//match blob
 				if (blnFirstFrame == true && first_video == true) {
 					first_video = false;
