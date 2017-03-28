@@ -30,17 +30,24 @@ void CarParkTrackExporter::run()
 	if (mSQLManager->isConnected())
 	{
 		std::cout << mFilePath << ": ";
+		
 		if(!resumeFromError)
 		{ 
 			dropTables();
 			createTables();
-			std::cout << "Initialized db tables" << std::endl;
-		}	
+			std::cout << "DB tables dropped & created" << std::endl;
+			std::cout << "Initialized DB tables" << std::endl;
+		}
+		else
+		{
+			std::cout << "-- Using existing DB --" << std::endl;
+		}
 		
 	}
 	else
 	{
 		//Log Error
+		std::cout << "[ERROR!] Unable to initialized db tables" << std::endl;
 	}
 
 	delete mSQLManager;

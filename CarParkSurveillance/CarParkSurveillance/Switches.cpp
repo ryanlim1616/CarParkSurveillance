@@ -7,7 +7,7 @@
 bool imshow_display = 0;
 
 // set resumeFromError = 1 to resume from a particular video
-bool resumeFromError = 1;
+bool resumeFromError = 0;
 
 //for debugging purpose - 1(true)(on)/0(false)(off)
 bool debug_on = 0;
