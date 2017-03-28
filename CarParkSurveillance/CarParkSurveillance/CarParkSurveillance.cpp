@@ -34,7 +34,7 @@
 #include <regex>
 #include "dirent.h"
 #include <vector>
-
+#include <ctime>
 #include "Switches.h"
 
 
@@ -256,6 +256,15 @@ void search(std::string curr_directory, std::string extension) {
 
 
 int main(void) {
+
+	//print current time before running program:
+
+	time_t t = time(0);   // get time now
+	struct tm * now = localtime(&t);
+	std::cout << "Start of job: " << (now->tm_hour ) << ':'
+		<< (now->tm_min ) << ':'
+		<< now->tm_sec
+		<< std::endl;
 
 
 
@@ -522,14 +531,24 @@ int main(void) {
 				//if last file name ~= 182400, automatically set time = 6
 				if ((resume_from + 1) == results.size()) {
 
-					if (results[resume_from].substr(53, 4) == "182400")
+					if (results[resume_from].substr(53, 6) == "182400")
 					{
 						vidLength = 6;
 					}
 				}
 				else
 				{
+					
+					
 					vidLength = stoi(results[resume_from + 1].substr(53, 4)) - stoi(results[resume_from].substr(53, 4));
+
+					//to cater for change of hour
+					if (vidLength == 46)
+					{
+						vidLength = 6;
+					}
+					//temp testing only for double skip method
+					//vidLength = vidLength * 2;
 				}
 
 			}
@@ -550,6 +569,7 @@ int main(void) {
 
 			capVideo.open(InputFile.c_str());
 			std::cout << "Processing file: " << InputFile.c_str() << std::endl;
+
 
 
 			if (!capVideo.isOpened()) {                                                 // if unable to open video file
@@ -1137,6 +1157,18 @@ int main(void) {
 			}
 			// note that if the user did press esc, we don't need to hold the windows open, we can simply let the program end which will close the windows
 		}
+
+		//end of job, print time
+
+		t = time(0);   // get time now
+		now = localtime(&t);
+		std::cout << "End of job: " << (now->tm_hour) << ':'
+			<< (now->tm_min) << ':'
+			<< now->tm_sec
+			<< std::endl;
+
+
+
 		std::cout << "Press Enter to continue: ";
 		std::cin >> cin_temp;
 	}
@@ -2864,22 +2896,22 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 			}
 			//	std::cout << "(vehicle Status) start: 4\n";
 			if (blobs[i].parkframe > 50 && blobs[i].park == false) {
-				std::cout << "11\n";
+				//std::cout << "11\n";
 				int a = blobs[i].parkLocation;
 				if (blobs[i].unitID == 0 && blobs[i].parkLocation != 6) {
-					std::cout << "22\n";
+					//std::cout << "22\n";
 					int highIndexx = -1;
 					double nerestDis = 1000000;
 					int lenght = missMatchBlob.size();
 					if (lenght == 0) {
-						std::cout << "33\n";
+						//std::cout << "33\n";
 						//	blobs[i].park = true;
 						blobs[i].enter = true;
 
 
 					}
 					else {
-						std::cout << "44\n";
+						//std::cout << "44\n";
 						for (int k = 0; k < missMatchBlob.size(); k++) {
 							double distancediff = sqrt(((blobs[i].centerPositions[blobs[i].centerPositions.size() - 1].x - missMatchBlob[k].centerPositions[missMatchBlob[k].centerPositions.size() - 1].x) *
 								(blobs[i].centerPositions[blobs[i].centerPositions.size() - 1].x - missMatchBlob[k].centerPositions[missMatchBlob[k].centerPositions.size() - 1].x)) +
@@ -2891,23 +2923,23 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 								highIndexx = k;
 							}
 						}
-						std::cout << "55\n";
+						//std::cout << "55\n";
 						if (highIndexx != -1) {
-							std::cout << "66\n";
+							//std::cout << "66\n";
 							missMatchBlob[highIndexx].parkLocation = blobs[i].parkLocation;
 							missMatchBlob[highIndexx].parkinglot = blobs[i].parkinglot;
 							missMatchBlob[highIndexx].parkframe = 50;
 							addBlobToExistingBlobsMissMatch(blobs[i], missMatchBlob, highIndexx);
 							missMatchBlob[highIndexx].matchBack = true;
 							missMatchBlob[highIndexx].matchbackid = i;
-							std::cout << "77\n";
+							//std::cout << "77\n";
 						}
 
 						else {
 
 							//	blobs[i].park = true;
 							blobs[i].enter = true;
-							std::cout << "88\n";
+							//std::cout << "88\n";
 
 						}
 					}
@@ -2916,7 +2948,7 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 				else if (blobs[i].unitID == 0 && blobs[i].parkLocation == 6) {
 
 					blobs[i].parkframe = 0;
-					std::cout << "99\n";
+					//std::cout << "99\n";
 				}
 				else {
 					if (a == 1 && blobs[i].park == false) {
