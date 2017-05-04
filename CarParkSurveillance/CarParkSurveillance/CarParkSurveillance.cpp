@@ -11,10 +11,13 @@
 #include<opencv2/nonfree/nonfree.hpp>
 #include<opencv2/gpu/gpu.hpp>
 #include<cmath>
+#include<cuda.h>
+
 
 #include<stdio.h>
 #include<iostream>
-#include<conio.h>           // it may be necessary to change or remove this line if not using Windows
+#include<conio.h> // it may be necessary to change or remove this line if not using Windows
+
 
 #include "Blob.h"
 #include "AdaptiveBackgroundLearning.h"
@@ -24,6 +27,8 @@
 
 //clarence added the following:
 #include <string>
+#include <cstring>
+#include <atlstr.h>
 #include "sqlite3.h" 
 #include "CarParkTrackExporter.h"
 #include "Logger.h"
@@ -34,9 +39,30 @@
 #include <regex>
 #include "dirent.h"
 #include <vector>
+<<<<<<< HEAD
 #include <ctime>
 #include "Switches.h"
 #include "GetSetLog.hxx"
+=======
+#include <thread>
+
+extern "C" {
+	#include "darknet.c"
+	#include <cuda.h>
+	void Init_YOLO(int argc, char **argv);
+	int predict_image_c(IplImage* input);
+
+}
+
+
+
+
+
+
+
+
+
+>>>>>>> refs/remotes/ryanlim1616/master
 
 
 
@@ -83,6 +109,10 @@ void addBack(std::vector<Blob> &blobs);
 void addBlobToExistingBlobsMissMatch(Blob &currentFrameBlob, std::vector<Blob> &existingBlobs, int &intIndex);
 bool checkIfPedestrain(cv::Mat tempCropImage);
 void removeBlobMemory(std::vector<Blob> &blobs);
+void check_vehicles();
+IplImage* mat_to_iplimage(cv::Mat input);
+cv::Rect enlargeROI(cv::Mat frm, cv::Rect boundingBox, int padding);
+
 
 
 void getNumOfTrajs(CarParkTrackExporter &openDB);
@@ -116,7 +146,7 @@ cv::Mat zoneC;
 cv::Mat zoneD;
 cv::Mat zoneE;
 
-
+cv::Mat ff;
 cv::Mat entrance1;
 cv::Mat entrance2;
 cv::Mat entrance3;
@@ -125,6 +155,7 @@ cv::Mat entrance5;
 cv::Mat entrance6;
 
 cv::Mat carParkZone;
+cv::Mat just_to_test;
 
 cv::Mat parkImg;
 cv::Mat minusMask;
@@ -155,6 +186,7 @@ cv::gpu::HOGDescriptor d_hog;
 
 int updateFrameCounter = 0;
 
+cv::Mat global_img;
 
 
 //IBGS *bgs2;
@@ -267,6 +299,7 @@ void search(std::string curr_directory, std::string extension) {
 
 
 int main(void) {
+<<<<<<< HEAD
 
 
 	//write to log
@@ -283,6 +316,14 @@ int main(void) {
 		<< std::endl;
 
 	//define exporter
+=======
+	//std::thread threadObj1(check_vehicles);
+//	threadObj1.join();
+	
+	Init_YOLO(0, 0);
+	
+	//initialize DB
+>>>>>>> refs/remotes/ryanlim1616/master
 	CarParkTrackExporter openDB;
 
 
@@ -349,11 +390,11 @@ int main(void) {
 
 	IBGS *bgs2;
 	bgs2 = new FrameDifferenceBGS;
-
-	d_hog = cv::gpu::HOGDescriptor(cv::Size(48, 96));
-	d_hog.setSVMDetector(d_hog.getPeopleDetector48x96());
-
-
+	
+	std::cout << "haha1\n";
+	//d_hog = cv::gpu::HOGDescriptor(cv::Size(48, 96));
+	//d_hog.setSVMDetector(d_hog.getPeopleDetector48x96());
+	std::cout << "haha2\n";
 	cv::VideoCapture capVideo;
 
 	cv::Mat imgFrame1;
@@ -382,13 +423,14 @@ int main(void) {
 	cv::Mat structuringElement5x5 = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(5, 5));
 	cv::Mat structuringElement7x7 = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(7, 7));
 	cv::Mat structuringElement15x15 = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(15, 15));
-
+	std::cout << "haha3\n";
 
 
 	cv::Mat mask;
+	std::cout << "haha5\n";
 	mask = cv::imread("mask.jpg");
 
-
+	std::cout << "haha4\n";
 
 
 	zoneA = cv::imread("zoneAmask.png");
@@ -413,10 +455,15 @@ int main(void) {
 	nonTrackZone = cv::imread("nonTrackParkingZone.png");
 	nonTrackZone2 = cv::imread("nonTrackParkingZone2.png");
 
-	minusMask = cv::imread("minusmask.png");
+	just_to_test = cv::imread("Capture2.jpg");
+
+	
+	/*minusMask = cv::imread("minusmask.png");
+	std::cout << "test3\n";
 	cv::transform(minusMask, minusMask, cv::Matx13f(1, 1, 1));
+	std::cout << "test4\n";*/
 
-
+	
 
 
 
@@ -507,7 +554,7 @@ int main(void) {
 	std::string myRoot2;
 	std::vector<std::string> listOfDates;				// holds search results
 
-
+	std::cout << "test1\n";
 	if (user == "Clarence") {
 		std::cout << "Please enter processing date (CCYYMMDD): ";
 		std::cin >> cinDate;
@@ -579,6 +626,7 @@ int main(void) {
 	//bbcc!!!!: else update 
 	//std::cout << "TO BE IMPLEMENTED!\n";
 
+<<<<<<< HEAD
 	int resume_from;
 	if (resumeFromError)
 	{
@@ -592,6 +640,10 @@ int main(void) {
 		std::cout << "Video resume_from: " << resume_from;
 		std::cout << " with unitObjCounter: " << unitObjCounter << std::endl;
 		std::cout << "\n*******************************************************************\n";
+=======
+	std::cout << "test2\n";
+	std::string myRoot2 = myRoot + cinDate + "\\c2\\";
+>>>>>>> refs/remotes/ryanlim1616/master
 
 
 	}
@@ -745,7 +797,7 @@ int main(void) {
 				int intVerticalLinePosition4 = (int)std::round((double)imgFrame1.rows * 0.98);
 
 
-
+			
 
 				crossingLine[0].x = 530;
 				crossingLine[0].y = intHorizontalLinePosition;
@@ -1029,6 +1081,7 @@ int main(void) {
 
 
 
+<<<<<<< HEAD
 					cv::erode(colorForeground, colorForeground, structuringElement3x3);
 					cv::dilate(colorForeground, colorForeground, structuringElement7x7);
 					cv::erode(colorForeground, colorForeground, structuringElement5x5);
@@ -1054,6 +1107,37 @@ int main(void) {
 					/////////////////////////// process contours
 
 
+=======
+				//convexHull
+			//	std::cout << "Start: Store Possible Blob!\n";
+				//filter convexHull
+				for (auto &convexHull : convexHulls) {
+					Blob possibleBlob(convexHull);
+
+					if (possibleBlob.currentBoundingRect.area() > 650 &&
+						possibleBlob.dblCurrentAspectRatio > 0.2 &&
+						possibleBlob.dblCurrentAspectRatio < 4.0 &&
+						possibleBlob.currentBoundingRect.width > 25 &&	
+						possibleBlob.currentBoundingRect.height > 25 &&
+						possibleBlob.currentBoundingRect.width * 2 > possibleBlob.currentBoundingRect.height &&
+						possibleBlob.dblCurrentDiagonalSize > 40.0 && possibleBlob.dblCurrentDiagonalSize < 200.0 &&
+						(cv::contourArea(possibleBlob.currentContour) / (double)possibleBlob.currentBoundingRect.area()) > 0.50) {
+						//cv::cvtColor(colorForeground, colorForeground, CV_BGR2GRAY);
+
+						/*cv::Rect tempBoundingRect = enlargeROI(imgFrame1Copy, possibleBlob.currentBoundingRect, 10);
+						cv::Mat cropImage = imgFrame1Copy(tempBoundingRect);
+
+						IplImage* to_test = mat_to_iplimage(cropImage);
+						int temp_test = predict_image_c(to_test);
+						std::cout << "prediction: " << temp_test << "\n";
+*/
+
+						//cv::imshow("cropImgae", cropImage);
+
+						possibleBlob.storeImage(imgFrame1Copy);
+						currentFrameBlobs.push_back(possibleBlob);
+						
+>>>>>>> refs/remotes/ryanlim1616/master
 
 
 					//convexHull
@@ -1064,6 +1148,7 @@ int main(void) {
 					}
 
 
+<<<<<<< HEAD
 					//convexHull
 					//std::cout << "Start: Store Possible Blob!\n";
 					//filter convexHull
@@ -1090,11 +1175,35 @@ int main(void) {
 							}
 
 							//check IOU before determining?
+=======
+				}
+
+				global_img = imgFrame1Copy;
+			//	std::cout << "End: Store Possible Blob!\n";
+				//std::cout << "tttttkkk: " << just_to_test.type() << "\n";
+		/*		IplImage* to_test = mat_to_iplimage(just_to_test);
+
+				cvShowImage("to_test", to_test);
+
+				int temp_test = predict_image_c(to_test);
+				std::cout << "asdasdasdadadsadas\n";
+				system("pause");*/
+>>>>>>> refs/remotes/ryanlim1616/master
 
 						}
 
 
+<<<<<<< HEAD
 
+=======
+				drawAndShowContours(imgThresh.size(), currentFrameBlobs, "imgCurrentFrameBlobs", imgFrame1Copy);
+			
+				if (currentFrameBlobs.size() == 0) {
+					updateFrameCounter++;
+					if (updateFrameCounter > 18) {
+						bgs2->updatemask();
+						updateFrameCounter = 0;
+>>>>>>> refs/remotes/ryanlim1616/master
 					}
 					//std::cout << "End: Store Possible Blob!\n";
 
@@ -1329,6 +1438,64 @@ int main(void) {
 	//_CrtDumpMemoryLeaks();
 	return(0);
 }
+
+void check_vehicles() {
+	int result = std::system("cd yolo & darknet.exe detector test ../Yolo/data/coco.data ../Yolo/yolo.cfg ../Yolo/yolo.weights -i 0 -thresh 0.1");
+	std::cout << "result: " << result << "\n";
+}
+
+//CString ExecuteExternalFile(CString csExecute) {
+//	SECURITY_ATTRIBUTES secattr;
+//	ZeroMemory(&secattr, sizeof(secattr));
+//	secattr.nLength = sizeof(secattr);
+//	secattr.bInheritHandle = TRUE;
+//
+//	HANDLE rPipe, wPipe;
+//
+//	//Create pipes to write and read data
+//	CreatePipe(&rPipe, &wPipe, &secattr, 0);
+//	//
+//	STARTUPINFO sInfo;
+//	ZeroMemory(&sInfo, sizeof(sInfo));
+//
+//	PROCESS_INFORMATION pInfo;
+//	ZeroMemory(&pInfo, sizeof(pInfo));
+//
+//	sInfo.cb = sizeof(sInfo);
+//	sInfo.dwFlags = STARTF_USESTDHANDLES;
+//	sInfo.hStdInput = NULL;
+//	sInfo.hStdOutput = wPipe;
+//	sInfo.hStdError = wPipe;
+//
+//	
+//
+//	char command[1024];
+//	strcpy(command, csExecute.GetBuffer(csExecute.GetLength()));
+//
+//	//Create the process here.
+//	CreateProcess(0, command, 0, 0, TRUE, NORMAL_PRIORITY_CLASS | CREATE_NO_WINDOW, 0, 0, &sInfo, &pInfo);
+//	CloseHandle(wPipe);
+//
+//	//now read the output pipe here.
+//
+//	char buf[100];
+//	DWORD reDword;
+//	CString m_csOutput, csTemp;
+//	BOOL res;
+//	do
+//	{
+//		res = ::ReadFile(rPipe, buf, 100, &reDword, 0);
+//		csTemp = buf;
+//		m_csOutput += csTemp.Left(reDword);
+//	} while (res);
+//
+//
+//	CloseHandle(pInfo.hProcess);
+//	CloseHandle(pInfo.hThread);
+//
+//	return  m_csOutput;
+//}
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1749,7 +1916,7 @@ void matchCurrentFrameBlobsToExistingBlobs2(std::vector<Blob> &existingBlobs, st
 
 			else if (dblLeastDistance < currentFrameBlobs[j].dblCurrentDiagonalSize * 0.5 && existingBlobs[intIndexOfLeastDistance].park == false) {
 				//std::cout << "match : " << existingBlobs[intIndexOfLeastDistance].unitID << "\n";
-				addBlobToExistingBlobs(currentFrameBlobs[j], existingBlobs, intIndexOfLeastDistance);
+				addBlobToExistingBlobs(currentFrameBlobs[j], existingBlobs, intIndexOfLeastDistance); 
 
 			}
 
@@ -1769,6 +1936,8 @@ void matchCurrentFrameBlobsToExistingBlobs2(std::vector<Blob> &existingBlobs, st
 				cv::Mat ctr(entrance1.size(), CV_8UC3, SCALAR_BLACK);
 				cv::drawContours(ctr, contourVec, -1, SCALAR_WHITE, -1);
 				contourVec.clear();
+				// testing
+
 
 
 				int counter;
@@ -1842,6 +2011,7 @@ void matchCurrentFrameBlobsToExistingBlobs2(std::vector<Blob> &existingBlobs, st
 						//std::cout << "(Matching with color) Start: add new blobs!\n";
 						addNewBlobLeavingParking(currentFrameBlobs[j], existingBlobs);
 						//std::cout << "(Matching with color) End: add new blobs!\n";
+						// 
 
 					}
 					//std::cout << "(Matching) End: Match blobs with color and distance!\n";
@@ -1894,9 +2064,11 @@ void matchCurrentFrameBlobsToExistingBlobs2(std::vector<Blob> &existingBlobs, st
 		//std::cout << "check to delete 4!\n";
 		if (existingBlobs[i].nonTrackParkingZone == true && existingBlobs[i].nonTrackZoneDelay == 0) {
 			if (existingBlobs[i].nonTrackParkingZoneLocation == 1) {
+				
 				nTrackzone1.push_back(existingBlobs[i]);
 			}
 			else if (existingBlobs[i].nonTrackParkingZoneLocation == 2) {
+				std::cout << existingBlobs[i].unitID << "\n";
 				nTrackzone2.push_back(existingBlobs[i]);
 			}
 			//existingBlobs[i].blnStillBeingTracked = false;
@@ -2291,7 +2463,8 @@ void addNewBlobLeavingParking(Blob &currentFrameBlob, std::vector<Blob> &existin
 			}
 		}
 		//std::cout << "End: new blob * A\n";
-		if (highMatch >= 0 && highMatchCounter >= zoneAlot[highMatch].countNZero * 0.6) {
+		std::cout << "A: " << "highMatchCounter : " << highMatchCounter << ", " << "highMatch : " << highMatch << "zoneAlot[highMatch].countNZero * 0.6 : " << zoneAlot[highMatch].countNZero * 0.5 << "\n";
+		if (highMatch >= 0 && highMatchCounter >= zoneAlot[highMatch].countNZero * 0.5) {
 			currentFrameBlob.park = true;
 			currentFrameBlob.enter = true;
 			currentFrameBlob.parkLocation = 1;
@@ -2300,11 +2473,15 @@ void addNewBlobLeavingParking(Blob &currentFrameBlob, std::vector<Blob> &existin
 		}
 	}
 	else {
+<<<<<<< HEAD
 
+=======
+	//	std::cout << "ggggggg\n";
+>>>>>>> refs/remotes/ryanlim1616/master
 		cv::bitwise_and(zoneB, ctr, bitwise);
 		cv::cvtColor(bitwise, bwInt, cv::COLOR_BGR2GRAY);
 		counter = cv::countNonZero(bwInt);
-
+		
 		if (counter > 0) {
 			//std::cout << "Start: new blob * B\n";
 			for (int i = 0; i < zoneBlot.size(); i++) {
@@ -2317,8 +2494,9 @@ void addNewBlobLeavingParking(Blob &currentFrameBlob, std::vector<Blob> &existin
 					highMatch = i;
 				}
 			}
+			std::cout << "B: " << "highMatchCounter : " << highMatchCounter << ", " << "highMatch : " << highMatch << "zoneAlot[highMatch].countNZero * 0.6 : " << zoneBlot[highMatch].countNZero * 0.5 << "\n";
 			//std::cout << "End: new blob * B\n";
-			if (highMatch >= 0 && highMatchCounter >= zoneBlot[highMatch].countNZero * 0.4) {
+			if (highMatch >= 0 && highMatchCounter >= zoneBlot[highMatch].countNZero * 0.5) {
 				currentFrameBlob.park = true;
 				currentFrameBlob.enter = true;
 				currentFrameBlob.parkLocation = 2;
@@ -2330,7 +2508,7 @@ void addNewBlobLeavingParking(Blob &currentFrameBlob, std::vector<Blob> &existin
 			cv::bitwise_and(zoneC, ctr, bitwise);
 			cv::cvtColor(bitwise, bwInt, cv::COLOR_BGR2GRAY);
 			counter = cv::countNonZero(bwInt);
-
+			
 			if (counter > 0) {
 				//std::cout << "Start: new blob * C\n";
 				for (int i = 0; i < zoneClot.size(); i++) {
@@ -2343,8 +2521,14 @@ void addNewBlobLeavingParking(Blob &currentFrameBlob, std::vector<Blob> &existin
 						highMatch = i;
 					}
 				}
+<<<<<<< HEAD
 				//	std::cout << "End: new blob * C\n";
 				if (highMatch >= 0 && highMatchCounter >= zoneClot[highMatch].countNZero * 0.6) {
+=======
+				std::cout << "C: " << "highMatchCounter : " << highMatchCounter << ", " << "highMatch : " << highMatch << "zoneAlot[highMatch].countNZero * 0.6 : " << zoneClot[highMatch].countNZero * 0.5 << "\n";
+			//	std::cout << "End: new blob * C\n";
+				if (highMatch >= 0 && highMatchCounter >= zoneClot[highMatch].countNZero * 0.5) {
+>>>>>>> refs/remotes/ryanlim1616/master
 					currentFrameBlob.park = true;
 					currentFrameBlob.enter = true;
 					currentFrameBlob.parkLocation = 3;
@@ -2369,9 +2553,15 @@ void addNewBlobLeavingParking(Blob &currentFrameBlob, std::vector<Blob> &existin
 							highMatch = i;
 						}
 					}
+<<<<<<< HEAD
 					//	std::cout << "End: new blob * D\n";
 
 					if (highMatch >= 0 && highMatchCounter >= zoneDlot[highMatch].countNZero * 0.6) {
+=======
+				//	std::cout << "End: new blob * D\n";
+					std::cout << "D: " << "highMatchCounter : " << highMatchCounter << ", " << "highMatch : " << highMatch << "zoneAlot[highMatch].countNZero * 0.6 : " << zoneDlot[highMatch].countNZero * 0.5 << "\n";
+					if (highMatch >= 0 && highMatchCounter >= zoneDlot[highMatch].countNZero * 0.5) {
+>>>>>>> refs/remotes/ryanlim1616/master
 						currentFrameBlob.park = true;
 						currentFrameBlob.enter = true;
 						currentFrameBlob.parkLocation = 4;
@@ -2383,7 +2573,7 @@ void addNewBlobLeavingParking(Blob &currentFrameBlob, std::vector<Blob> &existin
 					cv::bitwise_and(zoneE, ctr, bitwise);
 					cv::cvtColor(bitwise, bwInt, cv::COLOR_BGR2GRAY);
 					counter = cv::countNonZero(bwInt);
-
+					
 					if (counter > 0) {
 						//	std::cout << "Start: new blob * E\n";
 						for (int i = 0; i < zoneElot.size(); i++) {
@@ -2396,8 +2586,9 @@ void addNewBlobLeavingParking(Blob &currentFrameBlob, std::vector<Blob> &existin
 								highMatch = i;
 							}
 						}
+						std::cout << "E: " << "highMatchCounter : " << highMatchCounter << ", " << "highMatch : " << highMatch << "zoneAlot[highMatch].countNZero * 0.6 : " << zoneElot[highMatch].countNZero * 0.5 << "\n";
 						//std::cout << "End: new blob * E\n";
-						if (highMatch >= 0 && highMatchCounter >= zoneElot[highMatch].countNZero * 0.6) {
+						if (highMatch >= 0 && highMatchCounter >= zoneElot[highMatch].countNZero * 0.5) {
 							currentFrameBlob.park = true;
 							currentFrameBlob.enter = true;
 							currentFrameBlob.parkLocation = 5;
@@ -2500,6 +2691,12 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 
 	bool blnAtLeastOneBlobCrossedTheLine = false;
 
+	cv::Rect tempBoundingRect;
+	cv::Mat cropImage;
+	IplImage* to_crop;
+	int crop_result;
+
+
 	//for (auto blob : blobs) {
 	for (unsigned int i = 0; i < blobs.size(); i++) {
 
@@ -2507,11 +2704,14 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 		contourVec.push_back(blobs[i].currentContour);
 		cv::Mat ctr(entrance1.size(), CV_8UC3, SCALAR_BLACK);
 		cv::drawContours(ctr, contourVec, -1, SCALAR_WHITE, -1);
-
-
+		
 		int counter;
 		cv::Mat bitwise;
 		cv::Mat bwInt;
+
+
+
+
 
 		if (blobs[i].blnStillBeingTracked == true) {
 			//std::cout << "(vehicle Status) start: 1\n";
@@ -2528,6 +2728,8 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 
 				if (counter > 0) {
 
+
+
 					if (blobs[i].centerPositions[prevFrameIndex].y < blobs[i].centerPositions[currFrameIndex].y
 						&& blobs[i].enter == false
 						&& blobs[i].centerPositions[prevprevFrameIndex].y < blobs[i].centerPositions[prevFrameIndex].y
@@ -2535,11 +2737,24 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 
 						) {
 
-						printNumberofCar(1, true);
-						blobs[i].enter = true;
-						blobs[i].entExt = 1;
-						blobs[i].changed = true;
-						blobs[i].IO_indicator = true;
+
+
+						tempBoundingRect = enlargeROI(global_img, blobs[i].currentBoundingRect, 10);
+						cropImage = global_img(tempBoundingRect);
+						to_crop = mat_to_iplimage(cropImage);
+						crop_result = predict_image_c(to_crop);
+						std::cout << "prediction: " << crop_result << "\n";
+						//system("pause");
+
+						if (crop_result == 1) {
+
+
+							printNumberofCar(1, true);
+							blobs[i].enter = true;
+							blobs[i].entExt = 1;
+							blobs[i].changed = true;
+							blobs[i].IO_indicator = true;
+						}
 
 
 					}
@@ -2550,6 +2765,8 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 						&& blobs[i].centerPositions[prevprevprevFrameIndex].y > blobs[i].centerPositions[prevprevFrameIndex].y
 
 						) {
+
+						
 
 
 						printNumberofCar(1, false);
@@ -2575,11 +2792,21 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 							&& blobs[i].centerPositions[prevprevprevFrameIndex].y < blobs[i].centerPositions[prevprevFrameIndex].y
 							) {
 
-							printNumberofCar(2, true);
-							blobs[i].enter = true;
-							blobs[i].entExt = 2;
-							blobs[i].changed = true;
-							blobs[i].IO_indicator = true;
+
+							tempBoundingRect = enlargeROI(global_img, blobs[i].currentBoundingRect, 10);
+							cropImage = global_img(tempBoundingRect);
+							to_crop = mat_to_iplimage(cropImage);
+							crop_result = predict_image_c(to_crop);
+							std::cout << "prediction: " << crop_result << "\n";
+							//system("pause");
+
+							if (crop_result == 1) {
+								printNumberofCar(2, true);
+								blobs[i].enter = true;
+								blobs[i].entExt = 2;
+								blobs[i].changed = true;
+								blobs[i].IO_indicator = true;
+							}
 
 						}
 						else if (blobs[i].centerPositions[prevFrameIndex].y > blobs[i].centerPositions[currFrameIndex].y
@@ -2589,6 +2816,7 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 							&& blobs[i].centerPositions[prevprevprevFrameIndex].y > blobs[i].centerPositions[prevprevFrameIndex].y
 							) {
 
+							
 
 							printNumberofCar(2, false);
 							blobs[i].exit = true;
@@ -2603,19 +2831,29 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 						cv::bitwise_and(entrance6, ctr, bitwise);
 						cv::cvtColor(bitwise, bwInt, cv::COLOR_BGR2GRAY);
 						counter = cv::countNonZero(bwInt);
-
+					
 						if (counter > 0) {
+							//std::cout << blobs[i].centerPositions.back().x << ", " << blobs[i].centerPositions.back().y << "\n";
 							if (blobs[i].centerPositions[prevFrameIndex].x < blobs[i].centerPositions[currFrameIndex].x
 								&& blobs[i].enter == false
 								&& blobs[i].centerPositions[prevprevFrameIndex].x < blobs[i].centerPositions[prevFrameIndex].x
 								&& blobs[i].centerPositions[prevprevprevFrameIndex].x < blobs[i].centerPositions[prevprevFrameIndex].x
 								) {
 
+								/*tempBoundingRect = enlargeROI(global_img, blobs[i].currentBoundingRect, 10);
+								cropImage = global_img(tempBoundingRect);
+								to_crop = mat_to_iplimage(cropImage);
+								crop_result = predict_image_c(to_crop);
+								std::cout << "prediction: " << crop_result << "\n";*/
+								//system("pause");
+
+								
 								printNumberofCar(3, true);
 								blobs[i].enter = true;
 								blobs[i].entExt = 3;
 								blobs[i].changed = true;
 								blobs[i].IO_indicator = true;
+								
 
 							}
 							else if (blobs[i].centerPositions[prevFrameIndex].x > blobs[i].centerPositions[currFrameIndex].x
@@ -2624,6 +2862,8 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 								&& blobs[i].centerPositions[prevprevFrameIndex].x > blobs[i].centerPositions[prevFrameIndex].x
 								&& blobs[i].centerPositions[prevprevprevFrameIndex].x > blobs[i].centerPositions[prevprevFrameIndex].x
 								) {
+
+								
 
 								printNumberofCar(3, false);
 								blobs[i].exit = true;
@@ -2647,11 +2887,20 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 									&& blobs[i].centerPositions[prevprevprevFrameIndex].y > blobs[i].centerPositions[prevprevFrameIndex].y
 									) {
 
-									printNumberofCar(4, true);
-									blobs[i].enter = true;
-									blobs[i].entExt = 4;
-									blobs[i].changed = true;
-									blobs[i].IO_indicator = true;
+									tempBoundingRect = enlargeROI(global_img, blobs[i].currentBoundingRect, 10);
+									cropImage = global_img(tempBoundingRect);
+									to_crop = mat_to_iplimage(cropImage);
+									crop_result = predict_image_c(to_crop);
+									std::cout << "prediction: " << crop_result << "\n";
+									//system("pause");
+
+									if (crop_result == 1) {
+										printNumberofCar(4, true);
+										blobs[i].enter = true;
+										blobs[i].entExt = 4;
+										blobs[i].changed = true;
+										blobs[i].IO_indicator = true;
+									}
 								}
 								else if (blobs[i].centerPositions[prevFrameIndex].y < blobs[i].centerPositions[currFrameIndex].y
 									&& blobs[i].enter == true
@@ -2660,6 +2909,7 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 									&& blobs[i].centerPositions[prevprevprevFrameIndex].y < blobs[i].centerPositions[prevprevFrameIndex].y
 									) {
 
+									
 
 									printNumberofCar(4, false);
 									blobs[i].exit = true;
@@ -2683,12 +2933,22 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 										&& blobs[i].centerPositions[prevprevprevFrameIndex].x > blobs[i].centerPositions[prevprevFrameIndex].x
 										) {
 
-										printNumberofCar(5, true);
-										blobs[i].enter = true;
-										blobs[i].exit = false;
-										blobs[i].entExt = 5;
-										blobs[i].changed = true;
-										blobs[i].IO_indicator = true;
+										tempBoundingRect = enlargeROI(global_img, blobs[i].currentBoundingRect, 10);
+										cropImage = global_img(tempBoundingRect);
+										to_crop = mat_to_iplimage(cropImage);
+										crop_result = predict_image_c(to_crop);
+										std::cout << "prediction: " << crop_result << "\n";
+										//system("pause");
+
+										if (crop_result == 1) {
+
+											printNumberofCar(5, true);
+											blobs[i].enter = true;
+											blobs[i].exit = false;
+											blobs[i].entExt = 5;
+											blobs[i].changed = true;
+											blobs[i].IO_indicator = true;
+										}
 									}
 									else if (blobs[i].centerPositions[prevFrameIndex].x < blobs[i].centerPositions[currFrameIndex].x
 										&& blobs[i].enter == true
@@ -2697,6 +2957,7 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 										&& blobs[i].centerPositions[prevprevprevFrameIndex].x < blobs[i].centerPositions[prevprevFrameIndex].x
 										) {
 
+										
 
 										printNumberofCar(5, false);
 
@@ -2720,11 +2981,20 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 											&& blobs[i].centerPositions[prevprevprevFrameIndex].x < blobs[i].centerPositions[prevprevFrameIndex].x
 											) {
 
-											printNumberofCar(6, true);
-											blobs[i].enter = true;
-											blobs[i].entExt = 6;
-											blobs[i].changed = true;
-											blobs[i].IO_indicator = true;
+											tempBoundingRect = enlargeROI(global_img, blobs[i].currentBoundingRect, 10);
+											cropImage = global_img(tempBoundingRect);
+											to_crop = mat_to_iplimage(cropImage);
+											crop_result = predict_image_c(to_crop);
+											std::cout << "prediction: " << crop_result << "\n";
+											//system("pause");
+
+											if(crop_result == 1) {
+												printNumberofCar(6, true);
+												blobs[i].enter = true;
+												blobs[i].entExt = 6;
+												blobs[i].changed = true;
+												blobs[i].IO_indicator = true;
+											}
 
 										}
 										else if (blobs[i].centerPositions[prevFrameIndex].x > blobs[i].centerPositions[currFrameIndex].x
@@ -2733,6 +3003,8 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 											&& blobs[i].centerPositions[prevprevFrameIndex].x > blobs[i].centerPositions[prevFrameIndex].x
 											&& blobs[i].centerPositions[prevprevprevFrameIndex].x > blobs[i].centerPositions[prevprevFrameIndex].x
 											) {
+
+											
 
 
 											printNumberofCar(6, false);
@@ -2745,16 +3017,16 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 										}
 									}
 									else {
-										cv::bitwise_and(nonTrackZone2, ctr, bitwise);
+											cv::bitwise_and(nonTrackZone2, ctr, bitwise);
 										cv::cvtColor(bitwise, bwInt, cv::COLOR_BGR2GRAY);
 										counter = cv::countNonZero(bwInt);
 
 
-										if (counter > 0 && blobs[i].centerPositions.size() >= 6) {
-
+										//if (counter > 0 && blobs[i].centerPositions.size() >= 6) {
+										if (counter > 0 && blobs[i].centerPositions.size() >= 5) {
 
 											int prev5 = (int)blobs[i].centerPositions.size() - 5;
-											int prev6 = (int)blobs[i].centerPositions.size() - 6;
+											//int prev6 = (int)blobs[i].centerPositions.size() - 6;
 											//int prev7 = (int)blobs[i].centerPositions.size() - 7;
 											//int prev8 = (int)blobs[i].centerPositions.size() - 8;
 											//int prev9 = (int)blobs[i].centerPositions.size() - 9;
@@ -2764,23 +3036,35 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 												&& blobs[i].centerPositions[prevprevFrameIndex].y < blobs[i].centerPositions[prevFrameIndex].y
 												&& blobs[i].centerPositions[prevprevprevFrameIndex].y < blobs[i].centerPositions[prevprevFrameIndex].y
 												&& blobs[i].centerPositions[prev5].y < blobs[i].centerPositions[prevprevprevFrameIndex].y
-												&& blobs[i].centerPositions[prev6].y < blobs[i].centerPositions[prev5].y
+												//&& blobs[i].centerPositions[prev6].y < blobs[i].centerPositions[prev5].y
 												//&& blobs[i].centerPositions[prev7].y < blobs[i].centerPositions[prev6].y
 												//&& blobs[i].centerPositions[prev8].y < blobs[i].centerPositions[prev7].y
 												//&& blobs[i].centerPositions[prev9].y < blobs[i].centerPositions[prev8].y
 												&& blobs[i].exit == false && blobs[i].nonTrackParkingZone == false && blobs[i].unitID != 0) {
 
-												blobs[i].nonTrackParkingZone = true;
-												blobs[i].nonTrackParkingZoneLocation = 2;
-												blobs[i].enter = true;
-												blobs[i].leavingNonTrackzone = false;
 
-												std::cout << "vehicle " << blobs[i].unitID << " : non tracking zone 2\n";
+												tempBoundingRect = enlargeROI(global_img, blobs[i].currentBoundingRect, 10);
+												cropImage = global_img(tempBoundingRect);
+												to_crop = mat_to_iplimage(cropImage);
+												crop_result = predict_image_c(to_crop);
+												std::cout << "prediction: " << crop_result << "\n";
+												//system("pause");
 
-												//temporary set park to true to write into database
-												blobs[i].park = true;
-												openDB.writeToDB_park(blobs, i, frameCount, vidLength, "NTZ 2");
-												blobs[i].park = false;
+												if (crop_result == 1) {
+
+
+													blobs[i].nonTrackParkingZone = true;
+													blobs[i].nonTrackParkingZoneLocation = 2;
+													blobs[i].enter = true;
+													blobs[i].leavingNonTrackzone = false;
+
+													std::cout << "vehicle " << blobs[i].unitID << " : non tracking zone 2\n";
+
+													//temporary set park to true to write into database
+													blobs[i].park = true;
+													openDB.writeToDB_park(blobs, i, frameCount, vidLength, "NTZ 2");
+													blobs[i].park = false;
+												}
 
 
 											}
@@ -2789,37 +3073,50 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 												&& blobs[i].centerPositions[prevprevprevFrameIndex].y > blobs[i].centerPositions[prevprevFrameIndex].y
 
 												&& blobs[i].centerPositions[prev5].y > blobs[i].centerPositions[prevprevprevFrameIndex].y
-												&& blobs[i].centerPositions[prev6].y > blobs[i].centerPositions[prev5].y
+												//&& blobs[i].centerPositions[prev6].y < blobs[i].centerPositions[prev5].y
 												//&& blobs[i].centerPositions[prev7].y > blobs[i].centerPositions[prev6].y
 												//&& blobs[i].centerPositions[prev8].y > blobs[i].centerPositions[prev7].y
 												//&& blobs[i].centerPositions[prev9].y > blobs[i].centerPositions[prev8].y
 
-												&& blobs[i].leavingNonTrackzone == false) {
+												&& blobs[i].leavingNonTrackzone == false
+												&& blobs[i].unitID == 0) {
 
-												if (nTrackzone2.size() != 0) {
-													blobs[i].nonTrackParkingZone = false;
-													blobs[i].leavingNonTrackzone = true;
-													blobs[i].nonTrackParkingZoneLocation = -1;
-													blobs[i].unitID = nTrackzone2[0].unitID;
-													blobs[i].enter = true;
-													nTrackzone2.erase(nTrackzone2.begin() - 0);
 
+
+												tempBoundingRect = enlargeROI(global_img, blobs[i].currentBoundingRect, 10);
+												cropImage = global_img(tempBoundingRect);
+												to_crop = mat_to_iplimage(cropImage);
+												crop_result = predict_image_c(to_crop);
+												std::cout << "prediction: " << crop_result << "\n";
+												//system("pause");
+
+												if (crop_result == 1) {
+
+													if (nTrackzone2.size() != 0) {
+														blobs[i].nonTrackParkingZone = false;
+														blobs[i].leavingNonTrackzone = true;
+														blobs[i].nonTrackParkingZoneLocation = -1;
+														blobs[i].unitID = nTrackzone2[0].unitID;
+														blobs[i].enter = true;
+														nTrackzone2.erase(nTrackzone2.begin() - 0);
+
+													}
+													else {
+														blobs[i].nonTrackParkingZone = false;
+														blobs[i].nonTrackParkingZoneLocation = -1;
+														blobs[i].enter = true;
+														blobs[i].leavingNonTrackzone = true;
+														blobs[i].unitID = unitObjCounter;
+														unitObjCounter++;
+													}
+
+													std::cout << "vehicle " << blobs[i].unitID << " : leaving non tracking zone 2\n";
+													//printNumberofCar(1, false);
+													//blobs[i].exit = true;
+
+													//temporary set park to true to write into database
+													openDB.writeToDB_park(blobs, i, frameCount, vidLength, "NTZ 2");
 												}
-												else {
-													blobs[i].nonTrackParkingZone = false;
-													blobs[i].nonTrackParkingZoneLocation = -1;
-													blobs[i].enter = true;
-													blobs[i].leavingNonTrackzone = true;
-													blobs[i].unitID = unitObjCounter;
-													unitObjCounter++;
-												}
-
-												std::cout << "vehicle " << blobs[i].unitID << " : leaving non tracking zone 2\n";
-												//printNumberofCar(1, false);
-												//blobs[i].exit = true;
-
-												//temporary set park to true to write into database
-												openDB.writeToDB_park(blobs, i, frameCount, vidLength, "NTZ 2");
 
 
 											}
@@ -2852,19 +3149,29 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 
 													&& blobs[i].exit == false && blobs[i].nonTrackParkingZone == false && blobs[i].unitID != 0) {
 
-													blobs[i].nonTrackParkingZone = true;
-													blobs[i].nonTrackParkingZoneLocation = 1;
-													blobs[i].enter = true;
-													blobs[i].leavingNonTrackzone = false;
-													std::cout << "vehicle " << blobs[i].unitID << " : non tracking zone 1\n";
 
-													//blobs[i].entExt = 999;
-													//blobs[i].changed = true;
-													//blobs[i].IO_indicator = true;
-													//temporary set park to true to write into database
-													blobs[i].park = true;
-													openDB.writeToDB_park(blobs, i, frameCount, vidLength, "NTZ 1");
-													blobs[i].park = false;
+													tempBoundingRect = enlargeROI(global_img, blobs[i].currentBoundingRect, 10);
+													cropImage = global_img(tempBoundingRect);
+													to_crop = mat_to_iplimage(cropImage);
+													crop_result = predict_image_c(to_crop);
+													std::cout << "prediction: " << crop_result << "\n";
+													//system("pause");
+
+													if (crop_result == 1) {
+														blobs[i].nonTrackParkingZone = true;
+														blobs[i].nonTrackParkingZoneLocation = 1;
+														blobs[i].enter = true;
+														blobs[i].leavingNonTrackzone = false;
+														std::cout << "vehicle " << blobs[i].unitID << " : non tracking zone 1\n";
+
+														//blobs[i].entExt = 999;
+														//blobs[i].changed = true;
+														//blobs[i].IO_indicator = true;
+														//temporary set park to true to write into database
+														blobs[i].park = true;
+														openDB.writeToDB_park(blobs, i, frameCount, vidLength, "NTZ 1");
+														blobs[i].park = false;
+													}
 
 												}
 												else if (blobs[i].centerPositions[prevFrameIndex].x > blobs[i].centerPositions[currFrameIndex].x
@@ -2877,29 +3184,41 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 													//&& blobs[i].centerPositions[prev8].x > blobs[i].centerPositions[prev7].x
 													//&& blobs[i].centerPositions[prev9].x > blobs[i].centerPositions[prev8].x
 
-													&& blobs[i].leavingNonTrackzone == false) {
+													&& blobs[i].leavingNonTrackzone == false
+													&& blobs[i].unitID == 0) {
 
-													if (nTrackzone1.size() != 0) {
-														blobs[i].nonTrackParkingZone = false;
-														blobs[i].nonTrackParkingZoneLocation = -1;
-														blobs[i].unitID = nTrackzone1[0].unitID;
-														blobs[i].enter = true;
-														blobs[i].leavingNonTrackzone = true;
-														nTrackzone1.erase(nTrackzone1.begin() - 0);
+
+													tempBoundingRect = enlargeROI(global_img, blobs[i].currentBoundingRect, 10);
+													cropImage = global_img(tempBoundingRect);
+													to_crop = mat_to_iplimage(cropImage);
+													crop_result = predict_image_c(to_crop);
+													std::cout << "prediction: " << crop_result << "\n";
+													//system("pause");
+
+													if (crop_result == 1) {
+
+														if (nTrackzone1.size() != 0) {
+															blobs[i].nonTrackParkingZone = false;
+															blobs[i].nonTrackParkingZoneLocation = -1;
+															blobs[i].unitID = nTrackzone1[0].unitID;
+															blobs[i].enter = true;
+															blobs[i].leavingNonTrackzone = true;
+															nTrackzone1.erase(nTrackzone1.begin() - 0);
+														}
+														else {
+															blobs[i].nonTrackParkingZone = false;
+															blobs[i].nonTrackParkingZoneLocation = -1;
+															blobs[i].enter = true;
+															blobs[i].unitID = unitObjCounter;
+															blobs[i].leavingNonTrackzone = true;
+															unitObjCounter++;
+
+														}
+														std::cout << "vehicle " << blobs[i].unitID << " : leaving non tracking zone 1\n";
+
+														//temporary set park to true to write into database
+														openDB.writeToDB_park(blobs, i, frameCount, vidLength, "NTZ 1");
 													}
-													else {
-														blobs[i].nonTrackParkingZone = false;
-														blobs[i].nonTrackParkingZoneLocation = -1;
-														blobs[i].enter = true;
-														blobs[i].unitID = unitObjCounter;
-														blobs[i].leavingNonTrackzone = true;
-														unitObjCounter++;
-
-													}
-													std::cout << "vehicle " << blobs[i].unitID << " : leaving non tracking zone 1\n";
-
-													//temporary set park to true to write into database
-													openDB.writeToDB_park(blobs, i, frameCount, vidLength, "NTZ 1");
 
 
 												}
@@ -2921,6 +3240,7 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 					if (blobs[i].parkLocation != 1) {
 						blobs[i].parkLocation = 1;
 						blobs[i].parkframe = 1;
+						
 						if (blobs[i].unitID == 0) {
 							blobs[i].enter = false;
 						}
@@ -3120,18 +3440,35 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 						}
 
 						if (indexOflot >= 0) {
-							if (zoneAlot[indexOflot].parked == false) {
-								blobs[i].parkinglot = zoneAlot[indexOflot].lot;
-								zoneAlot[indexOflot].parked = true;
-								zoneAlot[indexOflot].vehicleId = blobs[i].unitID;
-								std::cout << "Park - Vehicle " << blobs[i].unitID << "Lot A" << blobs[i].parkinglot << "\n";
+							if (zoneAlot[indexOflot].parked == false && tempCounter > zoneAlot[indexOflot].countNZero * 0.5) {
 
-								blobs[i].park = true;
-								if (blobs[i].unitID == 0) {
-									blobs[i].unitID = unitObjCounter;
-									unitObjCounter++;
+
+								tempBoundingRect = enlargeROI(global_img, blobs[i].currentBoundingRect, 10);
+								cropImage = global_img(tempBoundingRect);
+								to_crop = mat_to_iplimage(cropImage);
+								crop_result = predict_image_c(to_crop);
+								std::cout << "prediction: " << crop_result << "\n";
+								//system("pause");
+
+								if (crop_result == 1) {
+									blobs[i].parkinglot = zoneAlot[indexOflot].lot;
+									zoneAlot[indexOflot].parked = true;
+									zoneAlot[indexOflot].vehicleId = blobs[i].unitID;
+									std::cout << "Park - Vehicle " << blobs[i].unitID << "Lot A" << blobs[i].parkinglot << "\n";
+
+									blobs[i].park = true;
+									if (blobs[i].unitID == 0) {
+										blobs[i].unitID = unitObjCounter;
+										unitObjCounter++;
+									}
+									openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot A");
 								}
-								openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot A");
+
+
+
+
+
+
 
 							}
 							else {
@@ -3157,17 +3494,29 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 						}
 						if (indexOflot >= 0) {
 							if (zoneBlot[indexOflot].parked == false) {
-								blobs[i].parkinglot = zoneBlot[indexOflot].lot;
-								zoneBlot[indexOflot].parked = true;
-								zoneBlot[indexOflot].vehicleId = blobs[i].unitID;
-								std::cout << "Park - Vehicle " << blobs[i].unitID << "Lot B" << blobs[i].parkinglot << "\n";
 
-								blobs[i].park = true;
-								if (blobs[i].unitID == 0) {
-									blobs[i].unitID = unitObjCounter;
-									unitObjCounter++;
+								tempBoundingRect = enlargeROI(global_img, blobs[i].currentBoundingRect, 10);
+								cropImage = global_img(tempBoundingRect);
+								to_crop = mat_to_iplimage(cropImage);
+								crop_result = predict_image_c(to_crop);
+								std::cout << "prediction: " << crop_result << "\n";
+								//system("pause");
+
+								if (crop_result == 1) {
+
+
+									blobs[i].parkinglot = zoneBlot[indexOflot].lot;
+									zoneBlot[indexOflot].parked = true;
+									zoneBlot[indexOflot].vehicleId = blobs[i].unitID;
+									std::cout << "Park - Vehicle " << blobs[i].unitID << "Lot B" << blobs[i].parkinglot << "\n";
+
+									blobs[i].park = true;
+									if (blobs[i].unitID == 0) {
+										blobs[i].unitID = unitObjCounter;
+										unitObjCounter++;
+									}
+									openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot B");
 								}
-								openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot B");
 							}
 							else {
 								blobs[i].parkframe = 0;
@@ -3187,20 +3536,31 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 								indexOflot = p;
 							}
 						}
-						std::cout << "indexOflot : " << indexOflot << "\n";
+						//std::cout << "indexOflot : " << indexOflot << "\n";
 						if (indexOflot >= 0) {
 							if (zoneClot[indexOflot].parked == false) {
-								blobs[i].parkinglot = zoneClot[indexOflot].lot;
-								zoneClot[indexOflot].parked = true;
-								zoneClot[indexOflot].vehicleId = blobs[i].unitID;
-								std::cout << "Park - Vehicle " << blobs[i].unitID << "Lot C" << blobs[i].parkinglot << "\n";
 
-								blobs[i].park = true;
-								if (blobs[i].unitID == 0) {
-									blobs[i].unitID = unitObjCounter;
-									unitObjCounter++;
+								tempBoundingRect = enlargeROI(global_img, blobs[i].currentBoundingRect, 10);
+								cropImage = global_img(tempBoundingRect);
+								to_crop = mat_to_iplimage(cropImage);
+								crop_result = predict_image_c(to_crop);
+								std::cout << "prediction: " << crop_result << "\n";
+								//system("pause");
+
+								if (crop_result == 1) {
+
+									blobs[i].parkinglot = zoneClot[indexOflot].lot;
+									zoneClot[indexOflot].parked = true;
+									zoneClot[indexOflot].vehicleId = blobs[i].unitID;
+									std::cout << "Park - Vehicle " << blobs[i].unitID << "Lot C" << blobs[i].parkinglot << "\n";
+
+									blobs[i].park = true;
+									if (blobs[i].unitID == 0) {
+										blobs[i].unitID = unitObjCounter;
+										unitObjCounter++;
+									}
+									openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot C");
 								}
-								openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot C");
 							}
 							else {
 								blobs[i].parkframe = 0;
@@ -3223,20 +3583,32 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 						}
 						if (indexOflot >= 0) {
 							if (zoneDlot[indexOflot].parked == false) {
-								blobs[i].parkinglot = zoneDlot[indexOflot].lot;
-
-								zoneDlot[indexOflot].parked = true;
-								zoneDlot[indexOflot].vehicleId = blobs[i].unitID;
 
 
-								std::cout << "Park - Vehicle " << blobs[i].unitID << "Lot D" << blobs[i].parkinglot << "\n";
+								tempBoundingRect = enlargeROI(global_img, blobs[i].currentBoundingRect, 10);
+								cropImage = global_img(tempBoundingRect);
+								to_crop = mat_to_iplimage(cropImage);
+								crop_result = predict_image_c(to_crop);
+								std::cout << "prediction: " << crop_result << "\n";
+								//system("pause");
 
-								blobs[i].park = true;
-								if (blobs[i].unitID == 0) {
-									blobs[i].unitID = unitObjCounter;
-									unitObjCounter++;
+								if (crop_result == 1) {
+
+									blobs[i].parkinglot = zoneDlot[indexOflot].lot;
+
+									zoneDlot[indexOflot].parked = true;
+									zoneDlot[indexOflot].vehicleId = blobs[i].unitID;
+
+
+									std::cout << "Park - Vehicle " << blobs[i].unitID << "Lot D" << blobs[i].parkinglot << "\n";
+
+									blobs[i].park = true;
+									if (blobs[i].unitID == 0) {
+										blobs[i].unitID = unitObjCounter;
+										unitObjCounter++;
+									}
+									openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot D");
 								}
-								openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot D");
 							}
 							else {
 								blobs[i].parkframe = 0;
@@ -3258,20 +3630,29 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 						}
 						if (indexOflot >= 0) {
 							if (zoneElot[indexOflot].parked == false) {
-								blobs[i].parkinglot = zoneElot[indexOflot].lot;
-								zoneElot[indexOflot].parked = true;
-								zoneElot[indexOflot].vehicleId = blobs[i].unitID;
+								tempBoundingRect = enlargeROI(global_img, blobs[i].currentBoundingRect, 10);
+								cropImage = global_img(tempBoundingRect);
+								to_crop = mat_to_iplimage(cropImage);
+								crop_result = predict_image_c(to_crop);
+								std::cout << "prediction: " << crop_result << "\n";
+								//system("pause");
+
+								if (crop_result == 1) {
+									blobs[i].parkinglot = zoneElot[indexOflot].lot;
+									zoneElot[indexOflot].parked = true;
+									zoneElot[indexOflot].vehicleId = blobs[i].unitID;
 
 
 
-								std::cout << "Park - Vehicle " << blobs[i].unitID << "Lot E" << blobs[i].parkinglot << "\n";
+									std::cout << "Park - Vehicle " << blobs[i].unitID << "Lot E" << blobs[i].parkinglot << "\n";
 
-								blobs[i].park = true;
-								if (blobs[i].unitID == 0) {
-									blobs[i].unitID = unitObjCounter;
-									unitObjCounter++;
+									blobs[i].park = true;
+									if (blobs[i].unitID == 0) {
+										blobs[i].unitID = unitObjCounter;
+										unitObjCounter++;
+									}
+									openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot E");
 								}
-								openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot E");
 							}
 							else {
 								blobs[i].parkframe = 0;
@@ -3281,13 +3662,22 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 					else if (a == 6 && blobs[i].park == false) {
 						blobs[i].parkframe++;
 						if (blobs[i].parkframe > 70) {
-							std::cout << "Park - Vehicle " << blobs[i].unitID << "DANGER ZONE!\n";
-							blobs[i].park = true;
-							if (blobs[i].unitID == 0) {
-								blobs[i].unitID = unitObjCounter;
-								unitObjCounter++;
+							tempBoundingRect = enlargeROI(global_img, blobs[i].currentBoundingRect, 10);
+							cropImage = global_img(tempBoundingRect);
+							to_crop = mat_to_iplimage(cropImage);
+							crop_result = predict_image_c(to_crop);
+							std::cout << "prediction: " << crop_result << "\n";
+							//system("pause");
+
+							if (crop_result == 1) {
+								std::cout << "Park - Vehicle " << blobs[i].unitID << "DANGER ZONE!\n";
+								blobs[i].park = true;
+								if (blobs[i].unitID == 0) {
+									blobs[i].unitID = unitObjCounter;
+									unitObjCounter++;
+								}
+								openDB.writeToDB_park(blobs, i, frameCount, vidLength, "DANGER ZONE!");
 							}
-							openDB.writeToDB_park(blobs, i, frameCount, vidLength, "DANGER ZONE!");
 						}
 					}
 
@@ -3360,6 +3750,7 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 						blobs[i].leavingcarpark++;
 
 					}
+					//std::cout << blobs[i].unitID << ": " << blobs[i].leavingcarpark << "\n";
 
 				}
 				else if (blobs[i].parkLocation == 4) {
@@ -3421,70 +3812,145 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 			}
 			//std::cout << "(vehicle Status) start: 6\n";
 			if (blobs[i].leavingcarpark > 5) {
+				bool predict_true_false = false;
 				if (blobs[i].parkLocation == 1) {
-					if (zoneAlot[blobs[i].parkinglot - 1].parked == true) {
-						zoneAlot[blobs[i].parkinglot - 1].parked = false;
-						blobs[i].unitID = zoneAlot[blobs[i].parkinglot - 1].vehicleId;
+
+
+					tempBoundingRect = enlargeROI(global_img, blobs[i].currentBoundingRect, 10);
+					cropImage = global_img(tempBoundingRect);
+					to_crop = mat_to_iplimage(cropImage);
+					crop_result = predict_image_c(to_crop);
+					std::cout << "prediction: " << crop_result << "\n";
+					//system("pause");
+
+					if (crop_result == 1) {
+
+						if (zoneAlot[blobs[i].parkinglot - 1].parked == true) {
+							zoneAlot[blobs[i].parkinglot - 1].parked = false;
+							blobs[i].unitID = zoneAlot[blobs[i].parkinglot - 1].vehicleId;
+						}
+						else if (zoneAlot[blobs[i].parkinglot - 1].parked == false) {
+							blobs[i].unitID = unitObjCounter;
+							unitObjCounter++;
+						}
+
+						std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "Lot A" << blobs[i].parkinglot << "\n";
+						openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot A");
+						predict_true_false = true;
 					}
-					else if (zoneAlot[blobs[i].parkinglot - 1].parked == false) {
-						blobs[i].unitID = unitObjCounter;
-						unitObjCounter++;
-					}
+<<<<<<< HEAD
 
 					std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "Lot A" << blobs[i].parkinglot << "\n";
 					blobs[i].park = false;
 					openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot A");
+=======
+>>>>>>> refs/remotes/ryanlim1616/master
 				}
 				else if (blobs[i].parkLocation == 2) {
-					if (zoneBlot[blobs[i].parkinglot - 1].parked == true) {
-						zoneBlot[blobs[i].parkinglot - 1].parked = false;
-						blobs[i].unitID = zoneBlot[blobs[i].parkinglot - 1].vehicleId;
+					tempBoundingRect = enlargeROI(global_img, blobs[i].currentBoundingRect, 10);
+					cropImage = global_img(tempBoundingRect);
+					to_crop = mat_to_iplimage(cropImage);
+					crop_result = predict_image_c(to_crop);
+					std::cout << "prediction: " << crop_result << "\n";
+					//system("pause");
+
+					if (crop_result == 1) {
+
+						if (zoneBlot[blobs[i].parkinglot - 1].parked == true) {
+							zoneBlot[blobs[i].parkinglot - 1].parked = false;
+							blobs[i].unitID = zoneBlot[blobs[i].parkinglot - 1].vehicleId;
+						}
+						else if (zoneBlot[blobs[i].parkinglot - 1].parked == false) {
+							blobs[i].unitID = unitObjCounter;
+							unitObjCounter++;
+						}
+						std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "Lot B" << blobs[i].parkinglot << "\n";
+						openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot B");
+						predict_true_false = true;
 					}
-					else if (zoneBlot[blobs[i].parkinglot - 1].parked == false) {
-						blobs[i].unitID = unitObjCounter;
-						unitObjCounter++;
-					}
+<<<<<<< HEAD
 					std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "Lot B" << blobs[i].parkinglot << "\n";
 					blobs[i].park = false;
 					openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot B");
+=======
+>>>>>>> refs/remotes/ryanlim1616/master
 				}
 				else if (blobs[i].parkLocation == 3) {
-					if (zoneClot[blobs[i].parkinglot - 1].parked == true) {
-						zoneClot[blobs[i].parkinglot - 1].parked = false;
-						blobs[i].unitID = zoneClot[blobs[i].parkinglot - 1].vehicleId;
+					tempBoundingRect = enlargeROI(global_img, blobs[i].currentBoundingRect, 10);
+					cropImage = global_img(tempBoundingRect);
+					to_crop = mat_to_iplimage(cropImage);
+					crop_result = predict_image_c(to_crop);
+					std::cout << "prediction: " << crop_result << "\n";
+					//system("pause");
+
+					if (crop_result == 1) {
+						if (zoneClot[blobs[i].parkinglot - 1].parked == true) {
+							zoneClot[blobs[i].parkinglot - 1].parked = false;
+							blobs[i].unitID = zoneClot[blobs[i].parkinglot - 1].vehicleId;
+						}
+						else if (zoneClot[blobs[i].parkinglot - 1].parked == false) {
+							blobs[i].unitID = unitObjCounter;
+							unitObjCounter++;
+						}
+						std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "Lot C" << blobs[i].parkinglot << "\n";
+						openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot C");
+						predict_true_false = true;
 					}
-					else if (zoneClot[blobs[i].parkinglot - 1].parked == false) {
-						blobs[i].unitID = unitObjCounter;
-						unitObjCounter++;
-					}
+<<<<<<< HEAD
 					std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "Lot C" << blobs[i].parkinglot << "\n";
 					blobs[i].park = false;
 					openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot C");
+=======
+>>>>>>> refs/remotes/ryanlim1616/master
 				}
 				else if (blobs[i].parkLocation == 4) {
-					if (zoneDlot[blobs[i].parkinglot - 1].parked == true) {
-						zoneDlot[blobs[i].parkinglot - 1].parked = false;
-						blobs[i].unitID = zoneDlot[blobs[i].parkinglot - 1].vehicleId;
-					}
-					else if (zoneDlot[blobs[i].parkinglot - 1].parked == false) {
-						blobs[i].unitID = unitObjCounter;
-						unitObjCounter++;
-					}
+					tempBoundingRect = enlargeROI(global_img, blobs[i].currentBoundingRect, 10);
+					cropImage = global_img(tempBoundingRect);
+					to_crop = mat_to_iplimage(cropImage);
+					crop_result = predict_image_c(to_crop);
+					std::cout << "prediction: " << crop_result << "\n";
+					//system("pause");
 
+					if (crop_result == 1) {
+						if (zoneDlot[blobs[i].parkinglot - 1].parked == true) {
+							zoneDlot[blobs[i].parkinglot - 1].parked = false;
+							blobs[i].unitID = zoneDlot[blobs[i].parkinglot - 1].vehicleId;
+						}
+						else if (zoneDlot[blobs[i].parkinglot - 1].parked == false) {
+							blobs[i].unitID = unitObjCounter;
+							unitObjCounter++;
+						}
+
+<<<<<<< HEAD
 					std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "Lot D" << blobs[i].parkinglot << "\n";
 					blobs[i].park = false;
 					openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot D");
+=======
+						std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "Lot D" << blobs[i].parkinglot << "\n";
+						openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot D");
+						predict_true_false = true;
+					}
+>>>>>>> refs/remotes/ryanlim1616/master
 				}
 				else if (blobs[i].parkLocation == 5) {
-					if (zoneElot[blobs[i].parkinglot - 1].parked == true) {
-						zoneElot[blobs[i].parkinglot - 1].parked = false;
-						blobs[i].unitID = zoneElot[blobs[i].parkinglot - 1].vehicleId;
-					}
-					else if (zoneElot[blobs[i].parkinglot - 1].parked == false) {
-						blobs[i].unitID = unitObjCounter;
-						unitObjCounter++;
-					}
+					tempBoundingRect = enlargeROI(global_img, blobs[i].currentBoundingRect, 10);
+					cropImage = global_img(tempBoundingRect);
+					to_crop = mat_to_iplimage(cropImage);
+					crop_result = predict_image_c(to_crop);
+					std::cout << "prediction: " << crop_result << "\n";
+					//system("pause");
 
+					if (crop_result == 1) {
+						if (zoneElot[blobs[i].parkinglot - 1].parked == true) {
+							zoneElot[blobs[i].parkinglot - 1].parked = false;
+							blobs[i].unitID = zoneElot[blobs[i].parkinglot - 1].vehicleId;
+						}
+						else if (zoneElot[blobs[i].parkinglot - 1].parked == false) {
+							blobs[i].unitID = unitObjCounter;
+							unitObjCounter++;
+						}
+
+<<<<<<< HEAD
 					std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "Lot E" << blobs[i].parkinglot << "\n";
 					blobs[i].park = false;
 					openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot E");
@@ -3502,6 +3968,36 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 				blobs[i].parkLocation = 0;
 				blobs[i].parkinglot = -1;
 				blobs[i].leavingcarpark = 0;
+=======
+						std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "Lot E" << blobs[i].parkinglot << "\n";
+						openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot E");
+						predict_true_false = true;
+					}
+				}
+				else if (blobs[i].parkLocation == 6) {
+					tempBoundingRect = enlargeROI(global_img, blobs[i].currentBoundingRect, 10);
+					cropImage = global_img(tempBoundingRect);
+					to_crop = mat_to_iplimage(cropImage);
+					crop_result = predict_image_c(to_crop);
+					std::cout << "prediction: " << crop_result << "\n";
+					//system("pause");
+
+					if (crop_result == 1) {
+
+						std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "DANGER ZONE" << blobs[i].parkinglot << "\n";
+						openDB.writeToDB_park(blobs, i, frameCount, vidLength, "DANGER ZONE");
+						predict_true_false = true;
+					}
+				}
+
+				if (predict_true_false == true) {
+					blobs[i].park = false;
+					blobs[i].parkframe = 0;
+					blobs[i].parkLocation = 0;
+					blobs[i].parkinglot = -1;
+					blobs[i].leavingcarpark = 0;
+				}
+>>>>>>> refs/remotes/ryanlim1616/master
 
 			}
 
@@ -3684,18 +4180,18 @@ void CallBackFunc(int event, int x, int y, int flags, void* userdata)
 }
 
 void printNumberofCar(int entrance, bool entExt) {
-	std::cout << "***************************************************\n";
+	//std::cout << "***************************************************\n";
 	if (entExt == true) {
 		std::cout << "Enter : " << entrance << "\n";
 		carNumberCounter++;
-		std::cout << "Number of car in Car Park : " << carNumberCounter << "\n";
+		//std::cout << "Number of car in Car Park : " << carNumberCounter << "\n";
 	}
 	else {
 		std::cout << "Exit : " << entrance << "\n";
 		carNumberCounter--;
-		std::cout << "Number of car in Car Park : " << carNumberCounter << "\n";
+		//std::cout << "Number of car in Car Park : " << carNumberCounter << "\n";
 	}
-	std::cout << "***************************************************\n";
+	//std::cout << "***************************************************\n";
 }
 
 void matchCurrentFrameBlobsToExistingBlobs(std::vector<Blob> &existingBlobs, std::vector<Blob> &currentFrameBlobs) {
@@ -4068,6 +4564,7 @@ void removeBlobMemory(std::vector<Blob> &blobs) {
 
 }
 
+<<<<<<< HEAD
 void getNumOfTrajs(CarParkTrackExporter &openDB) {
 
 	//traj grouping - should i group ALL the trajs? 
@@ -4089,12 +4586,30 @@ void getNumOfTrajs(CarParkTrackExporter &openDB) {
 	std::cout << "does it even run here? 1\n";
 
 	CarParkTrackExporter countTraj();
+=======
+IplImage* mat_to_iplimage(cv::Mat input) {
+
+	//IplImage* output = &input.operator IplImage();
+
+
+	IplImage* output = cvCloneImage(&(IplImage)input);
+	//input.convertTo(input, CV_32F);
+	/*std::cout << "type: " << input.type() << "  " << "channel: " << input.channels() << "\n";
+
+	IplImage* output;
+	output = cvCreateImage(cvSize(input.cols, input.rows), 8, 3);
+	IplImage ipltemp = input;
+	cvCopy(&ipltemp, output);
+*/
+
+>>>>>>> refs/remotes/ryanlim1616/master
 
 
 
 
 
 
+<<<<<<< HEAD
 }
 
 
@@ -4132,4 +4647,18 @@ int getOption() {
 
 	return getOptionNum;
 	
+=======
+
+
+	return output;
+}
+
+cv::Rect enlargeROI(cv::Mat frm, cv::Rect boundingBox, int padding) {
+	cv::Rect returnRect = cv::Rect(boundingBox.x - padding, boundingBox.y - padding, boundingBox.width + (padding * 2), boundingBox.height + (padding * 2));
+	if (returnRect.x < 0)returnRect.x = 0;
+	if (returnRect.y < 0)returnRect.y = 0;
+	if (returnRect.x + returnRect.width >= frm.cols)returnRect.width = frm.cols - returnRect.x;
+	if (returnRect.y + returnRect.height >= frm.rows)returnRect.height = frm.rows - returnRect.y;
+	return returnRect;
+>>>>>>> refs/remotes/ryanlim1616/master
 }
