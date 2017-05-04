@@ -34,6 +34,8 @@ public:
 	bool writeToDB_entExt(std::vector<Blob> &blobs, unsigned int &i, int &frameCount, int &vidLength, int entrance, bool entExt);
 	bool writeToDB_park(std::vector<Blob> &blobs, unsigned int &i, int &frameCount, int &vidLength, std::string parkzone);
 
+	bool countTraj();
+
 	
 	
 private:

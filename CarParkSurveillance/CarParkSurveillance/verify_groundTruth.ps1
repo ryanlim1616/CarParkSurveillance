@@ -7,11 +7,13 @@ $gt = Import-Csv C:\powershell\gt.csv
 #tracks_db
 #db_260317_rerun
 
-$db = Import-Csv C:\powershell\db_output280317.csv
+#290317db.csv
+
+$db = Import-Csv C:\powershell\290317db.csv
 $time_window = [timespan]('00:00:05') 
 $time_dec = [timespan]('00:00:05')
 $write = $false
-
+$temp_J = 0
 
 ##########################################################
 ### TEMPORARY
@@ -208,14 +210,14 @@ for($i = 0; $i -lt $gt.length; $i++){
     }    
 
 
-
+    $written_once = $FALSE;
 
 
 
     for($j = 0; $j -lt $db.Length; $j++)
     {
 
-
+			
         if($gt[$i].o_state  -eq $db[$j].obj_state)
         {
             
@@ -236,7 +238,8 @@ for($i = 0; $i -lt $gt.length; $i++){
                         $true_positive++
                         $FirstRun = $false
                         $write = $FALSE
-
+                        $written_once = $TRUE;
+                        $temp_J = $j
 
                         ## for individual states
 
@@ -286,18 +289,28 @@ for($i = 0; $i -lt $gt.length; $i++){
                 } 
              else
                 {
-                    $duplicate_check = $FALSE
-                    
-
-                  
-                    
+                    $duplicate_check = $FALSE                   
                 }      
         }
         else
         {
             $duplicate_check = $FALSE;
         }
-          
+        
+
+		if($written_once -eq $FALSE)
+		{
+
+                
+            if($j -gt $temp_J -and ([datetime]$gt[$i].t_time -gt [datetime]$db[$j].track_time))
+            {
+                $temp_J = $j
+
+				","+ "," +$($db[$j].track_time)+","+ $($db[$j].obj_state) | out-file C:\powershell\output.txt -Append
+                $written_once = $TRUE;
+			}
+        }
+		
         if($duplicate_check)
         {
             $j++

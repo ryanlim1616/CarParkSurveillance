@@ -33,7 +33,7 @@ void CarParkTrackExporter::run()
 		
 		if(!resumeFromError)
 		{ 
-			dropTables();
+			//dropTables();
 			createTables();
 			std::cout << "DB tables dropped & created" << std::endl;
 			std::cout << "Initialized DB tables" << std::endl;
@@ -58,11 +58,11 @@ bool CarParkTrackExporter::createTables()
 	bool success = mSQLManager->beginTransaction();
 	//success &= mSQLManager->executeStatement("create table tracks ( id INT, date DATE, time DATETIME, track_id INT, frame_num INT, pos_x INT, pos_y INT, width INT, height INT, filename TEXT, PRIMARY KEY(filename, id) )");
 
-	success &= mSQLManager->executeStatement("create table tracks ( track_id INTEGER PRIMARY KEY ASC, filename VARCHAR(20), track_date DATE, track_time TIME, obj_id INT, frame_num INT, obj_state VARCHAR(35), pos_x INT, pos_y INT, width INT, height INT)");
+	success &= mSQLManager->executeStatement("create table IF NOT EXISTS tracks ( track_id INTEGER PRIMARY KEY ASC, filename VARCHAR(20), track_date DATE, track_time TIME, obj_id INT, frame_num INT, obj_state VARCHAR(35), pos_x INT, pos_y INT, width INT, height INT)");
 	//success &= mSQLManager->executeStatement("create table objects ( object_id INTEGER PRIMARY KEY ASC, filename VARCHAR(20), obj_id INT, obj_type VARCHAR(10), obj_color VARCHAR(10), enter_from INT, parked_at VARCHAR(10), exit_from INT, parked_duration TIME )");
-	success &= mSQLManager->executeStatement("create table objects ( object_id INT, filename VARCHAR(20), obj_id INT, obj_type VARCHAR(10), obj_color VARCHAR(10), enter_from INT, parked_at VARCHAR(10), exit_from INT, parked_duration TIME, PRIMARY KEY( filename, obj_id) )");
-	success &= mSQLManager->executeStatement("create table weather ( weather_id INTEGER PRIMARY KEY ASC, weather_date DATE, weather_time TIME, weather_condition VARCHAR(10))");
-	success &= mSQLManager->executeStatement("create table days ( day_id INTEGER PRIMARY KEY ASC, day_date DATE, avg_weather VARCHAR(10), sod_car_num INT, eod_car_num INT, total_car_num INT)");
+	success &= mSQLManager->executeStatement("create table IF NOT EXISTS objects ( object_id INT, filename VARCHAR(20), obj_id INT, obj_type VARCHAR(10), obj_color VARCHAR(35), enter_from INT, parked_at VARCHAR(10), exit_from INT, parked_duration TIME, PRIMARY KEY( filename, obj_id) )");
+	success &= mSQLManager->executeStatement("create table IF NOT EXISTS weather ( weather_id INTEGER PRIMARY KEY ASC, weather_date DATE, weather_time TIME, weather_condition VARCHAR(10))");
+	success &= mSQLManager->executeStatement("create table IF NOT EXISTS days ( day_id INTEGER PRIMARY KEY ASC, day_date DATE, avg_weather VARCHAR(10), sod_car_num INT, eod_car_num INT, total_car_num INT)");
 
 	//success &= mSQLManager->executeStatement("create table object_type ( name TEXT, PRIMARY KEY( name) )");
 	//success &= mSQLManager->executeStatement("create table sceneobject ( object_id TEXT, type object_type, description TEXT, PRIMARY KEY( object_id) )");
@@ -130,6 +130,8 @@ bool CarParkTrackExporter::writeToDB_entExt(std::vector<Blob> &blobs, unsigned i
 	{
 		bool success = mSQLManager->beginTransaction();
 
+		std::string colorInfo = std::to_string(blobs[i].AvgColorScalar[0]) + ", " + std::to_string(blobs[i].AvgColorScalar[1]) + ", " + std::to_string(blobs[i].AvgColorScalar[2]);
+
 		//		if (entExt == true) {
 		if (blobs[i].IO_indicator == true) {
 			success &= mSQLManager->executeStatement("insert into tracks (obj_id, pos_x, pos_y, width, height, track_date, track_time, filename, frame_num, obj_state) values ('"
@@ -143,7 +145,7 @@ bool CarParkTrackExporter::writeToDB_entExt(std::vector<Blob> &blobs, unsigned i
 				+ " where filename = " + '"' + GlobalClass::instance()->get_InputFileName() + '"' + " and obj_id = " + std::to_string(blobs[i].unitID) + ";");
 
 			success &= mSQLManager->executeStatement("INSERT into objects (obj_id, filename, obj_type, obj_color, enter_from, parked_at,  parked_duration) SELECT '"
-				+ std::to_string(blobs[i].unitID) + "', '" + GlobalClass::instance()->get_InputFileName() + "', '" + "defaulted-car" + "', '" + "color-kiv" + "', '"
+				+ std::to_string(blobs[i].unitID) + "', '" + GlobalClass::instance()->get_InputFileName() + "', '" + "defaulted-car" + "', '" + colorInfo + "', '"
 				+ std::to_string(entrance) + "', '" + "NA" + "', '" + "NA" + "'"
 				+ " where NOT EXISTS(select * from objects where filename = " + '"' + GlobalClass::instance()->get_InputFileName() + '"' + " and obj_id = " + std::to_string(blobs[i].unitID) + ");");
 
@@ -153,14 +155,14 @@ bool CarParkTrackExporter::writeToDB_entExt(std::vector<Blob> &blobs, unsigned i
 				+ std::to_string(blobs[i].unitID) + "', '" + std::to_string(blobs[i].currentBoundingRect.x) + "', '" + std::to_string(blobs[i].currentBoundingRect.y) + "', '"
 				+ std::to_string(blobs[i].currentBoundingRect.width) + "', '" + std::to_string(blobs[i].currentBoundingRect.height) + "', '"
 				+ GlobalClass::instance()->get_InputDate() + "', '" + GlobalClass::instance()->get_InputTime(frameCount, vidLength) + "', '" + GlobalClass::instance()->get_InputFileName() + "', '"
-				+ std::to_string(frameCount) + "', '" + "Leave: " + std::to_string(entrance) + "');");
+				+ std::to_string(frameCount) + "', '" + "Exit: " + std::to_string(entrance) + "');");
 
 			success &= mSQLManager->executeStatement("UPDATE objects SET exit_from = " + std::to_string(entrance)
 				+ " where filename = " + '"' + GlobalClass::instance()->get_InputFileName() + '"' + " and obj_id = " + std::to_string(blobs[i].unitID) + ";");
 
 
 			success &= mSQLManager->executeStatement("INSERT into objects (obj_id, filename, obj_type, obj_color, parked_at, exit_from, parked_duration) SELECT '"
-				+ std::to_string(blobs[i].unitID) + "', '" + GlobalClass::instance()->get_InputFileName() + "', '" + "defaulted-car" + "', '" + "color-kiv" + "', '"
+				+ std::to_string(blobs[i].unitID) + "', '" + GlobalClass::instance()->get_InputFileName() + "', '" + "defaulted-car" + "', '" + colorInfo + "', '"
 				+ "NA" + "', '" + std::to_string(entrance) + "', '" + "NA" + "'"
 				+ " where NOT EXISTS(select * from objects where filename = " + '"' + GlobalClass::instance()->get_InputFileName() + '"' + " and obj_id = " + std::to_string(blobs[i].unitID) + ");");
 
@@ -249,6 +251,75 @@ bool CarParkTrackExporter::writeToDB_park(std::vector<Blob> &blobs, unsigned int
 	}
 	
 
+}
+
+
+bool CarParkTrackExporter::countTraj()
+{
+	
+	int numOfTrajs = 0;
+
+	mSQLManager = new SQLiteManager(mFilePath);
+	if (mSQLManager->isConnected())
+	{
+		bool success = mSQLManager->beginTransaction();
+		std::vector<std::vector<std::string>> r_result;
+		//std::vector<char> r_result;
+
+		
+		/*bool SQLiteManager::executeStatementGetArray(const std::string& statement, std::vector<std::vector<std::string>>& result)
+		{
+			char **dbResult = 0;
+			int nrows, ncols;
+			bool success = executeStatementWithReturn(statement.c_str(), &dbResult, nrows, ncols);
+
+			result.resize(nrows);
+			if (success)
+			{
+				for (int row = 0; row < nrows; ++row)
+				{
+					result[row].resize(ncols);
+					for (int col = 0; col < ncols; ++col)
+					{
+						if (dbResult[ncols + row * ncols + col] != NULL)
+							result[row][col] = dbResult[ncols + row * ncols + col];
+						else
+							result[row][col] = std::string();
+					}
+				}
+			}
+
+			sqlite3_free_table(dbResult);
+
+			return success;
+		}*/
+
+
+		success &= mSQLManager->executeStatementGetArray("select count(distinct obj_id) from tracks;", r_result);
+		
+		if (!success)
+		{
+			
+			std::cout << "WARNING: Unable to obtain number of unique obj_id from DB \n";
+			success = true;
+		}
+		else
+		{
+
+			numOfTrajs = std::stoi(r_result[0][0]);
+			std::cout << "Number of unique objects in database: " << numOfTrajs << " " << std::endl;
+
+		}
+
+		success &= mSQLManager->endTransaction();
+		delete mSQLManager;
+		return success;
+	}
+	else
+	{
+		std::cout << "NOT CONNECTED TO DB \n";
+		delete mSQLManager;
+	}
 }
 
 

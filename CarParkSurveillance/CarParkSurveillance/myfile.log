@@ -1,0 +1,23 @@
+Start of job: 10:25:11
+CarParkTrackExporter()
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+|              S H E R L O C K            =
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+|  Kindly select program options:         |
+|  1) Recovery Mode                       |
+|  2) State Extraction (Batch)            |
+|  3) Trajectory Grouping (Batch)         |
+|  4) Debugging Mode                      |
+|                                         |
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Program options: Number of unique objects in database: 16 
+DBSurveillance.db: DB tables dropped & created
+Initialized DB tables
+AdaptiveBackgroundLearning()
+FrameDifferenceBGS()
+1755 1691 1752 1748 1644 1623 1482 1557 1516 1457 1280 
+1081 918 943 910 967 1020 939 845 871 1034 
+792 713 725 716 734 688 643 668 625 
+457 445 436 428 456 283 262 338 
+287 319 312 340 263 285 
+Please enter processing date (CCYYMMDD): 

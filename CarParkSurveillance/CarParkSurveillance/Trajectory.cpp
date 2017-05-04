@@ -1,0 +1,16 @@
+// Trajectory.cpp
+
+#include "Trajectory.h"
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+Trajectory::~Trajectory() {
+	centerPositions.clear();
+	
+}
+
+Trajectory::Trajectory(int unitID) {
+
+
+
+}
+
