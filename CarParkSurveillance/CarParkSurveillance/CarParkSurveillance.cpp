@@ -609,7 +609,8 @@ int main(void) {
 	else if (user == "Ryan")
 	{
 		//cinDate = "20161018";
-		listOfDates[0] = "20161018";
+		cinDate = "20161018";
+		numDates = 1;
 	}
 	//check if root directory is correct
 	//std::cout << "Kindly confirm your video database root directory: \nie: " << myRoot << "CCYYMMDD\\c2 (Y/n)";
