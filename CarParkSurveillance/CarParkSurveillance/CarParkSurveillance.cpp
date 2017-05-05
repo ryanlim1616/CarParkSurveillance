@@ -39,11 +39,10 @@
 #include <regex>
 #include "dirent.h"
 #include <vector>
-<<<<<<< HEAD
 #include <ctime>
 #include "Switches.h"
 #include "GetSetLog.hxx"
-=======
+
 #include <thread>
 
 extern "C" {
@@ -53,16 +52,6 @@ extern "C" {
 	int predict_image_c(IplImage* input);
 
 }
-
-
-
-
-
-
-
-
-
->>>>>>> refs/remotes/ryanlim1616/master
 
 
 
@@ -115,7 +104,7 @@ cv::Rect enlargeROI(cv::Mat frm, cv::Rect boundingBox, int padding);
 
 
 
-void getNumOfTrajs(CarParkTrackExporter &openDB);
+//void getNumOfTrajs(CarParkTrackExporter &openDB);
 int getOption();
 
 int carDensity = 0;
@@ -299,7 +288,7 @@ void search(std::string curr_directory, std::string extension) {
 
 
 int main(void) {
-<<<<<<< HEAD
+
 
 
 	//write to log
@@ -316,15 +305,15 @@ int main(void) {
 		<< std::endl;
 
 	//define exporter
-=======
+	CarParkTrackExporter openDB;
+
 	//std::thread threadObj1(check_vehicles);
-//	threadObj1.join();
+	//	threadObj1.join();
 	
 	Init_YOLO(0, 0);
 	
-	//initialize DB
->>>>>>> refs/remotes/ryanlim1616/master
-	CarParkTrackExporter openDB;
+
+	
 
 
 	//run Get_options function
@@ -391,10 +380,11 @@ int main(void) {
 	IBGS *bgs2;
 	bgs2 = new FrameDifferenceBGS;
 	
-	std::cout << "haha1\n";
+	//std::cout << "haha1\n";
 	//d_hog = cv::gpu::HOGDescriptor(cv::Size(48, 96));
 	//d_hog.setSVMDetector(d_hog.getPeopleDetector48x96());
-	std::cout << "haha2\n";
+	//std::cout << "haha2\n";
+
 	cv::VideoCapture capVideo;
 
 	cv::Mat imgFrame1;
@@ -423,14 +413,14 @@ int main(void) {
 	cv::Mat structuringElement5x5 = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(5, 5));
 	cv::Mat structuringElement7x7 = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(7, 7));
 	cv::Mat structuringElement15x15 = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(15, 15));
-	std::cout << "haha3\n";
+	//std::cout << "haha3\n";
 
 
 	cv::Mat mask;
-	std::cout << "haha5\n";
+	//std::cout << "haha5\n";
 	mask = cv::imread("mask.jpg");
 
-	std::cout << "haha4\n";
+	//std::cout << "haha4\n";
 
 
 	zoneA = cv::imread("zoneAmask.png");
@@ -626,7 +616,7 @@ int main(void) {
 	//bbcc!!!!: else update 
 	//std::cout << "TO BE IMPLEMENTED!\n";
 
-<<<<<<< HEAD
+
 	int resume_from;
 	if (resumeFromError)
 	{
@@ -640,10 +630,10 @@ int main(void) {
 		std::cout << "Video resume_from: " << resume_from;
 		std::cout << " with unitObjCounter: " << unitObjCounter << std::endl;
 		std::cout << "\n*******************************************************************\n";
-=======
-	std::cout << "test2\n";
-	std::string myRoot2 = myRoot + cinDate + "\\c2\\";
->>>>>>> refs/remotes/ryanlim1616/master
+
+	//std::cout << "test2\n";
+	//std::string myRoot2 = myRoot + cinDate + "\\c2\\";
+
 
 
 	}
@@ -1080,8 +1070,6 @@ int main(void) {
 
 
 
-
-<<<<<<< HEAD
 					cv::erode(colorForeground, colorForeground, structuringElement3x3);
 					cv::dilate(colorForeground, colorForeground, structuringElement7x7);
 					cv::erode(colorForeground, colorForeground, structuringElement5x5);
@@ -1107,38 +1095,6 @@ int main(void) {
 					/////////////////////////// process contours
 
 
-=======
-				//convexHull
-			//	std::cout << "Start: Store Possible Blob!\n";
-				//filter convexHull
-				for (auto &convexHull : convexHulls) {
-					Blob possibleBlob(convexHull);
-
-					if (possibleBlob.currentBoundingRect.area() > 650 &&
-						possibleBlob.dblCurrentAspectRatio > 0.2 &&
-						possibleBlob.dblCurrentAspectRatio < 4.0 &&
-						possibleBlob.currentBoundingRect.width > 25 &&	
-						possibleBlob.currentBoundingRect.height > 25 &&
-						possibleBlob.currentBoundingRect.width * 2 > possibleBlob.currentBoundingRect.height &&
-						possibleBlob.dblCurrentDiagonalSize > 40.0 && possibleBlob.dblCurrentDiagonalSize < 200.0 &&
-						(cv::contourArea(possibleBlob.currentContour) / (double)possibleBlob.currentBoundingRect.area()) > 0.50) {
-						//cv::cvtColor(colorForeground, colorForeground, CV_BGR2GRAY);
-
-						/*cv::Rect tempBoundingRect = enlargeROI(imgFrame1Copy, possibleBlob.currentBoundingRect, 10);
-						cv::Mat cropImage = imgFrame1Copy(tempBoundingRect);
-
-						IplImage* to_test = mat_to_iplimage(cropImage);
-						int temp_test = predict_image_c(to_test);
-						std::cout << "prediction: " << temp_test << "\n";
-*/
-
-						//cv::imshow("cropImgae", cropImage);
-
-						possibleBlob.storeImage(imgFrame1Copy);
-						currentFrameBlobs.push_back(possibleBlob);
-						
->>>>>>> refs/remotes/ryanlim1616/master
-
 
 					//convexHull
 					std::vector<std::vector<cv::Point> > convexHulls(contours.size());
@@ -1148,9 +1104,8 @@ int main(void) {
 					}
 
 
-<<<<<<< HEAD
 					//convexHull
-					//std::cout << "Start: Store Possible Blob!\n";
+					//	std::cout << "Start: Store Possible Blob!\n";
 					//filter convexHull
 					for (auto &convexHull : convexHulls) {
 						Blob possibleBlob(convexHull);
@@ -1160,23 +1115,26 @@ int main(void) {
 							possibleBlob.dblCurrentAspectRatio < 4.0 &&
 							possibleBlob.currentBoundingRect.width > 25 &&
 							possibleBlob.currentBoundingRect.height > 25 &&
+							possibleBlob.currentBoundingRect.width * 2 > possibleBlob.currentBoundingRect.height &&
 							possibleBlob.dblCurrentDiagonalSize > 40.0 && possibleBlob.dblCurrentDiagonalSize < 200.0 &&
 							(cv::contourArea(possibleBlob.currentContour) / (double)possibleBlob.currentBoundingRect.area()) > 0.50) {
 							//cv::cvtColor(colorForeground, colorForeground, CV_BGR2GRAY);
 
-							cv::Mat cropImage = imgFrame1Copy(possibleBlob.currentBoundingRect);
-							cv::resize(cropImage, cropImage, cv::Size(48, 96));
+							/*cv::Rect tempBoundingRect = enlargeROI(imgFrame1Copy, possibleBlob.currentBoundingRect, 10);
+							cv::Mat cropImage = imgFrame1Copy(tempBoundingRect);
 
-							if (imshow_display)
-								cv::imshow("cropImgae", cropImage);
-							if (!checkIfPedestrain(cropImage)) {
-								possibleBlob.storeImage(imgFrame1Copy);
-								currentFrameBlobs.push_back(possibleBlob);
-							}
+							IplImage* to_test = mat_to_iplimage(cropImage);
+							int temp_test = predict_image_c(to_test);
+							std::cout << "prediction: " << temp_test << "\n";
+							*/
 
-							//check IOU before determining?
-=======
-				}
+							//cv::imshow("cropImgae", cropImage);
+
+							possibleBlob.storeImage(imgFrame1Copy);
+							currentFrameBlobs.push_back(possibleBlob);
+
+						}
+					}
 
 				global_img = imgFrame1Copy;
 			//	std::cout << "End: Store Possible Blob!\n";
@@ -1188,69 +1146,50 @@ int main(void) {
 				int temp_test = predict_image_c(to_test);
 				std::cout << "asdasdasdadadsadas\n";
 				system("pause");*/
->>>>>>> refs/remotes/ryanlim1616/master
 
-						}
+				//filter convexHull
 
 
-<<<<<<< HEAD
-
-=======
 				drawAndShowContours(imgThresh.size(), currentFrameBlobs, "imgCurrentFrameBlobs", imgFrame1Copy);
-			
+
 				if (currentFrameBlobs.size() == 0) {
 					updateFrameCounter++;
 					if (updateFrameCounter > 18) {
 						bgs2->updatemask();
 						updateFrameCounter = 0;
->>>>>>> refs/remotes/ryanlim1616/master
-					}
-					//std::cout << "End: Store Possible Blob!\n";
-
-
-					//filter convexHull
-
-
-					drawAndShowContours(imgThresh.size(), currentFrameBlobs, "imgCurrentFrameBlobs", imgFrame1Copy);
-
-					if (currentFrameBlobs.size() == 0) {
-						updateFrameCounter++;
-						if (updateFrameCounter > 18) {
-							bgs2->updatemask();
-							updateFrameCounter = 0;
-						}
-
 					}
 
+				}
 
 
 
-					//match blob
-					if (blnFirstFrame == true && first_video == true) {
-						first_video = false;
-						//std::cout << "Start: First Frame!\n";
+
+				//match blob
+				if (blnFirstFrame == true && first_video == true) {
+					first_video = false;
+					//std::cout << "Start: First Frame!\n";
+					for (auto &currentFrameBlob : currentFrameBlobs) {
+						addNewBlobLeavingParking(currentFrameBlob, blobs);
+					}
+					//std::cout << "End: First Frame!\n";
+				}
+				else {
+					if (blobs.size() == 0) {
+						//std::cout << "Start: If Existing Blobs empty!\n";
 						for (auto &currentFrameBlob : currentFrameBlobs) {
+
 							addNewBlobLeavingParking(currentFrameBlob, blobs);
 						}
-						//std::cout << "End: First Frame!\n";
+						//std::cout << "End: If Existing Blobs empty!\n";
 					}
 					else {
-						if (blobs.size() == 0) {
-							//std::cout << "Start: If Existing Blobs empty!\n";
-							for (auto &currentFrameBlob : currentFrameBlobs) {
+						updateFrameCounter = 0;
+						//std::cout << "Start: Blobs Matching!\n";
+						matchCurrentFrameBlobsToExistingBlobs2(blobs, currentFrameBlobs);
+						//std::cout << "End: Blobs Matching!\n";
 
-								addNewBlobLeavingParking(currentFrameBlob, blobs);
-							}
-							//std::cout << "End: If Existing Blobs empty!\n";
-						}
-						else {
-							updateFrameCounter = 0;
-							//std::cout << "Start: Blobs Matching!\n";
-							matchCurrentFrameBlobsToExistingBlobs2(blobs, currentFrameBlobs);
-							//std::cout << "End: Blobs Matching!\n";
-
-						}
 					}
+				}
 
 
 
@@ -2473,15 +2412,11 @@ void addNewBlobLeavingParking(Blob &currentFrameBlob, std::vector<Blob> &existin
 		}
 	}
 	else {
-<<<<<<< HEAD
-
-=======
-	//	std::cout << "ggggggg\n";
->>>>>>> refs/remotes/ryanlim1616/master
+		//	std::cout << "ggggggg\n";
 		cv::bitwise_and(zoneB, ctr, bitwise);
 		cv::cvtColor(bitwise, bwInt, cv::COLOR_BGR2GRAY);
 		counter = cv::countNonZero(bwInt);
-		
+
 		if (counter > 0) {
 			//std::cout << "Start: new blob * B\n";
 			for (int i = 0; i < zoneBlot.size(); i++) {
@@ -2508,7 +2443,7 @@ void addNewBlobLeavingParking(Blob &currentFrameBlob, std::vector<Blob> &existin
 			cv::bitwise_and(zoneC, ctr, bitwise);
 			cv::cvtColor(bitwise, bwInt, cv::COLOR_BGR2GRAY);
 			counter = cv::countNonZero(bwInt);
-			
+
 			if (counter > 0) {
 				//std::cout << "Start: new blob * C\n";
 				for (int i = 0; i < zoneClot.size(); i++) {
@@ -2521,14 +2456,9 @@ void addNewBlobLeavingParking(Blob &currentFrameBlob, std::vector<Blob> &existin
 						highMatch = i;
 					}
 				}
-<<<<<<< HEAD
-				//	std::cout << "End: new blob * C\n";
-				if (highMatch >= 0 && highMatchCounter >= zoneClot[highMatch].countNZero * 0.6) {
-=======
 				std::cout << "C: " << "highMatchCounter : " << highMatchCounter << ", " << "highMatch : " << highMatch << "zoneAlot[highMatch].countNZero * 0.6 : " << zoneClot[highMatch].countNZero * 0.5 << "\n";
-			//	std::cout << "End: new blob * C\n";
+				//	std::cout << "End: new blob * C\n";
 				if (highMatch >= 0 && highMatchCounter >= zoneClot[highMatch].countNZero * 0.5) {
->>>>>>> refs/remotes/ryanlim1616/master
 					currentFrameBlob.park = true;
 					currentFrameBlob.enter = true;
 					currentFrameBlob.parkLocation = 3;
@@ -2553,15 +2483,9 @@ void addNewBlobLeavingParking(Blob &currentFrameBlob, std::vector<Blob> &existin
 							highMatch = i;
 						}
 					}
-<<<<<<< HEAD
 					//	std::cout << "End: new blob * D\n";
-
-					if (highMatch >= 0 && highMatchCounter >= zoneDlot[highMatch].countNZero * 0.6) {
-=======
-				//	std::cout << "End: new blob * D\n";
 					std::cout << "D: " << "highMatchCounter : " << highMatchCounter << ", " << "highMatch : " << highMatch << "zoneAlot[highMatch].countNZero * 0.6 : " << zoneDlot[highMatch].countNZero * 0.5 << "\n";
 					if (highMatch >= 0 && highMatchCounter >= zoneDlot[highMatch].countNZero * 0.5) {
->>>>>>> refs/remotes/ryanlim1616/master
 						currentFrameBlob.park = true;
 						currentFrameBlob.enter = true;
 						currentFrameBlob.parkLocation = 4;
@@ -2573,7 +2497,7 @@ void addNewBlobLeavingParking(Blob &currentFrameBlob, std::vector<Blob> &existin
 					cv::bitwise_and(zoneE, ctr, bitwise);
 					cv::cvtColor(bitwise, bwInt, cv::COLOR_BGR2GRAY);
 					counter = cv::countNonZero(bwInt);
-					
+
 					if (counter > 0) {
 						//	std::cout << "Start: new blob * E\n";
 						for (int i = 0; i < zoneElot.size(); i++) {
@@ -2704,7 +2628,8 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 		contourVec.push_back(blobs[i].currentContour);
 		cv::Mat ctr(entrance1.size(), CV_8UC3, SCALAR_BLACK);
 		cv::drawContours(ctr, contourVec, -1, SCALAR_WHITE, -1);
-		
+
+
 		int counter;
 		cv::Mat bitwise;
 		cv::Mat bwInt;
@@ -2766,7 +2691,7 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 
 						) {
 
-						
+
 
 
 						printNumberofCar(1, false);
@@ -2816,7 +2741,7 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 							&& blobs[i].centerPositions[prevprevprevFrameIndex].y > blobs[i].centerPositions[prevprevFrameIndex].y
 							) {
 
-							
+
 
 							printNumberofCar(2, false);
 							blobs[i].exit = true;
@@ -2831,7 +2756,7 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 						cv::bitwise_and(entrance6, ctr, bitwise);
 						cv::cvtColor(bitwise, bwInt, cv::COLOR_BGR2GRAY);
 						counter = cv::countNonZero(bwInt);
-					
+
 						if (counter > 0) {
 							//std::cout << blobs[i].centerPositions.back().x << ", " << blobs[i].centerPositions.back().y << "\n";
 							if (blobs[i].centerPositions[prevFrameIndex].x < blobs[i].centerPositions[currFrameIndex].x
@@ -2847,13 +2772,13 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 								std::cout << "prediction: " << crop_result << "\n";*/
 								//system("pause");
 
-								
+
 								printNumberofCar(3, true);
 								blobs[i].enter = true;
 								blobs[i].entExt = 3;
 								blobs[i].changed = true;
 								blobs[i].IO_indicator = true;
-								
+
 
 							}
 							else if (blobs[i].centerPositions[prevFrameIndex].x > blobs[i].centerPositions[currFrameIndex].x
@@ -2863,7 +2788,7 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 								&& blobs[i].centerPositions[prevprevprevFrameIndex].x > blobs[i].centerPositions[prevprevFrameIndex].x
 								) {
 
-								
+
 
 								printNumberofCar(3, false);
 								blobs[i].exit = true;
@@ -2909,7 +2834,7 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 									&& blobs[i].centerPositions[prevprevprevFrameIndex].y < blobs[i].centerPositions[prevprevFrameIndex].y
 									) {
 
-									
+
 
 									printNumberofCar(4, false);
 									blobs[i].exit = true;
@@ -2957,7 +2882,7 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 										&& blobs[i].centerPositions[prevprevprevFrameIndex].x < blobs[i].centerPositions[prevprevFrameIndex].x
 										) {
 
-										
+
 
 										printNumberofCar(5, false);
 
@@ -2988,7 +2913,7 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 											std::cout << "prediction: " << crop_result << "\n";
 											//system("pause");
 
-											if(crop_result == 1) {
+											if (crop_result == 1) {
 												printNumberofCar(6, true);
 												blobs[i].enter = true;
 												blobs[i].entExt = 6;
@@ -3004,7 +2929,7 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 											&& blobs[i].centerPositions[prevprevprevFrameIndex].x > blobs[i].centerPositions[prevprevFrameIndex].x
 											) {
 
-											
+
 
 
 											printNumberofCar(6, false);
@@ -3017,7 +2942,7 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 										}
 									}
 									else {
-											cv::bitwise_and(nonTrackZone2, ctr, bitwise);
+										cv::bitwise_and(nonTrackZone2, ctr, bitwise);
 										cv::cvtColor(bitwise, bwInt, cv::COLOR_BGR2GRAY);
 										counter = cv::countNonZero(bwInt);
 
@@ -3231,7 +3156,7 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 					}
 				}
 			}
-			//std::cout << "(vehicle Status) start: 2\n";
+			//	std::cout << "(vehicle Status) start: 2\n";
 			if (blobs[i].exit == false && blobs[i].park == false) {
 				cv::bitwise_and(zoneA, ctr, bitwise);
 				cv::cvtColor(bitwise, bwInt, cv::COLOR_BGR2GRAY);
@@ -3240,7 +3165,7 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 					if (blobs[i].parkLocation != 1) {
 						blobs[i].parkLocation = 1;
 						blobs[i].parkframe = 1;
-						
+
 						if (blobs[i].unitID == 0) {
 							blobs[i].enter = false;
 						}
@@ -3360,7 +3285,7 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 					}
 				}
 			}
-			//std::cout << "(vehicle Status) start: 3\n";
+			//	std::cout << "(vehicle Status) start: 3\n";
 			if (blobs[i].parkframe > 20 && blobs[i].unitID == 0 && blobs[i].park == false) {
 				blobs[i].intNumOfConsecutiveFramesWithoutAMatch = 0;
 
@@ -3371,12 +3296,12 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 				//std::cout << "11\n";
 				int a = blobs[i].parkLocation;
 				if (blobs[i].unitID == 0 && blobs[i].parkLocation != 6) {
-					//std::cout << "22\n";
+					//	std::cout << "22\n";
 					int highIndexx = -1;
 					double nerestDis = 1000000;
 					int lenght = missMatchBlob.size();
 					if (lenght == 0) {
-						//std::cout << "33\n";
+						//	std::cout << "33\n";
 						//	blobs[i].park = true;
 						blobs[i].enter = true;
 
@@ -3397,7 +3322,7 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 						}
 						//std::cout << "55\n";
 						if (highIndexx != -1) {
-							//std::cout << "66\n";
+							//	std::cout << "66\n";
 							missMatchBlob[highIndexx].parkLocation = blobs[i].parkLocation;
 							missMatchBlob[highIndexx].parkinglot = blobs[i].parkinglot;
 							missMatchBlob[highIndexx].parkframe = 50;
@@ -3835,16 +3760,10 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 						}
 
 						std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "Lot A" << blobs[i].parkinglot << "\n";
+
 						openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot A");
 						predict_true_false = true;
 					}
-<<<<<<< HEAD
-
-					std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "Lot A" << blobs[i].parkinglot << "\n";
-					blobs[i].park = false;
-					openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot A");
-=======
->>>>>>> refs/remotes/ryanlim1616/master
 				}
 				else if (blobs[i].parkLocation == 2) {
 					tempBoundingRect = enlargeROI(global_img, blobs[i].currentBoundingRect, 10);
@@ -3865,15 +3784,10 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 							unitObjCounter++;
 						}
 						std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "Lot B" << blobs[i].parkinglot << "\n";
+
 						openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot B");
 						predict_true_false = true;
 					}
-<<<<<<< HEAD
-					std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "Lot B" << blobs[i].parkinglot << "\n";
-					blobs[i].park = false;
-					openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot B");
-=======
->>>>>>> refs/remotes/ryanlim1616/master
 				}
 				else if (blobs[i].parkLocation == 3) {
 					tempBoundingRect = enlargeROI(global_img, blobs[i].currentBoundingRect, 10);
@@ -3893,15 +3807,10 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 							unitObjCounter++;
 						}
 						std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "Lot C" << blobs[i].parkinglot << "\n";
+
 						openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot C");
 						predict_true_false = true;
 					}
-<<<<<<< HEAD
-					std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "Lot C" << blobs[i].parkinglot << "\n";
-					blobs[i].park = false;
-					openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot C");
-=======
->>>>>>> refs/remotes/ryanlim1616/master
 				}
 				else if (blobs[i].parkLocation == 4) {
 					tempBoundingRect = enlargeROI(global_img, blobs[i].currentBoundingRect, 10);
@@ -3921,16 +3830,11 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 							unitObjCounter++;
 						}
 
-<<<<<<< HEAD
-					std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "Lot D" << blobs[i].parkinglot << "\n";
-					blobs[i].park = false;
-					openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot D");
-=======
 						std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "Lot D" << blobs[i].parkinglot << "\n";
+
 						openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot D");
 						predict_true_false = true;
 					}
->>>>>>> refs/remotes/ryanlim1616/master
 				}
 				else if (blobs[i].parkLocation == 5) {
 					tempBoundingRect = enlargeROI(global_img, blobs[i].currentBoundingRect, 10);
@@ -3950,26 +3854,8 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 							unitObjCounter++;
 						}
 
-<<<<<<< HEAD
-					std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "Lot E" << blobs[i].parkinglot << "\n";
-					blobs[i].park = false;
-					openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot E");
-				}
-				else if (blobs[i].parkLocation == 6) {
-
-					std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "DANGER ZONE" << blobs[i].parkinglot << "\n";
-					blobs[i].park = false;
-					openDB.writeToDB_park(blobs, i, frameCount, vidLength, "DANGER ZONE");
-				}
-
-
-				//blobs[i].park = false;
-				blobs[i].parkframe = 0;
-				blobs[i].parkLocation = 0;
-				blobs[i].parkinglot = -1;
-				blobs[i].leavingcarpark = 0;
-=======
 						std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "Lot E" << blobs[i].parkinglot << "\n";
+
 						openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot E");
 						predict_true_false = true;
 					}
@@ -3985,6 +3871,7 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 					if (crop_result == 1) {
 
 						std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "DANGER ZONE" << blobs[i].parkinglot << "\n";
+
 						openDB.writeToDB_park(blobs, i, frameCount, vidLength, "DANGER ZONE");
 						predict_true_false = true;
 					}
@@ -3997,7 +3884,6 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 					blobs[i].parkinglot = -1;
 					blobs[i].leavingcarpark = 0;
 				}
->>>>>>> refs/remotes/ryanlim1616/master
 
 			}
 
@@ -4030,6 +3916,7 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 	return blnAtLeastOneBlobCrossedTheLine;
 
 }
+
 
 void addBack(std::vector<Blob> &blobs) {
 
@@ -4564,29 +4451,31 @@ void removeBlobMemory(std::vector<Blob> &blobs) {
 
 }
 
-<<<<<<< HEAD
-void getNumOfTrajs(CarParkTrackExporter &openDB) {
 
-	//traj grouping - should i group ALL the trajs? 
-	//how many should i group?
+//void getNumOfTrajs(CarParkTrackExporter &openDB) {
+//
+//	//traj grouping - should i group ALL the trajs? 
+//	//how many should i group?
+//
+//	//create a class traj, with a vector .push_back function to add in additional points
+//	// traj class also contains a "color" value for rainbow 
+//
+//
+//	// Generate random colors
+//	//vector<Vec3b> colors;
+//	//for (size_t i = 0; i < contours.size(); i++)
+//	//{
+//	//	int b = theRNG().uniform(0, 255);
+//	//	int g = theRNG().uniform(0, 255);
+//	//	int r = theRNG().uniform(0, 255);
+//	//	colors.push_back(Vec3b((uchar)b, (uchar)g, (uchar)r));
+//	
+//	std::cout << "does it even run here? 1\n";
+//
+//	CarParkTrackExporter countTraj();
+//}
 
-	//create a class traj, with a vector .push_back function to add in additional points
-	// traj class also contains a "color" value for rainbow 
 
-
-	// Generate random colors
-	//vector<Vec3b> colors;
-	//for (size_t i = 0; i < contours.size(); i++)
-	//{
-	//	int b = theRNG().uniform(0, 255);
-	//	int g = theRNG().uniform(0, 255);
-	//	int r = theRNG().uniform(0, 255);
-	//	colors.push_back(Vec3b((uchar)b, (uchar)g, (uchar)r));
-	
-	std::cout << "does it even run here? 1\n";
-
-	CarParkTrackExporter countTraj();
-=======
 IplImage* mat_to_iplimage(cv::Mat input) {
 
 	//IplImage* output = &input.operator IplImage();
@@ -4601,24 +4490,15 @@ IplImage* mat_to_iplimage(cv::Mat input) {
 	IplImage ipltemp = input;
 	cvCopy(&ipltemp, output);
 */
-
->>>>>>> refs/remotes/ryanlim1616/master
-
-
-
-
-
-
-<<<<<<< HEAD
+	return output;
 }
-
 
 
 int getOption() {
 
 	int getOptionNum;
 	bool bad = false;
-	
+
 	std::cout << "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" << std::endl;
 	std::cout << "|              S H E R L O C K            =" << std::endl;
 	std::cout << "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" << std::endl;
@@ -4629,8 +4509,8 @@ int getOption() {
 	std::cout << "|  4) Debugging Mode                      |\n";
 	std::cout << "|                                         |\n";
 	std::cout << "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" << std::endl;
-	
-	
+
+
 	do {
 		std::cout << "Program options: ";
 		std::cin >> getOptionNum;
@@ -4640,18 +4520,15 @@ int getOption() {
 		{
 			std::cout << "You have entered an invalid char, please try again : " << std::endl;
 		}
-			
+
 		std::cin.clear();
 		std::cin.ignore(10, '\n');
 	} while (bad);
 
 	return getOptionNum;
-	
-=======
 
-
-	return output;
 }
+	
 
 cv::Rect enlargeROI(cv::Mat frm, cv::Rect boundingBox, int padding) {
 	cv::Rect returnRect = cv::Rect(boundingBox.x - padding, boundingBox.y - padding, boundingBox.width + (padding * 2), boundingBox.height + (padding * 2));
@@ -4660,5 +4537,5 @@ cv::Rect enlargeROI(cv::Mat frm, cv::Rect boundingBox, int padding) {
 	if (returnRect.x + returnRect.width >= frm.cols)returnRect.width = frm.cols - returnRect.x;
 	if (returnRect.y + returnRect.height >= frm.rows)returnRect.height = frm.rows - returnRect.y;
 	return returnRect;
->>>>>>> refs/remotes/ryanlim1616/master
+
 }

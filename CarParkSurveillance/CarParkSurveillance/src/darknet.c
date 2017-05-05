@@ -385,7 +385,7 @@ void Init_YOLO(int argc, char **argv) {
 	printf("cba\n");
 	gpu_index = -1;
 #else
-	printf("abc\n");
+	//printf("abc\n");
 	if (gpu_index >= 0) {
 		cuda_set_device(gpu_index);
 	}

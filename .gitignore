@@ -12,3 +12,5 @@ CarParkSurveillance/x64/Debug/CarParkSurveillance.pdb
 *.csv
 *.db
 *.pdb
+*.avi
+*.weights

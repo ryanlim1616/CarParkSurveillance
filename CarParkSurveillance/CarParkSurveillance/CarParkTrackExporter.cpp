@@ -155,7 +155,7 @@ bool CarParkTrackExporter::writeToDB_entExt(std::vector<Blob> &blobs, unsigned i
 				+ std::to_string(blobs[i].unitID) + "', '" + std::to_string(blobs[i].currentBoundingRect.x) + "', '" + std::to_string(blobs[i].currentBoundingRect.y) + "', '"
 				+ std::to_string(blobs[i].currentBoundingRect.width) + "', '" + std::to_string(blobs[i].currentBoundingRect.height) + "', '"
 				+ GlobalClass::instance()->get_InputDate() + "', '" + GlobalClass::instance()->get_InputTime(frameCount, vidLength) + "', '" + GlobalClass::instance()->get_InputFileName() + "', '"
-				+ std::to_string(frameCount) + "', '" + "Exit: " + std::to_string(entrance) + "');");
+				+ std::to_string(frameCount) + "', '" + "Leave: " + std::to_string(entrance) + "');");
 
 			success &= mSQLManager->executeStatement("UPDATE objects SET exit_from = " + std::to_string(entrance)
 				+ " where filename = " + '"' + GlobalClass::instance()->get_InputFileName() + '"' + " and obj_id = " + std::to_string(blobs[i].unitID) + ";");

@@ -1,4 +1,4 @@
-Start of job: 10:25:11
+Start of job: 16:28:43
 CarParkTrackExporter()
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 |              S H E R L O C K            =
@@ -10,8 +10,7 @@ CarParkTrackExporter()
 |  4) Debugging Mode                      |
 |                                         |
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-Program options: Number of unique objects in database: 16 
-DBSurveillance.db: DB tables dropped & created
+Program options: DBSurveillance.db: DB tables dropped & created
 Initialized DB tables
 AdaptiveBackgroundLearning()
 FrameDifferenceBGS()
@@ -20,4 +19,7037 @@ FrameDifferenceBGS()
 792 713 725 716 734 688 643 668 625 
 457 445 436 428 456 283 262 338 
 287 319 312 340 263 285 
-Please enter processing date (CCYYMMDD): 
+test1
+Please enter processing date (CCYYMMDD): Please enter number of processing dates: < !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! >
+
+@ Processing # of dates: 1
+1: 20161018
+< !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! >
+100 files were found:
+1: D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4
+Press Enter to continue: --- [Creating new GlobalClass instance]---
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4
+prediction: 1
+Enter : 1
+Exit : 4
+Deleting : 1
+A: highMatchCounter : 582, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 877.5
+B: highMatchCounter : 336, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 483.5
+E: highMatchCounter : 0, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 143.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 855, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 845.5
+matching parked car : Lot A
+A: highMatchCounter : 278, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 758
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+Exit : 4
+prediction: 1
+Enter : 1
+Deleting : 2
+Exit : 4
+A: highMatchCounter : 387, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 778.5
+D: highMatchCounter : 456, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 228
+matching parked car : Lot D
+Deleting : 3
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+Exit : 4
+Deleting : 4
+Enter : 3
+D: highMatchCounter : 304, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 228
+matching parked car : Lot D
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Park - Vehicle 5Lot C2
+Deleting : 0
+prediction: 1
+Leaving car park - Vehicle 5Lot C2
+Add to Miss Match State: 5
+Deleting : 5
+Enter : 3
+Exit : 2
+Deleting : 6
+C: highMatchCounter : 488, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 321.5
+matching parked car : Lot C
+E: highMatchCounter : 189, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 142.5
+matching parked car : Lot E
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+prediction: 1
+Park - Vehicle 5Lot C2
+A: highMatchCounter : 474, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 877.5
+B: highMatchCounter : 797, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 469.5
+matching parked car : Lot B
+C: highMatchCounter : 188, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 312.5
+Deleting : 5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Add to Miss Match State: 7
+Deleting : 7
+Deleting : 0
+D: highMatchCounter : 120, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 228.5
+D: highMatchCounter : 210, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 228
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+vehicle 8 : leaving non tracking zone 1
+prediction: 1
+vehicle 8 : non tracking zone 1
+Deleting : 8
+prediction: 1
+vehicle 7 : non tracking zone 1
+Deleting : 7
+prediction: 1
+vehicle 8 : leaving non tracking zone 1
+prediction: 0
+prediction: 1
+vehicle 8 : non tracking zone 1
+Deleting : 8
+C: highMatchCounter : 657, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 356.5
+matching parked car : Lot C
+Deleting : 0
+Deleting : 0
+Add to Miss Match State: 9
+Deleting : 9
+prediction: 1
+Enter : 1
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 6
+C: highMatchCounter : 603, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 356.5
+matching parked car : Lot C
+prediction: 1
+Leaving car park - Vehicle 5Lot C2
+prediction: 1
+Enter : 1
+Exit : 5
+(Matching) start: merge!
+merged!
+merge jor 12 + 5
+(Matching) start: split!
+diff 1 : 48.9021 diff 2 : 44.7452
+diff 3 : 14.1925 diff 4 : 46.7828
+this else
+split jorrrrrrrrrrrrrrrrrrrrrrrrrrr
+(Matching) start: merge!
+merged!
+merge jor 11 + 12
+(Matching) start: split!
+diff 1 : 153.548 diff 2 : 20.7523
+diff 3 : 73.2998 diff 4 : 61.1011
+this else
+split jorrrrrrrrrrrrrrrrrrrrrrrrrrr
+(Matching) start: merge!
+merged!
+merge jor 5 + 11
+(Matching) start: split!
+diff 1 : 56.2067 diff 2 : 71.8165
+diff 3 : 51.7388 diff 4 : 154.339
+this else
+split jorrrrrrrrrrrrrrrrrrrrrrrrrrr
+(Matching) start: merge!
+merged!
+merge jor 12 + 5
+(Matching) start: merge!
+merged!
+merge jor 10 + 11
+Exit : 4
+Deleting : 0
+Deleting : 11
+Deleting : 10
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Leaving car park - Vehicle 0DANGER ZONE-1
+Exit : 4
+Deleting : 13
+prediction: 1
+Enter : 1
+prediction: 1
+Park - Vehicle 9Lot B4
+Deleting : 9
+prediction: 1
+Enter : 1
+Exit : 4
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+end of video
+EOF: Processing next video
+clear blob memory 
+2: D:\Videos Database\Carpark Data\20161018\c2\20161018_083600.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_083600.mp4
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+(Matching) start: split!
+diff 1 : 30.8873 diff 2 : 21.5099
+diff 3 : 102.298 diff 4 : 115.052
+this else
+split jorrrrrrrrrrrrrrrrrrrrrrrrrrr
+(Matching) start: merge!
+merged!
+merge jor 14 + 5
+prediction: 1
+Park - Vehicle 12Lot A7
+(Matching) start: split!
+diff 1 : 118.376 diff 2 : 105.282
+diff 3 : 21.2196 diff 4 : 31.2126
+this else
+split jorrrrrrrrrrrrrrrrrrrrrrrrrrr
+Deleting : 14
+Deleting : 12
+Exit : 6
+prediction: 0
+prediction: 1
+Park - Vehicle 15Lot B5
+A: highMatchCounter : 1449, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 741
+matching parked car : Lot A
+B: highMatchCounter : 380, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 455
+E: highMatchCounter : 285, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 142.5
+matching parked car : Lot E
+Deleting : 5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 15
+A: highMatchCounter : 523, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 741
+Deleting : 0
+Deleting : 0
+B: highMatchCounter : 237, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 455
+Deleting : 0
+A: highMatchCounter : 51, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 876
+Deleting : 0
+A: highMatchCounter : 445, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 845.5
+Deleting : 0
+A: highMatchCounter : 254, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 778.5
+Enter : 3
+Exit : 4
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 5
+prediction: 1
+Enter : 2
+Exit : 6
+Exit : 3
+Deleting : 17
+Deleting : 16
+Deleting : 0
+A: highMatchCounter : 379, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 778.5
+B: highMatchCounter : 830, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 510
+matching parked car : Lot B
+C: highMatchCounter : 9, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 312.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Park - Vehicle 19Lot A9
+Enter : 3
+Exit : 2
+Deleting : 20
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Leaving car park - Vehicle 19Lot A9
+Deleting : 0
+Deleting : 0
+prediction: 1
+Park - Vehicle 18Lot C3
+prediction: 1
+Park - Vehicle 19Lot A8
+Deleting : 18
+A: highMatchCounter : 928, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 778.5
+matching parked car : Lot A
+Deleting : 0
+Deleting : 19
+C: highMatchCounter : 269, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 356.5
+A: highMatchCounter : 598, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 845.5
+A: highMatchCounter : 570, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 778.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Leaving car park - Vehicle 0DANGER ZONE-1
+Add to Miss Match State: 21
+Deleting : 21
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 2
+prediction: 1
+Enter : 6
+Exit : 3
+Deleting : 23
+prediction: 1
+Park - Vehicle 22Lot C5
+prediction: 1
+Park - Vehicle 24Lot A9
+Deleting : 0
+Deleting : 0
+Deleting : 22
+Deleting : 24
+A: highMatchCounter : 168, highMatch : 9zoneAlot[highMatch].countNZero * 0.6 : 728.5
+Deleting : 0
+A: highMatchCounter : 269, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 758
+A: highMatchCounter : 278, highMatch : 9zoneAlot[highMatch].countNZero * 0.6 : 728.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+(Matching) start: merge!
+merged!
+merge jor 25 + 21
+(Matching) start: split!
+diff 1 : 43.365 diff 2 : 45.3938
+diff 3 : 41.9694 diff 4 : 47.1904
+this else
+split jorrrrrrrrrrrrrrrrrrrrrrrrrrr
+(Matching) start: merge!
+merged!
+merge jor 21 + 25
+(Matching) start: split!
+diff 1 : 28.2875 diff 2 : 34.5954
+diff 3 : 18.7179 diff 4 : 43.8745
+this else
+split jorrrrrrrrrrrrrrrrrrrrrrrrrrr
+(Matching) start: merge!
+merged!
+merge jor 25 + 21
+(Matching) start: split!
+diff 1 : 17.2015 diff 2 : 44.552
+diff 3 : 26.47 diff 4 : 34.914
+split jorrrrrrrrrrrrrrrrrrrrrrrrrrr
+(Matching) start: merge!
+merged!
+merge jor 25 + 21
+(Matching) start: split!
+diff 1 : 28.931 diff 2 : 33.1019
+diff 3 : 16.4815 diff 4 : 45.5229
+this else
+split jorrrrrrrrrrrrrrrrrrrrrrrrrrr
+(Matching) start: merge!
+merged!
+merge jor 25 + 21
+(Matching) start: split!
+diff 1 : 15.9987 diff 2 : 47.3441
+diff 3 : 26.9869 diff 4 : 36.5031
+split jorrrrrrrrrrrrrrrrrrrrrrrrrrr
+prediction: 0
+prediction: 0
+(Matching) start: merge!
+merged!
+merge jor 21 + 25
+Add to Miss Match State: 21
+Deleting : 21
+Add to Miss Match State: 25
+Deleting : 25
+A: highMatchCounter : 534, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 876
+Deleting : 0
+A: highMatchCounter : 440, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 876
+Deleting : 0
+prediction: 1
+Enter : 1
+Deleting : 0
+prediction: 1
+Enter : 2
+Exit : 3
+Deleting : 27
+C: highMatchCounter : 352, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 358
+Exit : 4
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Park - Vehicle 21Lot C4
+C: highMatchCounter : 384, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 358
+matching parked car : Lot C
+Deleting : 21
+prediction: 0
+prediction: 1
+Leaving car park - Vehicle 21Lot C4
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+Deleting : 26
+Exit : 4
+Deleting : 21
+prediction: 1
+Enter : 2
+Exit : 3
+Deleting : 0
+Deleting : 0
+Deleting : 28
+prediction: 1
+Leaving car park - Vehicle 0DANGER ZONE-1
+Add to Miss Match State: 29
+Deleting : 29
+prediction: 1
+Enter : 1
+Exit : 4
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 5
+Deleting : 0
+prediction: 1
+Enter : 2
+Exit : 3
+Exit : 6
+Deleting : 31
+Deleting : 0
+Deleting : 0
+Deleting : 30
+end of video
+EOF: Processing next video
+clear blob memory 
+3: D:\Videos Database\Carpark Data\20161018\c2\20161018_084200.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_084200.mp4
+Deleting : 0
+prediction: 1
+Enter : 6
+prediction: 1
+Enter : 1
+Exit : 6
+Deleting : 32
+prediction: 1
+Enter : 1
+Deleting : 0
+prediction: 1
+Enter : 2
+prediction: 1
+Enter : 1
+Exit : 3
+(Matching) start: merge!
+merged!
+merge jor 34 + 36
+Deleting : 35
+Deleting : 0
+prediction: 1
+Enter : 2
+(Matching) start: split!
+diff 1 : 58.7967 diff 2 : 49.1226
+diff 3 : 7.52801 diff 4 : 7.01374
+split jorrrrrrrrrrrrrrrrrrrrrrrrrrr
+Exit : 3
+Exit : 4
+Deleting : 37
+Deleting : 36
+prediction: 1
+Enter : 1
+prediction: 1
+Park - Vehicle 33Lot B7
+Deleting : 33
+prediction: 1
+Enter : 1
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 2
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Park - Vehicle 38Lot D1
+Deleting : 38
+Exit : 3
+Deleting : 40
+prediction: 1
+Park - Vehicle 34Lot C4
+prediction: 1
+Enter : 1
+Deleting : 34
+C: highMatchCounter : 716, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 358
+matching parked car : Lot C
+Deleting : 0
+prediction: 1
+Enter : 1
+(Matching) start: merge!
+merged!
+merge jor 41 + 39
+Deleting : 0
+prediction: 1
+Park - Vehicle 39Lot B6
+prediction: 1
+Leaving car park - Vehicle 39Lot B6
+prediction: 1
+Park - Vehicle 42Lot D3
+Deleting : 42
+Deleting : 0
+Exit : 5
+Deleting : 41
+prediction: 1
+Park - Vehicle 39Lot C6
+Deleting : 39
+prediction: 1
+Leaving car park - Vehicle 0DANGER ZONE-1
+Add to Miss Match State: 43
+Deleting : 43
+Deleting : 0
+prediction: 1
+Enter : 1
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+B: highMatchCounter : 874, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 471.5
+matching parked car : Lot B
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Add to Miss Match State: 44
+Deleting : 44
+C: highMatchCounter : 792, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 396
+matching parked car : Lot C
+C: highMatchCounter : 172, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 396
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+prediction: 0
+prediction: 1
+Leaving car park - Vehicle 45Lot C1
+C: highMatchCounter : 6, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 367
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+C: highMatchCounter : 35, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 367
+C: highMatchCounter : 614, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 358
+matching parked car : Lot C
+Deleting : 0
+prediction: 1
+Enter : 1
+Deleting : 0
+Deleting : 0
+Exit : 4
+Add to Miss Match State: 25
+Deleting : 45
+Add to Miss Match State: 25
+Deleting : 25
+C: highMatchCounter : 515, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 344
+matching parked car : Lot C
+prediction: 1
+Park - Vehicle 46Lot B8
+Deleting : 0
+Deleting : 46
+Deleting : 0
+B: highMatchCounter : 513, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 483.5
+matching parked car : Lot B
+Deleting : 0
+A: highMatchCounter : 341, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 822
+Deleting : 0
+Deleting : 0
+B: highMatchCounter : 539, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 435.5
+matching parked car : Lot B
+prediction: 0
+prediction: 1
+Enter : 6
+Deleting : 0
+A: highMatchCounter : 87, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 758
+B: highMatchCounter : 381, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 422.5
+Deleting : 0
+Deleting : 0
+Exit : 5
+Deleting : 47
+prediction: 1
+Enter : 1
+prediction: 1
+Park - Vehicle 48DANGER ZONE!
+prediction: 0
+prediction: 1
+Leaving car park - Vehicle 48DANGER ZONE-1
+Exit : 4
+Deleting : 48
+prediction: 0
+prediction: 0
+prediction: 0
+Enter : 3
+Exit : 2
+Deleting : 49
+Deleting : 0
+Deleting : 0
+Add to Miss Match State: 25
+Deleting : 25
+A: highMatchCounter : 253, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 845.5
+Deleting : 0
+A: highMatchCounter : 549, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 778.5
+A: highMatchCounter : 128, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 822
+A: highMatchCounter : 332, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 741
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 539, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 845.5
+A: highMatchCounter : 110, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 874
+C: highMatchCounter : 14, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 312.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+prediction: 1
+Enter : 2
+Exit : 3
+Deleting : 51
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+4: D:\Videos Database\Carpark Data\20161018\c2\20161018_084800.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_084800.mp4
+prediction: 1
+Park - Vehicle 50Lot C7
+Deleting : 0
+prediction: 1
+Enter : 6
+Deleting : 50
+prediction: 1
+Enter : 2
+Exit : 5
+Exit : 3
+Deleting : 53
+A: highMatchCounter : 516, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 876
+A: highMatchCounter : 870, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 811.5
+matching parked car : Lot A
+A: highMatchCounter : 299, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 741
+A: highMatchCounter : 707, highMatch : 9zoneAlot[highMatch].countNZero * 0.6 : 728.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 52
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 699, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 877.5
+E: highMatchCounter : 0, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 143.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 1198, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 778.5
+matching parked car : Lot A
+A: highMatchCounter : 470, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 758
+A: highMatchCounter : 608, highMatch : 10zoneAlot[highMatch].countNZero * 0.6 : 640
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 534, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 877.5
+A: highMatchCounter : 635, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 778.5
+C: highMatchCounter : 0, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 396
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+Exit : 4
+Deleting : 54
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 5
+prediction: 1
+Enter : 1
+Exit : 6
+Deleting : 55
+Deleting : 0
+A: highMatchCounter : 342, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 845.5
+B: highMatchCounter : 937, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 471.5
+matching parked car : Lot B
+E: highMatchCounter : 62, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 131.5
+E: highMatchCounter : 106, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 142.5
+Enter : 3
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Add to Miss Match State: 56
+Deleting : 56
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Add to Miss Match State: 43
+Deleting : 43
+prediction: 1
+Park - Vehicle 57Lot C9
+Deleting : 57
+Add to Miss Match State: 29
+Deleting : 29
+Deleting : 0
+prediction: 1
+Enter : 1
+Exit : 4
+Deleting : 58
+Deleting : 0
+prediction: 1
+Enter : 5
+Add to Miss Match State: 59
+Deleting : 59
+D: highMatchCounter : 415, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 218
+matching parked car : Lot D
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 2
+prediction: 1
+Enter : 1
+Exit : 3
+Deleting : 60
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Park - Vehicle 61DANGER ZONE!
+Deleting : 61
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+Exit : 4
+Deleting : 62
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+5: D:\Videos Database\Carpark Data\20161018\c2\20161018_085400.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_085400.mp4
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Enter : 3
+prediction: 1
+Enter : 1
+prediction: 1
+Park - Vehicle 63Lot C8
+Deleting : 63
+prediction: 1
+Enter : 1
+Exit : 4
+Deleting : 64
+C: highMatchCounter : 260, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 312.5
+Enter : 3
+prediction: 1
+vehicle 65 : non tracking zone 1
+Deleting : 65
+prediction: 1
+vehicle 7 : leaving non tracking zone 1
+Deleting : 0
+prediction: 1
+Enter : 1
+prediction: 1
+vehicle 7 : non tracking zone 1
+Deleting : 7
+Add to Miss Match State: 29
+Deleting : 29
+Deleting : 0
+Exit : 4
+Deleting : 67
+prediction: 1
+Enter : 5
+Exit : 4
+Deleting : 66
+Deleting : 0
+Exit : 6
+Deleting : 0
+Deleting : 68
+Enter : 3
+Exit : 4
+Deleting : 69
+prediction: 1
+Enter : 1
+prediction: 0
+prediction: 0
+Exit : 4
+Deleting : 70
+prediction: 1
+Enter : 1
+Exit : 4
+Deleting : 71
+prediction: 1
+Enter : 5
+Add to Miss Match State: 72
+Deleting : 72
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 2
+Exit : 3
+Deleting : 73
+A: highMatchCounter : 785, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 877.5
+A: highMatchCounter : 745, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 845.5
+D: highMatchCounter : 452, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 228
+matching parked car : Lot D
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+6: D:\Videos Database\Carpark Data\20161018\c2\20161018_090000.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_090000.mp4
+Enter : 3
+prediction: 1
+Park - Vehicle 74Lot B9
+prediction: 1
+Leaving car park - Vehicle 74Lot B9
+prediction: 1
+Park - Vehicle 74Lot B9
+Deleting : 74
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+Deleting : 0
+B: highMatchCounter : 606, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 435.5
+matching parked car : Lot B
+B: highMatchCounter : 464, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 435.5
+matching parked car : Lot B
+Deleting : 0
+Deleting : 0
+Exit : 4
+A: highMatchCounter : 87, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 758
+Deleting : 75
+B: highMatchCounter : 278, highMatch : 9zoneAlot[highMatch].countNZero * 0.6 : 517
+Deleting : 0
+A: highMatchCounter : 762, highMatch : 10zoneAlot[highMatch].countNZero * 0.6 : 640
+matching parked car : Lot A
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Exit : 6
+prediction: 0
+Deleting : 0
+Deleting : 44
+prediction: 1
+Enter : 1
+Exit : 4
+Deleting : 76
+Deleting : 0
+prediction: 1
+Enter : 1
+prediction: 1
+vehicle 77 : non tracking zone 1
+Exit : 4
+Deleting : 77
+A: highMatchCounter : 759, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 845.5
+Deleting : 0
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+7: D:\Videos Database\Carpark Data\20161018\c2\20161018_090600.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_090600.mp4
+prediction: 1
+Enter : 2
+Exit : 3
+Deleting : 78
+prediction: 1
+Enter : 1
+prediction: 1
+vehicle 79 : non tracking zone 1
+Exit : 4
+Deleting : 79
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 5
+Exit : 5
+Deleting : 80
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 1
+Enter : 1
+Exit : 4
+Deleting : 81
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+8: D:\Videos Database\Carpark Data\20161018\c2\20161018_091200.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_091200.mp4
+Deleting : 0
+prediction: 1
+Enter : 2
+Exit : 3
+Deleting : 82
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 2
+Exit : 3
+Deleting : 83
+Enter : 3
+Exit : 4
+Deleting : 84
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+vehicle 85 : leaving non tracking zone 2
+Exit : 6
+Deleting : 85
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 4
+Exit : 1
+Deleting : 86
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 6
+Add to Miss Match State: 87
+Deleting : 87
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 1
+Enter : 2
+Deleting : 0
+Exit : 3
+Deleting : 88
+prediction: 1
+Enter : 1
+prediction: 0
+prediction: 0
+Exit : 4
+Deleting : 89
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+9: D:\Videos Database\Carpark Data\20161018\c2\20161018_091800.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_091800.mp4
+prediction: 0
+prediction: 0
+Add to Miss Match State: 56
+Deleting : 56
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 4
+Deleting : 0
+Add to Miss Match State: 90
+Deleting : 90
+prediction: 1
+Enter : 1
+prediction: 0
+Exit : 4
+Deleting : 91
+A: highMatchCounter : 536, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 778.5
+A: highMatchCounter : 667, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 874
+A: highMatchCounter : 336, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 811.5
+A: highMatchCounter : 970, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 845.5
+matching parked car : Lot A
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 92
+Deleting : 0
+Enter : 3
+Add to Miss Match State: 93
+Deleting : 93
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Park - Vehicle 43Lot E1
+Deleting : 43
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+10: D:\Videos Database\Carpark Data\20161018\c2\20161018_092400.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_092400.mp4
+prediction: 1
+Enter : 2
+Exit : 3
+Deleting : 94
+A: highMatchCounter : 1408, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 877.5
+matching parked car : Lot A
+A: highMatchCounter : 544, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 874
+A: highMatchCounter : 604, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 741
+B: highMatchCounter : 819, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 471.5
+matching parked car : Lot B
+E: highMatchCounter : 0, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 143.5
+E: highMatchCounter : 0, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 143.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Add to Miss Match State: 95
+Deleting : 95
+prediction: 1
+Enter : 5
+Exit : 5
+Deleting : 96
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+11: D:\Videos Database\Carpark Data\20161018\c2\20161018_093000.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_093000.mp4
+Enter : 3
+prediction: 1
+Park - Vehicle 97Lot B10
+Deleting : 97
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 5
+B: highMatchCounter : 940, highMatch : 9zoneAlot[highMatch].countNZero * 0.6 : 517
+matching parked car : Lot B
+Exit : 6
+Deleting : 98
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 99
+Deleting : 0
+B: highMatchCounter : 486, highMatch : 9zoneAlot[highMatch].countNZero * 0.6 : 517
+prediction: 1
+Enter : 2
+Deleting : 0
+Exit : 2
+Deleting : 0
+Deleting : 100
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+12: D:\Videos Database\Carpark Data\20161018\c2\20161018_093600.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_093600.mp4
+prediction: 1
+Enter : 1
+prediction: 1
+vehicle 101 : non tracking zone 1
+Exit : 4
+Deleting : 101
+Deleting : 0
+prediction: 1
+Enter : 2
+Exit : 3
+Deleting : 102
+C: highMatchCounter : 8, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 358
+E: highMatchCounter : 0, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 143.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+prediction: 1
+vehicle 103 : non tracking zone 1
+Exit : 4
+Deleting : 103
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+13: D:\Videos Database\Carpark Data\20161018\c2\20161018_094200.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_094200.mp4
+Deleting : 0
+prediction: 1
+Enter : 2
+Exit : 3
+Deleting : 104
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+14: D:\Videos Database\Carpark Data\20161018\c2\20161018_094800.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_094800.mp4
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+Deleting : 0
+Add to Miss Match State: 105
+Deleting : 105
+A: highMatchCounter : 183, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 822
+D: highMatchCounter : 78, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 131
+E: highMatchCounter : 0, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 143.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+vehicle 8 : leaving non tracking zone 1
+prediction: 1
+Enter : 1
+Exit : 2
+Exit : 4
+Deleting : 106
+Deleting : 8
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 107
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 2
+Exit : 3
+Deleting : 108
+prediction: 1
+Enter : 2
+Exit : 3
+Deleting : 109
+Deleting : 0
+C: highMatchCounter : 677, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 396
+matching parked car : Lot C
+D: highMatchCounter : 453, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 228
+matching parked car : Lot D
+E: highMatchCounter : 0, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 143.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+B: highMatchCounter : 616, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 471.5
+matching parked car : Lot B
+D: highMatchCounter : 454, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 228
+matching parked car : Lot D
+E: highMatchCounter : 319, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 159.5
+matching parked car : Lot E
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+15: D:\Videos Database\Carpark Data\20161018\c2\20161018_095400.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_095400.mp4
+Deleting : 0
+prediction: 1
+Enter : 1
+Deleting : 0
+prediction: 0
+prediction: 1
+vehicle 110 : non tracking zone 1
+Exit : 4
+Deleting : 110
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+prediction: 1
+Park - Vehicle 93Lot E2
+Exit : 4
+Deleting : 111
+D: highMatchCounter : 287, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 228
+matching parked car : Lot D
+Deleting : 0
+Deleting : 0
+Deleting : 93
+Deleting : 0
+Deleting : 0
+Deleting : 0
+E: highMatchCounter : 287, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 143.5
+matching parked car : Lot E
+prediction: 0
+prediction: 0
+prediction: 1
+Leaving car park - Vehicle 43Lot E1
+prediction: 0
+Add to Miss Match State: 43
+Deleting : 43
+prediction: 1
+Enter : 1
+end of video
+EOF: Processing next video
+clear blob memory 
+16: D:\Videos Database\Carpark Data\20161018\c2\20161018_100000.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_100000.mp4
+Deleting : 0
+Deleting : 0
+prediction: 1
+Park - Vehicle 112DANGER ZONE!
+prediction: 1
+Leaving car park - Vehicle 112DANGER ZONE-1
+prediction: 1
+vehicle 112 : non tracking zone 1
+Deleting : 112
+Deleting : 0
+prediction: 0
+prediction: 1
+vehicle 65 : leaving non tracking zone 1
+prediction: 1
+vehicle 65 : non tracking zone 1
+Deleting : 65
+prediction: 1
+vehicle 7 : leaving non tracking zone 1
+prediction: 0
+Add to Miss Match State: 7
+Deleting : 7
+prediction: 1
+Enter : 1
+prediction: 1
+vehicle 113 : non tracking zone 1
+Exit : 4
+Deleting : 113
+prediction: 1
+Enter : 1
+prediction: 1
+vehicle 114 : non tracking zone 1
+Deleting : 114
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+17: D:\Videos Database\Carpark Data\20161018\c2\20161018_100600.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_100600.mp4
+Deleting : 0
+prediction: 1
+Enter : 1
+Deleting : 0
+prediction: 1
+vehicle 115 : non tracking zone 1
+Exit : 4
+Deleting : 115
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+18: D:\Videos Database\Carpark Data\20161018\c2\20161018_101200.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_101200.mp4
+A: highMatchCounter : 476, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 876
+B: highMatchCounter : 587, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 459
+matching parked car : Lot B
+C: highMatchCounter : 0, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 396
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+prediction: 1
+vehicle 116 : non tracking zone 1
+Deleting : 116
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 5
+Exit : 6
+Deleting : 117
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Park - Vehicle 90Lot D5
+Deleting : 90
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+Exit : 4
+Deleting : 118
+Deleting : 0
+prediction: 1
+Enter : 1
+prediction: 1
+vehicle 119 : non tracking zone 1
+Exit : 4
+Deleting : 119
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+19: D:\Videos Database\Carpark Data\20161018\c2\20161018_101800.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_101800.mp4
+Deleting : 0
+Deleting : 0
+Deleting : 0
+E: highMatchCounter : 312, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 159.5
+matching parked car : Lot E
+E: highMatchCounter : 254, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 159.5
+matching parked car : Lot E
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+prediction: 1
+vehicle 120 : non tracking zone 1
+Exit : 4
+Deleting : 120
+Deleting : 0
+prediction: 1
+Enter : 1
+Exit : 4
+Deleting : 121
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+20: D:\Videos Database\Carpark Data\20161018\c2\20161018_102400.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_102400.mp4
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 122
+Deleting : 0
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 123
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+21: D:\Videos Database\Carpark Data\20161018\c2\20161018_103000.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_103000.mp4
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 6
+prediction: 1
+vehicle 124 : non tracking zone 2
+prediction: 0
+124
+Enter : 3
+Deleting : 124
+Exit : 2
+Deleting : 125
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Park - Vehicle 25Lot C1
+D: highMatchCounter : 185, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 222.5
+Deleting : 25
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+22: D:\Videos Database\Carpark Data\20161018\c2\20161018_103600.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_103600.mp4
+D: highMatchCounter : 306, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 222.5
+matching parked car : Lot D
+Deleting : 0
+D: highMatchCounter : 345, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 222.5
+matching parked car : Lot D
+prediction: 1
+Leaving car park - Vehicle 126Lot D2
+Add to Miss Match State: 126
+Deleting : 126
+Deleting : 0
+prediction: 1
+vehicle 77 : leaving non tracking zone 1
+Exit : 1
+Deleting : 77
+Deleting : 0
+prediction: 1
+Enter : 1
+prediction: 1
+vehicle 127 : non tracking zone 1
+Exit : 4
+Deleting : 127
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+23: D:\Videos Database\Carpark Data\20161018\c2\20161018_104200.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_104200.mp4
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+Exit : 4
+Deleting : 128
+Deleting : 0
+Deleting : 0
+C: highMatchCounter : 312, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 356.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+C: highMatchCounter : 444, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 312.5
+matching parked car : Lot C
+Deleting : 0
+Deleting : 0
+end of video
+EOF: Processing next video
+clear blob memory 
+24: D:\Videos Database\Carpark Data\20161018\c2\20161018_104800.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_104800.mp4
+Deleting : 0
+prediction: 1
+Enter : 1
+Exit : 4
+Deleting : 129
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 2
+Exit : 3
+Deleting : 130
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+25: D:\Videos Database\Carpark Data\20161018\c2\20161018_105400.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_105400.mp4
+Exit : 4
+Deleting : 131
+Deleting : 0
+prediction: 1
+Enter : 2
+Exit : 3
+Deleting : 132
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 133
+Deleting : 0
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+26: D:\Videos Database\Carpark Data\20161018\c2\20161018_110000.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_110000.mp4
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+27: D:\Videos Database\Carpark Data\20161018\c2\20161018_110600.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_110600.mp4
+Enter : 3
+prediction: 1
+Park - Vehicle 134Lot E4
+Deleting : 134
+prediction: 1
+Enter : 1
+prediction: 1
+vehicle 135 : non tracking zone 1
+Exit : 4
+Deleting : 135
+Deleting : 0
+Deleting : 0
+B: highMatchCounter : 648, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 469.5
+matching parked car : Lot B
+B: highMatchCounter : 136, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 422.5
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 419, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 778.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Leaving car park - Vehicle 0DANGER ZONE-1
+Exit : 2
+Deleting : 136
+Deleting : 0
+Deleting : 0
+end of video
+EOF: Processing next video
+clear blob memory 
+28: D:\Videos Database\Carpark Data\20161018\c2\20161018_111200.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_111200.mp4
+Deleting : 0
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 137
+Deleting : 0
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 138
+Deleting : 0
+A: highMatchCounter : 211, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 874
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 139
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+vehicle 124 : leaving non tracking zone 2
+Enter : 3
+Exit : 2
+Deleting : 140
+Add to Miss Match State: 124
+Deleting : 124
+Deleting : 0
+Enter : 3
+Enter : 3
+Exit : 2
+Deleting : 141
+Exit : 2
+Deleting : 142
+prediction: 0
+prediction: 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+Deleting : 0
+Exit : 4
+Deleting : 143
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 144
+Deleting : 0
+Add to Miss Match State: 25
+Deleting : 25
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 946, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 811.5
+matching parked car : Lot A
+B: highMatchCounter : 490, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 459
+matching parked car : Lot B
+B: highMatchCounter : 244, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 459
+Deleting : 0
+A: highMatchCounter : 1468, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 811.5
+matching parked car : Lot A
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+Deleting : 0
+Deleting : 0
+B: highMatchCounter : 251, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 455
+Enter : 3
+Enter : 3
+Exit : 4
+Deleting : 145
+Deleting : 0
+Exit : 2
+E: highMatchCounter : 339, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 170
+matching parked car : Lot E
+Deleting : 0
+Deleting : 146
+Deleting : 0
+prediction: 1
+Leaving car park - Vehicle 134Lot E4
+Exit : 2
+Deleting : 134
+Deleting : 0
+B: highMatchCounter : 539, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 471.5
+matching parked car : Lot B
+A: highMatchCounter : 1536, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 876
+matching parked car : Lot A
+prediction: 0
+prediction: 1
+Leaving car park - Vehicle 147Lot B3
+A: highMatchCounter : 1415, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 876
+matching parked car : Lot A
+Deleting : 0
+prediction: 1
+Leaving car park - Vehicle 148Lot A3
+Deleting : 0
+Add to Miss Match State: 148
+Deleting : 148
+Exit : 2
+Deleting : 147
+prediction: 0
+prediction: 0
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 149
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 150
+Deleting : 0
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+29: D:\Videos Database\Carpark Data\20161018\c2\20161018_111800.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_111800.mp4
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 151
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 1
+Enter : 5
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Park - Vehicle 152DANGER ZONE!
+prediction: 0
+Add to Miss Match State: 148
+Deleting : 148
+prediction: 1
+Leaving car park - Vehicle 152DANGER ZONE-1
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Enter : 3
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Exit : 2
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 153
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Add to Miss Match State: 152
+Deleting : 152
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 0
+Deleting : 154
+Deleting : 0
+Deleting : 0
+Enter : 3
+Enter : 3
+Exit : 4
+Deleting : 155
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+vehicle 156 : leaving non tracking zone 2
+Exit : 6
+Deleting : 156
+Enter : 3
+Exit : 2
+Deleting : 157
+Deleting : 0
+Deleting : 0
+prediction: 1
+vehicle 79 : leaving non tracking zone 1
+Add to Miss Match State: 79
+Deleting : 79
+Deleting : 0
+D: highMatchCounter : 376, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 218
+matching parked car : Lot D
+prediction: 1
+Leaving car park - Vehicle 42Lot D3
+Exit : 1
+Deleting : 42
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 158
+Deleting : 0
+Deleting : 0
+B: highMatchCounter : 792, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 540.5
+matching parked car : Lot B
+prediction: 1
+Leaving car park - Vehicle 159Lot B1
+end of video
+EOF: Processing next video
+clear blob memory 
+30: D:\Videos Database\Carpark Data\20161018\c2\20161018_112400.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_112400.mp4
+Exit : 3
+Deleting : 159
+Deleting : 0
+prediction: 0
+prediction: 1
+Enter : 2
+Exit : 3
+Deleting : 160
+Enter : 3
+Exit : 2
+Deleting : 161
+Deleting : 0
+prediction: 1
+Enter : 1
+Exit : 4
+Deleting : 162
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 163
+Deleting : 0
+Deleting : 0
+Enter : 3
+prediction: 1
+Park - Vehicle 164DANGER ZONE!
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 164
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Park - Vehicle 148Lot A3
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Leaving car park - Vehicle 148Lot A3
+Exit : 6
+Deleting : 148
+Enter : 3
+Exit : 2
+Deleting : 165
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Leaving car park - Vehicle 0DANGER ZONE-1
+Add to Miss Match State: 166
+Deleting : 166
+end of video
+EOF: Processing next video
+clear blob memory 
+31: D:\Videos Database\Carpark Data\20161018\c2\20161018_113000.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_113000.mp4
+prediction: 1
+Enter : 1
+prediction: 1
+vehicle 167 : non tracking zone 1
+Exit : 4
+Deleting : 167
+Deleting : 0
+prediction: 1
+Enter : 2
+Exit : 3
+Deleting : 168
+Deleting : 0
+B: highMatchCounter : 587, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 435.5
+matching parked car : Lot B
+Deleting : 0
+Deleting : 0
+B: highMatchCounter : 681, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 435.5
+matching parked car : Lot B
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Leaving car park - Vehicle 74Lot B9
+Deleting : 0
+(Matching) start: merge!
+merged!
+merge jor 87 + 74
+prediction: 0
+(Matching) start: split!
+diff 1 : 25.7938 diff 2 : 41.8041
+diff 3 : 42.8704 diff 4 : 16.1673
+split jorrrrrrrrrrrrrrrrrrrrrrrrrrr
+Add to Miss Match State: 87
+Deleting : 87
+prediction: 1
+Enter : 1
+Add to Miss Match State: 74
+Deleting : 74
+prediction: 1
+vehicle 169 : non tracking zone 1
+Exit : 4
+Deleting : 169
+Deleting : 0
+prediction: 1
+Enter : 1
+prediction: 0
+prediction: 1
+vehicle 170 : non tracking zone 1
+Exit : 4
+Deleting : 170
+Deleting : 0
+C: highMatchCounter : 462, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 312.5
+matching parked car : Lot C
+prediction: 1
+Leaving car park - Vehicle 57Lot C9
+Add to Miss Match State: 57
+Deleting : 57
+Deleting : 0
+Enter : 3
+Deleting : 0
+Exit : 2
+A: highMatchCounter : 289, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 876
+Deleting : 171
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+prediction: 1
+vehicle 172 : non tracking zone 1
+Deleting : 172
+C: highMatchCounter : 581, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 358
+matching parked car : Lot C
+Deleting : 0
+prediction: 1
+Leaving car park - Vehicle 34Lot C4
+Add to Miss Match State: 34
+Deleting : 34
+Deleting : 0
+Enter : 3
+end of video
+EOF: Processing next video
+clear blob memory 
+32: D:\Videos Database\Carpark Data\20161018\c2\20161018_113600.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_113600.mp4
+Exit : 2
+Deleting : 173
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 1
+Enter : 1
+Exit : 4
+Deleting : 174
+Deleting : 0
+prediction: 1
+Enter : 1
+Exit : 4
+Deleting : 175
+Deleting : 0
+prediction: 0
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 176
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Park - Vehicle 126Lot B3
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Leaving car park - Vehicle 126Lot B3
+prediction: 1
+Park - Vehicle 126Lot C4
+Deleting : 126
+C: highMatchCounter : 167, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 358
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+33: D:\Videos Database\Carpark Data\20161018\c2\20161018_114200.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_114200.mp4
+Deleting : 0
+D: highMatchCounter : 367, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 214
+matching parked car : Lot D
+prediction: 1
+Leaving car park - Vehicle 177Lot D4
+Exit : 2
+Deleting : 177
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 5
+Exit : 6
+Deleting : 178
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+34: D:\Videos Database\Carpark Data\20161018\c2\20161018_114800.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_114800.mp4
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 179
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+prediction: 1
+vehicle 180 : non tracking zone 1
+Deleting : 180
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+Exit : 4
+Deleting : 181
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 5
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Add to Miss Match State: 182
+Deleting : 182
+prediction: 1
+Enter : 1
+end of video
+EOF: Processing next video
+clear blob memory 
+35: D:\Videos Database\Carpark Data\20161018\c2\20161018_115400.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_115400.mp4
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Add to Miss Match State: 183
+Deleting : 183
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 1
+Enter : 4
+Add to Miss Match State: 184
+Deleting : 184
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Leaving car park - Vehicle 0DANGER ZONE-1
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Exit : 2
+Deleting : 185
+Deleting : 0
+Enter : 3
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+vehicle 186 : non tracking zone 1
+Deleting : 186
+Deleting : 0
+Add to Miss Match State: 25
+Deleting : 25
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+36: D:\Videos Database\Carpark Data\20161018\c2\20161018_120000.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_120000.mp4
+prediction: 0
+prediction: 1
+Enter : 6
+Exit : 5
+Deleting : 187
+A: highMatchCounter : 907, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 741
+matching parked car : Lot A
+A: highMatchCounter : 1382, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 741
+matching parked car : Lot A
+prediction: 1
+Leaving car park - Vehicle 12Lot A7
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Add to Miss Match State: 12
+Deleting : 12
+Deleting : 0
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+37: D:\Videos Database\Carpark Data\20161018\c2\20161018_120600.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_120600.mp4
+Deleting : 0
+A: highMatchCounter : 338, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 778.5
+Deleting : 0
+Add to Miss Match State: 25
+Deleting : 25
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 493, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 778.5
+Deleting : 0
+D: highMatchCounter : 396, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 228.5
+matching parked car : Lot D
+A: highMatchCounter : 410, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 778.5
+prediction: 1
+Leaving car park - Vehicle 38Lot D1
+Deleting : 0
+Exit : 6
+Deleting : 12
+Enter : 3
+Deleting : 0
+Deleting : 0
+Exit : 2
+prediction: 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Enter : 3
+Deleting : 188
+Enter : 3
+Deleting : 0
+Exit : 1
+Deleting : 0
+Deleting : 38
+Add to Miss Match State: 191
+Deleting : 191
+Deleting : 0
+prediction: 1
+vehicle 189 : non tracking zone 2
+189
+prediction: 1
+Enter : 1
+Deleting : 189
+Deleting : 0
+prediction: 1
+vehicle 192 : non tracking zone 1
+Exit : 4
+Deleting : 192
+Add to Miss Match State: 190
+Deleting : 190
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+Deleting : 0
+Add to Miss Match State: 183
+Deleting : 183
+C: highMatchCounter : 576, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 396
+matching parked car : Lot C
+Enter : 3
+Enter : 3
+Exit : 2
+prediction: 1
+Leaving car park - Vehicle 25Lot C1
+Deleting : 0
+Deleting : 193
+Add to Miss Match State: 57
+Deleting : 57
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+prediction: 0
+prediction: 1
+Enter : 4
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Park - Vehicle 25DANGER ZONE!
+Deleting : 0
+Deleting : 25
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+prediction: 0
+prediction: 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Enter : 3
+Deleting : 0
+prediction: 1
+Park - Vehicle 190Lot A4
+Exit : 2
+Deleting : 195
+Deleting : 190
+Exit : 6
+Exit : 3
+Deleting : 124
+Deleting : 0
+prediction: 1
+vehicle 101 : leaving non tracking zone 1
+Enter : 3
+Deleting : 194
+Exit : 1
+Deleting : 0
+Exit : 2
+Deleting : 196
+Deleting : 101
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 1
+vehicle 34 : non tracking zone 1
+Deleting : 34
+Exit : 2
+Deleting : 57
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 5
+Deleting : 0
+Add to Miss Match State: 197
+Deleting : 197
+A: highMatchCounter : 233, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 876
+Deleting : 0
+A: highMatchCounter : 1147, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 845.5
+matching parked car : Lot A
+prediction: 1
+Enter : 1
+prediction: 0
+prediction: 1
+Leaving car park - Vehicle 199Lot A2
+Deleting : 0
+Add to Miss Match State: 199
+Deleting : 199
+prediction: 1
+vehicle 198 : non tracking zone 1
+Exit : 4
+Deleting : 198
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+38: D:\Videos Database\Carpark Data\20161018\c2\20161018_121200.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_121200.mp4
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 6
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+vehicle 103 : leaving non tracking zone 1
+Exit : 5
+Deleting : 200
+prediction: 0
+prediction: 0
+Exit : 4
+Deleting : 103
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+vehicle 110 : leaving non tracking zone 1
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+(Matching) start: split!
+diff 1 : 5.27673 diff 2 : 0
+diff 3 : 5.18962 diff 4 : 0
+split jorrrrrrrrrrrrrrrrrrrrrrrrrrr
+A: highMatchCounter : 116, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 758
+prediction: 0
+prediction: 0
+Exit : 1
+prediction: 0
+(Matching) start: split!
+diff 1 : 16.6571 diff 2 : 0
+diff 3 : 13.5558 diff 4 : 0
+split jorrrrrrrrrrrrrrrrrrrrrrrrrrr
+prediction: 0
+(Matching) start: split!
+diff 1 : 18.0559 diff 2 : 0
+diff 3 : 13.8885 diff 4 : 0
+split jorrrrrrrrrrrrrrrrrrrrrrrrrrr
+prediction: 0
+prediction: 0
+prediction: 0
+(Matching) start: split!
+diff 1 : 21.6647 diff 2 : 0
+diff 3 : 13.4211 diff 4 : 0
+split jorrrrrrrrrrrrrrrrrrrrrrrrrrr
+prediction: 0
+(Matching) start: split!
+diff 1 : 18.9788 diff 2 : 0
+diff 3 : 13.5935 diff 4 : 0
+split jorrrrrrrrrrrrrrrrrrrrrrrrrrr
+prediction: 0
+prediction: 1
+Enter : 5
+Deleting : 110
+Add to Miss Match State: 25
+Deleting : 25
+prediction: 1
+vehicle 112 : leaving non tracking zone 1
+prediction: 1
+Park - Vehicle 197Lot B6
+Deleting : 197
+Exit : 5
+Deleting : 201
+Add to Miss Match State: 112
+Deleting : 112
+Exit : 5
+Deleting : 74
+Deleting : 0
+B: highMatchCounter : 528, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 510
+matching parked car : Lot B
+Deleting : 0
+Exit : 2
+Deleting : 87
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+vehicle 65 : leaving non tracking zone 1
+prediction: 1
+vehicle 113 : leaving non tracking zone 1
+C: highMatchCounter : 660, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 334
+matching parked car : Lot C
+Exit : 4
+prediction: 1
+Leaving car park - Vehicle 63Lot C8
+Deleting : 113
+Deleting : 0
+Deleting : 0
+Exit : 6
+Deleting : 63
+Deleting : 0
+Enter : 3
+Exit : 1
+Exit : 2
+Deleting : 202
+Deleting : 65
+Deleting : 0
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 203
+Deleting : 0
+prediction: 1
+Enter : 1
+Deleting : 0
+Deleting : 0
+prediction: 1
+vehicle 204 : non tracking zone 1
+Deleting : 204
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 4
+A: highMatchCounter : 522, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 758
+A: highMatchCounter : 544, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 758
+Deleting : 0
+Enter : 3
+Deleting : 0
+Exit : 2
+Exit : 6
+Deleting : 205
+Deleting : 206
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 5
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 208
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 209
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Add to Miss Match State: 207
+Deleting : 207
+C: highMatchCounter : 491, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 344
+matching parked car : Lot C
+prediction: 1
+Park - Vehicle 207Lot C2
+Deleting : 0
+Deleting : 207
+C: highMatchCounter : 92, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 344
+Deleting : 0
+Enter : 3
+Deleting : 0
+Deleting : 0
+Exit : 2
+Deleting : 210
+Deleting : 0
+Deleting : 0
+C: highMatchCounter : 662, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 356.5
+matching parked car : Lot C
+prediction: 1
+Leaving car park - Vehicle 207Lot C2
+Deleting : 0
+Add to Miss Match State: 207
+Deleting : 207
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+39: D:\Videos Database\Carpark Data\20161018\c2\20161018_121800.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_121800.mp4
+Deleting : 0
+C: highMatchCounter : 568, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 344
+matching parked car : Lot C
+C: highMatchCounter : 644, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 344
+matching parked car : Lot C
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 4
+Exit : 1
+Deleting : 211
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 212
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+Deleting : 0
+prediction: 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 1
+Park - Vehicle 79Lot B3
+prediction: 0
+prediction: 0
+prediction: 1
+Leaving car park - Vehicle 79Lot B3
+Add to Miss Match State: 79
+Deleting : 79
+prediction: 0
+prediction: 1
+vehicle 114 : leaving non tracking zone 1
+Exit : 2
+Deleting : 79
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Exit : 4
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+40: D:\Videos Database\Carpark Data\20161018\c2\20161018_122400.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_122400.mp4
+Deleting : 114
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 1
+Deleting : 0
+Exit : 4
+Deleting : 213
+prediction: 1
+Enter : 1
+Exit : 4
+Deleting : 214
+end of video
+EOF: Processing next video
+clear blob memory 
+41: D:\Videos Database\Carpark Data\20161018\c2\20161018_123000.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_123000.mp4
+Deleting : 0
+prediction: 0
+prediction: 1
+Enter : 2
+Exit : 3
+Deleting : 215
+prediction: 1
+vehicle 115 : leaving non tracking zone 1
+Exit : 1
+Deleting : 115
+Deleting : 0
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+42: D:\Videos Database\Carpark Data\20161018\c2\20161018_123600.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_123600.mp4
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 4
+Exit : 1
+Deleting : 216
+Enter : 3
+Enter : 3
+Exit : 2
+Deleting : 217
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+43: D:\Videos Database\Carpark Data\20161018\c2\20161018_124200.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_124200.mp4
+Enter : 3
+Exit : 2
+Deleting : 218
+prediction: 1
+Enter : 1
+Exit : 4
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 5
+Deleting : 0
+A: highMatchCounter : 533, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 874
+Deleting : 0
+prediction: 0
+prediction: 1
+vehicle 219 : non tracking zone 2
+219
+Deleting : 219
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+prediction: 0
+Deleting : 0
+prediction: 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 1
+vehicle 189 : leaving non tracking zone 2
+B: highMatchCounter : 187, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 455
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Add to Miss Match State: 189
+Deleting : 189
+Enter : 3
+Exit : 2
+prediction: 1
+Enter : 1
+Deleting : 220
+Deleting : 0
+Exit : 4
+Deleting : 221
+Deleting : 0
+A: highMatchCounter : 1557, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 778.5
+matching parked car : Lot A
+Deleting : 0
+B: highMatchCounter : 342, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 422.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Add to Miss Match State: 29
+Deleting : 29
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+44: D:\Videos Database\Carpark Data\20161018\c2\20161018_124800.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_124800.mp4
+prediction: 1
+Enter : 1
+Exit : 4
+Deleting : 222
+E: highMatchCounter : 45, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 142.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+Add to Miss Match State: 223
+Deleting : 223
+Deleting : 0
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 224
+B: highMatchCounter : 742, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 483.5
+matching parked car : Lot B
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+45: D:\Videos Database\Carpark Data\20161018\c2\20161018_125400.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_125400.mp4
+Deleting : 0
+Exit : 5
+Deleting : 223
+Enter : 3
+Exit : 2
+prediction: 1
+Enter : 1
+Deleting : 225
+Deleting : 0
+Deleting : 0
+prediction: 1
+vehicle 226 : non tracking zone 1
+Deleting : 226
+prediction: 1
+vehicle 116 : leaving non tracking zone 1
+prediction: 1
+vehicle 116 : non tracking zone 1
+Deleting : 116
+Deleting : 0
+prediction: 1
+vehicle 119 : leaving non tracking zone 1
+prediction: 1
+vehicle 119 : non tracking zone 1
+Deleting : 119
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 4
+Add to Miss Match State: 227
+Deleting : 227
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+46: D:\Videos Database\Carpark Data\20161018\c2\20161018_130000.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_130000.mp4
+prediction: 1
+Enter : 1
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Add to Miss Match State: 228
+Deleting : 228
+Deleting : 0
+B: highMatchCounter : 451, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 540.5
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+Exit : 4
+Deleting : 229
+Enter : 3
+Enter : 3
+Exit : 2
+(Matching) start: merge!
+merged!
+merge jor 231 + 230
+Exit : 2
+Deleting : 0
+Deleting : 231
+Deleting : 230
+B: highMatchCounter : 338, highMatch : 9zoneAlot[highMatch].countNZero * 0.6 : 517
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+C: highMatchCounter : 725, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 362.5
+matching parked car : Lot C
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+Deleting : 0
+prediction: 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+Enter : 3
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Add to Miss Match State: 232
+Deleting : 232
+Deleting : 0
+Enter : 3
+Enter : 3
+Exit : 2
+Deleting : 0
+Deleting : 233
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+E: highMatchCounter : 254, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 142.5
+matching parked car : Lot E
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 920, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 778.5
+matching parked car : Lot A
+Deleting : 0
+Deleting : 0
+Deleting : 0
+end of video
+EOF: Processing next video
+clear blob memory 
+47: D:\Videos Database\Carpark Data\20161018\c2\20161018_130600.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_130600.mp4
+E: highMatchCounter : 287, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 143.5
+matching parked car : Lot E
+E: highMatchCounter : 278, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 143.5
+matching parked car : Lot E
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+A: highMatchCounter : 191, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 758
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Enter : 3
+Enter : 3
+Exit : 2
+Deleting : 0
+Deleting : 235
+Deleting : 0
+Exit : 4
+Deleting : 0
+Deleting : 234
+Deleting : 0
+Enter : 3
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Add to Miss Match State: 227
+Deleting : 227
+A: highMatchCounter : 343, highMatch : 10zoneAlot[highMatch].countNZero * 0.6 : 640
+Deleting : 0
+Add to Miss Match State: 236
+Deleting : 236
+Deleting : 0
+A: highMatchCounter : 423, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 741
+A: highMatchCounter : 227, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 874
+A: highMatchCounter : 700, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 811.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+E: highMatchCounter : 340, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 170
+matching parked car : Lot E
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 653, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 845.5
+Deleting : 0
+Deleting : 0
+C: highMatchCounter : 631, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 321.5
+matching parked car : Lot C
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+E: highMatchCounter : 340, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 170
+matching parked car : Lot E
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Exit : 4
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 237
+Deleting : 0
+prediction: 0
+Deleting : 0
+A: highMatchCounter : 560, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 741
+A: highMatchCounter : 145, highMatch : 9zoneAlot[highMatch].countNZero * 0.6 : 728.5
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Exit : 6
+prediction: 0
+prediction: 0
+A: highMatchCounter : 455, highMatch : 9zoneAlot[highMatch].countNZero * 0.6 : 728.5
+prediction: 0
+prediction: 0
+Deleting : 236
+Deleting : 0
+Enter : 3
+Deleting : 0
+Exit : 2
+Deleting : 238
+Exit : 1
+Deleting : 227
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+E: highMatchCounter : 0, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 143.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Enter : 3
+Deleting : 0
+Add to Miss Match State: 239
+Deleting : 239
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+48: D:\Videos Database\Carpark Data\20161018\c2\20161018_131200.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_131200.mp4
+Enter : 3
+Add to Miss Match State: 240
+Deleting : 240
+prediction: 1
+Enter : 1
+prediction: 1
+vehicle 241 : non tracking zone 1
+Deleting : 241
+A: highMatchCounter : 1069, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 874
+matching parked car : Lot A
+A: highMatchCounter : 525, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 758
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+vehicle 120 : leaving non tracking zone 1
+Deleting : 0
+Deleting : 0
+Add to Miss Match State: 120
+Deleting : 120
+A: highMatchCounter : 627, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 845.5
+A: highMatchCounter : 1223, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 874
+matching parked car : Lot A
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+A: highMatchCounter : 542, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 758
+Deleting : 0
+A: highMatchCounter : 221, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 778.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+E: highMatchCounter : 123, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 143.5
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 542, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 741
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+Deleting : 0
+Enter : 3
+prediction: 1
+Park - Vehicle 189Lot A11
+Deleting : 189
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+E: highMatchCounter : 201, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 159.5
+matching parked car : Lot E
+C: highMatchCounter : 47, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 356.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Add to Miss Match State: 242
+Deleting : 242
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+A: highMatchCounter : 811, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 778.5
+matching parked car : Lot A
+B: highMatchCounter : 129, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 422.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Enter : 3
+Deleting : 0
+Deleting : 0
+Exit : 2
+Deleting : 243
+Deleting : 0
+Deleting : 0
+Deleting : 0
+E: highMatchCounter : 208, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 170
+matching parked car : Lot E
+Deleting : 0
+prediction: 0
+prediction: 1
+Leaving car park - Vehicle 244Lot E4
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Add to Miss Match State: 244
+Deleting : 244
+A: highMatchCounter : 1126, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 876
+matching parked car : Lot A
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+vehicle 127 : leaving non tracking zone 1
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Add to Miss Match State: 127
+Deleting : 127
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 792, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 876
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+49: D:\Videos Database\Carpark Data\20161018\c2\20161018_131800.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_131800.mp4
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 245
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 2
+E: highMatchCounter : 246, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 142.5
+matching parked car : Lot E
+Deleting : 0
+Exit : 4
+Deleting : 246
+Enter : 3
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 1
+Enter : 5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Exit : 2
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 570, highMatch : 9zoneAlot[highMatch].countNZero * 0.6 : 728.5
+Deleting : 247
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+vehicle 248 : non tracking zone 1
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 248
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+50: D:\Videos Database\Carpark Data\20161018\c2\20161018_132400.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_132400.mp4
+Deleting : 0
+Deleting : 0
+C: highMatchCounter : 689, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 356.5
+matching parked car : Lot C
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+vehicle 135 : leaving non tracking zone 1
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+A: highMatchCounter : 1143, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 778.5
+matching parked car : Lot A
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 943, highMatch : 10zoneAlot[highMatch].countNZero * 0.6 : 640
+matching parked car : Lot A
+C: highMatchCounter : 70, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 312.5
+prediction: 1
+Leaving car park - Vehicle 19Lot A8
+prediction: 1
+vehicle 135 : non tracking zone 1
+Deleting : 0
+Deleting : 135
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+Deleting : 0
+prediction: 1
+vehicle 19 : non tracking zone 1
+prediction: 1
+vehicle 167 : leaving non tracking zone 1
+prediction: 1
+vehicle 167 : non tracking zone 1
+Deleting : 19
+Deleting : 0
+Deleting : 167
+prediction: 1
+Enter : 1
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Exit : 4
+Deleting : 249
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+51: D:\Videos Database\Carpark Data\20161018\c2\20161018_133000.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_133000.mp4
+prediction: 1
+Enter : 1
+Exit : 4
+Deleting : 250
+Deleting : 0
+prediction: 1
+Enter : 1
+prediction: 0
+prediction: 1
+vehicle 251 : non tracking zone 1
+Deleting : 0
+Deleting : 251
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 252
+Deleting : 0
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 253
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Enter : 3
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Exit : 2
+Deleting : 254
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+E: highMatchCounter : 319, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 159.5
+matching parked car : Lot E
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 1420, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 877.5
+matching parked car : Lot A
+E: highMatchCounter : 340, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 170
+matching parked car : Lot E
+E: highMatchCounter : 259, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 142.5
+matching parked car : Lot E
+prediction: 1
+Leaving car park - Vehicle 255Lot A1
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Add to Miss Match State: 255
+Deleting : 255
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+vehicle 169 : leaving non tracking zone 1
+Add to Miss Match State: 169
+Deleting : 169
+Deleting : 0
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+52: D:\Videos Database\Carpark Data\20161018\c2\20161018_133600.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_133600.mp4
+prediction: 1
+vehicle 170 : leaving non tracking zone 1
+Exit : 1
+Deleting : 170
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+E: highMatchCounter : 187, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 142.5
+matching parked car : Lot E
+Deleting : 0
+Deleting : 0
+B: highMatchCounter : 602, highMatch : 9zoneAlot[highMatch].countNZero * 0.6 : 517
+matching parked car : Lot B
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Leaving car park - Vehicle 97Lot B10
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Add to Miss Match State: 97
+Deleting : 97
+prediction: 1
+Enter : 1
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Exit : 4
+Deleting : 256
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 1592, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 822
+matching parked car : Lot A
+A: highMatchCounter : 257, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 778.5
+Deleting : 0
+A: highMatchCounter : 287, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 876
+A: highMatchCounter : 768, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 811.5
+A: highMatchCounter : 137, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 758
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 1131, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 811.5
+matching parked car : Lot A
+C: highMatchCounter : 236, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 334
+C: highMatchCounter : 625, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 312.5
+matching parked car : Lot C
+B: highMatchCounter : 315, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 459
+A: highMatchCounter : 197, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 822
+C: highMatchCounter : 529, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 367
+matching parked car : Lot C
+Deleting : 0
+Deleting : 0
+D: highMatchCounter : 445, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 222.5
+matching parked car : Lot D
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Park - Vehicle 228Lot C1
+Deleting : 228
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+C: highMatchCounter : 441, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 334
+matching parked car : Lot C
+C: highMatchCounter : 169, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 344
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Enter : 3
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Add to Miss Match State: 169
+Add to Miss Match State: 257
+Deleting : 169
+Add to Miss Match State: 257
+Deleting : 257
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+Exit : 4
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 5
+prediction: 0
+Add to Miss Match State: 258
+Deleting : 258
+Deleting : 0
+C: highMatchCounter : 317, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 362.5
+Deleting : 0
+D: highMatchCounter : 388, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 228
+matching parked car : Lot D
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 1
+Enter : 2
+Exit : 3
+Deleting : 259
+D: highMatchCounter : 437, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 228
+matching parked car : Lot D
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+53: D:\Videos Database\Carpark Data\20161018\c2\20161018_134200.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_134200.mp4
+prediction: 1
+Leaving car park - Vehicle 90Lot D5
+Exit : 2
+Deleting : 90
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Enter : 3
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+Deleting : 0
+Deleting : 0
+E: highMatchCounter : 340, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 170
+matching parked car : Lot E
+E: highMatchCounter : 319, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 159.5
+matching parked car : Lot E
+prediction: 1
+Leaving car park - Vehicle 261Lot E4
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Exit : 2
+Deleting : 0
+Deleting : 260
+Deleting : 0
+Deleting : 0
+prediction: 1
+vehicle 261 : non tracking zone 2
+261
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 261
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+prediction: 1
+Enter : 1
+prediction: 1
+vehicle 263 : non tracking zone 1
+Exit : 4
+Deleting : 263
+Add to Miss Match State: 262
+Deleting : 262
+Deleting : 0
+B: highMatchCounter : 395, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 510
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+Add to Miss Match State: 199
+Deleting : 199
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+E: highMatchCounter : 19, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 170
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Add to Miss Match State: 239
+Deleting : 239
+B: highMatchCounter : 787, highMatch : 9zoneAlot[highMatch].countNZero * 0.6 : 517
+matching parked car : Lot B
+E: highMatchCounter : 0, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 143.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+E: highMatchCounter : 199, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 142.5
+matching parked car : Lot E
+E: highMatchCounter : 16, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 142.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+B: highMatchCounter : 730, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 469.5
+matching parked car : Lot B
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 2
+Exit : 3
+Deleting : 264
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+prediction: 0
+prediction: 1
+Enter : 2
+Exit : 3
+Deleting : 265
+prediction: 0
+prediction: 1
+Enter : 6
+Deleting : 0
+Add to Miss Match State: 59
+Deleting : 59
+Add to Miss Match State: 266
+Deleting : 266
+prediction: 0
+end of video
+EOF: Processing next video
+clear blob memory 
+54: D:\Videos Database\Carpark Data\20161018\c2\20161018_134800.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_134800.mp4
+prediction: 1
+Park - Vehicle 59Lot A2
+prediction: 1
+Leaving car park - Vehicle 59Lot A2
+C: highMatchCounter : 353, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 312.5
+matching parked car : Lot C
+Deleting : 0
+Deleting : 0
+B: highMatchCounter : 672, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 483.5
+matching parked car : Lot B
+Deleting : 0
+Deleting : 0
+Add to Miss Match State: 59
+Deleting : 59
+A: highMatchCounter : 258, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 876
+Deleting : 0
+A: highMatchCounter : 270, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 876
+(Matching) start: merge!
+merged!
+merge jor 59 + 184
+prediction: 1
+Park - Vehicle 59Lot A2
+A: highMatchCounter : 809, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 845.5
+Deleting : 0
+Deleting : 59
+A: highMatchCounter : 904, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 877.5
+matching parked car : Lot A
+Deleting : 0
+prediction: 1
+Leaving car park - Vehicle 267Lot A1
+(Matching) start: merge!
+merged!
+merge jor 267 + 184
+(Matching) start: split!
+diff 1 : 21.1177 diff 2 : 12.3139
+diff 3 : 16.8844 diff 4 : 45.3533
+this else
+split jorrrrrrrrrrrrrrrrrrrrrrrrrrr
+prediction: 1
+vehicle 184 : non tracking zone 1
+Deleting : 184
+Add to Miss Match State: 267
+Deleting : 267
+Deleting : 0
+Deleting : 0
+Deleting : 0
+D: highMatchCounter : 351, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 228.5
+matching parked car : Lot D
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+E: highMatchCounter : 144, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 156
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 1447, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 822
+matching parked car : Lot A
+A: highMatchCounter : 789, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 877.5
+B: highMatchCounter : 163, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 471.5
+A: highMatchCounter : 1196, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 876
+matching parked car : Lot A
+A: highMatchCounter : 108, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 822
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 522, highMatch : 9zoneAlot[highMatch].countNZero * 0.6 : 728.5
+Enter : 3
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 2
+prediction: 0
+prediction: 0
+Deleting : 0
+Exit : 3
+Deleting : 0
+Deleting : 268
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+C: highMatchCounter : 540, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 396
+matching parked car : Lot C
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Park - Vehicle 267Lot A1
+Deleting : 0
+Deleting : 0
+Deleting : 267
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Enter : 3
+Deleting : 0
+Exit : 2
+Deleting : 269
+Deleting : 0
+prediction: 1
+Enter : 1
+Exit : 4
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 5
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 1
+Exit : 4
+Deleting : 271
+Add to Miss Match State: 270
+Deleting : 270
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+prediction: 1
+vehicle 272 : non tracking zone 1
+Deleting : 272
+prediction: 0
+Deleting : 0
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+55: D:\Videos Database\Carpark Data\20161018\c2\20161018_135400.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_135400.mp4
+E: highMatchCounter : 233, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 142.5
+matching parked car : Lot E
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+prediction: 1
+Enter : 1
+Deleting : 0
+Exit : 4
+Deleting : 274
+Deleting : 0
+Exit : 4
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Exit : 6
+Deleting : 273
+Deleting : 0
+prediction: 1
+Enter : 1
+prediction: 1
+vehicle 275 : non tracking zone 1
+Deleting : 275
+Deleting : 0
+prediction: 0
+prediction: 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+Exit : 4
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 5
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 2
+Exit : 3
+Deleting : 277
+C: highMatchCounter : 55, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 312.5
+Enter : 3
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+56: D:\Videos Database\Carpark Data\20161018\c2\20161018_140000.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_140000.mp4
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 1623, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 811.5
+matching parked car : Lot A
+C: highMatchCounter : 215, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 356.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 276, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 877.5
+Deleting : 0
+Deleting : 0
+Add to Miss Match State: 278
+Deleting : 278
+Add to Miss Match State: 276
+Deleting : 276
+A: highMatchCounter : 457, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 845.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 303, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 877.5
+Deleting : 0
+A: highMatchCounter : 222, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 877.5
+prediction: 0
+prediction: 1
+Enter : 6
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Park - Vehicle 279Lot A3
+Deleting : 279
+A: highMatchCounter : 140, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 874
+(Matching) start: merge!
+merged!
+merge jor 276 + 270
+Exit : 5
+Exit : 5
+Deleting : 276
+Deleting : 270
+Deleting : 0
+prediction: 1
+Enter : 1
+Exit : 4
+Deleting : 280
+Deleting : 0
+Deleting : 0
+Deleting : 0
+E: highMatchCounter : 215, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 142.5
+matching parked car : Lot E
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+Deleting : 0
+Exit : 4
+Deleting : 281
+prediction: 1
+vehicle 172 : leaving non tracking zone 1
+prediction: 1
+vehicle 172 : non tracking zone 1
+Deleting : 172
+prediction: 1
+vehicle 180 : leaving non tracking zone 1
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Add to Miss Match State: 180
+Deleting : 180
+Deleting : 0
+E: highMatchCounter : 27, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 142.5
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+B: highMatchCounter : 815, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 422.5
+matching parked car : Lot B
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 104, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 758
+Deleting : 0
+B: highMatchCounter : 422, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 455
+A: highMatchCounter : 277, highMatch : 9zoneAlot[highMatch].countNZero * 0.6 : 728.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+C: highMatchCounter : 527, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 334
+matching parked car : Lot C
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 411, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 758
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 1
+Enter : 6
+prediction: 0
+prediction: 1
+vehicle 282 : non tracking zone 2
+282
+Enter : 3
+Deleting : 282
+Exit : 2
+Deleting : 283
+Deleting : 0
+Deleting : 0
+Deleting : 0
+end of video
+EOF: Processing next video
+clear blob memory 
+57: D:\Videos Database\Carpark Data\20161018\c2\20161018_140600.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_140600.mp4
+prediction: 1
+Enter : 1
+Exit : 4
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 5
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Add to Miss Match State: 284
+Deleting : 284
+prediction: 1
+Enter : 1
+prediction: 0
+prediction: 0
+prediction: 1
+vehicle 285 : non tracking zone 1
+Deleting : 285
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 1
+Enter : 2
+prediction: 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+vehicle 219 : leaving non tracking zone 2
+Deleting : 0
+Deleting : 0
+Exit : 6
+Deleting : 219
+Deleting : 0
+Enter : 3
+Exit : 2
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Leaving car park - Vehicle 0DANGER ZONE-1
+Deleting : 286
+Deleting : 0
+Add to Miss Match State: 287
+Deleting : 287
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 2
+Exit : 3
+Deleting : 288
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+58: D:\Videos Database\Carpark Data\20161018\c2\20161018_141200.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_141200.mp4
+Deleting : 0
+prediction: 1
+Enter : 2
+Exit : 3
+Deleting : 289
+Deleting : 0
+prediction: 1
+Enter : 1
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+vehicle 290 : non tracking zone 1
+Deleting : 290
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+prediction: 0
+prediction: 1
+Enter : 2
+Exit : 3
+Deleting : 292
+Exit : 4
+Deleting : 291
+Deleting : 0
+A: highMatchCounter : 488, highMatch : 9zoneAlot[highMatch].countNZero * 0.6 : 728.5
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 1
+Enter : 2
+Exit : 3
+Deleting : 293
+prediction: 1
+Enter : 2
+Exit : 3
+Deleting : 294
+Deleting : 0
+A: highMatchCounter : 910, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 877.5
+matching parked car : Lot A
+Deleting : 0
+prediction: 0
+prediction: 1
+Enter : 1
+Exit : 4
+Deleting : 295
+Enter : 3
+A: highMatchCounter : 462, highMatch : 9zoneAlot[highMatch].countNZero * 0.6 : 728.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Add to Miss Match State: 296
+Deleting : 296
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 1
+Leaving car park - Vehicle 0DANGER ZONE-1
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+59: D:\Videos Database\Carpark Data\20161018\c2\20161018_141800.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_141800.mp4
+C: highMatchCounter : 633, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 334
+matching parked car : Lot C
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Add to Miss Match State: 297
+Deleting : 297
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 485, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 758
+A: highMatchCounter : 814, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 877.5
+A: highMatchCounter : 936, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 845.5
+matching parked car : Lot A
+prediction: 0
+B: highMatchCounter : 539, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 510
+matching parked car : Lot B
+prediction: 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+C: highMatchCounter : 25, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 396
+Deleting : 0
+Deleting : 0
+Deleting : 0
+C: highMatchCounter : 667, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 334
+matching parked car : Lot C
+Deleting : 0
+Deleting : 0
+B: highMatchCounter : 427, highMatch : 9zoneAlot[highMatch].countNZero * 0.6 : 517
+E: highMatchCounter : 79, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 159.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 1644, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 822
+matching parked car : Lot A
+prediction: 1
+Enter : 4
+Deleting : 0
+Deleting : 0
+prediction: 0
+Deleting : 0
+prediction: 1
+vehicle 298 : non tracking zone 1
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 298
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+prediction: 1
+vehicle 299 : non tracking zone 1
+Deleting : 0
+Exit : 4
+Deleting : 299
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Enter : 3
+C: highMatchCounter : 388, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 334
+matching parked car : Lot C
+D: highMatchCounter : 74, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 131
+Deleting : 0
+Deleting : 0
+prediction: 1
+Park - Vehicle 300Lot C2
+Deleting : 300
+Deleting : 0
+A: highMatchCounter : 702, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 845.5
+Deleting : 0
+A: highMatchCounter : 379, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 877.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 865, highMatch : 9zoneAlot[highMatch].countNZero * 0.6 : 728.5
+matching parked car : Lot A
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+vehicle 186 : leaving non tracking zone 1
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Add to Miss Match State: 186
+Deleting : 186
+Deleting : 0
+Deleting : 0
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+60: D:\Videos Database\Carpark Data\20161018\c2\20161018_142400.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_142400.mp4
+Deleting : 0
+A: highMatchCounter : 1482, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 741
+matching parked car : Lot A
+A: highMatchCounter : 559, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 811.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+E: highMatchCounter : 13, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 170
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 314, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 877.5
+A: highMatchCounter : 443, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 876
+B: highMatchCounter : 533, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 483.5
+matching parked car : Lot B
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 2
+Exit : 3
+Deleting : 0
+Deleting : 301
+Deleting : 0
+B: highMatchCounter : 248, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 459
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 476, highMatch : 9zoneAlot[highMatch].countNZero * 0.6 : 728.5
+Enter : 3
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Add to Miss Match State: 302
+Deleting : 302
+Add to Miss Match State: 262
+Deleting : 262
+Enter : 3
+Deleting : 0
+Exit : 4
+Deleting : 303
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 4
+Add to Miss Match State: 304
+Deleting : 304
+Enter : 3
+Exit : 2
+Deleting : 305
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+C: highMatchCounter : 0, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 396
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 1
+vehicle 192 : leaving non tracking zone 1
+Exit : 4
+Deleting : 192
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 1
+Deleting : 0
+Enter : 3
+Exit : 4
+Deleting : 306
+Enter : 3
+Enter : 3
+Deleting : 0
+Exit : 2
+prediction: 0
+Deleting : 308
+prediction: 1
+vehicle 307 : non tracking zone 1
+Deleting : 307
+Deleting : 0
+Deleting : 0
+Deleting : 0
+end of video
+EOF: Processing next video
+clear blob memory 
+61: D:\Videos Database\Carpark Data\20161018\c2\20161018_143000.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_143000.mp4
+E: highMatchCounter : 246, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 170
+matching parked car : Lot E
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+D: highMatchCounter : 98, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 214
+E: highMatchCounter : 285, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 142.5
+matching parked car : Lot E
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+D: highMatchCounter : 266, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 141.5
+matching parked car : Lot D
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 309
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+vehicle 261 : leaving non tracking zone 2
+Exit : 6
+Deleting : 261
+Enter : 3
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+62: D:\Videos Database\Carpark Data\20161018\c2\20161018_143600.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_143600.mp4
+Exit : 2
+Deleting : 310
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 294, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 877.5
+A: highMatchCounter : 792, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 845.5
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+Exit : 4
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 4
+Deleting : 311
+Deleting : 0
+Deleting : 0
+Deleting : 0
+end of video
+EOF: Processing next video
+clear blob memory 
+63: D:\Videos Database\Carpark Data\20161018\c2\20161018_144200.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_144200.mp4
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 2
+Exit : 3
+Deleting : 312
+Deleting : 0
+prediction: 1
+Enter : 2
+Exit : 3
+Deleting : 313
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 314
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+Exit : 4
+Deleting : 315
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 316
+Deleting : 0
+Deleting : 0
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+64: D:\Videos Database\Carpark Data\20161018\c2\20161018_144800.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_144800.mp4
+Enter : 3
+Exit : 2
+Deleting : 317
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+Exit : 4
+Deleting : 318
+prediction: 1
+Enter : 1
+Exit : 4
+Deleting : 319
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+end of video
+EOF: Processing next video
+clear blob memory 
+65: D:\Videos Database\Carpark Data\20161018\c2\20161018_145400.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_145400.mp4
+prediction: 1
+Enter : 1
+Exit : 4
+Deleting : 320
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+A: highMatchCounter : 353, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 845.5
+Deleting : 0
+A: highMatchCounter : 91, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 877.5
+Deleting : 0
+B: highMatchCounter : 305, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 540.5
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Park - Vehicle 56Lot B1
+Deleting : 56
+B: highMatchCounter : 212, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 540.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+66: D:\Videos Database\Carpark Data\20161018\c2\20161018_150000.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_150000.mp4
+Deleting : 0
+prediction: 1
+Enter : 2
+Exit : 3
+Deleting : 321
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+B: highMatchCounter : 574, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 483.5
+matching parked car : Lot B
+B: highMatchCounter : 892, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 483.5
+matching parked car : Lot B
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+Deleting : 0
+B: highMatchCounter : 940, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 483.5
+matching parked car : Lot B
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 322
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+67: D:\Videos Database\Carpark Data\20161018\c2\20161018_150600.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_150600.mp4
+Add to Miss Match State: 266
+Deleting : 266
+C: highMatchCounter : 187, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 334
+prediction: 1
+Park - Vehicle 97Lot C8
+Deleting : 97
+C: highMatchCounter : 27, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 334
+Deleting : 0
+Deleting : 0
+D: highMatchCounter : 235, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 228
+matching parked car : Lot D
+Deleting : 0
+D: highMatchCounter : 199, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 131
+matching parked car : Lot D
+Deleting : 0
+D: highMatchCounter : 130, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 131
+Deleting : 0
+D: highMatchCounter : 231, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 131
+matching parked car : Lot D
+Deleting : 0
+D: highMatchCounter : 207, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 131
+matching parked car : Lot D
+Deleting : 0
+C: highMatchCounter : 321, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 321.5
+Deleting : 0
+C: highMatchCounter : 478, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 321.5
+matching parked car : Lot C
+Deleting : 0
+C: highMatchCounter : 64, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 334
+Deleting : 0
+C: highMatchCounter : 51, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 334
+Deleting : 0
+C: highMatchCounter : 187, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 312.5
+Add to Miss Match State: 266
+Deleting : 266
+C: highMatchCounter : 281, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 321.5
+Add to Miss Match State: 169
+Deleting : 169
+Enter : 3
+Exit : 2
+C: highMatchCounter : 95, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 344
+Deleting : 323
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Enter : 3
+Deleting : 0
+Exit : 2
+Deleting : 324
+Deleting : 0
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+68: D:\Videos Database\Carpark Data\20161018\c2\20161018_151200.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_151200.mp4
+prediction: 1
+Enter : 1
+Exit : 4
+Deleting : 325
+C: highMatchCounter : 492, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 321.5
+matching parked car : Lot C
+prediction: 1
+Leaving car park - Vehicle 50Lot C7
+prediction: 1
+Enter : 1
+Exit : 4
+Exit : 2
+Deleting : 50
+Deleting : 326
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+69: D:\Videos Database\Carpark Data\20161018\c2\20161018_151800.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_151800.mp4
+prediction: 1
+Enter : 6
+Deleting : 0
+prediction: 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Add to Miss Match State: 327
+Deleting : 327
+Deleting : 0
+prediction: 1
+Enter : 1
+prediction: 1
+vehicle 328 : non tracking zone 1
+Deleting : 328
+Deleting : 0
+prediction: 1
+vehicle 34 : leaving non tracking zone 1
+prediction: 0
+Deleting : 0
+Deleting : 0
+Exit : 5
+Deleting : 0
+Deleting : 34
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 1
+vehicle 198 : leaving non tracking zone 1
+prediction: 1
+vehicle 198 : non tracking zone 1
+Deleting : 198
+prediction: 0
+prediction: 1
+vehicle 204 : leaving non tracking zone 1
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Add to Miss Match State: 204
+Deleting : 204
+prediction: 1
+vehicle 226 : leaving non tracking zone 1
+prediction: 0
+Add to Miss Match State: 226
+Deleting : 226
+Deleting : 0
+prediction: 1
+vehicle 116 : leaving non tracking zone 1
+Deleting : 0
+prediction: 1
+Park - Vehicle 116Lot C9
+prediction: 1
+Leaving car park - Vehicle 116Lot C9
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Park - Vehicle 116DANGER ZONE!
+prediction: 1
+Enter : 1
+Deleting : 116
+Deleting : 0
+Deleting : 0
+prediction: 1
+vehicle 329 : non tracking zone 1
+Deleting : 0
+Exit : 4
+Deleting : 329
+Deleting : 0
+Deleting : 0
+Deleting : 0
+end of video
+EOF: Processing next video
+clear blob memory 
+70: D:\Videos Database\Carpark Data\20161018\c2\20161018_152400.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_152400.mp4
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 330
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+71: D:\Videos Database\Carpark Data\20161018\c2\20161018_153000.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_153000.mp4
+C: highMatchCounter : 36, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 334
+Add to Miss Match State: 266
+Deleting : 266
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+72: D:\Videos Database\Carpark Data\20161018\c2\20161018_153600.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_153600.mp4
+Enter : 3
+Exit : 2
+Deleting : 331
+Deleting : 0
+Enter : 3
+Deleting : 0
+Exit : 2
+Deleting : 332
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Add to Miss Match State: 183
+Deleting : 183
+Add to Miss Match State: 112
+Deleting : 112
+B: highMatchCounter : 415, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 540.5
+A: highMatchCounter : 1366, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 874
+matching parked car : Lot A
+A: highMatchCounter : 562, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 874
+Deleting : 0
+Deleting : 0
+Exit : 6
+Deleting : 183
+Enter : 3
+Exit : 2
+Deleting : 333
+A: highMatchCounter : 1573, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 877.5
+matching parked car : Lot A
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+Deleting : 0
+Exit : 4
+Deleting : 334
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+73: D:\Videos Database\Carpark Data\20161018\c2\20161018_154200.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_154200.mp4
+Deleting : 0
+Deleting : 0
+Deleting : 0
+end of video
+EOF: Processing next video
+clear blob memory 
+74: D:\Videos Database\Carpark Data\20161018\c2\20161018_154800.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_154800.mp4
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 1
+Enter : 2
+prediction: 1
+Enter : 2
+Exit : 3
+Deleting : 335
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 375, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 811.5
+Deleting : 0
+prediction: 1
+Enter : 1
+Exit : 4
+Deleting : 336
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+75: D:\Videos Database\Carpark Data\20161018\c2\20161018_155400.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_155400.mp4
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 1
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Exit : 4
+Deleting : 337
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+Exit : 4
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 338
+Deleting : 0
+end of video
+EOF: Processing next video
+clear blob memory 
+76: D:\Videos Database\Carpark Data\20161018\c2\20161018_160000.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_160000.mp4
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+vehicle 282 : leaving non tracking zone 2
+Exit : 6
+Deleting : 282
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+Exit : 4
+Deleting : 339
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+77: D:\Videos Database\Carpark Data\20161018\c2\20161018_160600.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_160600.mp4
+Enter : 3
+Exit : 2
+Deleting : 340
+Deleting : 0
+prediction: 1
+Enter : 1
+prediction: 1
+vehicle 341 : non tracking zone 1
+Exit : 4
+Deleting : 341
+end of video
+EOF: Processing next video
+clear blob memory 
+78: D:\Videos Database\Carpark Data\20161018\c2\20161018_161200.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_161200.mp4
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+79: D:\Videos Database\Carpark Data\20161018\c2\20161018_161800.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_161800.mp4
+Deleting : 0
+prediction: 1
+Enter : 2
+Exit : 3
+Deleting : 342
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 343
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+80: D:\Videos Database\Carpark Data\20161018\c2\20161018_162400.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_162400.mp4
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 344
+Deleting : 0
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+81: D:\Videos Database\Carpark Data\20161018\c2\20161018_163000.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_163000.mp4
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 6
+prediction: 1
+vehicle 345 : non tracking zone 2
+345
+Deleting : 345
+prediction: 1
+Enter : 4
+Exit : 1
+Deleting : 346
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+82: D:\Videos Database\Carpark Data\20161018\c2\20161018_163600.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_163600.mp4
+prediction: 1
+Enter : 1
+prediction: 1
+vehicle 347 : non tracking zone 1
+Deleting : 347
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 5
+prediction: 1
+vehicle 348 : non tracking zone 2
+348
+Deleting : 348
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Exit : 4
+Deleting : 349
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+83: D:\Videos Database\Carpark Data\20161018\c2\20161018_164200.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_164200.mp4
+Deleting : 0
+Deleting : 0
+Enter : 3
+Enter : 3
+Exit : 2
+Deleting : 0
+Deleting : 350
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 1
+Enter : 2
+Deleting : 0
+Add to Miss Match State: 351
+Deleting : 351
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 4
+prediction: 0
+prediction: 1
+vehicle 119 : leaving non tracking zone 1
+Exit : 1
+(Matching) start: merge!
+merged!
+merge jor 352 + 119
+Exit : 1
+Deleting : 352
+Deleting : 119
+Enter : 3
+Exit : 2
+Deleting : 353
+Deleting : 0
+Deleting : 0
+end of video
+EOF: Processing next video
+clear blob memory 
+84: D:\Videos Database\Carpark Data\20161018\c2\20161018_164800.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_164800.mp4
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+vehicle 241 : leaving non tracking zone 1
+Exit : 1
+Deleting : 241
+Enter : 3
+Exit : 2
+Deleting : 354
+Deleting : 0
+Deleting : 0
+end of video
+EOF: Processing next video
+clear blob memory 
+85: D:\Videos Database\Carpark Data\20161018\c2\20161018_165400.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_165400.mp4
+prediction: 1
+Enter : 1
+prediction: 1
+vehicle 355 : non tracking zone 1
+Exit : 4
+Deleting : 355
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 356
+Deleting : 0
+prediction: 1
+Enter : 1
+prediction: 1
+vehicle 357 : non tracking zone 1
+Exit : 4
+Deleting : 357
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 5
+prediction: 0
+Exit : 5
+Enter : 3
+Exit : 2
+Deleting : 359
+Deleting : 0
+Deleting : 358
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+86: D:\Videos Database\Carpark Data\20161018\c2\20161018_170000.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_170000.mp4
+prediction: 1
+Enter : 1
+prediction: 1
+vehicle 360 : non tracking zone 1
+Deleting : 360
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 361
+Deleting : 0
+Deleting : 0
+prediction: 1
+vehicle 248 : leaving non tracking zone 1
+Add to Miss Match State: 248
+Deleting : 248
+Deleting : 0
+prediction: 1
+Leaving car park - Vehicle 0DANGER ZONE-1
+prediction: 0
+Exit : 4
+Deleting : 362
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 363
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 364
+prediction: 1
+vehicle 135 : leaving non tracking zone 1
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Exit : 1
+Deleting : 135
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 365
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 366
+prediction: 1
+Enter : 5
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+87: D:\Videos Database\Carpark Data\20161018\c2\20161018_170600.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_170600.mp4
+Add to Miss Match State: 367
+Deleting : 367
+A: highMatchCounter : 264, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 876
+Deleting : 0
+A: highMatchCounter : 1242, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 876
+matching parked car : Lot A
+A: highMatchCounter : 1745, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 876
+matching parked car : Lot A
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Leaving car park - Vehicle 279Lot A3
+Deleting : 0
+Deleting : 0
+Add to Miss Match State: 279
+Deleting : 279
+Enter : 3
+Exit : 2
+Deleting : 368
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 369
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 2
+Exit : 3
+Deleting : 370
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 5
+Enter : 3
+Exit : 2
+Deleting : 372
+Add to Miss Match State: 371
+Deleting : 371
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+88: D:\Videos Database\Carpark Data\20161018\c2\20161018_171200.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_171200.mp4
+B: highMatchCounter : 515, highMatch : 9zoneAlot[highMatch].countNZero * 0.6 : 517
+Deleting : 0
+C: highMatchCounter : 365, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 362.5
+matching parked car : Lot C
+D: highMatchCounter : 292, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 228.5
+matching parked car : Lot D
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 483, highMatch : 9zoneAlot[highMatch].countNZero * 0.6 : 728.5
+A: highMatchCounter : 469, highMatch : 9zoneAlot[highMatch].countNZero * 0.6 : 728.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 373
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 2
+Exit : 3
+Deleting : 374
+Enter : 3
+Exit : 2
+Deleting : 375
+Deleting : 0
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 376
+Deleting : 0
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 377
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+89: D:\Videos Database\Carpark Data\20161018\c2\20161018_171800.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_171800.mp4
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+A: highMatchCounter : 1626, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 877.5
+matching parked car : Lot A
+Deleting : 0
+Add to Miss Match State: 279
+Deleting : 279
+A: highMatchCounter : 255, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 845.5
+Deleting : 0
+A: highMatchCounter : 130, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 845.5
+Add to Miss Match State: 279
+Deleting : 279
+A: highMatchCounter : 1151, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 845.5
+matching parked car : Lot A
+A: highMatchCounter : 1633, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 845.5
+matching parked car : Lot A
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+90: D:\Videos Database\Carpark Data\20161018\c2\20161018_172400.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_172400.mp4
+prediction: 1
+Park - Vehicle 378Lot E5
+Deleting : 378
+Enter : 3
+Exit : 2
+Deleting : 379
+Deleting : 0
+prediction: 0
+Deleting : 0
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+91: D:\Videos Database\Carpark Data\20161018\c2\20161018_173000.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_173000.mp4
+prediction: 1
+Enter : 1
+prediction: 1
+vehicle 380 : non tracking zone 1
+Deleting : 380
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 381
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+vehicle 345 : leaving non tracking zone 2
+Exit : 6
+Deleting : 345
+Enter : 3
+Exit : 2
+Deleting : 382
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 4
+prediction: 1
+vehicle 383 : non tracking zone 1
+Deleting : 383
+prediction: 1
+vehicle 19 : leaving non tracking zone 1
+Exit : 1
+Deleting : 19
+Deleting : 0
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+92: D:\Videos Database\Carpark Data\20161018\c2\20161018_173600.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_173600.mp4
+Enter : 3
+Exit : 2
+Deleting : 384
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 1
+Enter : 5
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Park - Vehicle 385Lot B3
+Deleting : 385
+Deleting : 0
+C: highMatchCounter : 608, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 362.5
+matching parked car : Lot C
+prediction: 1
+Leaving car park - Vehicle 18Lot C3
+prediction: 1
+vehicle 18 : non tracking zone 1
+Deleting : 18
+Deleting : 0
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 386
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 387
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+93: D:\Videos Database\Carpark Data\20161018\c2\20161018_174200.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_174200.mp4
+Enter : 3
+Exit : 2
+Deleting : 388
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+vehicle 167 : leaving non tracking zone 1
+Exit : 1
+Deleting : 167
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+94: D:\Videos Database\Carpark Data\20161018\c2\20161018_174800.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_174800.mp4
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 6
+Exit : 5
+Deleting : 389
+end of video
+EOF: Processing next video
+clear blob memory 
+95: D:\Videos Database\Carpark Data\20161018\c2\20161018_175400.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_175400.mp4
+Enter : 3
+Exit : 2
+Deleting : 390
+Deleting : 0
+C: highMatchCounter : 271, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 362.5
+E: highMatchCounter : 304, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 156
+matching parked car : Lot E
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+B: highMatchCounter : 268, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 510
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Enter : 3
+prediction: 1
+vehicle 391 : non tracking zone 1
+Deleting : 391
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 959, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 877.5
+matching parked car : Lot A
+A: highMatchCounter : 648, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 845.5
+A: highMatchCounter : 597, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 822
+A: highMatchCounter : 675, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 874
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 580, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 877.5
+A: highMatchCounter : 549, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 811.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 392
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Enter : 3
+Exit : 2
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+96: D:\Videos Database\Carpark Data\20161018\c2\20161018_180000.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_180000.mp4
+Deleting : 393
+Deleting : 0
+B: highMatchCounter : 598, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 510
+matching parked car : Lot B
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 1194, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 877.5
+matching parked car : Lot A
+A: highMatchCounter : 308, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 845.5
+A: highMatchCounter : 341, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 741
+B: highMatchCounter : 557, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 471.5
+matching parked car : Lot B
+B: highMatchCounter : 166, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 459
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 348, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 822
+A: highMatchCounter : 1691, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 845.5
+matching parked car : Lot A
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 548, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 741
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 1430, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 811.5
+matching parked car : Lot A
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 394
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 395
+Deleting : 0
+Deleting : 0
+B: highMatchCounter : 367, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 510
+A: highMatchCounter : 329, highMatch : 9zoneAlot[highMatch].countNZero * 0.6 : 728.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 475, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 845.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 780, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 876
+A: highMatchCounter : 69, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 845.5
+B: highMatchCounter : 249, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 510
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+97: D:\Videos Database\Carpark Data\20161018\c2\20161018_180600.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_180600.mp4
+D: highMatchCounter : 287, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 169
+matching parked car : Lot D
+C: highMatchCounter : 56, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 356.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+C: highMatchCounter : 0, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 396
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 1748, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 874
+matching parked car : Lot A
+A: highMatchCounter : 540, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 811.5
+B: highMatchCounter : 235, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 459
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+prediction: 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 396
+prediction: 1
+Enter : 1
+prediction: 1
+vehicle 397 : non tracking zone 1
+Deleting : 397
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+D: highMatchCounter : 281, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 141.5
+matching parked car : Lot D
+E: highMatchCounter : 0, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 143.5
+E: highMatchCounter : 124, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 156
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 566, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 874
+A: highMatchCounter : 111, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 876
+B: highMatchCounter : 256, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 459
+B: highMatchCounter : 710, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 510
+matching parked car : Lot B
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Enter : 3
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 2
+prediction: 1
+Enter : 2
+(Matching) start: merge!
+merged!
+merge jor 399 + 398
+(Matching) start: split!
+diff 1 : 54.348 diff 2 : 22.3265
+diff 3 : 85.1922 diff 4 : 14.8563
+split jorrrrrrrrrrrrrrrrrrrrrrrrrrr
+(Matching) start: merge!
+merged!
+merge jor 399 + 398
+(Matching) start: split!
+diff 1 : 16.1034 diff 2 : 83.3152
+diff 3 : 24.1081 diff 4 : 50.0952
+split jorrrrrrrrrrrrrrrrrrrrrrrrrrr
+(Matching) start: merge!
+merged!
+merge jor 398 + 399
+(Matching) start: split!
+diff 1 : 12.4625 diff 2 : 78.0604
+diff 3 : 30.8898 diff 4 : 43.388
+split jorrrrrrrrrrrrrrrrrrrrrrrrrrr
+(Matching) start: merge!
+merged!
+merge jor 398 + 399
+(Matching) start: split!
+diff 1 : 11.9082 diff 2 : 79.113
+diff 3 : 33.4064 diff 4 : 40.4857
+split jorrrrrrrrrrrrrrrrrrrrrrrrrrr
+Deleting : 0
+Exit : 3
+Deleting : 398
+Deleting : 0
+Deleting : 0
+Add to Miss Match State: 399
+Deleting : 399
+Deleting : 0
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+98: D:\Videos Database\Carpark Data\20161018\c2\20161018_181200.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_181200.mp4
+A: highMatchCounter : 171, highMatch : 10zoneAlot[highMatch].countNZero * 0.6 : 640
+Enter : 3
+Exit : 2
+Deleting : 400
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Add to Miss Match State: 180
+Deleting : 180
+A: highMatchCounter : 140, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 778.5
+A: highMatchCounter : 330, highMatch : 9zoneAlot[highMatch].countNZero * 0.6 : 728.5
+B: highMatchCounter : 776, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 455
+matching parked car : Lot B
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 143, highMatch : 9zoneAlot[highMatch].countNZero * 0.6 : 728.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 1755, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 877.5
+matching parked car : Lot A
+A: highMatchCounter : 705, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 811.5
+A: highMatchCounter : 214, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 822
+B: highMatchCounter : 559, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 455
+matching parked car : Lot B
+C: highMatchCounter : 621, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 396
+matching parked car : Lot C
+A: highMatchCounter : 297, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 874
+C: highMatchCounter : 655, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 344
+matching parked car : Lot C
+E: highMatchCounter : 319, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 159.5
+matching parked car : Lot E
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 420, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 876
+A: highMatchCounter : 226, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 874
+B: highMatchCounter : 365, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 483.5
+C: highMatchCounter : 713, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 356.5
+matching parked car : Lot C
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+C: highMatchCounter : 283, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 362.5
+E: highMatchCounter : 0, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 143.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 1516, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 758
+matching parked car : Lot A
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+99: D:\Videos Database\Carpark Data\20161018\c2\20161018_181800.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_181800.mp4
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+Exit : 5
+Deleting : 279
+Deleting : 0
+C: highMatchCounter : 472, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 362.5
+matching parked car : Lot C
+C: highMatchCounter : 554, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 321.5
+matching parked car : Lot C
+D: highMatchCounter : 456, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 228
+matching parked car : Lot D
+E: highMatchCounter : 319, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 159.5
+matching parked car : Lot E
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+D: highMatchCounter : 341, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 214
+matching parked car : Lot D
+E: highMatchCounter : 0, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 143.5
+E: highMatchCounter : 0, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 143.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+B: highMatchCounter : 720, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 422.5
+matching parked car : Lot B
+Deleting : 0
+Deleting : 0
+Deleting : 0
+B: highMatchCounter : 447, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 455
+C: highMatchCounter : 499, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 362.5
+matching parked car : Lot C
+C: highMatchCounter : 267, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 367
+C: highMatchCounter : 316, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 344
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 401
+Deleting : 0
+imgFrame2.empty() - breaking from loop
+clear blob memory 
+100: D:\Videos Database\Carpark Data\20161018\c2\20161018_182400.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_182400.mp4
+A: highMatchCounter : 335, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 811.5
+A: highMatchCounter : 156, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 758
+A: highMatchCounter : 588, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 874
+C: highMatchCounter : 753, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 396
+matching parked car : Lot C
+E: highMatchCounter : 248, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 142.5
+matching parked car : Lot E
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 569, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 874
+C: highMatchCounter : 355, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 321.5
+matching parked car : Lot C
+C: highMatchCounter : 467, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 356.5
+matching parked car : Lot C
+D: highMatchCounter : 456, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 228
+matching parked car : Lot D
+E: highMatchCounter : 0, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 143.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 1141, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 874
+matching parked car : Lot A
+B: highMatchCounter : 770, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 455
+matching parked car : Lot B
+C: highMatchCounter : 515, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 396
+matching parked car : Lot C
+C: highMatchCounter : 576, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 344
+matching parked car : Lot C
+C: highMatchCounter : 665, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 356.5
+matching parked car : Lot C
+E: highMatchCounter : 0, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 143.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 124, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 877.5
+A: highMatchCounter : 319, highMatch : 10zoneAlot[highMatch].countNZero * 0.6 : 640
+Deleting : 0
+Exit : 5
+Deleting : 112
+prediction: 1
+vehicle 251 : leaving non tracking zone 1
+Exit : 1
+Deleting : 251
+Deleting : 0
+prediction: 1
+Enter : 2
+Exit : 3
+Deleting : 402
+A: highMatchCounter : 1245, highMatch : 9zoneAlot[highMatch].countNZero * 0.6 : 728.5
+matching parked car : Lot A
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+B: highMatchCounter : 829, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 471.5
+matching parked car : Lot B
+B: highMatchCounter : 584, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 455
+matching parked car : Lot B
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 1
+prediction: 1
+vehicle 403 : non tracking zone 1
+Deleting : 403
+Deleting : 0
+Add to Miss Match State: 180
+Deleting : 180
+A: highMatchCounter : 686, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 876
+A: highMatchCounter : 987, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 874
+matching parked car : Lot A
+B: highMatchCounter : 576, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 540.5
+matching parked car : Lot B
+D: highMatchCounter : 349, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 228
+matching parked car : Lot D
+E: highMatchCounter : 256, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 143.5
+matching parked car : Lot E
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+E: highMatchCounter : 251, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 159.5
+matching parked car : Lot E
+Deleting : 0
+Deleting : 0
+E: highMatchCounter : 198, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 156
+matching parked car : Lot E
+Deleting : 0
+Deleting : 0
+prediction: 1
+vehicle 348 : leaving non tracking zone 2
+E: highMatchCounter : 204, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 159.5
+matching parked car : Lot E
+Deleting : 0
+Exit : 6
+Deleting : 348
+Deleting : 0
+E: highMatchCounter : 154, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 159.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+E: highMatchCounter : 216, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 159.5
+matching parked car : Lot E
+Deleting : 0
+Deleting : 0
+Deleting : 0
+E: highMatchCounter : 179, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 159.5
+matching parked car : Lot E
+Deleting : 0
+Deleting : 0
+C: highMatchCounter : 450, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 396
+matching parked car : Lot C
+C: highMatchCounter : 378, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 362.5
+matching parked car : Lot C
+C: highMatchCounter : 274, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 344
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+end of video
+EOF: Processing next video
+End of current file: 9:4:44
+CarParkTrackExporter()

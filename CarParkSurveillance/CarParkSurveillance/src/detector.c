@@ -568,7 +568,7 @@ void run_detector(int argc, char **argv)
 {
 	char *prefix = find_char_arg(argc, argv, "-prefix", 0);
 	float thresh = find_float_arg(argc, argv, "-thresh", .24);
-	printf("asdasdsasadasdasdasdasd : %.6f\n", thresh);
+	//printf("asdasdsasadasdasdasdasd : %.6f\n", thresh);
 	int cam_index = find_int_arg(argc, argv, "-c", 0);
 	int frame_skip = find_int_arg(argc, argv, "-s", 0);
 	if (argc < 4) {
