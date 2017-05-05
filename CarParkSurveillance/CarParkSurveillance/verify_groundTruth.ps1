@@ -1,6 +1,9 @@
 ﻿cls
 
-$gt = Import-Csv C:\powershell\gt.csv
+#$gt = Import-Csv C:\powershell\gt.csv
+$gt = Import-Csv C:\powershell\gt1vid.csv
+
+
 
 #db250317
 #db260317_skip
@@ -9,11 +12,12 @@ $gt = Import-Csv C:\powershell\gt.csv
 
 #290317db.csv
 
-$db = Import-Csv C:\powershell\withYOLO.csv
+$db = Import-Csv C:\powershell\withYOLO2.csv
 $time_window = [timespan]('00:00:05') 
 $time_dec = [timespan]('00:00:05')
 $write = $false
 $temp_J = 0
+
 
 ##########################################################
 ### TEMPORARY
@@ -210,7 +214,7 @@ for($i = 0; $i -lt $gt.length; $i++){
     }    
 
 
-    $written_once = $FALSE;
+    #$written_once = $FALSE;
 
 
 
@@ -289,7 +293,9 @@ for($i = 0; $i -lt $gt.length; $i++){
                 } 
              else
                 {
-                    $duplicate_check = $FALSE                   
+                    $duplicate_check = $FALSE
+                    $written_once = $FALSE;       
+                    #$temp_J = $j            
                 }      
         }
         else
@@ -300,15 +306,18 @@ for($i = 0; $i -lt $gt.length; $i++){
 
 		if($written_once -eq $FALSE)
 		{
+            
+                     
+                if($j -gt $temp_J -and ([datetime]$gt[$i].t_time -gt [datetime]$db[$j].track_time))
+                {
+                    $temp_J = $j
 
-                
-            if($j -gt $temp_J -and ([datetime]$gt[$i].t_time -gt [datetime]$db[$j].track_time))
-            {
-                $temp_J = $j
+				    ","+ "," +$($db[$j].track_time)+","+ $($db[$j].obj_state) | out-file C:\powershell\output.txt -Append
+                    $written_once = $TRUE;
 
-				","+ "," +$($db[$j].track_time)+","+ $($db[$j].obj_state) | out-file C:\powershell\output.txt -Append
-                $written_once = $TRUE;
-			}
+
+			    }
+            
         }
 		
         if($duplicate_check)

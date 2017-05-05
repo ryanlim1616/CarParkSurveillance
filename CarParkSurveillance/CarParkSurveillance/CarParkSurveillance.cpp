@@ -3760,7 +3760,7 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 						}
 
 						std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "Lot A" << blobs[i].parkinglot << "\n";
-
+						blobs[i].park = false;
 						openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot A");
 						predict_true_false = true;
 					}
@@ -3784,7 +3784,7 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 							unitObjCounter++;
 						}
 						std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "Lot B" << blobs[i].parkinglot << "\n";
-
+						blobs[i].park = false;
 						openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot B");
 						predict_true_false = true;
 					}
@@ -3807,7 +3807,7 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 							unitObjCounter++;
 						}
 						std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "Lot C" << blobs[i].parkinglot << "\n";
-
+						blobs[i].park = false;
 						openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot C");
 						predict_true_false = true;
 					}
@@ -3831,7 +3831,7 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 						}
 
 						std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "Lot D" << blobs[i].parkinglot << "\n";
-
+						blobs[i].park = false;
 						openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot D");
 						predict_true_false = true;
 					}
@@ -3855,7 +3855,7 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 						}
 
 						std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "Lot E" << blobs[i].parkinglot << "\n";
-
+						blobs[i].park = false;
 						openDB.writeToDB_park(blobs, i, frameCount, vidLength, "Lot E");
 						predict_true_false = true;
 					}
@@ -3871,7 +3871,7 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 					if (crop_result == 1) {
 
 						std::cout << "Leaving car park - Vehicle " << blobs[i].unitID << "DANGER ZONE" << blobs[i].parkinglot << "\n";
-
+						blobs[i].park = false;
 						openDB.writeToDB_park(blobs, i, frameCount, vidLength, "DANGER ZONE");
 						predict_true_false = true;
 					}

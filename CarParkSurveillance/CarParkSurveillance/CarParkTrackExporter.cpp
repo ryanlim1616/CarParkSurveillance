@@ -33,7 +33,7 @@ void CarParkTrackExporter::run()
 		
 		if(!resumeFromError)
 		{ 
-			//dropTables();
+			dropTables();
 			createTables();
 			std::cout << "DB tables dropped & created" << std::endl;
 			std::cout << "Initialized DB tables" << std::endl;
