@@ -14,4 +14,4 @@ bool debug_on = 0;
 
 
 //Just need to change here to set each user's pc to be able to do what they need to do.. temporary solution
-std::string user = "Clarence";
+std::string user = "Ryan";

@@ -1,4 +1,4 @@
-Start of job: 15:9:11
+Start of job: 15:23:51
 CarParkTrackExporter()
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 |              S H E R L O C K            =
@@ -20,11 +20,7 @@ FrameDifferenceBGS()
 457 445 436 428 456 283 262 338 
 287 319 312 340 263 285 
 test1
-Please enter processing date (CCYYMMDD): Please enter number of processing dates: < !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! >
-
-@ Processing # of dates: 1
-1: 20161018
-< !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! >
+D:\Videos Database\Carpark Data\20161018\c2\
 1 files were found:
 1: D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4
 Press Enter to continue: --- [Creating new GlobalClass instance]---
