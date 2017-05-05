@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\yolo">
+      <UniqueIdentifier>{e4ccc1b5-9f2e-4e2f-bd41-4f3f7e4841d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\yolo">
+      <UniqueIdentifier>{dcdc122a-6883-4b05-ac61-fd983a5dd9e7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -42,191 +48,197 @@
     <ClCompile Include="SQLiteManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="classification.cpp">
+    <ClCompile Include="Switches.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\activations.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\art.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\avgpool_layer.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\batchnorm_layer.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\blas.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\box.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\captcha.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\cifar.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\classifier.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\coco.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\col2im.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\compare.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\connected_layer.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\convolutional_layer.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\cost_layer.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\cpu_gemm.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\crnn_layer.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\crop_layer.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\cuda.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\data.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\deconvolutional_layer.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\demo.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\detection_layer.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\detector.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\dice.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\dropout_layer.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gemm.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\getopt.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gettimeofday.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\go.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gru_layer.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\im2col.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\image.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\layer.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\list.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\local_layer.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\matrix.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\maxpool_layer.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\network.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\nightmare.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\normalization_layer.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\option_list.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\parser.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\region_layer.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\reorg_layer.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\rnn.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\rnn_layer.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\rnn_vid.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\route_layer.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\shortcut_layer.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\softmax_layer.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\super.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\swag.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\tag.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\tree.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\utils.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\voxel.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\writing.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\yolo.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\darknet.c">
+    <ClCompile Include="Trajectory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\activation_layer.c">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\activations.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\art.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\avgpool_layer.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\batchnorm_layer.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\blas.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\box.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\captcha.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cifar.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="classification.cpp">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\classifier.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\coco.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\col2im.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\compare.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\connected_layer.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\convolutional_layer.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cost_layer.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cpu_gemm.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\crnn_layer.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\crop_layer.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cuda.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\darknet.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\data.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deconvolutional_layer.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\demo.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\detection_layer.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\detector.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dice.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dropout_layer.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gemm.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\getopt.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gettimeofday.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\go.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gru_layer.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\image.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\im2col.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\layer.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\list.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\local_layer.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\matrix.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\maxpool_layer.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\network.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\nightmare.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\normalization_layer.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\option_list.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\parser.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\region_layer.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\reorg_layer.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\rnn.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\rnn_layer.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\rnn_vid.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\route_layer.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\shortcut_layer.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\softmax_layer.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\super.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\swag.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tag.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tree.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utils.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\voxel.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\writing.c">
+      <Filter>Source Files\yolo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\yolo.c">
+      <Filter>Source Files\yolo</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -251,9 +263,6 @@
     <ClInclude Include="GlobalClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Logger.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="CarParkTrackExporter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -266,143 +275,155 @@
     <ClInclude Include="sqlite3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\activation_layer.h">
+    <ClInclude Include="Switches.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GetSetLog.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Trajectory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\activation_layer.h">
+      <Filter>Header Files\yolo</Filter>
     </ClInclude>
     <ClInclude Include="src\activations.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\yolo</Filter>
     </ClInclude>
     <ClInclude Include="src\avgpool_layer.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\yolo</Filter>
     </ClInclude>
     <ClInclude Include="src\batchnorm_layer.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\yolo</Filter>
     </ClInclude>
     <ClInclude Include="src\blas.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\yolo</Filter>
     </ClInclude>
     <ClInclude Include="src\box.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\yolo</Filter>
     </ClInclude>
     <ClInclude Include="src\classifier.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\yolo</Filter>
     </ClInclude>
     <ClInclude Include="src\col2im.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\yolo</Filter>
     </ClInclude>
     <ClInclude Include="src\connected_layer.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\yolo</Filter>
     </ClInclude>
     <ClInclude Include="src\convolutional_layer.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\yolo</Filter>
     </ClInclude>
     <ClInclude Include="src\cost_layer.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\yolo</Filter>
     </ClInclude>
     <ClInclude Include="src\crnn_layer.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\yolo</Filter>
     </ClInclude>
     <ClInclude Include="src\crop_layer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\cuda.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\data.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\deconvolutional_layer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\demo.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\detection_layer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\dropout_layer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gemm.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\getopt.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gettimeofday.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gru_layer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\im2col.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\image.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\layer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\list.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\local_layer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\matrix.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\maxpool_layer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\network.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\normalization_layer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\option_list.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\parser.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\region_layer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\reorg_layer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\rnn_layer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\route_layer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\shortcut_layer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\softmax_layer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\stb_image.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\stb_image_write.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\tree.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\unistd.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\utils.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\yolo</Filter>
     </ClInclude>
     <ClInclude Include="src\darknet.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\yolo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\data.h">
+      <Filter>Header Files\yolo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deconvolutional_layer.h">
+      <Filter>Header Files\yolo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\demo.h">
+      <Filter>Header Files\yolo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\detection_layer.h">
+      <Filter>Header Files\yolo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dropout_layer.h">
+      <Filter>Header Files\yolo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gemm.h">
+      <Filter>Header Files\yolo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\getopt.h">
+      <Filter>Header Files\yolo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gettimeofday.h">
+      <Filter>Header Files\yolo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gru_layer.h">
+      <Filter>Header Files\yolo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\im2col.h">
+      <Filter>Header Files\yolo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\image.h">
+      <Filter>Header Files\yolo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\layer.h">
+      <Filter>Header Files\yolo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\list.h">
+      <Filter>Header Files\yolo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\local_layer.h">
+      <Filter>Header Files\yolo</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger.h">
+      <Filter>Header Files\yolo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\matrix.h">
+      <Filter>Header Files\yolo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\maxpool_layer.h">
+      <Filter>Header Files\yolo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\network.h">
+      <Filter>Header Files\yolo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\normalization_layer.h">
+      <Filter>Header Files\yolo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\option_list.h">
+      <Filter>Header Files\yolo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\parser.h">
+      <Filter>Header Files\yolo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\reorg_layer.h">
+      <Filter>Header Files\yolo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\region_layer.h">
+      <Filter>Header Files\yolo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\rnn_layer.h">
+      <Filter>Header Files\yolo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\route_layer.h">
+      <Filter>Header Files\yolo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shortcut_layer.h">
+      <Filter>Header Files\yolo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\softmax_layer.h">
+      <Filter>Header Files\yolo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\stb_image.h">
+      <Filter>Header Files\yolo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\stb_image_write.h">
+      <Filter>Header Files\yolo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tree.h">
+      <Filter>Header Files\yolo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\unistd.h">
+      <Filter>Header Files\yolo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utils.h">
+      <Filter>Header Files\yolo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cuda.h">
+      <Filter>Header Files\yolo</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

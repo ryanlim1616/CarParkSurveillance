@@ -69,16 +69,18 @@ Logger::Logger()
 , m_noFileLog(false)
 , m_errorOccured(false)
 {
-	//Get current time formatted to generate log name
-	time_t rawtime;	
-	time(&rawtime);
-	struct tm * timeinfo=localtime(&rawtime);
-	char timebuffer[24];
-	//strftime (timebuffer,sizeof(timebuffer)/sizeof(char),"run-%Y%m%d-%H%M.html",timeinfo);
-	strftime(timebuffer, sizeof(timebuffer) / sizeof(char), "run-log.html", timeinfo);
-	m_logName = std::string(timebuffer);
-	m_fstream.open(m_logName, std::ofstream::app | std::ofstream::out);
-	m_fstream << "<html><head><title>" << m_logName << "</title></head><body bgcolor=\"#272822\"><H1><font color=\"#F8F8F2\">" << m_logName << "</font></H1><table border=\"0\">";
+	//remove all?
+
+	////Get current time formatted to generate log name
+	//time_t rawtime;	
+	//time(&rawtime);
+	//struct tm * timeinfo=localtime(&rawtime);
+	//char timebuffer[24];
+	////strftime (timebuffer,sizeof(timebuffer)/sizeof(char),"run-%Y%m%d-%H%M.html",timeinfo);
+	//strftime(timebuffer, sizeof(timebuffer) / sizeof(char), "run-log.html", timeinfo);
+	//m_logName = std::string(timebuffer);
+	//m_fstream.open(m_logName, std::ofstream::app | std::ofstream::out);
+	//m_fstream << "<html><head><title>" << m_logName << "</title></head><body bgcolor=\"#272822\"><H1><font color=\"#F8F8F2\">" << m_logName << "</font></H1><table border=\"0\">";
 }
 
 Logger::~Logger()

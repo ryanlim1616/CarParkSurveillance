@@ -65,6 +65,9 @@ public:
 
 	std::vector<cv::Point> centerPositions;
 	std::vector<cv::Scalar> AvgColor;
+	cv::Scalar AvgColorScalar;
+
+
 	cv::Scalar avgColorBeforeMerge;
 	cv::Mat image;
 

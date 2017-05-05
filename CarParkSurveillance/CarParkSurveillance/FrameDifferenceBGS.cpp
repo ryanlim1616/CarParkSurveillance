@@ -67,6 +67,7 @@ void FrameDifferenceBGS::process(const cv::Mat &img_input, cv::Mat &img_output, 
 
 	img_foreground.copyTo(img_output);
 
+	if (imshow_display)
 	cv::imshow("Frame Difference", img_foreground);
 
 	//if (couter < 100) {

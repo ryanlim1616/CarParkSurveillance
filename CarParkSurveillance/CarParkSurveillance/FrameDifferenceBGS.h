@@ -15,7 +15,7 @@ along with BGSLibrary.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <iostream>
 #include <opencv2/opencv.hpp>
-
+#include "Switches.h"
 
 #include "IBGS.h"
 
@@ -38,8 +38,7 @@ private:
 
 
 	bool update = false;
-
-
+	
 public:
 	FrameDifferenceBGS();
 	~FrameDifferenceBGS();
