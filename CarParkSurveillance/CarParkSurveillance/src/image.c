@@ -191,6 +191,13 @@ bool draw_detections(image im, int num, float thresh, box *boxes, float **probs,
 	int xMid, yMid;
 
 	char* object = "";
+	char* object2 = "";
+
+	float temp_float = 0;
+
+
+	bool temp_object = true;
+
 	for (i = 0; i < num; ++i) {
 		int class = max_index(probs[i], classes);
 		float prob = probs[i][class];
@@ -237,24 +244,33 @@ bool draw_detections(image im, int num, float thresh, box *boxes, float **probs,
 			//clarence was here
 			//printf("%s: \t%.0f%% \t box: (%d,\t%d),\t(%d,\t%d)\n", names[class], prob * 100, left, top, right, bot);
 
-			xMid = (right - left) / 2 + left;
-			yMid = (bot - top) / 2 + top;
-			xDiffTemp = xHalf - xMid;
-			if (xDiffTemp < 0) {
-				xDiffTemp = xDiffTemp * -1;
-			}
-			yDiffTemp = yHalf - yMid;
-			if (yDiffTemp < 0) {
-				yDiffTemp = yDiffTemp * -1;
-			}
-			if (yDiffTemp + xDiffTemp < xyDiff) {
-				xyDiff = yDiffTemp + xDiffTemp;
+			//xMid = (right - left) / 2 + left;
+			//yMid = (bot - top) / 2 + top;
+			//xDiffTemp = xHalf - xMid;
+			//if (xDiffTemp < 0) {
+			//	xDiffTemp = xDiffTemp * -1;
+			//}
+			//yDiffTemp = yHalf - yMid;
+			//if (yDiffTemp < 0) {
+			//	yDiffTemp = yDiffTemp * -1;
+			//}
+			//if (yDiffTemp + xDiffTemp < xyDiff) {
+			//	xyDiff = yDiffTemp + xDiffTemp;
+			//	object = names[class];
+			//	//printf("\t%s\n", object);
+			//	//printf("(%3d,%3d),(%3d,%3d) \t%.0f%%:\t%s\n", left, top, right, bot, prob * 100, names[class]);
+			//}
+
+			if (prob * 100 > temp_float) {
 				object = names[class];
-				//printf("\t%s\n", object);
-				//printf("(%3d,%3d),(%3d,%3d) \t%.0f%%:\t%s\n", left, top, right, bot, prob * 100, names[class]);
+				temp_float = prob * 100;
 			}
 
 
+			object2 = names[class];
+			if (strcmp(object, "person") == 0) {
+				temp_object = false;
+			}
 
 			FILE *f = fopen("YOLOoutput.txt", "a");
 			if (f == NULL)
@@ -271,7 +287,14 @@ bool draw_detections(image im, int num, float thresh, box *boxes, float **probs,
 		}
 	}
 
-	if (strcmp(object, "car") == 0 || strcmp(object, "truck") == 0 || strcmp(object, "bus") == 0 || strcmp(object, "boat") == 0 || strcmp(object, "train") == 0) {
+	if ((strcmp(object, "car") == 0 || 
+		strcmp(object, "truck") == 0 || 
+		strcmp(object, "bus") == 0 || 
+		strcmp(object, "boat") == 0 ||
+		strcmp(object, "train") == 0 || 
+		strcmp(object, "book") == 0 || 
+		strcmp(object, "keyboard") == 0) && temp_object == true) {
+
 		//printf("Yes Got it\n");
 		return true;
 	}
@@ -279,6 +302,7 @@ bool draw_detections(image im, int num, float thresh, box *boxes, float **probs,
 		//printf("Noooooo WHyyyyyyyyyyyyy\n");
 		return false;
 	}
+	//return temp_object;
 
 }
 
