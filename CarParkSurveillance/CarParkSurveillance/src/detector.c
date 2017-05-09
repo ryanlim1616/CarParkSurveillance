@@ -109,7 +109,7 @@ bool predict_image(IplImage* input, float thresh) {
 	time = clock();
 	network_predict(net, X);
 	
-	printf("%s: Predicted in %f seconds.\n", input, sec(clock() - time));
+	//printf("%s: Predicted in %f seconds.\n", input, sec(clock() - time));
 	get_region_boxes(l, 1, 1, 0.1000, probs, boxes, 0, 0);
 	//printf("going to draw 1\n");
 	if (nms) do_nms_sort(boxes, probs, l.w*l.h*l.n, l.classes, nms);
@@ -117,7 +117,8 @@ bool predict_image(IplImage* input, float thresh) {
 	//printf("going to draw\n");
 	bool carOrNot = draw_detections(im, l.w*l.h*l.n, 0.1000, boxes, probs, names, alphabet, l.classes);
 	//printf("end of draw\n");
-	//save_image(im, "predictions");
+	save_image(im, "predictions");
+	//system("pause");
 	//show_image(im, "predictions");
 	//printf("end of saving image\n");
 	free_image(im);
