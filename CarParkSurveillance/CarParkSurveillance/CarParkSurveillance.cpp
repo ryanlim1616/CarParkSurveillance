@@ -543,6 +543,7 @@ int main(void) {
 	std::string myRoot = "D:\\Videos Database\\Carpark Data\\";
 	std::string myRoot2;
 	std::vector<std::string> listOfDates;				// holds search results
+	std::string temp_root;
 
 	std::cout << "test1\n";
 	if (user == "Clarence") {
@@ -571,7 +572,7 @@ int main(void) {
 		std::cout << "< !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! >" << std::endl;;
 
 		do {
-			std::string temp_root = myRoot + std::to_string(stoi(cinDate) + temp_numDates) + "\\c2\\";
+			temp_root = myRoot + std::to_string(stoi(cinDate) + temp_numDates) + "\\c2\\";
 
 			//std::cout << temp_root << std::endl;
 			
@@ -609,7 +610,11 @@ int main(void) {
 	else if (user == "Ryan")
 	{
 		//cinDate = "20161018";
-		listOfDates[0] = "20161018";
+		cinDate = "20161018";
+		temp_numDates = 0;
+		temp_root = myRoot + std::to_string(stoi(cinDate) + temp_numDates) + "\\c2\\";
+		listOfDates.push_back(std::to_string(stoi(cinDate) + temp_numDates));
+
 	}
 	//check if root directory is correct
 	//std::cout << "Kindly confirm your video database root directory: \nie: " << myRoot << "CCYYMMDD\\c2 (Y/n)";
@@ -650,7 +655,7 @@ int main(void) {
 
 
 		myRoot2 = myRoot + listOfDates[i] + "\\c2\\";
-
+		std::cout << myRoot2 << std::endl;
 		pd = opendir(myRoot2.c_str());
 		if (pd == NULL) {
 			//return error code 
