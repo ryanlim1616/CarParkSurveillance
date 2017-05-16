@@ -268,7 +268,7 @@ bool draw_detections(image im, int num, float thresh, box *boxes, float **probs,
 
 
 			object2 = names[class];
-			if (strcmp(object, "person") == 0) {
+			if (strcmp(object, "person") == 0 || strcmp(object, "bicycle") == 0) {
 				temp_object = false;
 			}
 
