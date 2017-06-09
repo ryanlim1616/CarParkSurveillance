@@ -54,7 +54,7 @@ public:
 
 	int nonTrackZoneDelay = 0;
 
-
+	std::string motion = "";
 
 	// member variables ///////////////////////////////////////////////////////////////////////////
 	std::vector<cv::Point> currentContour;

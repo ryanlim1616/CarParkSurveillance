@@ -104,6 +104,7 @@ IplImage* mat_to_iplimage(cv::Mat input);
 cv::Rect enlargeROI(cv::Mat frm, cv::Rect boundingBox, int padding);
 
 
+void getBlobMotion(std::vector<Blob> &blobs);
 
 //void getNumOfTrajs(CarParkTrackExporter &openDB);
 int getOption();
@@ -1223,6 +1224,13 @@ int main(void) {
 					// Vehicle counting
 
 					imgFrame2Copy = imgFrame2.clone();          // get another copy of frame 2 since we changed the previous frame 2 copy in the processing above
+
+
+
+					//clarence - get the motion direction of the vehicle
+					getBlobMotion(blobs);
+
+
 
 
 
@@ -4224,11 +4232,63 @@ void drawBlobInfoOnImage(std::vector<Blob> &blobs, cv::Mat &imgFrame2Copy, CarPa
 		//clarencetest
 
 		cv::Rect tempBoundingRect = blobs[i].currentBoundingRect;
-		cv::Size inflationSize(blobs[i].currentBoundingRect.width*0.4, blobs[i].currentBoundingRect.height*0.4);
+		cv::Size inflationSize(blobs[i].currentBoundingRect.width*0.8, blobs[i].currentBoundingRect.height*0.8);
 
 		tempBoundingRect -= inflationSize;
 		tempBoundingRect.x += inflationSize.width/2;
 		tempBoundingRect.y += inflationSize.height/2;
+
+		cv::Point currentcenter = blobs[i].centerPositions.back();
+		
+
+		if (blobs[i].motion == "up")
+		{
+			currentcenter.x = currentcenter.x;
+			currentcenter.y = abs(currentcenter.y - inflationSize.height / 2);
+		}
+		else if (blobs[i].motion == "down")
+		{
+			currentcenter.x = currentcenter.x;
+			currentcenter.y = abs(currentcenter.y + inflationSize.height / 2);
+		}
+		else if (blobs[i].motion == "left")
+		{
+			currentcenter.x = abs(currentcenter.x - inflationSize.width / 2);
+			currentcenter.y = currentcenter.y;
+		}
+		else if (blobs[i].motion == "right")
+		{
+			currentcenter.x = abs(currentcenter.x + inflationSize.width / 2);
+			currentcenter.y = currentcenter.y;
+		}
+		else if (blobs[i].motion == "left-up")
+		{
+			currentcenter.x = abs(currentcenter.x - inflationSize.width / 2);
+			currentcenter.y = abs(currentcenter.y - inflationSize.height / 2);
+		}
+		else if (blobs[i].motion == "right-up")
+		{
+			currentcenter.x = abs(currentcenter.x + inflationSize.width / 2);
+			currentcenter.y = abs(currentcenter.y - inflationSize.height / 2);
+		}
+		else if (blobs[i].motion == "left-down")
+		{
+			currentcenter.x = abs(currentcenter.x - inflationSize.width / 2);
+			currentcenter.y = abs(currentcenter.y + inflationSize.height / 2);
+		}
+		else if (blobs[i].motion == "right-down")
+		{
+			currentcenter.x = abs(currentcenter.x + inflationSize.width / 2);
+			currentcenter.y = abs(currentcenter.y + inflationSize.height / 2);
+		}
+		else
+		{
+
+		}
+
+
+
+		
 
 
 		//clarencetest end
@@ -4244,7 +4304,9 @@ void drawBlobInfoOnImage(std::vector<Blob> &blobs, cv::Mat &imgFrame2Copy, CarPa
 				if (blobs[i].mergeid < blobs[i].unitID) {
 					cv::rectangle(imgFrame2Copy, blobs[i].currentBoundingRect, SCALAR_RED, 2);
 					//test
-					cv::rectangle(imgFrame2Copy, tempBoundingRect, blobs[i].AvgColorScalar, 2);
+					//cv::rectangle(imgFrame2Copy, tempBoundingRect, blobs[i].AvgColorScalar, 2);
+					cv::arrowedLine(imgFrame2Copy, blobs[i].centerPositions.back(), currentcenter, SCALAR_BLACK, 5, CV_AA, 0, 0.3);
+					cv::arrowedLine(imgFrame2Copy, blobs[i].centerPositions.back(), currentcenter, blobs[i].AvgColorScalar, 1, CV_AA, 0, 0.3);
 					//test
 					cv::putText(imgFrame2Copy, std::to_string(blobs[i].mergeid) + ", " + std::to_string(blobs[i].unitID), blobs[i].centerPositions.back(), intFontFace, dblFontScale, SCALAR_GREEN, 2);
 				}
@@ -4256,10 +4318,13 @@ void drawBlobInfoOnImage(std::vector<Blob> &blobs, cv::Mat &imgFrame2Copy, CarPa
 			}
 			else {
 				cv::rectangle(imgFrame2Copy, blobs[i].currentBoundingRect, SCALAR_RED, 2);
+				
+				//test
+				//cv::rectangle(imgFrame2Copy, tempBoundingRect, blobs[i].AvgColorScalar, 2);
+				cv::arrowedLine(imgFrame2Copy, blobs[i].centerPositions.back(), currentcenter, SCALAR_BLACK, 5, CV_AA, 0, 0.3);
+				cv::arrowedLine(imgFrame2Copy, blobs[i].centerPositions.back(), currentcenter, blobs[i].AvgColorScalar, 1, CV_AA, 0, 0.3);
+				//test
 				cv::putText(imgFrame2Copy, std::to_string(blobs[i].unitID), blobs[i].centerPositions.back(), intFontFace, dblFontScale, SCALAR_GREEN, 2);
-				//test
-				cv::rectangle(imgFrame2Copy, tempBoundingRect, blobs[i].AvgColorScalar, 2);
-				//test
 
 				//write to db
 				//if (blobs[i].enter == true && blobs[i].exit == false && blobs[i].changed == true) 
@@ -4771,6 +4836,80 @@ IplImage* mat_to_iplimage(cv::Mat input) {
 */
 	return output;
 }
+
+
+
+void getBlobMotion(std::vector<Blob> &blobs) {
+
+	int diff_X = 0;
+	int diff_Y = 0;
+	std::string direction_X = "";
+	std::string direction_Y = "";
+
+
+	for (int i = 0; i < blobs.size(); i++) {
+		
+
+		//std::cout <<  blobs[i].centerPositions << std::endl; 
+
+		//std::cout << "blob x,y = " << blobs[i].centerPositions[blobs.size()].x << blobs[i].centerPositions[blobs.size()].y << std::endl;
+
+		if (blobs[i].centerPositions.size() > 12)
+		{
+
+
+			diff_X = blobs[i].centerPositions[blobs[i].centerPositions.size() - 10].x - blobs[i].centerPositions[blobs[i].centerPositions.size() - 1].x;
+			diff_Y = blobs[i].centerPositions[blobs[i].centerPositions.size() - 10].y - blobs[i].centerPositions[blobs[i].centerPositions.size() - 1].y;
+			direction_X = "";
+			direction_Y = "";
+
+			if (abs(diff_X) > 5)
+			{
+				if (diff_X > 0)
+					direction_X = "left";
+				else
+					direction_X = "right";
+			}
+
+			if (abs(diff_Y) > 5)
+			{
+				if (diff_Y > 0)
+					direction_Y = "up";
+				else
+					direction_Y = "down";
+			}
+
+			//handle when both directions are non - empty
+			if ((direction_X != "") && (direction_Y != ""))
+			{
+				blobs[i].motion = direction_X + "-" + direction_Y;
+			}
+			//otherwise, only one direction is non - empty
+			else 
+			{
+				if((direction_X != ""))
+				{ 
+					blobs[i].motion = direction_X;
+				}
+				else
+				{
+					blobs[i].motion = direction_Y;
+				}
+
+			}
+			
+
+			
+
+			//std::cout << "testX, testY = " << direction_X << "-" << direction_Y << std::endl;
+		}
+
+	}
+
+
+
+}
+
 
 
 int getOption() {
