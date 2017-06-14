@@ -293,6 +293,11 @@ bool draw_detections(image im, int num, float thresh, box *boxes, float **probs,
 		strcmp(object, "boat") == 0 ||
 		strcmp(object, "train") == 0 || 
 		strcmp(object, "book") == 0 || 
+		strcmp(object, "remote") == 0 ||
+		strcmp(object, "cell phone") == 0 ||
+		strcmp(object, "cake") == 0 ||
+		strcmp(object, "sandwich") == 0 ||
+		strcmp(object, "cup") == 0 ||
 		strcmp(object, "keyboard") == 0) && temp_object == true) {
 
 		//printf("Yes Got it\n");

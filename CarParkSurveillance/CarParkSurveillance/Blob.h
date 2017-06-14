@@ -54,6 +54,11 @@ public:
 
 	int nonTrackZoneDelay = 0;
 
+	std::string motion = "";
+
+	int previous_park_frame = 0;
+	int previous_park_frame_counter = 0;
+
 
 
 	// member variables ///////////////////////////////////////////////////////////////////////////
