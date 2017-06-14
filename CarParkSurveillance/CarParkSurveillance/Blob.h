@@ -55,6 +55,14 @@ public:
 	int nonTrackZoneDelay = 0;
 
 	std::string motion = "";
+<<<<<<< HEAD
+=======
+
+	int previous_park_frame = 0;
+	int previous_park_frame_counter = 0;
+
+
+>>>>>>> refs/remotes/ryanlim1616/master
 
 	// member variables ///////////////////////////////////////////////////////////////////////////
 	std::vector<cv::Point> currentContour;
