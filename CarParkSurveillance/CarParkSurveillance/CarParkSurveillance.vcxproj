@@ -177,7 +177,7 @@
     <ClCompile Include="sqlite3.c" />
     <ClCompile Include="SQLiteManager.cpp" />
     <ClCompile Include="Switches.cpp" />
-    <ClCompile Include="Trajectory.cpp" />
+    <ClCompile Include="ColorTerms.cpp" />
     <ClCompile Include="src\activations.c" />
     <ClCompile Include="src\activation_layer.c" />
     <ClCompile Include="src\art.c" />
@@ -301,7 +301,7 @@
     <ClInclude Include="src\utils.h" />
     <ClInclude Include="StringHelpers.h" />
     <ClInclude Include="Switches.h" />
-    <ClInclude Include="Trajectory.h" />
+    <ClInclude Include="ColorTerms.h" />
   </ItemGroup>
   <ItemGroup>
     <CudaCompile Include="src\activation_kernels.cu" />

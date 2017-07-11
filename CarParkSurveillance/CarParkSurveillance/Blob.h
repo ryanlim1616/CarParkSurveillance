@@ -15,6 +15,8 @@
 
 #include<iostream>
 #include<conio.h> 
+#include"ColorTerms.h"
+#include "Switches.h"
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 class Blob {
@@ -55,14 +57,12 @@ public:
 	int nonTrackZoneDelay = 0;
 
 	std::string motion = "";
-<<<<<<< HEAD
-=======
+
 
 	int previous_park_frame = 0;
 	int previous_park_frame_counter = 0;
 
 
->>>>>>> refs/remotes/ryanlim1616/master
 
 	// member variables ///////////////////////////////////////////////////////////////////////////
 	std::vector<cv::Point> currentContour;
@@ -74,7 +74,7 @@ public:
 	std::vector<cv::Point> centerPositions;
 	std::vector<cv::Scalar> AvgColor;
 	cv::Scalar AvgColorScalar;
-
+	std::string ColorInTerms;
 
 	cv::Scalar avgColorBeforeMerge;
 	cv::Mat image;
@@ -123,7 +123,8 @@ public:
 	void setEnter();
 	void setExit();
 	void setPark();
-	void getAverageColor();
+	//void getAverageColor();
+	void getAverageColor(std::vector<ColorTerm> &inputColorVector);
 	void getAverageColorLast();
 	cv::Scalar getAverageColorOnce();
 

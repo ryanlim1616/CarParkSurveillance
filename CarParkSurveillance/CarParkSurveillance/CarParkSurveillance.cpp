@@ -42,6 +42,7 @@
 #include <ctime>
 #include "Switches.h"
 #include "GetSetLog.hxx"
+#include "ColorTerms.h"
 
 #include <thread>
 
@@ -66,9 +67,9 @@ const cv::Scalar SCALAR_GREEN = cv::Scalar(0.0, 200.0, 0.0);
 const cv::Scalar SCALAR_RED = cv::Scalar(0.0, 0.0, 255.0);
 
 // function prototypes ////////////////////////////////////////////////////////////////////////////
-void matchCurrentFrameBlobsToExistingBlobs(std::vector<Blob> &existingBlobs, std::vector<Blob> &currentFrameBlobs);
-void addBlobToExistingBlobs(Blob &currentFrameBlob, std::vector<Blob> &existingBlobs, int &intIndex);
-void addNewBlob(Blob &currentFrameBlob, std::vector<Blob> &existingBlobs); \
+void matchCurrentFrameBlobsToExistingBlobs(std::vector<Blob> &existingBlobs, std::vector<Blob> &currentFrameBlobs,std::vector<ColorTerm> &colorsList);
+void addBlobToExistingBlobs(Blob &currentFrameBlob, std::vector<Blob> &existingBlobs, int &intIndex,std::vector<ColorTerm> &colorsList);
+void addNewBlob(Blob &currentFrameBlob, std::vector<Blob> &existingBlobs); 
 void addNewBlobLeavingParking(Blob &currentFrameBlob, std::vector<Blob> &existingBlobs);
 bool check_matching(Blob &currentFrameBlob, std::vector<Blob> &existingBlobs);
 double distanceBetweenPoints(cv::Point point1, cv::Point point2);
@@ -78,7 +79,7 @@ void drawAndShowContours(cv::Size imageSize, std::vector<Blob> blobs, std::strin
 
 //clarence changed the following function to include write to db:
 //bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLinePosition, int &carCount);
-bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLinePosition, int &carCount, CarParkTrackExporter &openDB, int &frameCount, int &vidLength);
+bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLinePosition, int &carCount, CarParkTrackExporter &openDB, int &frameCount, int &vidLength, std::vector<ColorTerm> &colorsList);
 
 //clarence changed the following function to include write to db:
 //void drawBlobInfoOnImage(std::vector<Blob> &blobs, cv::Mat &imgFrame2Copy);
@@ -89,14 +90,14 @@ void getIOU(std::vector<Blob> &identifiedBlob, std::vector<Blob> &newBlob0, int 
 void drawCarCountOnImage(int &carCount, cv::Mat &imgFrame2Copy);
 void drawCarDensityOnImage(double &carCount, cv::Mat &imgFrame2Copy);
 void drawRegion(cv::Size imageSize, cv::vector<cv::Point2f> points, cv::Mat imageCopy);
-void matchCurrentFrameBlobsToExistingBlobs2(std::vector<Blob> &existingBlobs, std::vector<Blob> &currentFrameBlobs);
+void matchCurrentFrameBlobsToExistingBlobs2(std::vector<Blob> &existingBlobs, std::vector<Blob> &currentFrameBlobs, std::vector<ColorTerm> &colorsList);
 void CallBackFunc(int event, int x, int y, int flags, void* userdata);
 void printNumberofCar(int entrance, bool entExt);
-void addBlobToGroupState(Blob &currentFrameBlob, std::vector<Blob> &existingBlobs, int &intIndex, int &intIndex2);
+void addBlobToGroupState(Blob &currentFrameBlob, std::vector<Blob> &existingBlobs, int &intIndex, int &intIndex2, std::vector<ColorTerm> &colorsList);
 void splitBlob(Blob &currentFrameBlob1, Blob &currentFrameBlob2, std::vector<Blob> &existingBlobs, int &intIndex);
 void checkLeaveWithNoEnter();
 void addBack(std::vector<Blob> &blobs);
-void addBlobToExistingBlobsMissMatch(Blob &currentFrameBlob, std::vector<Blob> &existingBlobs, int &intIndex);
+void addBlobToExistingBlobsMissMatch(Blob &currentFrameBlob, std::vector<Blob> &existingBlobs, int &intIndex, std::vector<ColorTerm> &colorsList);
 bool checkIfPedestrain(cv::Mat tempCropImage);
 void removeBlobMemory(std::vector<Blob> &blobs);
 void check_vehicles();
@@ -373,6 +374,18 @@ int main(void) {
 	//initialize DB
 	
 	openDB.run();
+
+	//load color term start
+
+	ColorTerm allColors("NULL","NULL");
+
+	std::vector<ColorTerm> colorsList;
+	colorsList = allColors.loadHSVtoTerms(colorsList);
+
+
+
+	//load color term end
+
 
 	for (int i = 0; i < 25; i++) {
 		countingfeatures.push_back(0);
@@ -1216,7 +1229,7 @@ int main(void) {
 						updateFrameCounter = 0;
 					//	std::cout << "Start: Blobs Matching!\n";
 						
-						matchCurrentFrameBlobsToExistingBlobs2(blobs, currentFrameBlobs);
+						matchCurrentFrameBlobsToExistingBlobs2(blobs, currentFrameBlobs, colorsList);
 						//std::cout << "End: Blobs Matching!\n";
 
 					}
@@ -1259,7 +1272,7 @@ int main(void) {
 
 					//std::cout << "Start: Check vehicle status!\n";
 					//bool blnAtLeastOneBlobCrossedTheLine = checkIfBlobsCrossedTheLine(blobs, intHorizontalLinePosition2, carCount);
-					bool blnAtLeastOneBlobCrossedTheLine = checkIfBlobsCrossedTheLine(blobs, intHorizontalLinePosition2, carCount, openDB, frameCount, vidLength);
+					bool blnAtLeastOneBlobCrossedTheLine = checkIfBlobsCrossedTheLine(blobs, intHorizontalLinePosition2, carCount, openDB, frameCount, vidLength, colorsList);
 					//std::cout << "End: Check vehicle status!\n";
 					//std::cout << "Start: Match Miss Match Blobs!\n";
 					addBack(blobs);
@@ -1698,7 +1711,7 @@ void drawRegion(cv::Size imageSize, cv::vector<cv::Point2f> points, cv::Mat imag
 		cv::imshow("sdsd", countingRegion);
 }
 
-void matchCurrentFrameBlobsToExistingBlobs2(std::vector<Blob> &existingBlobs, std::vector<Blob> &currentFrameBlobs) {
+void matchCurrentFrameBlobsToExistingBlobs2(std::vector<Blob> &existingBlobs, std::vector<Blob> &currentFrameBlobs, std::vector<ColorTerm> &colorsList) {
 
 	//std::cout << "Start: Matching temp blobs!\n";
 	std::vector<Blob> tempBlob;
@@ -1832,7 +1845,7 @@ void matchCurrentFrameBlobsToExistingBlobs2(std::vector<Blob> &existingBlobs, st
 
 		if (existingBlobs[intIndexOfLeastDistance].park == true && dblLeastDistance < currentFrameBlobs[j].dblCurrentDiagonalSize * 0.2) {
 			//std::cout << "(Matching) Start: Match parked blobs!\n";
-			addBlobToExistingBlobs(currentFrameBlobs[j], existingBlobs, intIndexOfLeastDistance);
+			addBlobToExistingBlobs(currentFrameBlobs[j], existingBlobs, intIndexOfLeastDistance, colorsList);
 			//std::cout << "(Matching) End: Match parked blobs!\n";
 		}
 
@@ -1867,7 +1880,7 @@ void matchCurrentFrameBlobsToExistingBlobs2(std::vector<Blob> &existingBlobs, st
 					std::cout << "split jorrrrrrrrrrrrrrrrrrrrrrrrrrr\n";
 				}
 				else {
-					addBlobToExistingBlobs(currentFrameBlobs[j], existingBlobs, intIndexOfLeastDistance);
+					addBlobToExistingBlobs(currentFrameBlobs[j], existingBlobs, intIndexOfLeastDistance, colorsList);
 				}
 
 
@@ -1889,14 +1902,14 @@ void matchCurrentFrameBlobsToExistingBlobs2(std::vector<Blob> &existingBlobs, st
 				&& existingBlobs[intIndexOfLeastDistance2].park == false) {
 
 				std::cout << "(Matching) start: merge!\n";
-				addBlobToGroupState(currentFrameBlobs[j], existingBlobs, intIndexOfLeastDistance, intIndexOfLeastDistance2);
+				addBlobToGroupState(currentFrameBlobs[j], existingBlobs, intIndexOfLeastDistance, intIndexOfLeastDistance2, colorsList);
 				std::cout << "merge jor " << existingBlobs[intIndexOfLeastDistance].unitID << " + " << existingBlobs[intIndexOfLeastDistance2].unitID << "\n";
 			}
 
 
 			else if (dblLeastDistance < currentFrameBlobs[j].dblCurrentDiagonalSize * 0.5 && existingBlobs[intIndexOfLeastDistance].park == false) {
 				//std::cout << "match : " << existingBlobs[intIndexOfLeastDistance].unitID << "\n";
-				addBlobToExistingBlobs(currentFrameBlobs[j], existingBlobs, intIndexOfLeastDistance); 
+				addBlobToExistingBlobs(currentFrameBlobs[j], existingBlobs, intIndexOfLeastDistance, colorsList); 
 
 			}
 
@@ -1983,7 +1996,7 @@ void matchCurrentFrameBlobsToExistingBlobs2(std::vector<Blob> &existingBlobs, st
 						//if(existingBlobs[leastDistancesss].unitID != 0)
 						bool temp_check = check_matching(currentFrameBlobs[j], existingBlobs);
 						if (temp_check == false) {
-							addBlobToExistingBlobs(currentFrameBlobs[j], existingBlobs, leastDistancesss);
+							addBlobToExistingBlobs(currentFrameBlobs[j], existingBlobs, leastDistancesss, colorsList);
 						}
 					}
 					else if (leastDistancesss >= 0 && dblDistancesss < 300 && existingBlobs[leastDistancesss].park == false) {
@@ -1991,7 +2004,7 @@ void matchCurrentFrameBlobsToExistingBlobs2(std::vector<Blob> &existingBlobs, st
 						//if (existingBlobs[leastDistancesss].unitID != 0)
 						bool temp_check = check_matching(currentFrameBlobs[j], existingBlobs);
 						if (temp_check == false) {
-							addBlobToExistingBlobs(currentFrameBlobs[j], existingBlobs, leastDistancesss);
+							addBlobToExistingBlobs(currentFrameBlobs[j], existingBlobs, leastDistancesss, colorsList);
 						}
 					}
 
@@ -2098,7 +2111,7 @@ void matchCurrentFrameBlobsToExistingBlobs2(std::vector<Blob> &existingBlobs, st
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-void addBlobToGroupState(Blob &currentFrameBlob, std::vector<Blob> &existingBlobs, int &intIndex, int &intIndex2) {
+void addBlobToGroupState(Blob &currentFrameBlob, std::vector<Blob> &existingBlobs, int &intIndex, int &intIndex2, std::vector<ColorTerm> &colorsList) {
 	currentFrameBlob.addornot = true;
 
 	existingBlobs[intIndex].getAverageColorLast();
@@ -2157,11 +2170,11 @@ void addBlobToGroupState(Blob &currentFrameBlob, std::vector<Blob> &existingBlob
 	existingBlobs[intIndex2].mergeid = existingBlobs[intIndex].unitID;
 
 	if (existingBlobs[intIndex].enter == true) {
-		existingBlobs[intIndex].getAverageColor();
+		existingBlobs[intIndex].getAverageColor(colorsList);
 	}
 
 	if (existingBlobs[intIndex2].enter == true) {
-		existingBlobs[intIndex2].getAverageColor();
+		existingBlobs[intIndex2].getAverageColor(colorsList);
 	}
 	std::cout << "merged!\n";
 
@@ -2328,7 +2341,7 @@ void splitBlob(Blob &currentFrameBlob1, Blob &currentFrameBlob2, std::vector<Blo
 
 }
 
-void addBlobToExistingBlobs(Blob &currentFrameBlob, std::vector<Blob> &existingBlobs, int &intIndex) {
+void addBlobToExistingBlobs(Blob &currentFrameBlob, std::vector<Blob> &existingBlobs, int &intIndex, std::vector<ColorTerm> &colorsList) {
 
 	carDensity = carDensity - existingBlobs[intIndex].currentBoundingRect.area();
 	carDensity = carDensity + currentFrameBlob.currentBoundingRect.area();
@@ -2358,7 +2371,7 @@ void addBlobToExistingBlobs(Blob &currentFrameBlob, std::vector<Blob> &existingB
 	existingBlobs[intIndex].existInSceen++;
 
 	if (existingBlobs[intIndex].enter == true) {
-		existingBlobs[intIndex].getAverageColor();
+		existingBlobs[intIndex].getAverageColor(colorsList);
 	}
 
 	if (existingBlobs[intIndex].enter == true && existingBlobs[intIndex].unitID == 0 && existingBlobs[intIndex].park == false) {
@@ -2394,7 +2407,7 @@ void addBlobToExistingBlobs(Blob &currentFrameBlob, std::vector<Blob> &existingB
 				existingBlobs[k].existInSceen++;
 
 				if (existingBlobs[k].enter == true) {
-					existingBlobs[k].getAverageColor();
+					existingBlobs[k].getAverageColor(colorsList);
 				}
 				break;
 			}
@@ -2895,7 +2908,7 @@ void drawAndShowContours(cv::Size imageSize, std::vector<Blob> blobs, std::strin
 }
 
 //bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLinePosition, int &carCount) {
-bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLinePosition, int &carCount, CarParkTrackExporter &openDB, int &frameCount, int &vidLength) {
+bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLinePosition, int &carCount, CarParkTrackExporter &openDB, int &frameCount, int &vidLength, std::vector<ColorTerm> &colorsList) {
 
 
 	std::vector<Blob> tempBb;
@@ -3409,7 +3422,7 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 																missMatchBlob[highIndexx].nonTrackParkingZoneLocation = 1;
 																missMatchBlob[highIndexx].enter = true;
 																missMatchBlob[highIndexx].leavingNonTrackzone = false;
-																addBlobToExistingBlobsMissMatch(blobs[i], missMatchBlob, highIndexx);
+																addBlobToExistingBlobsMissMatch(blobs[i], missMatchBlob, highIndexx, colorsList);
 																missMatchBlob[highIndexx].matchBack = true;
 																missMatchBlob[highIndexx].matchbackid = i;
 
@@ -3690,7 +3703,7 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 								missMatchBlob[highIndexx].parkLocation = blobs[i].parkLocation;
 								missMatchBlob[highIndexx].parkinglot = blobs[i].parkinglot;
 								missMatchBlob[highIndexx].parkframe = 50;
-								addBlobToExistingBlobsMissMatch(blobs[i], missMatchBlob, highIndexx);
+								addBlobToExistingBlobsMissMatch(blobs[i], missMatchBlob, highIndexx, colorsList);
 								missMatchBlob[highIndexx].matchBack = true;
 								missMatchBlob[highIndexx].matchbackid = i;
 								//std::cout << "77\n";
@@ -4409,59 +4422,6 @@ void drawBlobInfoOnImage(std::vector<Blob> &blobs, cv::Mat &imgFrame2Copy, CarPa
 
 
 
-		
-
-
-
-		cv::Point currentcenter = blobs[i].centerPositions.back();
-		
-			
-	if (blobs[i].motion == "up")
-	{
-		currentcenter.x = currentcenter.x;
-		currentcenter.y = abs(currentcenter.y - inflationSize.height / 2);
-	}
-	else if (blobs[i].motion == "down")
-	{
-		currentcenter.x = currentcenter.x;
-		currentcenter.y = abs(currentcenter.y + inflationSize.height / 2);
-	}
-	else if (blobs[i].motion == "left")
-	{
-		currentcenter.x = abs(currentcenter.x - inflationSize.width / 2);
-		currentcenter.y = currentcenter.y;
-	}
-	else if (blobs[i].motion == "right")
-	{
-		currentcenter.x = abs(currentcenter.x + inflationSize.width / 2);
-		currentcenter.y = currentcenter.y;
-	}
-	else if (blobs[i].motion == "left-up")
-	{
-		currentcenter.x = abs(currentcenter.x - inflationSize.width / 2);
-		currentcenter.y = abs(currentcenter.y - inflationSize.height / 2);
-	}
-	else if (blobs[i].motion == "right-up")
-	{
-		currentcenter.x = abs(currentcenter.x + inflationSize.width / 2);
-		currentcenter.y = abs(currentcenter.y - inflationSize.height / 2);
-	}
-	else if (blobs[i].motion == "left-down")
-	{
-		currentcenter.x = abs(currentcenter.x - inflationSize.width / 2);
-		currentcenter.y = abs(currentcenter.y + inflationSize.height / 2);
-	}
-	else if (blobs[i].motion == "right-down")
-	{
-		currentcenter.x = abs(currentcenter.x + inflationSize.width / 2);
-		currentcenter.y = abs(currentcenter.y + inflationSize.height / 2);
-	}
-	else
-	{
-			
-	}
-
-
 		//clarencetest end
 
 		
@@ -4489,19 +4449,16 @@ void drawBlobInfoOnImage(std::vector<Blob> &blobs, cv::Mat &imgFrame2Copy, CarPa
 			}
 			else {
 				cv::rectangle(imgFrame2Copy, blobs[i].currentBoundingRect, SCALAR_RED, 2);
-<<<<<<< HEAD
-				
-=======
+
 				//cv::putText(imgFrame2Copy, std::to_string(blobs[i].unitID), blobs[i].centerPositions.back(), intFontFace, dblFontScale, SCALAR_GREEN, 2);
->>>>>>> refs/remotes/ryanlim1616/master
+
 				//test
 				//cv::rectangle(imgFrame2Copy, tempBoundingRect, blobs[i].AvgColorScalar, 2);
 				cv::arrowedLine(imgFrame2Copy, blobs[i].centerPositions.back(), currentcenter, SCALAR_BLACK, 5, CV_AA, 0, 0.3);
 				cv::arrowedLine(imgFrame2Copy, blobs[i].centerPositions.back(), currentcenter, blobs[i].AvgColorScalar, 1, CV_AA, 0, 0.3);
-<<<<<<< HEAD
-=======
+
 				cv::putText(imgFrame2Copy, std::to_string(blobs[i].unitID), blobs[i].centerPositions.back(), intFontFace, dblFontScale, SCALAR_GREEN, 2);
->>>>>>> refs/remotes/ryanlim1616/master
+
 				//test
 				cv::putText(imgFrame2Copy, std::to_string(blobs[i].unitID), blobs[i].centerPositions.back(), intFontFace, dblFontScale, SCALAR_GREEN, 2);
 
@@ -4604,7 +4561,7 @@ void printNumberofCar(int entrance, bool entExt) {
 	//std::cout << "***************************************************\n";
 }
 
-void matchCurrentFrameBlobsToExistingBlobs(std::vector<Blob> &existingBlobs, std::vector<Blob> &currentFrameBlobs) {
+void matchCurrentFrameBlobsToExistingBlobs(std::vector<Blob> &existingBlobs, std::vector<Blob> &currentFrameBlobs, std::vector<ColorTerm> &colorsList) {
 
 	for (auto &existingBlob : existingBlobs) {
 
@@ -4797,7 +4754,7 @@ void matchCurrentFrameBlobsToExistingBlobs(std::vector<Blob> &existingBlobs, std
 			}
 			}*/
 
-			addBlobToExistingBlobs(currentFrameBlobs[j], existingBlobs, intIndexOfLeastDistance);
+			addBlobToExistingBlobs(currentFrameBlobs[j], existingBlobs, intIndexOfLeastDistance, colorsList);
 
 
 
@@ -4841,7 +4798,7 @@ void checkLeaveWithNoEnter() {
 
 }
 
-void addBlobToExistingBlobsMissMatch(Blob &currentFrameBlob, std::vector<Blob> &existingBlobs, int &intIndex) {
+void addBlobToExistingBlobsMissMatch(Blob &currentFrameBlob, std::vector<Blob> &existingBlobs, int &intIndex, std::vector<ColorTerm> &colorsList) {
 	carDensity = carDensity - existingBlobs[intIndex].currentBoundingRect.area();
 	carDensity = carDensity + currentFrameBlob.currentBoundingRect.area();
 
@@ -4874,7 +4831,7 @@ void addBlobToExistingBlobsMissMatch(Blob &currentFrameBlob, std::vector<Blob> &
 	existingBlobs[intIndex].existInSceen++;
 
 	if (existingBlobs[intIndex].enter == true) {
-		existingBlobs[intIndex].getAverageColor();
+		existingBlobs[intIndex].getAverageColor(colorsList);
 	}
 
 	if (existingBlobs[intIndex].enter == true && existingBlobs[intIndex].unitID == 0 && existingBlobs[intIndex].park == false) {
@@ -4910,7 +4867,7 @@ void addBlobToExistingBlobsMissMatch(Blob &currentFrameBlob, std::vector<Blob> &
 				existingBlobs[k].existInSceen++;
 
 				if (existingBlobs[k].enter == true) {
-					existingBlobs[k].getAverageColor();
+					existingBlobs[k].getAverageColor(colorsList);
 				}
 				break;
 			}
@@ -5016,78 +4973,6 @@ IplImage* mat_to_iplimage(cv::Mat input) {
 	return output;
 }
 
-void getBlobMotion(std::vector<Blob> &blobs) {
-	
-	int diff_X = 0;
-	int diff_Y = 0;
-	std::string direction_X = "";
-	std::string direction_Y = "";
-	
-		
-	for (int i = 0; i < blobs.size(); i++) {
-		
-			
-	//std::cout <<  blobs[i].centerPositions << std::endl; 
-			
-	//std::cout << "blob x,y = " << blobs[i].centerPositions[blobs.size()].x << blobs[i].centerPositions[blobs.size()].y << std::endl;
-			
-		if (blobs[i].centerPositions.size() > 12)
-		{
-			
-				
-			diff_X = blobs[i].centerPositions[blobs[i].centerPositions.size() - 10].x - blobs[i].centerPositions[blobs[i].centerPositions.size() - 1].x;
-			diff_Y = blobs[i].centerPositions[blobs[i].centerPositions.size() - 10].y - blobs[i].centerPositions[blobs[i].centerPositions.size() - 1].y;
-			direction_X = "";
-			direction_Y = "";
-			
-			if (abs(diff_X) > 5)
-			{
-				if (diff_X > 0)
-					direction_X = "left";
-				else
-					direction_X = "right";
-			}
-			
-			if (abs(diff_Y) > 5)
-			{
-				if (diff_Y > 0)
-					direction_Y = "up";
-				else
-					direction_Y = "down";
-			}
-			
-			//handle when both directions are non - empty
-			if ((direction_X != "") && (direction_Y != ""))
-			{
-				blobs[i].motion = direction_X + "-" + direction_Y;
-			}
-			//otherwise, only one direction is non - empty
-			else
-			{
-				if ((direction_X != ""))
-				{
-					blobs[i].motion = direction_X;
-				}
-				else
-				{
-					blobs[i].motion = direction_Y;
-				}
-				
-			}
-			
-				
-				
-				
-		//std::cout << "testX, testY = " << direction_X << "-" << direction_Y << std::endl;
-		}
-		
-			
-	}
-	
-		
-		
-		
-}
 
 
 

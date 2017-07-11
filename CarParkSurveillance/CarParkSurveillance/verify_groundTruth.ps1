@@ -12,7 +12,7 @@ $gt = Import-Csv C:\powershell\gt.csv
 
 #290317db.csv
 
-$db = Import-Csv C:\powershell\db_260317_rerun.csv
+$db = Import-Csv C:\powershell\d15062017.csv
 $time_window = [timespan]('00:00:05') 
 $time_dec = [timespan]('00:00:05')
 $write = $false

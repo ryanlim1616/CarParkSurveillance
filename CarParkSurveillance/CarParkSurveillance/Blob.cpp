@@ -276,10 +276,13 @@ void Blob::storeImage(cv::Mat rawImage) {
 	
 }
 
-void Blob::getAverageColor() {
+
+
+
+void Blob::getAverageColor(std::vector<ColorTerm> &inputColorVector) {
 
 	////clarence
-	cv::Mat hsv;
+	cv::Mat hsv, hsv2;
 	cv::Mat temp_mat = cv::Mat::zeros(10, 10, CV_8UC3);
 
 
@@ -303,7 +306,7 @@ void Blob::getAverageColor() {
 
 	cvtColor(cropImage, hsv, CV_BGR2HSV);
 	//calculate the Hue-Saturation histogram
-	int hbins = 30, sbins = 32, vbins = 32;
+	int hbins = 15, sbins = 8, vbins = 8;
 	int histSize[] = { hbins, sbins, vbins };
 	// hue varies from 0 to 179, see cvtColor
 	float hranges[] = { 0, 180 };
@@ -321,7 +324,7 @@ void Blob::getAverageColor() {
 		hist, 3, histSize, ranges,
 		true, // the histogram is uniform
 		false);
-	double maxVal = 0;
+	//double maxVal = 0;
 
 	//cv::Point min_loc, max_loc;
 	//minMaxLoc(hist, 0, &maxVal, &min_loc, &max_loc);  <-- if there's only 2 dimension
@@ -336,25 +339,62 @@ void Blob::getAverageColor() {
 
 	//std::cout << "Hue range, Saturation, Value : (" << int((max_loc[0])) * 12 << "), " << int(((max_loc[1] + max_loc[1] + 1)/2) * 3.125) <<  ", " << int(((max_loc[2] + max_loc[2] + 1)/2) * 3.125) << std::endl;	
 
+	//std::cout << ">> HSV: " << max_loc[0] << "," << max_loc[1] << ","<< max_loc[2] <<std::endl;
 
-	average[0] = int(max_loc[0] * 6);  // each bin represents 6 HUES
-	average[1] = int(max_loc[1] * 8);  // each bin represents 8 SATURATION 
-	average[2] = int(max_loc[2] * 8);  // each bin represents 8 VALUES
+	average[0] = int(max_loc[0] * 12);  // each bin represents 12 HUES ///// 6hues (if 30,32,32)
+	average[1] = int(max_loc[1] * 32);  // each bin represents 32 SATURATION //8sat (if 30,32,32)
+	average[2] = int(max_loc[2] * 32);  // each bin represents 32 VALUES// 8val (if 30,32,32)
 
 	hsv = average;  // set MAT to the HSV color
 	cvtColor(hsv, temp_mat, CV_HSV2BGR);  // convert it back to BGR
 	average = cv::mean(temp_mat); // get the color in BGR format
 	AvgColorScalar = average;
 	
+	
 
 
-	AvgColorScalar[0] = (average[0] + AvgColorScalar[0]) / 2;
-	AvgColorScalar[1] = (average[1] + AvgColorScalar[1]) / 2;
-	AvgColorScalar[2] = (average[2] + AvgColorScalar[2]) / 2;
+	AvgColorScalar[0] = int((average[0] + AvgColorScalar[0]) / 2);
+	AvgColorScalar[1] = int((average[1] + AvgColorScalar[1]) / 2);
+	AvgColorScalar[2] = int((average[2] + AvgColorScalar[2]) / 2);
 
 
 	AvgColor.push_back(AvgColorScalar);
 
+
+
+
+
+
+
+	temp_mat = AvgColorScalar;  // set MAT to the averaged HSV color
+	//std::cout << AvgColorScalar << std::endl;
+
+	cvtColor(temp_mat, hsv, CV_BGR2HSV);
+
+	//recalculate the Histogram value
+	calcHist(&hsv, 1, channels, cv::Mat(), // do not use mask
+		hist, 3, histSize, ranges,
+		true, // the histogram is uniform
+		false);
+
+	max_loc[0] = 0;
+	max_loc[1] = 0;
+	max_loc[2] = 0;
+
+	//reobtain the value
+	minMaxIdx(hist, 0, 0, 0, max_loc, cv::Mat());
+
+	std::string tempString = std::to_string(max_loc[0]) + "," + std::to_string(max_loc[1]) + "," + std::to_string(max_loc[2]);
+
+	ColorTerm allColors("Null","Null");
+	ColorInTerms = allColors.getTerm(inputColorVector, tempString);
+
+
+	ColorInTerms = ColorInTerms + " HSV:" + std::to_string(max_loc[0]) + ", " + std::to_string(max_loc[1]) + ", " + std::to_string(max_loc[2]);
+	//test
+
+	if(debug_on)
+	std::cout << "unitID: " << unitID << ", " << ColorInTerms  << ">> HSV: " << max_loc[0] << ", " << max_loc[1] << ", "<< max_loc[2] << std::endl;
 
 	//int scale = 10;
 	//cv::Mat histImg = cv::Mat::zeros(sbins*scale, hbins*scale, CV_8UC3);
@@ -383,6 +423,117 @@ void Blob::getAverageColor() {
 	cropImage.release();
 
 }	
+
+
+//void Blob::getAverageColor() {
+//
+//	////clarence
+//	cv::Mat hsv;
+//	cv::Mat temp_mat = cv::Mat::zeros(10, 10, CV_8UC3);
+//
+//
+//	cv::Rect tempBoundingRect = currentBoundingRect;
+//	cv::Size inflationSize(currentBoundingRect.width*0.4, currentBoundingRect.height*0.4);
+//
+//	tempBoundingRect -= inflationSize;
+//	tempBoundingRect.x += inflationSize.width / 2;
+//	tempBoundingRect.y += inflationSize.height / 2;
+//
+//	////clarence end
+//
+//
+//	cv::Mat cropImage = rawImage(tempBoundingRect);
+//	cv::Scalar average = cv::mean(cropImage);
+//	//clarence commented out -- START --
+//	//AvgColor.push_back(average);
+//	//AvgColorScalar = average;
+//	//clarence -- END -- 
+//
+//
+//	cvtColor(cropImage, hsv, CV_BGR2HSV);
+//	//calculate the Hue-Saturation histogram
+//	int hbins = 15, sbins = 8, vbins = 8;
+//	int histSize[] = { hbins, sbins, vbins };
+//	// hue varies from 0 to 179, see cvtColor
+//	float hranges[] = { 0, 180 };
+//	// saturation & value varies from 0 (black-gray-white) to
+//	// 255 (pure spectrum color)
+//	float sranges[] = { 0, 256 };
+//	float vranges[] = { 0, 256 };
+//
+//	const float* ranges[] = { hranges, sranges, vranges };
+//	cv::MatND hist;
+//	// we compute the histogram from the 0-th and 1-st channels
+//	int channels[] = { 0, 1, 2 };
+//
+//	calcHist(&hsv, 1, channels, cv::Mat(), // do not use mask
+//		hist, 3, histSize, ranges,
+//		true, // the histogram is uniform
+//		false);
+//	double maxVal = 0;
+//
+//	//cv::Point min_loc, max_loc;
+//	//minMaxLoc(hist, 0, &maxVal, &min_loc, &max_loc);  <-- if there's only 2 dimension
+//
+//	int max_loc[3];
+//	minMaxIdx(hist, 0, 0, 0, max_loc, cv::Mat());
+//
+//
+//	// formula: Hue			= ((Current bin+next bin)/2)* ((180 hue/30 bin)*2(to change to GIMP 360)
+//	// formula: Saturation	= (current bin+next bin)/2) * (100/32) --< eg: bin value/32 bins * 100(gimp max sat)
+//	// formula: value		= ((current bin + next bin)/2) * (100/32) --< eg: bin value/32 bins * 100 (gimp max value)
+//
+//	//std::cout << "Hue range, Saturation, Value : (" << int((max_loc[0])) * 12 << "), " << int(((max_loc[1] + max_loc[1] + 1)/2) * 3.125) <<  ", " << int(((max_loc[2] + max_loc[2] + 1)/2) * 3.125) << std::endl;	
+//
+//	std::cout << ">> HSV: " << max_loc[0] << "," << max_loc[1] << "," << max_loc[2] << std::endl;
+//
+//	average[0] = int(max_loc[0] * 12);  // each bin represents 12 HUES ///// 6hues (if 30,32,32)
+//	average[1] = int(max_loc[1] * 32);  // each bin represents 32 SATURATION //8sat (if 30,32,32)
+//	average[2] = int(max_loc[2] * 32);  // each bin represents 32 VALUES// 8val (if 30,32,32)
+//
+//	hsv = average;  // set MAT to the HSV color
+//	cvtColor(hsv, temp_mat, CV_HSV2BGR);  // convert it back to BGR
+//	average = cv::mean(temp_mat); // get the color in BGR format
+//	AvgColorScalar = average;
+//
+//	
+//
+//	AvgColorScalar[0] = (average[0] + AvgColorScalar[0]) / 2;
+//	AvgColorScalar[1] = (average[1] + AvgColorScalar[1]) / 2;
+//	AvgColorScalar[2] = (average[2] + AvgColorScalar[2]) / 2;
+//
+//
+//	AvgColor.push_back(AvgColorScalar);
+//
+//	
+//
+//	//int scale = 10;
+//	//cv::Mat histImg = cv::Mat::zeros(sbins*scale, hbins*scale, CV_8UC3);
+//
+//
+//	//int h_max, s_max;
+//
+//	//to display and compute histogram
+//	//for (int h = 0; h < hbins; h++)
+//	//	for (int s = 0; s < sbins; s++)
+//	//	{
+//	//		float binVal = hist.at<float>(h, s);
+//	//		int intensity = cvRound(binVal * 255 / maxVal);
+//	//		rectangle(histImg, cv::Point(h*scale, s*scale),
+//	//			cv::Point((h + 1)*scale - 1, (s + 1)*scale - 1),
+//	//			cv::Scalar::all(intensity),
+//	//			CV_FILLED);
+//
+//	//	}
+//
+//	////display histogram:
+//	//cv::imshow("H-S histogram", histImg);
+//
+//	hsv.release();
+//	temp_mat.release();
+//	cropImage.release();
+//
+//}
 
 void Blob::getAverageColorLast() {
 	avgColorBeforeMerge = cv::mean(rawImage, image);
@@ -547,6 +698,7 @@ void Blob::setPark() {
 	park = true;
 
 }
+
 
 
 

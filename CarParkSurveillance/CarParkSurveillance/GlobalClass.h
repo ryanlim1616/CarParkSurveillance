@@ -119,6 +119,56 @@ public:
 		
 		return InputTime_new;
 	}
+	std::string get_PosTime(int vframeCount, int vidLength)
+	{
+		//let's see if this is causing some memory leak issue? -- tested, 17/3/17 - no leak here
+
+		//****************** START ******************
+		struct tm *timeinfo = new struct tm();
+
+		double vidDuration = vidLength * 60;
+		int temp_time = vframeCount * (vidDuration / double(TotalFrames));
+		time(&InputTime_time);
+		timeinfo = localtime(&InputTime_time);
+		timeinfo->tm_hour = 0;
+		timeinfo->tm_min = 0;
+		timeinfo->tm_sec = temp_time + std::stoi(InputTime_old.substr(4, 2));
+
+
+		mktime(timeinfo);
+
+		std::string temp_hour, temp_minute, temp_sec;
+
+
+		temp_hour = "0";
+
+
+		if (timeinfo->tm_min < 10)
+		{
+			temp_minute = "0" + std::to_string(timeinfo->tm_min);
+		}
+		else
+		{
+			temp_minute = std::to_string(timeinfo->tm_min);
+		}
+
+		if (timeinfo->tm_sec < 10)
+		{
+			temp_sec = "0" + std::to_string(timeinfo->tm_sec);
+		}
+		else
+		{
+			temp_sec = std::to_string(timeinfo->tm_sec);
+		}
+
+		InputTime_new = temp_hour + ":" + temp_minute + ":" + temp_sec;
+
+		//****************** END ******************
+		//InputTime_new = "00:00:00";
+
+
+		return InputTime_new;
+	}
 	void set_TotalFrames(int vTotalFrames)
 	{
 		TotalFrames = vTotalFrames;
