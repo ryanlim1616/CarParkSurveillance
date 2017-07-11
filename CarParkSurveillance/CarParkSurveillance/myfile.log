@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 Start of job: 20:20:30
+=======
+Start of job: 15:40:6
+>>>>>>> refs/remotes/ryanlim1616/master
 CarParkTrackExporter()
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 |              S H E R L O C K            =
@@ -27,6 +31,7 @@ Please enter processing date (CCYYMMDD): Please enter number of processing dates
 2: 20161019
 < !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! >
 D:\Videos Database\Carpark Data\20161018\c2\
+<<<<<<< HEAD
 100 files were found:
 1: D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4
 Press Enter to continue: --- [Creating new GlobalClass instance]---
@@ -18553,3 +18558,9 @@ Deleting : 0
 imgFrame2.empty() - breaking from loop
 End of current file: 3:45:32
 CarParkTrackExporter()
+=======
+1 files were found:
+1: D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4
+Press Enter to continue: --- [Creating new GlobalClass instance]---
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4
+>>>>>>> refs/remotes/ryanlim1616/master
