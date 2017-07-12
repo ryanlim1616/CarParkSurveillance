@@ -1,0 +1,10 @@
+ffmpeg -i 20160926_083000.mp4 -i overlayMask.png -filter_complex "overlay=(W-w)/2:(H-h)/2" -codec:a copy output.mp4
+
+
+for %%A IN (*.mp4) DO ffmpeg -i "%%A" "%%A.mpg"
+
+
+
+
+for %%A IN (*.mp4) DO ffmpeg -i "%%A" -i overlayMask.png -filter_complex "overlay=(W-w)/2:(H-h)/2" -codec:a copy "%%A_mask.mp4"
+

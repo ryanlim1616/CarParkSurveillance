@@ -284,10 +284,18 @@ void Blob::getAverageColor(std::vector<ColorTerm> &inputColorVector) {
 	////clarence
 	cv::Mat hsv, hsv2;
 	cv::Mat temp_mat = cv::Mat::zeros(10, 10, CV_8UC3);
+	cv::Mat blurredImg, resizedBlurredImg;
 
+	cv::Size Ksize;
+	Ksize.height = 5;
+	Ksize.width = 5;
+
+	cv::Size resizeScale;
+	resizeScale.height = 400;
+	resizeScale.width = 400;
 
 	cv::Rect tempBoundingRect = currentBoundingRect;
-	cv::Size inflationSize(currentBoundingRect.width*0.4, currentBoundingRect.height*0.4);
+	cv::Size inflationSize(currentBoundingRect.width*0.3, currentBoundingRect.height*0.3);
 
 	tempBoundingRect -= inflationSize;
 	tempBoundingRect.x += inflationSize.width / 2;
@@ -303,8 +311,33 @@ void Blob::getAverageColor(std::vector<ColorTerm> &inputColorVector) {
 	//AvgColorScalar = average;
 	//clarence -- END -- 
 
+	//perform gaussian blur around the img, avoid noise
+	cv::GaussianBlur(cropImage, blurredImg, Ksize, 5);
 
-	cvtColor(cropImage, hsv, CV_BGR2HSV);
+	////perform minmaxloc to find the highest pixel value
+	////draw a circle around the highest peak
+	//cv::hconcat(cropImage, blurredImg, resizedBlurredImg);
+
+	double maxVal = 0;
+	cv::Point min_locBlur, max_locBlur;
+
+	//cv::Mat reshapedMat;
+	//reshapedMat = blurredImg.reshape(1);
+
+	//minMaxLoc(reshapedMat, 0, &maxVal, &min_locBlur, &max_locBlur);
+
+	//cv::circle(blurredImg, max_locBlur, Ksize.width, (0,255,0), 1);
+
+
+
+	////if (imshow_display)
+	//cv::hconcat(resizedBlurredImg, blurredImg, resizedBlurredImg);
+	//cv::resize(resizedBlurredImg, resizedBlurredImg, resizeScale);
+	//cv::imshow("Gaussian Blur", resizedBlurredImg);
+
+
+	cvtColor(blurredImg, hsv, CV_BGR2HSV);
+	//cvtColor(cropImage, hsv, CV_BGR2HSV);
 	//calculate the Hue-Saturation histogram
 	int hbins = 15, sbins = 8, vbins = 8;
 	int histSize[] = { hbins, sbins, vbins };
