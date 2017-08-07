@@ -425,6 +425,9 @@
     <ClInclude Include="ColorTerms.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="alphanum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CudaCompile Include="src\avgpool_layer_kernels.cu" />

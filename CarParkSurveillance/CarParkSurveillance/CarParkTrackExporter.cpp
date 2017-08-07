@@ -64,9 +64,34 @@ bool CarParkTrackExporter::createTables()
 	success &= mSQLManager->executeStatement("create table IF NOT EXISTS weather ( weather_id INTEGER PRIMARY KEY ASC, weather_date DATE, weather_time TIME, weather_condition VARCHAR(10))");
 	success &= mSQLManager->executeStatement("create table IF NOT EXISTS days ( day_id INTEGER PRIMARY KEY ASC, day_date DATE, avg_weather VARCHAR(10), sod_car_num INT, eod_car_num INT, total_car_num INT)");
 
-	//success &= mSQLManager->executeStatement("create table object_type ( name TEXT, PRIMARY KEY( name) )");
-	//success &= mSQLManager->executeStatement("create table sceneobject ( object_id TEXT, type object_type, description TEXT, PRIMARY KEY( object_id) )");
-	//success &= mSQLManager->executeStatement("create table position ( object_id sceneobject, frame_number INTEGER, top_left_corner_x REAL, top_left_corner_y REAL, bottom_right_corner_x REAL, bottom_right_corner_y REAL,  PRIMARY KEY( object_id, frame_number ) )");
+	
+
+	//create color tables
+	success &= mSQLManager->executeStatement("create table IF NOT EXISTS color_black ( row_id INTEGER PRIMARY KEY ASC, filename VARCHAR(20), atom_x INT, atom_y INT,atom_t INT ,unique (filename, atom_x, atom_y, atom_t))");
+	success &= mSQLManager->executeStatement("create table IF NOT EXISTS color_grey_silver ( row_id INTEGER PRIMARY KEY ASC, filename VARCHAR(20), atom_x INT, atom_y INT,atom_t INT ,unique (filename, atom_x, atom_y, atom_t))");
+	success &= mSQLManager->executeStatement("create table IF NOT EXISTS color_white ( row_id INTEGER PRIMARY KEY ASC, filename VARCHAR(20), atom_x INT, atom_y INT,atom_t INT ,unique (filename, atom_x, atom_y, atom_t))");
+	success &= mSQLManager->executeStatement("create table IF NOT EXISTS color_red ( row_id INTEGER PRIMARY KEY ASC, filename VARCHAR(20), atom_x INT, atom_y INT,atom_t INT ,unique (filename, atom_x, atom_y, atom_t))");
+	success &= mSQLManager->executeStatement("create table IF NOT EXISTS color_green ( row_id INTEGER PRIMARY KEY ASC, filename VARCHAR(20), atom_x INT, atom_y INT,atom_t INT ,unique (filename, atom_x, atom_y, atom_t))");
+	success &= mSQLManager->executeStatement("create table IF NOT EXISTS color_blue ( row_id INTEGER PRIMARY KEY ASC, filename VARCHAR(20), atom_x INT, atom_y INT,atom_t INT ,unique (filename, atom_x, atom_y, atom_t))");
+	success &= mSQLManager->executeStatement("create table IF NOT EXISTS color_brown ( row_id INTEGER PRIMARY KEY ASC, filename VARCHAR(20), atom_x INT, atom_y INT,atom_t INT ,unique (filename, atom_x, atom_y, atom_t))");
+	success &= mSQLManager->executeStatement("create table IF NOT EXISTS color_orange ( row_id INTEGER PRIMARY KEY ASC, filename VARCHAR(20), atom_x INT, atom_y INT,atom_t INT ,unique (filename, atom_x, atom_y, atom_t))");
+	success &= mSQLManager->executeStatement("create table IF NOT EXISTS color_pink ( row_id INTEGER PRIMARY KEY ASC, filename VARCHAR(20), atom_x INT, atom_y INT,atom_t INT ,unique (filename, atom_x, atom_y, atom_t))");
+	success &= mSQLManager->executeStatement("create table IF NOT EXISTS color_purple ( row_id INTEGER PRIMARY KEY ASC, filename VARCHAR(20), atom_x INT, atom_y INT,atom_t INT ,unique (filename, atom_x, atom_y, atom_t))");
+	success &= mSQLManager->executeStatement("create table IF NOT EXISTS color_yellow ( row_id INTEGER PRIMARY KEY ASC, filename VARCHAR(20), atom_x INT, atom_y INT,atom_t INT ,unique (filename, atom_x, atom_y, atom_t))");
+
+
+	//create direction tables
+	success &= mSQLManager->executeStatement("create table IF NOT EXISTS dir_up ( row_id INTEGER PRIMARY KEY ASC, filename VARCHAR(20), atom_x INT, atom_y INT,atom_t INT ,unique (filename, atom_x, atom_y, atom_t))");
+	success &= mSQLManager->executeStatement("create table IF NOT EXISTS dir_down ( row_id INTEGER PRIMARY KEY ASC, filename VARCHAR(20), atom_x INT, atom_y INT,atom_t INT ,unique (filename, atom_x, atom_y, atom_t))");
+	success &= mSQLManager->executeStatement("create table IF NOT EXISTS dir_left ( row_id INTEGER PRIMARY KEY ASC, filename VARCHAR(20), atom_x INT, atom_y INT,atom_t INT ,unique (filename, atom_x, atom_y, atom_t))");
+	success &= mSQLManager->executeStatement("create table IF NOT EXISTS dir_right ( row_id INTEGER PRIMARY KEY ASC, filename VARCHAR(20), atom_x INT, atom_y INT,atom_t INT ,unique (filename, atom_x, atom_y, atom_t))");
+	success &= mSQLManager->executeStatement("create table IF NOT EXISTS dir_left_up ( row_id INTEGER PRIMARY KEY ASC, filename VARCHAR(20), atom_x INT, atom_y INT,atom_t INT ,unique (filename, atom_x, atom_y, atom_t))");
+	success &= mSQLManager->executeStatement("create table IF NOT EXISTS dir_right_up ( row_id INTEGER PRIMARY KEY ASC, filename VARCHAR(20), atom_x INT, atom_y INT,atom_t INT ,unique (filename, atom_x, atom_y, atom_t))");
+	success &= mSQLManager->executeStatement("create table IF NOT EXISTS dir_left_down ( row_id INTEGER PRIMARY KEY ASC, filename VARCHAR(20), atom_x INT, atom_y INT,atom_t INT ,unique (filename, atom_x, atom_y, atom_t))");
+	success &= mSQLManager->executeStatement("create table IF NOT EXISTS dir_right_down ( row_id INTEGER PRIMARY KEY ASC, filename VARCHAR(20), atom_x INT, atom_y INT,atom_t INT ,unique (filename, atom_x, atom_y, atom_t))");
+	success &= mSQLManager->executeStatement("create table IF NOT EXISTS dir_motionless ( row_id INTEGER PRIMARY KEY ASC, filename VARCHAR(20), atom_x INT, atom_y INT,atom_t INT ,unique (filename, atom_x, atom_y, atom_t))");
+
+
 	success &= mSQLManager->endTransaction();
 	return success;
 }
@@ -78,6 +103,33 @@ bool CarParkTrackExporter::dropTables()
 	success &= mSQLManager->executeStatement("drop table if exists objects;");
 	success &= mSQLManager->executeStatement("drop table if exists weather;");
 	success &= mSQLManager->executeStatement("drop table if exists days;");
+
+
+	//drop color tables
+	success &= mSQLManager->executeStatement("drop table if exists color_black;");
+	success &= mSQLManager->executeStatement("drop table if exists color_grey_silver;");
+	success &= mSQLManager->executeStatement("drop table if exists color_white;");
+	success &= mSQLManager->executeStatement("drop table if exists color_red;");
+	success &= mSQLManager->executeStatement("drop table if exists color_green;");
+	success &= mSQLManager->executeStatement("drop table if exists color_blue;");
+	success &= mSQLManager->executeStatement("drop table if exists color_brown;");
+	success &= mSQLManager->executeStatement("drop table if exists color_orange;");
+	success &= mSQLManager->executeStatement("drop table if exists color_pink;");
+	success &= mSQLManager->executeStatement("drop table if exists color_purple;");
+	success &= mSQLManager->executeStatement("drop table if exists color_yellow;");
+
+
+	//drop motion tables
+	success &= mSQLManager->executeStatement("drop table if exists dir_up;");
+	success &= mSQLManager->executeStatement("drop table if exists dir_down;");
+	success &= mSQLManager->executeStatement("drop table if exists dir_left;");
+	success &= mSQLManager->executeStatement("drop table if exists dir_right;");
+	success &= mSQLManager->executeStatement("drop table if exists dir_left_up;");
+	success &= mSQLManager->executeStatement("drop table if exists dir_right_up;");
+	success &= mSQLManager->executeStatement("drop table if exists dir_left_down;");
+	success &= mSQLManager->executeStatement("drop table if exists dir_right_down;");
+	success &= mSQLManager->executeStatement("drop table if exists dir_motionless;");
+
 
 	/*success &= mSQLManager->executeStatement("drop table if exists position;" );
 	success &= mSQLManager->executeStatement("drop table if exists sceneobject;" );
@@ -100,6 +152,30 @@ bool CarParkTrackExporter::writeToDB(std::vector<Blob> &blobs, unsigned int &i, 
 			+ std::to_string(blobs[i].currentBoundingRect.width) + "', '" + std::to_string(blobs[i].currentBoundingRect.height) + "', '"
 			+ GlobalClass::instance()->get_InputDate() + "', '" + GlobalClass::instance()->get_InputTime(frameCount, vidLength) + "', '" + GlobalClass::instance()->get_PosTime(frameCount, vidLength) + "', '"
 			+ GlobalClass::instance()->get_InputFileName() + "', '" + std::to_string(frameCount) + "');");
+
+
+		//get atom_x, atom_y, atom_t using tuple
+		//write into the new tables: colors & directions
+		//std::tuple<int, int, int> get_atomInfo(int pos_x, int pos_y, int currentFrame)
+
+		auto blobi = get_atomInfo(blobs[i].currentBoundingRect.x+(blobs[i].currentBoundingRect.width/2), blobs[i].currentBoundingRect.y + (blobs[i].currentBoundingRect.height / 2), frameCount);
+
+		if(blobs[i].ColorInTerms != "")
+		{
+			success &= mSQLManager->executeStatement("INSERT OR REPLACE into color_" + blobs[i].ColorInTerms +" (filename, atom_x, atom_y, atom_t) values ('"
+				+ GlobalClass::instance()->get_InputFileName() + "', '" 
+				+ std::to_string(std::get<0>(blobi)) + "', '" + std::to_string(std::get<1>(blobi)) + "', '" + std::to_string(std::get<2>(blobi)) + "');");
+		}
+
+		if (blobs[i].motion != "")
+		{
+			success &= mSQLManager->executeStatement("INSERT OR REPLACE into dir_" + blobs[i].motion + " (filename, atom_x, atom_y, atom_t) values ('"
+				+ GlobalClass::instance()->get_InputFileName() + "', '"
+				+ std::to_string(std::get<0>(blobi)) + "', '" + std::to_string(std::get<1>(blobi)) + "', '" + std::to_string(std::get<2>(blobi)) + "');");
+		}
+
+
+
 		if (!success)
 		{
 			std::cin.get();
@@ -269,7 +345,7 @@ bool CarParkTrackExporter::countTraj()
 	if (mSQLManager->isConnected())
 	{
 		bool success = mSQLManager->beginTransaction();
-		std::vector<std::vector<std::string>> r_result;
+		//std::vector<std::vector<std::string>> r_result;
 		//std::vector<char> r_result;
 
 		
@@ -301,7 +377,7 @@ bool CarParkTrackExporter::countTraj()
 		}*/
 
 
-		success &= mSQLManager->executeStatementGetArray("select count(distinct obj_id) from tracks;", r_result);
+		success &= mSQLManager->executeStatementGetArray("select * from tracks limit 10;", r_result);
 		
 		if (!success)
 		{
@@ -311,9 +387,78 @@ bool CarParkTrackExporter::countTraj()
 		}
 		else
 		{
+			
+			std::cout << "r_result: " << std::endl;
+			for (int i = 0; i < r_result.size(); i++)
+			{
+				
+				for (int j = 0; j < r_result[i].size(); j++)
+				{
+					std::cout << r_result[i][j];
+					if (j != r_result[i].size() - 1)
+					{
+						std::cout << ",";
+					}
+				}
+				std::cout  << std::endl;
+			}
 
-			numOfTrajs = std::stoi(r_result[0][0]);
-			std::cout << "Number of unique objects in database: " << numOfTrajs << " " << std::endl;
+			//numOfTrajs = std::stoi(r_result[0][0]);
+			//std::cout << "Number of unique objects in database: " << numOfTrajs << " " << std::endl;
+
+		}
+
+		success &= mSQLManager->endTransaction();
+		delete mSQLManager;
+		return success;
+	}
+	else
+	{
+		std::cout << "NOT CONNECTED TO DB \n";
+		delete mSQLManager;
+	}
+}
+
+bool CarParkTrackExporter::searchdatabase(std::string QueryInput)
+{
+
+	mSQLManager = new SQLiteManager(mFilePath);
+	if (mSQLManager->isConnected())
+	{
+		bool success = mSQLManager->beginTransaction();
+		//std::vector<std::vector<std::string>> r_result;
+
+		success &= mSQLManager->executeStatementGetArray(QueryInput, r_result);
+
+		if (!success)
+		{
+
+			std::cout << "WARNING: Unable to perform query! \n" << " ----- \n" << QueryInput << "\n ----- \n"  ;
+			success = true;
+		}
+		else
+		{
+			for (int i = 0; i < r_result.size(); i++)
+			{
+
+				for (int j = 0; j < r_result[i].size(); j++)
+				{
+
+
+
+					if(debug_on)
+					{
+						std::cout << r_result[i][j];
+						if (j != r_result[i].size() - 1)
+						{
+							std::cout << ",";
+						}
+					}
+				}
+				if(debug_on)
+				std::cout << std::endl;
+			}
+
 
 		}
 

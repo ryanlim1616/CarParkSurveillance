@@ -1,6 +1,7 @@
 //HSV
 // CarCounting.cpp : Defines the entry point for the console application.
-
+//include CVUI for user interface
+#include "cvui.h"
 
 #include<opencv2/core/core.hpp>
 #include<opencv2/highgui/highgui.hpp>
@@ -38,6 +39,7 @@
 #include <sstream>
 #include "GlobalClass.h"
 #include <regex>
+#define NOMINMAX
 #include "dirent.h"
 #include <vector>
 #include <ctime>
@@ -45,7 +47,10 @@
 #include "GetSetLog.hxx"
 #include "ColorTerms.h"
 
+
 #include <thread>
+#include "alphanum.h"
+
 
 extern "C" {
 #include "darknet.c"
@@ -106,6 +111,8 @@ IplImage* mat_to_iplimage(cv::Mat input);
 cv::Rect enlargeROI(cv::Mat frm, cv::Rect boundingBox, int padding);
 void getBlobMotion(std::vector<Blob> &blobs);
 
+
+void QueryModule(CarParkTrackExporter &openDB);
 
 //void getNumOfTrajs(CarParkTrackExporter &openDB);
 int getOption();
@@ -327,7 +334,28 @@ void search(std::string curr_directory, std::string extension) {
 }
 
 
+static void onMouse(int event, int x, int y, int, void*)
+{
+	if (event != CV_EVENT_LBUTTONDOWN)
+	{
+		return;
+	}
 
+	cv::Point mouseLoc = cv::Point(x-300, y);
+	std::vector<cv::Point> drawQuery;
+
+	drawQuery.push_back(mouseLoc);
+	const cv::Point *pts = (const cv::Point*) cv::Mat(drawQuery).data;
+	int npts = cv::Mat(drawQuery).rows;
+
+	std::cout << "Mouse location: " << mouseLoc.x << "," << mouseLoc.y << std::endl;
+	return;
+	//polylines(img, &pts, &npts, 1, false, Scalar(0, 255, 0));
+
+}
+
+
+#define WINDOW_NAME "Retrieval / Query GUI"
 
 int main(void) {
 
@@ -352,7 +380,7 @@ int main(void) {
 	//std::thread threadObj1(check_vehicles);
 	//	threadObj1.join();
 
-	Init_YOLO(0, 0);
+	
 
 
 
@@ -365,7 +393,7 @@ int main(void) {
 	//Program options:
 	//std::cout << "|  1) Recovery Mode                        |\n";
 	//std::cout << "|  2) State Extraction (Batch)             |\n";
-	//std::cout << "|  3) Trajectory Grouping (Batch)          |\n";
+	//std::cout << "|  3) Retrieval Module (Batch)             |\n";
 	//std::cout << "|  4) Debugging Mode (Batch)               |\n";
 
 
@@ -379,14 +407,14 @@ int main(void) {
 		else if (getOptionReturn == 2)
 		{
 			invalid = false;
+			Init_YOLO(0, 0);
 			//do nothing
 		}
 		else if (getOptionReturn == 3)
 		{
 			invalid = false;
-			//run the trajectory grouping function
-			//openDB.getNumOfTrajs();
-			openDB.countTraj();
+			//run the retrieval module
+			QueryModule(openDB);
 
 		}
 		else if (getOptionReturn == 4)
@@ -412,12 +440,9 @@ int main(void) {
 	openDB.run();
 
 	//load color term start
-
 	ColorTerm allColors("NULL", "NULL");
-
 	std::vector<ColorTerm> colorsList;
 	colorsList = allColors.loadHSVtoTerms(colorsList);
-
 
 
 	//load color term end
@@ -599,7 +624,7 @@ int main(void) {
 	std::vector<std::string> listOfDates;				// holds search results
 	std::string temp_root;
 
-	std::cout << "test1\n";
+	
 	if (user == "Clarence") {
 		std::cout << "Please enter processing date (CCYYMMDD): ";
 		std::cin >> cinDate;
@@ -766,7 +791,7 @@ int main(void) {
 
 				if (first_video) {
 					std::cout << "Press Enter to continue: ";
-					std::cin >> cin_temp;
+					//std::cin >> cin_temp;
 				}
 
 				int vidLength;
@@ -932,7 +957,7 @@ int main(void) {
 						ROImask1.release();
 						ROImask2.release();
 
-						if (debug_on) std::cout << "Did it break here?" << std::endl;
+
 
 
 
@@ -947,7 +972,7 @@ int main(void) {
 						cv::Mat img_bkgmodel2;
 						bgs2->process(imgFrame1Copy, img_mask2, img_bkgmodel2);
 
-						if (debug_on)std::cout << "Did it break here? 2.3" << std::endl;
+	
 
 
 						if (imshow_display)
@@ -2022,6 +2047,7 @@ void matchCurrentFrameBlobsToExistingBlobs2(std::vector<Blob> &existingBlobs, st
 	for (int f = 0; f < existingBlobs.size(); f++) {
 		if (existingBlobs[f].blnStillBeingTracked == false) {
 			std::cout << "Deleting : " << existingBlobs[f].unitID << "\n";
+
 			existingBlobs.erase(existingBlobs.begin() + f);
 			if (f > 0) {
 				f--;
@@ -2926,6 +2952,14 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 						blobs[i].entExt = 1;
 						blobs[i].changed = true;
 						blobs[i].IO_indicator = false;
+						/*if (debug_on)
+						{
+							std::cout << "Blob stats: " << blobs[i].unitID << " color: " << blobs[i].ColorInTerms << std::endl;
+							std::cout << "  " << " [Diff min/max]: " << blobs[i].RGBGRAYDiff_min << "/" << blobs[i].RGBGRAYDiff_max << " | " << blobs[i].RGBGRAYDiff_max - blobs[i].RGBGRAYDiff_min << std::endl;
+							std::cout << "  " << " [Mean min/max]: " << blobs[i].meanValue_min << "/" << blobs[i].meanValue_max << " | " << blobs[i].meanValue_max - blobs[i].meanValue_min << std::endl;
+							std::cout << "  " << " [ L2  min/max]: " << blobs[i].L2error_min << "/" << blobs[i].L2error_max <<  " | " << blobs[i].L2error_max  - blobs[i].L2error_min << std::endl;
+						}*/
+
 
 
 
@@ -2975,6 +3009,13 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 							blobs[i].entExt = 2;
 							blobs[i].changed = true;
 							blobs[i].IO_indicator = false;
+							/*if (debug_on)
+							{
+								std::cout << "Blob stats: " << blobs[i].unitID << " color: " << blobs[i].ColorInTerms << std::endl;
+								std::cout << "  " << " [Diff min/max]: " << blobs[i].RGBGRAYDiff_min << "/" << blobs[i].RGBGRAYDiff_max << " | " << blobs[i].RGBGRAYDiff_max - blobs[i].RGBGRAYDiff_min << std::endl;
+								std::cout << "  " << " [Mean min/max]: " << blobs[i].meanValue_min << "/" << blobs[i].meanValue_max << " | " << blobs[i].meanValue_max - blobs[i].meanValue_min << std::endl;
+								std::cout << "  " << " [ L2  min/max]: " << blobs[i].L2error_min << "/" << blobs[i].L2error_max << " | " << blobs[i].L2error_max - blobs[i].L2error_min << std::endl;
+							}*/
 
 						}
 					}
@@ -3023,6 +3064,13 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 								blobs[i].entExt = 3;
 								blobs[i].changed = true;
 								blobs[i].IO_indicator = false;
+								/*if (debug_on)
+								{
+									std::cout << "Blob stats: " << blobs[i].unitID << " color: " << blobs[i].ColorInTerms << std::endl;
+									std::cout << "  " << " [Diff min/max]: " << blobs[i].RGBGRAYDiff_min << "/" << blobs[i].RGBGRAYDiff_max << " | " << blobs[i].RGBGRAYDiff_max - blobs[i].RGBGRAYDiff_min << std::endl;
+									std::cout << "  " << " [Mean min/max]: " << blobs[i].meanValue_min << "/" << blobs[i].meanValue_max << " | " << blobs[i].meanValue_max - blobs[i].meanValue_min << std::endl;
+									std::cout << "  " << " [ L2  min/max]: " << blobs[i].L2error_min << "/" << blobs[i].L2error_max << " | " << blobs[i].L2error_max - blobs[i].L2error_min << std::endl;
+								}*/
 
 							}
 						}
@@ -3070,6 +3118,14 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 									blobs[i].entExt = 4;
 									blobs[i].changed = true;
 									blobs[i].IO_indicator = false;
+									/*if (debug_on)
+									{
+										std::cout << "Blob stats: " << blobs[i].unitID << " color: " << blobs[i].ColorInTerms << std::endl;
+										std::cout << "  " << " [Diff min/max]: " << blobs[i].RGBGRAYDiff_min << "/" << blobs[i].RGBGRAYDiff_max << " | " << blobs[i].RGBGRAYDiff_max - blobs[i].RGBGRAYDiff_min << std::endl;
+										std::cout << "  " << " [Mean min/max]: " << blobs[i].meanValue_min << "/" << blobs[i].meanValue_max << " | " << blobs[i].meanValue_max - blobs[i].meanValue_min << std::endl;
+										std::cout << "  " << " [ L2  min/max]: " << blobs[i].L2error_min << "/" << blobs[i].L2error_max << " | " << blobs[i].L2error_max - blobs[i].L2error_min << std::endl;
+									}*/
+
 								}
 
 							}
@@ -3118,6 +3174,14 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 										blobs[i].entExt = 5;
 										blobs[i].changed = true;
 										blobs[i].IO_indicator = false;
+										/*if (debug_on)
+										{
+											std::cout << "Blob stats: " << blobs[i].unitID << " color: " << blobs[i].ColorInTerms << std::endl;
+											std::cout << "  " << " [Diff min/max]: " << blobs[i].RGBGRAYDiff_min << "/" << blobs[i].RGBGRAYDiff_max << " | " << blobs[i].RGBGRAYDiff_max - blobs[i].RGBGRAYDiff_min << std::endl;
+											std::cout << "  " << " [Mean min/max]: " << blobs[i].meanValue_min << "/" << blobs[i].meanValue_max << " | " << blobs[i].meanValue_max - blobs[i].meanValue_min << std::endl;
+											std::cout << "  " << " [ L2  min/max]: " << blobs[i].L2error_min << "/" << blobs[i].L2error_max << " | " << blobs[i].L2error_max - blobs[i].L2error_min << std::endl;
+										}*/
+
 									}
 								}
 
@@ -3166,6 +3230,14 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 											blobs[i].entExt = 6;
 											blobs[i].changed = true;
 											blobs[i].IO_indicator = false;
+											/*if (debug_on)
+											{
+												std::cout << "Blob stats: " << blobs[i].unitID << " color: " << blobs[i].ColorInTerms << std::endl;
+												std::cout << "  " << " [Diff min/max]: " << blobs[i].RGBGRAYDiff_min << "/" << blobs[i].RGBGRAYDiff_max << " | " << blobs[i].RGBGRAYDiff_max - blobs[i].RGBGRAYDiff_min << std::endl;
+												std::cout << "  " << " [Mean min/max]: " << blobs[i].meanValue_min << "/" << blobs[i].meanValue_max << " | " << blobs[i].meanValue_max - blobs[i].meanValue_min << std::endl;
+												std::cout << "  " << " [ L2  min/max]: " << blobs[i].L2error_min << "/" << blobs[i].L2error_max << " | " << blobs[i].L2error_max - blobs[i].L2error_min << std::endl;
+											}*/
+
 
 										}
 									}
@@ -4404,6 +4476,8 @@ void drawBlobInfoOnImage(std::vector<Blob> &blobs, cv::Mat &imgFrame2Copy, CarPa
 				else
 				{
 					openDB.writeToDB(blobs, i, frameCount, vidLength);
+	
+
 				}
 
 			}
@@ -4945,7 +5019,7 @@ void getBlobMotion(std::vector<Blob> &blobs) {
 			//handle when both directions are non - empty
 			if ((direction_X != "") && (direction_Y != ""))
 			{
-				blobs[i].motion = direction_X + "-" + direction_Y;
+				blobs[i].motion = direction_X + "_" + direction_Y;
 			}
 			//otherwise, only one direction is non - empty
 			else
@@ -4954,12 +5028,18 @@ void getBlobMotion(std::vector<Blob> &blobs) {
 				{
 					blobs[i].motion = direction_X;
 				}
-				else
+				else if((direction_Y != ""))
 				{
 					blobs[i].motion = direction_Y;
 				}
+				else
+				{
+					blobs[i].motion = "motionless";
+				}
 
 			}
+
+	
 
 
 
@@ -4988,7 +5068,7 @@ int getOption() {
 	std::cout << "|  Kindly select program options:         |\n";
 	std::cout << "|  1) Recovery Mode                       |\n";
 	std::cout << "|  2) State Extraction (Batch)            |\n";
-	std::cout << "|  3) Trajectory Grouping (Batch)         |\n";
+	std::cout << "|  3) Retrieval Module (Batch)            |\n";
 	std::cout << "|  4) Debugging Mode                      |\n";
 	std::cout << "|                                         |\n";
 	std::cout << "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" << std::endl;
@@ -5022,3 +5102,1118 @@ cv::Rect enlargeROI(cv::Mat frm, cv::Rect boundingBox, int padding) {
 	return returnRect;
 
 }
+
+
+std::vector<std::string> dim_flat(std::string v, std::vector<std::string> const &)
+{
+	return std::vector<std::string>(1, v);
+}
+
+std::vector<std::string> dim_flat(std::vector<std::string> const & v)
+{
+	return v;
+}
+
+template <typename T>
+std::vector<std::string> dim_flat(std::vector<std::vector<T>> const & v)
+{
+	std::vector<std::string>  ret;
+
+	for (auto const & e : v)
+	{
+		auto s = dim_flat(e);
+
+		ret.reserve(ret.size() + s.size());
+		ret.insert(ret.end(), s.cbegin(), s.cend());
+	}
+
+	return ret;
+}
+
+
+
+
+void QueryModule(CarParkTrackExporter &openDB) {
+
+	int count = 0;
+	//create GUI mat
+	cv::Mat RetrievalMod = cv::Mat(480, 300, CV_8UC3);
+	cv::Mat queryInputMat = cv::imread("nogrid2.jpg");
+	cv::Mat queryInputMat_ORI = cv::imread("nogrid2.jpg");
+
+	//cv::Mat queryInputMatGray;
+
+
+	cv::Mat showthisMat;
+	//cv::Mat RetrievalMod = cv::Mat(200, 500, CV_8UC3);
+
+	// Init a OpenCV window and tell cvui to use it.
+	cv::namedWindow(WINDOW_NAME);
+	cvui::init(WINDOW_NAME);
+
+	int low_threshold = 50, high_threshold = 150;
+	//bool use_canny = false;
+
+
+
+	//colors:
+	bool find_black = false;
+	bool find_blue = false;
+	bool find_brown = false;
+	bool find_green = false;
+	bool find_grey_silver = false;
+	bool find_orange = false;
+	bool find_pink = false;
+	bool find_purple = false;
+	bool find_red = false;
+	bool find_white = false;
+	bool find_yellow = false;
+
+
+
+	bool init_window = true;
+	bool initialize_grid = true;
+
+	std::vector<std::vector<int>> status;
+	std::vector<std::vector<bool>> clicked;
+	std::vector<std::vector<std::string>> query_dir_table;
+
+
+	std::vector<std::vector<int>> status_test;
+
+	
+
+	int previous_x = 0;
+	int	previous_y = 0;
+
+	cv::Point centroid, direction;
+
+	bool queryArroworCircle = 1;
+	int numbOfQueryinput = 0;
+	int trackbarValue = 70;
+
+	//std::vector<cv::Point> queryLine;
+
+	//cv::setMouseCallback(WINDOW_NAME, onMouse, NULL);
+
+	while (true) {
+		int display_x = 30;
+		int display_y = 80;
+		int display_gap = 18;
+
+
+		// Fill the frame with a nice color
+		RetrievalMod = cv::Scalar(49, 52, 49);
+
+		cvui::printf(RetrievalMod, 20, 20, 0.8, 0x64c831, "Query Module");
+
+		//if (use_canny)
+		//{
+		//	//cv::cvtColor(queryInputMat, queryInputMatGray, CV_BGR2GRAY);
+		//	//cv::Canny(queryInputMatGray, queryInputMatGray, low_threshold, high_threshold, 3);
+		//	//cv::cvtColor(queryInputMatGray, queryInputMatGray, CV_GRAY2BGR);
+
+		//}
+		//else
+		//{
+		//	//
+		//	//queryInputMat.copyTo(RetrievalMod);
+		//}
+
+		// Render the settings window to house the UI
+		cvui::window(RetrievalMod, 20, 50, 150, 240, "Colors");
+
+		// Checkbox to enable/disable the use of Canny edge
+		cvui::checkbox(RetrievalMod, display_x, display_y, "Black", &find_black);
+		display_y = display_y + display_gap;
+		cvui::checkbox(RetrievalMod, display_x, display_y, "Blue", &find_blue);
+		display_y = display_y + display_gap;
+		cvui::checkbox(RetrievalMod, display_x, display_y, "Brown", &find_brown);
+		display_y = display_y + display_gap;
+		cvui::checkbox(RetrievalMod, display_x, display_y, "Green", &find_green);
+		display_y = display_y + display_gap;
+		cvui::checkbox(RetrievalMod, display_x, display_y, "Grey/Silver", &find_grey_silver);
+		display_y = display_y + display_gap;
+		cvui::checkbox(RetrievalMod, display_x, display_y, "Orange", &find_orange);
+		display_y = display_y + display_gap;
+		cvui::checkbox(RetrievalMod, display_x, display_y, "Pink", &find_pink);
+		display_y = display_y + display_gap;
+		cvui::checkbox(RetrievalMod, display_x, display_y, "Purple", &find_purple);
+		display_y = display_y + display_gap;
+		cvui::checkbox(RetrievalMod, display_x, display_y, "Red", &find_red);
+		display_y = display_y + display_gap;
+		cvui::checkbox(RetrievalMod, display_x, display_y, "White", &find_white);
+		display_y = display_y + display_gap;
+		cvui::checkbox(RetrievalMod, display_x, display_y, "Yellow", &find_yellow);
+
+
+
+		//write query:
+		std::string queryCondition_table = "";
+		std::string queryCondition_where = "";
+		
+
+
+
+		/*if (find_black)
+		{
+		if (queryCondition == "")
+		queryCondition += "obj_color = \"BLACK\"";
+		else
+		queryCondition += " or obj_color = \"BLACK\"";
+
+		}*/
+
+
+
+
+		//draw all the rect in the search interface
+
+		int numberofWindows = 20;
+		//int start_y = 0;
+
+		int video_width = 640;
+		int video_height = 480;
+		int dimension_x = 20;
+		int dimension_y = 20;
+
+		int win_x = video_width / dimension_x;
+		int win_y = video_height / dimension_y;
+
+		int atom_x, atom_y;
+
+
+		
+
+
+
+
+
+
+		status.resize(numberofWindows);
+		status_test.resize(video_width);
+
+		if (initialize_grid)
+		{
+			clicked.resize(numberofWindows);
+			query_dir_table.resize(numberofWindows);
+		}
+
+		//TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST 
+		//TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST 
+		//TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST 
+		//TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST 
+		//TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST 
+		for (int i = 0; i < video_width; i+=5)
+		{
+	
+			status_test[i].resize(video_height);
+
+
+			for (int j = 0; j < video_height;j+=5)
+			{
+
+				//define rect area
+				cv::Rect rectangle_test(i, j, 5, 5);
+
+				atom_x = i / win_x;
+				atom_y = j / win_y;
+
+				status_test[i][j] = (cvui::iarea(RetrievalMod.size().width + rectangle_test.x, rectangle_test.y, rectangle_test.width, rectangle_test.height));
+
+				switch (status_test[i][j]) {
+				
+				case cvui::CLICK:
+				{
+					//std::cout << "Rectangle " << i << "," << j << " was clicked!" << std::endl; 
+
+					previous_x = i;
+					previous_y = j;
+
+					if (clicked[atom_x][atom_y] == true)
+					{
+						clicked[atom_x][atom_y] = false;
+						queryInputMat_ORI.copyTo(queryInputMat);
+
+
+					}
+					else
+					{
+						//clicked[i][j] = true;
+						//cvui::rect(queryInputMat, rectangle.x, rectangle.y, rectangle.width, rectangle.height, 0x00ff00);
+					}
+
+
+
+
+
+
+
+					break;
+				}
+				case cvui::DOWN:
+				{
+
+
+					////set previous row/colomn
+					//previous_x = i;
+					//previous_y = j;
+
+					//determine the direction the mouse went:
+					if (previous_x != i && previous_y == j)
+					{
+
+						if (previous_x > i)
+						{
+							query_dir_table[atom_x][atom_y] = "dir_left";
+
+
+						}
+						else if (previous_x < i)
+						{
+							query_dir_table[atom_x][atom_y] = "dir_right";
+
+						}
+
+
+						previous_x = i;
+
+					}
+					else
+						if (previous_y != j && previous_x == i)
+						{
+
+							if (previous_y > j)
+							{
+								query_dir_table[atom_x][atom_y] = "dir_up";
+							}
+							else if (previous_y < j)
+							{
+								query_dir_table[atom_x][atom_y] = "dir_down";
+							}
+
+
+							previous_y = j;
+
+						}
+						else
+							if (previous_y != j && previous_x != i)
+							{
+
+								if (previous_x > i && previous_y > j)
+								{
+									query_dir_table[atom_x][atom_y] = "dir_left_up";
+
+								}
+								else if (previous_x < i && previous_y > j)
+								{
+									query_dir_table[atom_x][atom_y] = "dir_right_up";
+								}
+								else if (previous_x > i && previous_y < j)
+								{
+									query_dir_table[atom_x][atom_y] = "dir_left_down";
+								}
+								else if (previous_x < i && previous_y < j)
+								{
+									query_dir_table[atom_x][atom_y] = "dir_right_down";
+
+								}
+
+								previous_x = i;
+								previous_y = j;
+
+							}
+
+
+					//cvui::text(RetrievalMod, 20, 350, "Mouse is: DOWN" + std::to_string(i) + "," + std::to_string(j) + " " + query_dir_table[i][j]);
+
+
+					if (clicked[atom_x][atom_y] == true)
+					{
+						//clicked[i][j] = false;
+						//queryInputMat_ORI.copyTo(queryInputMat);
+
+
+					}
+					else
+					{
+						clicked[atom_x][atom_y] = true;
+						if (debug_on)
+						{
+							//cvui::rect(queryInputMat, rectangle.x, rectangle.y, rectangle.width, rectangle.height, 0x00ff00);
+							cv::arrowedLine(queryInputMat, centroid, direction, SCALAR_GREEN, 5, CV_AA, 0, 0.3);
+						}
+
+					}
+
+
+
+					break;
+				}
+				case cvui::OVER:
+				{
+					cvui::text(RetrievalMod, 20, 430, "Mouse is: OVER" + std::to_string(i) + "," + std::to_string(j));
+					break;
+				}
+				//case cvui::OUT:		cvui::text(queryInputMat, 240, 50, "Mouse is: OUT"); break;
+				}
+
+
+			}
+		}
+
+		//TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST 
+		//TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST 
+		//TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST 
+		//TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST 
+		//TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST 
+		//TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST 
+
+
+		for (int i = 0; i < video_width;)
+		{
+			atom_x = i / win_x;
+			status[atom_x].resize(numberofWindows);
+
+			if (initialize_grid)
+			{
+				clicked[atom_x].resize(numberofWindows);
+				query_dir_table[atom_x].resize(numberofWindows);
+			}
+
+
+
+			for (int j = 0; j < video_height;)
+			{
+
+				//define rect area
+				cv::Rect rectangle(i, j, win_x, win_y);
+
+
+
+				atom_y = j / win_y;
+				status[atom_x][atom_y] = (cvui::iarea(RetrievalMod.size().width + rectangle.x, rectangle.y, rectangle.width, rectangle.height));
+
+
+
+				if (initialize_grid)
+				{
+					clicked[atom_x][atom_y] = false;
+
+					//std::cout << query_dir_table.size() << query_dir_table[atom_x].size() << std::endl;
+					query_dir_table[atom_x][atom_y] = "";
+
+				}
+
+
+
+				if (clicked[atom_x][atom_y] == false)
+				{
+					//cvui::rect(queryInputMat, rectangle.x, rectangle.y, rectangle.width, rectangle.height, 0xffffff);
+					//queryInputMat = cv::imread("nogrid2.jpg");
+
+				}
+				else
+				{
+					if(debug_on)
+					cvui::rect(queryInputMat, rectangle.x, rectangle.y, rectangle.width, rectangle.height, 0x00ff00);
+
+					if (query_dir_table[atom_x][atom_y] == "dir_left")
+					{
+						centroid.x = (atom_x *  win_x) + win_x / 2;
+						centroid.y = (atom_y *  win_y) + win_y / 2;
+
+						direction.x = (atom_x * win_x);
+						direction.y = (atom_y * win_y) + win_y / 2;
+					}
+					else if (query_dir_table[atom_x][atom_y] == "dir_right")
+					{
+
+						centroid.x = (atom_x *  win_x) + win_x / 2;
+						centroid.y = (atom_y *  win_y) + win_y / 2;
+
+						direction.x = (atom_x * win_x) + win_x;
+						direction.y = (atom_y * win_y) + win_y / 2;
+					}
+					else if (query_dir_table[atom_x][atom_y] == "dir_up")
+					{
+						centroid.x = (atom_x *  win_x) + win_x / 2;
+						centroid.y = (atom_y *  win_y) + win_y / 2;
+
+						direction.x = (atom_x * win_x) + win_x / 2;
+						direction.y = (atom_y * win_y);
+					}
+					else if (query_dir_table[atom_x][atom_y] == "dir_down")
+					{
+						centroid.x = (atom_x *  win_x) + win_x / 2;
+						centroid.y = (atom_y *  win_y) + win_y / 2;
+
+						direction.x = (atom_x * win_x) + win_x / 2;
+						direction.y = (atom_y * win_y) + win_y;						
+					}
+					else if (query_dir_table[atom_x][atom_y] == "dir_left_up")
+					{
+						centroid.x = (atom_x *  win_x) + win_x / 2;
+						centroid.y = (atom_y *  win_y) + win_y / 2;
+
+						direction.x = (atom_x * win_x);
+						direction.y = (atom_y * win_y);
+					}
+					else if (query_dir_table[atom_x][atom_y] == "dir_right_up")
+					{
+						centroid.x = (atom_x *  win_x) + win_x / 2;
+						centroid.y = (atom_y *  win_y) + win_y / 2;
+
+						direction.x = (atom_x * win_x) + win_x;
+						direction.y = (atom_y * win_y);
+					}
+					else if (query_dir_table[atom_x][atom_y] == "dir_left_down")
+					{
+						centroid.x = (atom_x *  win_x) + win_x / 2;
+						centroid.y = (atom_y *  win_y) + win_y / 2;
+
+						direction.x = (atom_x * win_x);
+						direction.y = (atom_y * win_y) + win_y;
+					}
+					else if (query_dir_table[atom_x][atom_y] == "dir_right_down")
+					{
+						centroid.x = (atom_x *  win_x) + win_x / 2;
+						centroid.y = (atom_y *  win_y) + win_y / 2;
+
+						direction.x = (atom_x * win_x) + win_x;
+						direction.y = (atom_y * win_y) + win_y;
+					}
+					
+					if (queryArroworCircle)
+					{
+						cv::arrowedLine(queryInputMat, centroid, direction, SCALAR_GREEN, 2, CV_AA, 0, 0.3);
+					}
+					else
+					{
+						cv::circle(queryInputMat, centroid, 1, SCALAR_GREEN, 2, CV_AA);
+					}
+				}
+
+
+				if (atom_x == 0)
+				{
+					cv::putText(queryInputMat, std::to_string(atom_y), cv::Point(i, j + win_y), cv::FONT_HERSHEY_SIMPLEX, 0.6, SCALAR_RED);
+				}
+
+				if (atom_y == 0)
+				{
+					cv::putText(queryInputMat, std::to_string(atom_x), cv::Point(i, j + win_y), cv::FONT_HERSHEY_SIMPLEX, 0.6, SCALAR_RED);
+				}
+
+				j += win_y;
+
+				/* // ## UNCOMMENT ALL THESE
+
+				//switch (status[atom_x][atom_y]) {
+				//case cvui::CLICK:
+				//{
+				//	//std::cout << "Rectangle " << atom_x << "," << atom_y << " was clicked!" << std::endl; 
+
+				//	previous_x = atom_x;
+				//	previous_y = atom_y;
+
+				//	if (clicked[atom_x][atom_y] == true)
+				//	{
+				//		clicked[atom_x][atom_y] = false;
+				//		queryInputMat_ORI.copyTo(queryInputMat);
+
+
+				//	}
+				//	else
+				//	{
+				//		//clicked[atom_x][atom_y] = true;
+				//		//cvui::rect(queryInputMat, rectangle.x, rectangle.y, rectangle.width, rectangle.height, 0x00ff00);
+				//	}
+
+
+
+
+
+
+
+				//	break;
+				//}
+				//case cvui::DOWN:
+				//{
+				//	
+
+				//	////set previous row/colomn
+				//	//previous_x = atom_x;
+				//	//previous_y = atom_y;
+
+				//	
+				//	//determine the direction the mouse went:
+				//	if (previous_x != atom_x && previous_y == atom_y)
+				//	{
+
+				//		if (previous_x > atom_x )
+				//		{
+				//			query_dir_table[atom_x][atom_y] = "dir_left";
+				//		
+
+				//		}
+				//		else if (previous_x < atom_x)
+				//		{
+				//			query_dir_table[atom_x][atom_y] = "dir_right";
+				//			
+				//		}
+
+
+				//		previous_x = atom_x;
+
+				//	}
+				//	else
+				//	if (previous_y != atom_y && previous_x == atom_x)
+				//	{
+
+				//		if (previous_y > atom_y)
+				//		{
+				//			query_dir_table[atom_x][atom_y] = "dir_up";
+				//		} 
+				//		else if (previous_y < atom_y)
+				//		{
+				//			query_dir_table[atom_x][atom_y] = "dir_down";
+				//		}
+
+
+				//		previous_y = atom_y;
+
+				//	}
+				//	else
+				//	if (previous_y != atom_y && previous_x != atom_x)
+				//	{
+
+				//		if (previous_x > atom_x && previous_y > atom_y)
+				//		{
+				//			query_dir_table[atom_x][atom_y] = "dir_left_up";
+				//			
+				//		}
+				//		else if (previous_x < atom_x && previous_y > atom_y)
+				//		{
+				//			query_dir_table[atom_x][atom_y] = "dir_right_up";
+				//		}
+				//		else if (previous_x > atom_x && previous_y < atom_y)
+				//		{
+				//			query_dir_table[atom_x][atom_y] = "dir_left_down";
+				//		}
+				//		else if (previous_x < atom_x && previous_y < atom_y)
+				//		{
+				//			query_dir_table[atom_x][atom_y] = "dir_right_down";
+				//			
+				//		}
+
+				//		previous_x = atom_x;
+				//		previous_y = atom_y;
+
+				//	}
+
+
+				//	//cvui::text(RetrievalMod, 20, 350, "Mouse is: DOWN" + std::to_string(atom_x) + "," + std::to_string(atom_y) + " " + query_dir_table[atom_x][atom_y]);
+
+
+				//	if (clicked[atom_x][atom_y] == true)
+				//	{
+				//		//clicked[atom_x][atom_y] = false;
+				//		//queryInputMat_ORI.copyTo(queryInputMat);
+
+
+				//	}
+				//	else
+				//	{
+				//		clicked[atom_x][atom_y] = true;
+				//		if (debug_on)
+				//		{
+				//			cvui::rect(queryInputMat, rectangle.x, rectangle.y, rectangle.width, rectangle.height, 0x00ff00);
+				//			cv::arrowedLine(queryInputMat, centroid, direction, SCALAR_GREEN, 5, CV_AA, 0, 0.3);
+				//		}
+				//		
+				//	}
+
+				//	
+
+				//	break;
+				//}
+				//case cvui::OVER:
+				//{
+				//	//cvui::text(RetrievalMod, 20, 350, "Mouse is: OVER" + std::to_string(atom_x) + "," + std::to_string(atom_y));
+				//	break;
+				//}
+				////case cvui::OUT:		cvui::text(queryInputMat, 240, 50, "Mouse is: OUT"); break;
+				//}
+				*/
+
+				// UNCOMMENT ALL THESE IF YOU WANT TO USE THE PREVIOUS METHOD
+
+				//std::cout << atom_x << "," << atom_y << ": " <<clicked[atom_x][atom_y] << std::endl;
+
+				
+				if (clicked[atom_x][atom_y] == true)
+				{
+					//std::cout << "Selected rects are: " << atom_x << ", " << atom_y << std::endl;
+
+					queryCondition_where =  "where atom_x = " + std::to_string(atom_x) + " and atom_y = " + std::to_string(atom_y);
+
+					if (find_black)
+					{
+						queryCondition_table += "select filename, atom_t from " + query_dir_table[atom_x][atom_y];
+						queryCondition_table += " where atom_x = (select atom_x from color_black " + queryCondition_where + ") and atom_y = (select atom_y from color_black " + queryCondition_where + ");";
+
+					}
+
+					if (find_blue)
+					{
+
+						queryCondition_table += "select filename, atom_t from " + query_dir_table[atom_x][atom_y];
+						queryCondition_table += " where atom_x = (select atom_x from color_blue " + queryCondition_where + ") and atom_y = (select atom_y from color_blue " + queryCondition_where + ");";
+					}
+
+					if (find_brown)
+					{
+
+						queryCondition_table += "select filename, atom_t from " + query_dir_table[atom_x][atom_y];
+						queryCondition_table += " where atom_x = (select atom_x from color_brown " + queryCondition_where + ") and atom_y = (select atom_y from color_brown " + queryCondition_where + ");";
+					}
+
+					if (find_green)
+					{
+
+						queryCondition_table += "select filename, atom_t from " + query_dir_table[atom_x][atom_y];
+						queryCondition_table += " where atom_x = (select atom_x from color_green " + queryCondition_where + ") and atom_y = (select atom_y from color_green " + queryCondition_where + ");";
+					}
+
+					if (find_grey_silver)
+					{
+
+						queryCondition_table += "select filename, atom_t from " + query_dir_table[atom_x][atom_y];
+						queryCondition_table += " where atom_x = (select atom_x from color_grey_silver " + queryCondition_where + ") and atom_y = (select atom_y from color_grey_silver " + queryCondition_where + ");";
+					}
+
+					if (find_orange)
+					{
+
+						queryCondition_table += "select filename, atom_t from " + query_dir_table[atom_x][atom_y];
+						queryCondition_table += " where atom_x = (select atom_x from color_orange " + queryCondition_where + ") and atom_y = (select atom_y from color_orange " + queryCondition_where + ");";
+					}
+
+					if (find_pink)
+					{
+
+						queryCondition_table += "select filename, atom_t from " + query_dir_table[atom_x][atom_y];
+						queryCondition_table += " where atom_x = (select atom_x from color_pink " + queryCondition_where + ") and atom_y = (select atom_y from color_pink " + queryCondition_where + ");";
+					}
+
+					if (find_purple)
+					{
+
+						queryCondition_table += "select filename, atom_t from " + query_dir_table[atom_x][atom_y];
+						queryCondition_table += " where atom_x = (select atom_x from color_purple " + queryCondition_where + ") and atom_y = (select atom_y from color_purple " + queryCondition_where + ");";
+					}
+
+					if (find_red)
+					{
+
+						queryCondition_table += "select filename, atom_t from " + query_dir_table[atom_x][atom_y];
+						queryCondition_table += " where atom_x = (select atom_x from color_red " + queryCondition_where + ") and atom_y = (select atom_y from color_red " + queryCondition_where + ");";
+					}
+
+					if (find_white)
+					{
+
+						queryCondition_table += "select filename, atom_t from " + query_dir_table[atom_x][atom_y];
+						queryCondition_table += " where atom_x = (select atom_x from color_white " + queryCondition_where + ") and atom_y = (select atom_y from color_white " + queryCondition_where + ");";
+					}
+
+					if (find_yellow)
+					{
+
+						queryCondition_table += "select filename, atom_t from " + query_dir_table[atom_x][atom_y];
+						queryCondition_table += " where atom_x = (select atom_x from color_yellow " + queryCondition_where + ") and atom_y = (select atom_y from color_yellow " + queryCondition_where + ");";
+					}
+
+
+					
+
+
+
+
+
+				}
+			}
+			i += win_x;
+
+
+
+		}
+
+
+
+
+
+
+		initialize_grid = false;
+
+
+		if (cvui::button(RetrievalMod, 20, 450, " Reset! ")) {
+
+		
+
+			for (int i = 0; i < numberofWindows; i++)
+			{
+				for (int j = 0; j < numberofWindows; j++)
+				{
+					clicked[i][j] = false;
+					query_dir_table[i][j] = "";
+
+				}
+			}
+			queryInputMat_ORI.copyTo(queryInputMat);
+			
+
+			
+		}
+
+		
+		//create a trackbar
+		cvui::text(RetrievalMod, 20, 300, "Confidence Value (%):");
+
+		trackbarValue = round(trackbarValue);
+		cvui::beginColumn(RetrievalMod, 20, 315, -1, -1, 6);
+		cvui::trackbar(150, &trackbarValue,30, 100,1,"%.1Lf", cvui::TRACKBAR_DISCRETE,10);
+	
+		//cvui::trackbar(RetrievalMod, 20, 315, 150, &trackbarValue, 30., 100.0);
+		cvui::endColumn();
+
+
+
+		// Show a button at position (50, 280)
+		if (cvui::button(RetrievalMod, 20, 360, "      Query!      ")) {
+			// The button was clicked, so let's increment our counter.
+			count++;
+
+
+
+			//create a MAT to display all the results
+
+
+
+
+			numbOfQueryinput = 0;
+			//count number of query input given
+			for (int i = 0; i < numberofWindows; i++)
+			{
+				for (int j = 0; j < numberofWindows; j++)
+				{
+					if (clicked[i][j])
+					{
+						numbOfQueryinput++;
+						
+					}
+				}
+			}
+
+
+			std::string queryInput;
+			queryInput = queryCondition_table;
+			
+			if(debug_on)
+				std::cout << queryInput << std::endl;
+
+			openDB.searchdatabase(queryInput);
+
+		
+			//remove all the ID.. not important
+			/*for (int i = 0; i < openDB.r_result.size(); i++)
+			{
+
+				for (int j = 0; j < openDB.r_result[i].size(); j++)
+				{
+
+					if (j == 0)
+						openDB.r_result[i][j] = "0";
+				}
+			}*/
+
+			if (openDB.r_result.size() == 0)
+				std::cout << "--- NO RESULTS FOUND!" <<std::endl;
+			else
+			{
+				std::cout << std::endl << "--------------------" << std::endl;
+
+
+
+				/*
+				// traditional sort
+				struct {
+				bool operator()(std::vector<std::string> a, std::vector<std::string> b) const
+				{
+				return a < b;
+				}
+				} customSort;
+				std::sort(openDB.r_result.begin(), openDB.r_result.end(), customSort);
+				*/
+
+
+				std::vector<std::string> v;
+				// vector contents are reversed sorted contents of the old set
+				//std::copy(openDB.r_result.begin(), openDB.r_result.end(), std::back_inserter(v));
+
+				for (int i = 0; i < openDB.r_result.size(); i++)
+				{
+					v.push_back(openDB.r_result[i][0] + "," + openDB.r_result[i][1]);
+				}
+
+				// now sort the vector with the algorithm
+				std::sort(v.begin(), v.end(), doj::alphanum_less<std::string>());
+				// and print the vector to cout
+				if (debug_on)
+				{
+					std::copy(v.begin(), v.end(), std::ostream_iterator<std::string>(std::cout, "\n"));
+				}
+
+
+				//create sorted vector:
+				struct grouppedResults {
+
+					std::string resultFileName = "";
+					int groupNum = 0;
+					std::vector<int> frameNums = {};
+
+
+
+					int size()
+					{
+						return sizeof(grouppedResults);
+					}
+
+
+					int frameNumsize()
+					{
+						return sizeof(frameNums);
+					}
+
+				};
+
+				grouppedResults singlegrouppedResults;
+				std::vector<grouppedResults> resultsFromDB;
+
+				std::cout << " \n\n TEST \n\n";
+
+				std::string firstFilename = openDB.r_result[0][0] = v[0].substr(0, 63);
+				int resultGroupNum = 0;
+
+
+				for (int i = 0; i < openDB.r_result.size(); i++)
+				{
+					openDB.r_result[i][0] = v[i].substr(0, 63);
+					openDB.r_result[i][1] = v[i].substr(64, std::string::npos);
+
+
+					std::cout << openDB.r_result[i][0] << " " << openDB.r_result[i][1] << std::endl;
+
+					//since its sorted here already, ill group them up here.
+					
+					if (firstFilename == openDB.r_result[i][0])
+					{
+
+						//std::cout << "grouping items ";
+
+
+						singlegrouppedResults.resultFileName = openDB.r_result[i][0];
+						singlegrouppedResults.groupNum = resultGroupNum;
+						singlegrouppedResults.frameNums.push_back(std::stoi(openDB.r_result[i][1]));
+
+						
+						// push back last group
+						if (i == (openDB.r_result.size() - 1))
+						{
+							resultsFromDB.push_back(singlegrouppedResults);
+						}
+
+					}
+					else
+					{
+						resultsFromDB.push_back(singlegrouppedResults);
+						resultGroupNum++;
+
+						singlegrouppedResults.frameNums.clear();
+						firstFilename = openDB.r_result[i][0];
+
+						//set first occurance
+						singlegrouppedResults.resultFileName = openDB.r_result[i][0];
+						singlegrouppedResults.groupNum = resultGroupNum;
+						singlegrouppedResults.frameNums.push_back(std::stoi(openDB.r_result[i][1]));
+
+						//std::cout << "\n new group:  " << openDB.r_result[i][0] << std::endl;
+					}
+
+
+				}
+
+
+				std::cout << "\n\n";
+
+
+				//all the grouped items are here.. now find out if it fulfils the CV% value (individual small groups)
+
+
+				for (int i = 0; i < resultsFromDB.size(); i++)
+				{
+
+						
+						std::cout << resultsFromDB[i].resultFileName << std::endl;
+						std::cout << resultsFromDB[i].groupNum << std::endl;
+
+						int firstAtomT = 0;
+						int passedCV = 0;
+						int groupNum = 0;
+
+						grouppedResults resultFromSingleVideo;
+						std::vector<grouppedResults> resultFromSingleVideo_grouped;
+
+
+						resultFromSingleVideo.resultFileName = resultsFromDB[i].resultFileName;
+						//resultFromSingleVideo.groupNum = 0;
+
+
+						for (int j = 0; j < resultsFromDB[i].frameNums.size(); j++)
+						{
+							std::cout << resultsFromDB[i].frameNums[j] << ",";
+
+							if (j == 0)
+							{
+								firstAtomT = resultsFromDB[i].frameNums[j];
+							}
+
+							if (resultsFromDB[i].frameNums[j] <= firstAtomT + 5)
+							{
+								resultFromSingleVideo.frameNums.push_back(resultsFromDB[i].frameNums[j]);
+								firstAtomT = resultsFromDB[i].frameNums[j];
+
+								if (j == (resultsFromDB[i].frameNums.size() - 1))
+								{
+									resultFromSingleVideo_grouped.push_back(resultFromSingleVideo);
+								}
+
+							}
+							else
+							{
+								
+								resultFromSingleVideo.groupNum = groupNum;
+								resultFromSingleVideo_grouped.push_back(resultFromSingleVideo);
+								resultFromSingleVideo.frameNums.clear();
+
+								groupNum++;
+								
+
+								firstAtomT = resultsFromDB[i].frameNums[j];
+								resultFromSingleVideo.frameNums.push_back(resultsFromDB[i].frameNums[j]);
+
+								/*
+									resultsFromDB.push_back(singlegrouppedResults);
+									resultGroupNum++;
+
+									singlegrouppedResults.frameNums.clear();
+									firstFilename = openDB.r_result[i][0];
+
+								//set first occurance
+									singlegrouppedResults.resultFileName = openDB.r_result[i][0];
+									singlegrouppedResults.groupNum = resultGroupNum;
+									singlegrouppedResults.frameNums.push_back(std::stoi(openDB.r_result[i][1]));
+											
+								
+								*/
+
+							}
+
+							
+
+						}
+
+						for (int k = 0; k < resultFromSingleVideo_grouped.size(); k++)
+						{
+							std::cout << "\n--- resultFromSingleVideo_grouped ---\n";
+							std::cout << resultFromSingleVideo_grouped[k].groupNum << std::endl;
+
+								for (int g = 0; g < resultFromSingleVideo_grouped[k].frameNums.size(); g++)
+								{
+									std::cout << resultFromSingleVideo_grouped[k].frameNums[g] << " ";
+
+								}
+
+							
+						/*std::cout << "resultFromSingleVideo_grouped[k].frameNums.size() / numbOfQueryinput : " << resultFromSingleVideo_grouped[k].frameNums.size() << "/" << numbOfQueryinput << "\n";
+						if (((resultFromSingleVideo_grouped[k].frameNums.size() / numbOfQueryinput) * 100) > trackbarValue)
+						{
+						}*/
+
+						}
+
+
+
+							
+
+
+
+						
+
+						std::cout << "\n\n";
+
+					
+
+					//test to display all first
+
+					
+
+
+
+				}
+				
+
+
+
+
+
+
+
+
+
+
+
+
+			}
+
+		}
+
+
+		// Show how many times the button has been clicked.
+		// Text at position (250, 90), sized 0.4, in red.
+		cvui::printf(RetrievalMod, 15, 400, 0.4, 0x0000ff, "Number of queries made: %d", count);
+
+		// Update cvui internal stuff
+		cvui::update();
+
+		// Show everything on the screen
+
+		cv::hconcat(RetrievalMod, queryInputMat, showthisMat);
+		cv::imshow(WINDOW_NAME, showthisMat);
+
+		// Check if ESC key was pressed
+		if (cv::waitKey(20) == 27) {
+			break;
+		}
+	}
+
+
+
+
+
+openDB.countTraj();
+std::cin.get();
+}
+
+

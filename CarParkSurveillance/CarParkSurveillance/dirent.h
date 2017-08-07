@@ -24,6 +24,7 @@
 
 #include <stdio.h>
 #include <stdarg.h>
+#define NOMINMAX
 #include <windef.h>
 #include <winbase.h>
 #include <wchar.h>

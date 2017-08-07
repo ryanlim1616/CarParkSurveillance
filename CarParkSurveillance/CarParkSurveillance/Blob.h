@@ -18,6 +18,7 @@
 #include"ColorTerms.h"
 #include "Switches.h"
 
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 class Blob {
 public:
@@ -63,7 +64,6 @@ public:
 	int previous_park_frame_counter = 0;
 
 
-
 	// member variables ///////////////////////////////////////////////////////////////////////////
 	std::vector<cv::Point> currentContour;
 
@@ -74,7 +74,7 @@ public:
 	std::vector<cv::Point> centerPositions;
 	std::vector<cv::Scalar> AvgColor;
 	cv::Scalar AvgColorScalar;
-	std::string ColorInTerms;
+	std::string ColorInTerms = "";
 
 	cv::Scalar avgColorBeforeMerge;
 	cv::Mat image;
@@ -106,6 +106,15 @@ public:
 
 	bool addornot;
 
+	/*int meanValue_min = 0;
+	int RGBGRAYDiff_min = 0;
+	double L2error_min = 0.0;
+
+	int meanValue_max = 0;
+	int RGBGRAYDiff_max = 0;
+	double L2error_max = 0.0;*/
+
+
 	// function prototypes ////////////////////////////////////////////////////////////////////////
 	Blob(std::vector<cv::Point> _contour);
 	~Blob();
@@ -127,6 +136,9 @@ public:
 	void getAverageColor(std::vector<ColorTerm> &inputColorVector);
 	void getAverageColorLast();
 	cv::Scalar getAverageColorOnce();
+	double getSimilarity(const cv::Mat A, const cv::Mat B);
+	void setChannel(cv::Mat &mat, unsigned int channel, unsigned char value);
+	
 
 };
 
