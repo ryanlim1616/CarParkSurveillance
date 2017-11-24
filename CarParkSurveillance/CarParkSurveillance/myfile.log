@@ -1,4 +1,4 @@
-Start of job: 17:12:22
+Start of job: 11:26:4
 CarParkTrackExporter()
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 |              S H E R L O C K            =
@@ -6,2015 +6,1075 @@ CarParkTrackExporter()
 |  Kindly select program options:         |
 |  1) Recovery Mode                       |
 |  2) State Extraction (Batch)            |
-|  3) Retrieval Module (Batch)            |
+|  3) Retrieval Module                    |
 |  4) Debugging Mode                      |
 |                                         |
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-Program options: 
---------------------
- 
-
- TEST 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4 44
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4 82
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4 86
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4 87
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4 88
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4 119
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4 120
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4 121
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4 122
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4 163
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4 164
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4 166
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4 167
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4 168
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4 214
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4 215
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4 296
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4 297
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4 299
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4 300
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4 330
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4 331
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4 332
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4 346
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4 347
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4 354
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4 355
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4 358
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083600.mp4 67
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083600.mp4 68
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083600.mp4 69
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083600.mp4 72
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083600.mp4 166
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083600.mp4 167
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083600.mp4 170
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083600.mp4 171
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083600.mp4 253
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083600.mp4 254
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083600.mp4 317
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083600.mp4 318
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084200.mp4 4
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084200.mp4 5
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084200.mp4 11
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084200.mp4 24
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084200.mp4 27
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084200.mp4 27
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084200.mp4 28
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084200.mp4 36
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084200.mp4 44
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084200.mp4 45
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084200.mp4 48
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084200.mp4 49
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084200.mp4 54
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084200.mp4 57
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084200.mp4 58
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084200.mp4 70
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084200.mp4 71
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084200.mp4 185
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084200.mp4 186
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084200.mp4 190
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084200.mp4 253
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084200.mp4 253
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084200.mp4 254
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084200.mp4 338
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084200.mp4 339
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084200.mp4 340
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084800.mp4 125
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084800.mp4 126
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084800.mp4 137
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084800.mp4 138
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084800.mp4 255
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084800.mp4 256
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084800.mp4 256
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084800.mp4 313
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084800.mp4 314
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084800.mp4 315
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084800.mp4 316
-D:\Videos Database\Carpark Data\20161018\c2\20161018_085400.mp4 42
-D:\Videos Database\Carpark Data\20161018\c2\20161018_085400.mp4 43
-D:\Videos Database\Carpark Data\20161018\c2\20161018_085400.mp4 45
-D:\Videos Database\Carpark Data\20161018\c2\20161018_085400.mp4 46
-D:\Videos Database\Carpark Data\20161018\c2\20161018_085400.mp4 70
-D:\Videos Database\Carpark Data\20161018\c2\20161018_085400.mp4 72
-D:\Videos Database\Carpark Data\20161018\c2\20161018_085400.mp4 181
-D:\Videos Database\Carpark Data\20161018\c2\20161018_085400.mp4 190
-D:\Videos Database\Carpark Data\20161018\c2\20161018_090000.mp4 123
-D:\Videos Database\Carpark Data\20161018\c2\20161018_090000.mp4 124
-D:\Videos Database\Carpark Data\20161018\c2\20161018_090000.mp4 160
-D:\Videos Database\Carpark Data\20161018\c2\20161018_090000.mp4 171
-D:\Videos Database\Carpark Data\20161018\c2\20161018_090600.mp4 168
-D:\Videos Database\Carpark Data\20161018\c2\20161018_090600.mp4 169
-D:\Videos Database\Carpark Data\20161018\c2\20161018_090600.mp4 170
-D:\Videos Database\Carpark Data\20161018\c2\20161018_091200.mp4 332
-D:\Videos Database\Carpark Data\20161018\c2\20161018_091200.mp4 333
-D:\Videos Database\Carpark Data\20161018\c2\20161018_091800.mp4 81
-D:\Videos Database\Carpark Data\20161018\c2\20161018_091800.mp4 82
-D:\Videos Database\Carpark Data\20161018\c2\20161018_092400.mp4 134
-D:\Videos Database\Carpark Data\20161018\c2\20161018_092400.mp4 135
-D:\Videos Database\Carpark Data\20161018\c2\20161018_093600.mp4 123
-D:\Videos Database\Carpark Data\20161018\c2\20161018_093600.mp4 124
-D:\Videos Database\Carpark Data\20161018\c2\20161018_093600.mp4 306
-D:\Videos Database\Carpark Data\20161018\c2\20161018_093600.mp4 307
-D:\Videos Database\Carpark Data\20161018\c2\20161018_093600.mp4 308
-D:\Videos Database\Carpark Data\20161018\c2\20161018_093600.mp4 309
-D:\Videos Database\Carpark Data\20161018\c2\20161018_094800.mp4 28
-D:\Videos Database\Carpark Data\20161018\c2\20161018_094800.mp4 29
-D:\Videos Database\Carpark Data\20161018\c2\20161018_094800.mp4 91
-D:\Videos Database\Carpark Data\20161018\c2\20161018_094800.mp4 92
-D:\Videos Database\Carpark Data\20161018\c2\20161018_094800.mp4 93
-D:\Videos Database\Carpark Data\20161018\c2\20161018_095400.mp4 89
-D:\Videos Database\Carpark Data\20161018\c2\20161018_095400.mp4 206
-D:\Videos Database\Carpark Data\20161018\c2\20161018_095400.mp4 207
-D:\Videos Database\Carpark Data\20161018\c2\20161018_095400.mp4 338
-D:\Videos Database\Carpark Data\20161018\c2\20161018_095400.mp4 339
-D:\Videos Database\Carpark Data\20161018\c2\20161018_095400.mp4 343
-D:\Videos Database\Carpark Data\20161018\c2\20161018_095400.mp4 344
-D:\Videos Database\Carpark Data\20161018\c2\20161018_100000.mp4 148
-D:\Videos Database\Carpark Data\20161018\c2\20161018_100000.mp4 149
-D:\Videos Database\Carpark Data\20161018\c2\20161018_100000.mp4 214
-D:\Videos Database\Carpark Data\20161018\c2\20161018_101200.mp4 347
-D:\Videos Database\Carpark Data\20161018\c2\20161018_101200.mp4 348
-D:\Videos Database\Carpark Data\20161018\c2\20161018_101800.mp4 245
-D:\Videos Database\Carpark Data\20161018\c2\20161018_101800.mp4 246
-D:\Videos Database\Carpark Data\20161018\c2\20161018_101800.mp4 247
-D:\Videos Database\Carpark Data\20161018\c2\20161018_103600.mp4 315
-D:\Videos Database\Carpark Data\20161018\c2\20161018_103600.mp4 316
-D:\Videos Database\Carpark Data\20161018\c2\20161018_103600.mp4 317
-D:\Videos Database\Carpark Data\20161018\c2\20161018_103600.mp4 318
-D:\Videos Database\Carpark Data\20161018\c2\20161018_104800.mp4 59
-D:\Videos Database\Carpark Data\20161018\c2\20161018_110600.mp4 178
-D:\Videos Database\Carpark Data\20161018\c2\20161018_110600.mp4 179
-D:\Videos Database\Carpark Data\20161018\c2\20161018_111200.mp4 192
-D:\Videos Database\Carpark Data\20161018\c2\20161018_111200.mp4 193
-D:\Videos Database\Carpark Data\20161018\c2\20161018_111200.mp4 194
-D:\Videos Database\Carpark Data\20161018\c2\20161018_111200.mp4 225
-D:\Videos Database\Carpark Data\20161018\c2\20161018_111200.mp4 226
-D:\Videos Database\Carpark Data\20161018\c2\20161018_111800.mp4 186
-D:\Videos Database\Carpark Data\20161018\c2\20161018_111800.mp4 187
-D:\Videos Database\Carpark Data\20161018\c2\20161018_113000.mp4 15
-D:\Videos Database\Carpark Data\20161018\c2\20161018_113000.mp4 154
-D:\Videos Database\Carpark Data\20161018\c2\20161018_113000.mp4 155
-D:\Videos Database\Carpark Data\20161018\c2\20161018_113000.mp4 169
-D:\Videos Database\Carpark Data\20161018\c2\20161018_113000.mp4 170
-D:\Videos Database\Carpark Data\20161018\c2\20161018_113000.mp4 320
-D:\Videos Database\Carpark Data\20161018\c2\20161018_113600.mp4 111
-D:\Videos Database\Carpark Data\20161018\c2\20161018_114800.mp4 30
-D:\Videos Database\Carpark Data\20161018\c2\20161018_114800.mp4 31
-D:\Videos Database\Carpark Data\20161018\c2\20161018_114800.mp4 143
-D:\Videos Database\Carpark Data\20161018\c2\20161018_114800.mp4 351
-D:\Videos Database\Carpark Data\20161018\c2\20161018_114800.mp4 352
-D:\Videos Database\Carpark Data\20161018\c2\20161018_120600.mp4 347
-D:\Videos Database\Carpark Data\20161018\c2\20161018_121200.mp4 82
-D:\Videos Database\Carpark Data\20161018\c2\20161018_121200.mp4 83
-D:\Videos Database\Carpark Data\20161018\c2\20161018_121200.mp4 174
-D:\Videos Database\Carpark Data\20161018\c2\20161018_121200.mp4 175
-D:\Videos Database\Carpark Data\20161018\c2\20161018_122400.mp4 263
-D:\Videos Database\Carpark Data\20161018\c2\20161018_122400.mp4 306
-D:\Videos Database\Carpark Data\20161018\c2\20161018_124200.mp4 143
-D:\Videos Database\Carpark Data\20161018\c2\20161018_124200.mp4 144
-D:\Videos Database\Carpark Data\20161018\c2\20161018_124200.mp4 145
-D:\Videos Database\Carpark Data\20161018\c2\20161018_124200.mp4 257
-D:\Videos Database\Carpark Data\20161018\c2\20161018_124200.mp4 258
-D:\Videos Database\Carpark Data\20161018\c2\20161018_124800.mp4 126
-D:\Videos Database\Carpark Data\20161018\c2\20161018_124800.mp4 269
-D:\Videos Database\Carpark Data\20161018\c2\20161018_124800.mp4 271
-D:\Videos Database\Carpark Data\20161018\c2\20161018_124800.mp4 274
-D:\Videos Database\Carpark Data\20161018\c2\20161018_125400.mp4 34
-D:\Videos Database\Carpark Data\20161018\c2\20161018_130000.mp4 111
-D:\Videos Database\Carpark Data\20161018\c2\20161018_130000.mp4 112
-D:\Videos Database\Carpark Data\20161018\c2\20161018_130000.mp4 113
-D:\Videos Database\Carpark Data\20161018\c2\20161018_130000.mp4 177
-D:\Videos Database\Carpark Data\20161018\c2\20161018_130000.mp4 178
-D:\Videos Database\Carpark Data\20161018\c2\20161018_130000.mp4 178
-D:\Videos Database\Carpark Data\20161018\c2\20161018_131800.mp4 255
-D:\Videos Database\Carpark Data\20161018\c2\20161018_131800.mp4 256
-D:\Videos Database\Carpark Data\20161018\c2\20161018_132400.mp4 21
-D:\Videos Database\Carpark Data\20161018\c2\20161018_133000.mp4 8
-D:\Videos Database\Carpark Data\20161018\c2\20161018_133600.mp4 163
-D:\Videos Database\Carpark Data\20161018\c2\20161018_133600.mp4 164
-D:\Videos Database\Carpark Data\20161018\c2\20161018_133600.mp4 272
-D:\Videos Database\Carpark Data\20161018\c2\20161018_133600.mp4 273
-D:\Videos Database\Carpark Data\20161018\c2\20161018_133600.mp4 274
-D:\Videos Database\Carpark Data\20161018\c2\20161018_133600.mp4 275
-D:\Videos Database\Carpark Data\20161018\c2\20161018_133600.mp4 277
-D:\Videos Database\Carpark Data\20161018\c2\20161018_133600.mp4 278
-D:\Videos Database\Carpark Data\20161018\c2\20161018_134200.mp4 87
-D:\Videos Database\Carpark Data\20161018\c2\20161018_134200.mp4 88
-D:\Videos Database\Carpark Data\20161018\c2\20161018_134200.mp4 91
-D:\Videos Database\Carpark Data\20161018\c2\20161018_134200.mp4 92
-D:\Videos Database\Carpark Data\20161018\c2\20161018_134200.mp4 93
-D:\Videos Database\Carpark Data\20161018\c2\20161018_134200.mp4 119
-D:\Videos Database\Carpark Data\20161018\c2\20161018_134200.mp4 120
-D:\Videos Database\Carpark Data\20161018\c2\20161018_134800.mp4 198
-D:\Videos Database\Carpark Data\20161018\c2\20161018_134800.mp4 199
-D:\Videos Database\Carpark Data\20161018\c2\20161018_134800.mp4 200
-D:\Videos Database\Carpark Data\20161018\c2\20161018_134800.mp4 240
-D:\Videos Database\Carpark Data\20161018\c2\20161018_134800.mp4 241
-D:\Videos Database\Carpark Data\20161018\c2\20161018_134800.mp4 309
-D:\Videos Database\Carpark Data\20161018\c2\20161018_135400.mp4 168
-D:\Videos Database\Carpark Data\20161018\c2\20161018_135400.mp4 169
-D:\Videos Database\Carpark Data\20161018\c2\20161018_135400.mp4 317
-D:\Videos Database\Carpark Data\20161018\c2\20161018_140000.mp4 95
-D:\Videos Database\Carpark Data\20161018\c2\20161018_140000.mp4 96
-D:\Videos Database\Carpark Data\20161018\c2\20161018_140000.mp4 139
-D:\Videos Database\Carpark Data\20161018\c2\20161018_140000.mp4 140
-D:\Videos Database\Carpark Data\20161018\c2\20161018_140000.mp4 141
-D:\Videos Database\Carpark Data\20161018\c2\20161018_140600.mp4 103
-D:\Videos Database\Carpark Data\20161018\c2\20161018_140600.mp4 174
-D:\Videos Database\Carpark Data\20161018\c2\20161018_140600.mp4 175
-D:\Videos Database\Carpark Data\20161018\c2\20161018_141200.mp4 71
-D:\Videos Database\Carpark Data\20161018\c2\20161018_141200.mp4 74
-D:\Videos Database\Carpark Data\20161018\c2\20161018_141200.mp4 188
-D:\Videos Database\Carpark Data\20161018\c2\20161018_141200.mp4 189
-D:\Videos Database\Carpark Data\20161018\c2\20161018_141200.mp4 313
-D:\Videos Database\Carpark Data\20161018\c2\20161018_141800.mp4 121
-D:\Videos Database\Carpark Data\20161018\c2\20161018_141800.mp4 122
-D:\Videos Database\Carpark Data\20161018\c2\20161018_142400.mp4 325
-D:\Videos Database\Carpark Data\20161018\c2\20161018_142400.mp4 326
-D:\Videos Database\Carpark Data\20161018\c2\20161018_143600.mp4 296
-D:\Videos Database\Carpark Data\20161018\c2\20161018_144200.mp4 304
-D:\Videos Database\Carpark Data\20161018\c2\20161018_144200.mp4 305
-D:\Videos Database\Carpark Data\20161018\c2\20161018_144800.mp4 80
-D:\Videos Database\Carpark Data\20161018\c2\20161018_144800.mp4 109
-D:\Videos Database\Carpark Data\20161018\c2\20161018_151200.mp4 14
-D:\Videos Database\Carpark Data\20161018\c2\20161018_151200.mp4 15
-D:\Videos Database\Carpark Data\20161018\c2\20161018_151200.mp4 16
-D:\Videos Database\Carpark Data\20161018\c2\20161018_151200.mp4 47
-D:\Videos Database\Carpark Data\20161018\c2\20161018_151200.mp4 48
-D:\Videos Database\Carpark Data\20161018\c2\20161018_151800.mp4 198
-D:\Videos Database\Carpark Data\20161018\c2\20161018_151800.mp4 204
-D:\Videos Database\Carpark Data\20161018\c2\20161018_153600.mp4 344
-D:\Videos Database\Carpark Data\20161018\c2\20161018_153600.mp4 345
-D:\Videos Database\Carpark Data\20161018\c2\20161018_154800.mp4 247
-D:\Videos Database\Carpark Data\20161018\c2\20161018_154800.mp4 248
-D:\Videos Database\Carpark Data\20161018\c2\20161018_154800.mp4 249
-D:\Videos Database\Carpark Data\20161018\c2\20161018_155400.mp4 174
-D:\Videos Database\Carpark Data\20161018\c2\20161018_155400.mp4 175
-D:\Videos Database\Carpark Data\20161018\c2\20161018_155400.mp4 176
-D:\Videos Database\Carpark Data\20161018\c2\20161018_155400.mp4 179
-D:\Videos Database\Carpark Data\20161018\c2\20161018_155400.mp4 227
-D:\Videos Database\Carpark Data\20161018\c2\20161018_155400.mp4 228
-D:\Videos Database\Carpark Data\20161018\c2\20161018_160000.mp4 173
-D:\Videos Database\Carpark Data\20161018\c2\20161018_160000.mp4 174
-D:\Videos Database\Carpark Data\20161018\c2\20161018_160600.mp4 314
-D:\Videos Database\Carpark Data\20161018\c2\20161018_163600.mp4 24
-D:\Videos Database\Carpark Data\20161018\c2\20161018_163600.mp4 277
-D:\Videos Database\Carpark Data\20161018\c2\20161018_165400.mp4 147
-D:\Videos Database\Carpark Data\20161018\c2\20161018_165400.mp4 288
-D:\Videos Database\Carpark Data\20161018\c2\20161018_170000.mp4 6
-D:\Videos Database\Carpark Data\20161018\c2\20161018_180600.mp4 224
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083000.mp4 14
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083000.mp4 15
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083000.mp4 24
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083000.mp4 95
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083000.mp4 96
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083000.mp4 99
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083000.mp4 99
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083000.mp4 101
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083000.mp4 103
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083000.mp4 104
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083000.mp4 217
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083000.mp4 298
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083000.mp4 299
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083000.mp4 303
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083000.mp4 316
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083000.mp4 317
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083000.mp4 318
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083600.mp4 2
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083600.mp4 5
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083600.mp4 6
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083600.mp4 164
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083600.mp4 165
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083600.mp4 170
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083600.mp4 182
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083600.mp4 198
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083600.mp4 199
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083600.mp4 200
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083600.mp4 201
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083600.mp4 278
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083600.mp4 279
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083600.mp4 316
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083600.mp4 317
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083600.mp4 323
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083600.mp4 324
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083600.mp4 345
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083600.mp4 346
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083600.mp4 347
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083600.mp4 348
-D:\Videos Database\Carpark Data\20161019\c2\20161019_084200.mp4 51
-D:\Videos Database\Carpark Data\20161019\c2\20161019_084200.mp4 52
-D:\Videos Database\Carpark Data\20161019\c2\20161019_084200.mp4 54
-D:\Videos Database\Carpark Data\20161019\c2\20161019_084200.mp4 114
-D:\Videos Database\Carpark Data\20161019\c2\20161019_084200.mp4 115
-D:\Videos Database\Carpark Data\20161019\c2\20161019_084200.mp4 123
-D:\Videos Database\Carpark Data\20161019\c2\20161019_084200.mp4 159
-D:\Videos Database\Carpark Data\20161019\c2\20161019_084200.mp4 161
-D:\Videos Database\Carpark Data\20161019\c2\20161019_084200.mp4 305
-D:\Videos Database\Carpark Data\20161019\c2\20161019_084200.mp4 306
-D:\Videos Database\Carpark Data\20161019\c2\20161019_084200.mp4 307
-D:\Videos Database\Carpark Data\20161019\c2\20161019_084800.mp4 64
-D:\Videos Database\Carpark Data\20161019\c2\20161019_084800.mp4 176
-D:\Videos Database\Carpark Data\20161019\c2\20161019_084800.mp4 334
-D:\Videos Database\Carpark Data\20161019\c2\20161019_084800.mp4 335
-D:\Videos Database\Carpark Data\20161019\c2\20161019_085400.mp4 219
-D:\Videos Database\Carpark Data\20161019\c2\20161019_085400.mp4 269
-D:\Videos Database\Carpark Data\20161019\c2\20161019_085400.mp4 270
-D:\Videos Database\Carpark Data\20161019\c2\20161019_085400.mp4 344
-D:\Videos Database\Carpark Data\20161019\c2\20161019_085400.mp4 345
-D:\Videos Database\Carpark Data\20161019\c2\20161019_090000.mp4 109
-D:\Videos Database\Carpark Data\20161019\c2\20161019_090000.mp4 110
-D:\Videos Database\Carpark Data\20161019\c2\20161019_090000.mp4 250
-D:\Videos Database\Carpark Data\20161019\c2\20161019_090000.mp4 251
-D:\Videos Database\Carpark Data\20161019\c2\20161019_090000.mp4 304
-D:\Videos Database\Carpark Data\20161019\c2\20161019_090000.mp4 305
-D:\Videos Database\Carpark Data\20161019\c2\20161019_090000.mp4 306
-D:\Videos Database\Carpark Data\20161019\c2\20161019_090600.mp4 80
-D:\Videos Database\Carpark Data\20161019\c2\20161019_090600.mp4 81
-D:\Videos Database\Carpark Data\20161019\c2\20161019_090600.mp4 82
-D:\Videos Database\Carpark Data\20161019\c2\20161019_090600.mp4 83
-D:\Videos Database\Carpark Data\20161019\c2\20161019_090600.mp4 175
-D:\Videos Database\Carpark Data\20161019\c2\20161019_090600.mp4 176
-D:\Videos Database\Carpark Data\20161019\c2\20161019_090600.mp4 177
-D:\Videos Database\Carpark Data\20161019\c2\20161019_090600.mp4 253
-D:\Videos Database\Carpark Data\20161019\c2\20161019_090600.mp4 254
-D:\Videos Database\Carpark Data\20161019\c2\20161019_090600.mp4 255
-D:\Videos Database\Carpark Data\20161019\c2\20161019_090600.mp4 256
-D:\Videos Database\Carpark Data\20161019\c2\20161019_090600.mp4 317
-D:\Videos Database\Carpark Data\20161019\c2\20161019_090600.mp4 318
-D:\Videos Database\Carpark Data\20161019\c2\20161019_091200.mp4 46
-D:\Videos Database\Carpark Data\20161019\c2\20161019_091200.mp4 47
-D:\Videos Database\Carpark Data\20161019\c2\20161019_091200.mp4 264
-D:\Videos Database\Carpark Data\20161019\c2\20161019_091200.mp4 265
-D:\Videos Database\Carpark Data\20161019\c2\20161019_091200.mp4 266
-D:\Videos Database\Carpark Data\20161019\c2\20161019_091200.mp4 285
-D:\Videos Database\Carpark Data\20161019\c2\20161019_091200.mp4 286
-D:\Videos Database\Carpark Data\20161019\c2\20161019_091800.mp4 56
-D:\Videos Database\Carpark Data\20161019\c2\20161019_091800.mp4 157
-D:\Videos Database\Carpark Data\20161019\c2\20161019_091800.mp4 158
-D:\Videos Database\Carpark Data\20161019\c2\20161019_091800.mp4 220
-D:\Videos Database\Carpark Data\20161019\c2\20161019_091800.mp4 221
-D:\Videos Database\Carpark Data\20161019\c2\20161019_091800.mp4 224
-D:\Videos Database\Carpark Data\20161019\c2\20161019_091800.mp4 229
-D:\Videos Database\Carpark Data\20161019\c2\20161019_091800.mp4 230
-D:\Videos Database\Carpark Data\20161019\c2\20161019_091800.mp4 338
-D:\Videos Database\Carpark Data\20161019\c2\20161019_092400.mp4 231
-D:\Videos Database\Carpark Data\20161019\c2\20161019_092400.mp4 269
-D:\Videos Database\Carpark Data\20161019\c2\20161019_094200.mp4 166
-D:\Videos Database\Carpark Data\20161019\c2\20161019_094200.mp4 241
-D:\Videos Database\Carpark Data\20161019\c2\20161019_094200.mp4 242
-D:\Videos Database\Carpark Data\20161019\c2\20161019_094200.mp4 243
-D:\Videos Database\Carpark Data\20161019\c2\20161019_094200.mp4 278
-D:\Videos Database\Carpark Data\20161019\c2\20161019_094200.mp4 279
-D:\Videos Database\Carpark Data\20161019\c2\20161019_094200.mp4 282
-D:\Videos Database\Carpark Data\20161019\c2\20161019_094200.mp4 297
-D:\Videos Database\Carpark Data\20161019\c2\20161019_094200.mp4 298
-D:\Videos Database\Carpark Data\20161019\c2\20161019_094200.mp4 342
-D:\Videos Database\Carpark Data\20161019\c2\20161019_094200.mp4 346
-D:\Videos Database\Carpark Data\20161019\c2\20161019_094200.mp4 347
-D:\Videos Database\Carpark Data\20161019\c2\20161019_094200.mp4 348
-D:\Videos Database\Carpark Data\20161019\c2\20161019_094800.mp4 214
-D:\Videos Database\Carpark Data\20161019\c2\20161019_094800.mp4 215
-D:\Videos Database\Carpark Data\20161019\c2\20161019_094800.mp4 217
-D:\Videos Database\Carpark Data\20161019\c2\20161019_094800.mp4 220
-D:\Videos Database\Carpark Data\20161019\c2\20161019_095400.mp4 38
-D:\Videos Database\Carpark Data\20161019\c2\20161019_095400.mp4 107
-D:\Videos Database\Carpark Data\20161019\c2\20161019_095400.mp4 108
-D:\Videos Database\Carpark Data\20161019\c2\20161019_095400.mp4 110
-D:\Videos Database\Carpark Data\20161019\c2\20161019_100600.mp4 353
-D:\Videos Database\Carpark Data\20161019\c2\20161019_100600.mp4 354
-D:\Videos Database\Carpark Data\20161019\c2\20161019_100600.mp4 355
-D:\Videos Database\Carpark Data\20161019\c2\20161019_100600.mp4 357
-D:\Videos Database\Carpark Data\20161019\c2\20161019_101200.mp4 42
-D:\Videos Database\Carpark Data\20161019\c2\20161019_101200.mp4 148
-D:\Videos Database\Carpark Data\20161019\c2\20161019_101200.mp4 156
-D:\Videos Database\Carpark Data\20161019\c2\20161019_101200.mp4 157
-D:\Videos Database\Carpark Data\20161019\c2\20161019_102400.mp4 114
-D:\Videos Database\Carpark Data\20161019\c2\20161019_102400.mp4 115
-D:\Videos Database\Carpark Data\20161019\c2\20161019_103000.mp4 177
-D:\Videos Database\Carpark Data\20161019\c2\20161019_103000.mp4 178
-D:\Videos Database\Carpark Data\20161019\c2\20161019_105400.mp4 268
-D:\Videos Database\Carpark Data\20161019\c2\20161019_105400.mp4 346
-D:\Videos Database\Carpark Data\20161019\c2\20161019_105400.mp4 347
-D:\Videos Database\Carpark Data\20161019\c2\20161019_110000.mp4 93
-D:\Videos Database\Carpark Data\20161019\c2\20161019_110000.mp4 94
-D:\Videos Database\Carpark Data\20161019\c2\20161019_110000.mp4 97
-D:\Videos Database\Carpark Data\20161019\c2\20161019_110000.mp4 98
-D:\Videos Database\Carpark Data\20161019\c2\20161019_110600.mp4 162
-D:\Videos Database\Carpark Data\20161019\c2\20161019_110600.mp4 163
-D:\Videos Database\Carpark Data\20161019\c2\20161019_111800.mp4 78
-D:\Videos Database\Carpark Data\20161019\c2\20161019_112400.mp4 43
-D:\Videos Database\Carpark Data\20161019\c2\20161019_112400.mp4 44
-D:\Videos Database\Carpark Data\20161019\c2\20161019_112400.mp4 195
-D:\Videos Database\Carpark Data\20161019\c2\20161019_112400.mp4 197
-D:\Videos Database\Carpark Data\20161019\c2\20161019_112400.mp4 198
-D:\Videos Database\Carpark Data\20161019\c2\20161019_112400.mp4 260
-D:\Videos Database\Carpark Data\20161019\c2\20161019_112400.mp4 261
-D:\Videos Database\Carpark Data\20161019\c2\20161019_112400.mp4 263
-D:\Videos Database\Carpark Data\20161019\c2\20161019_113000.mp4 211
-D:\Videos Database\Carpark Data\20161019\c2\20161019_113000.mp4 212
-D:\Videos Database\Carpark Data\20161019\c2\20161019_113000.mp4 213
-D:\Videos Database\Carpark Data\20161019\c2\20161019_113000.mp4 305
-D:\Videos Database\Carpark Data\20161019\c2\20161019_113000.mp4 306
-D:\Videos Database\Carpark Data\20161019\c2\20161019_113000.mp4 316
-D:\Videos Database\Carpark Data\20161019\c2\20161019_113600.mp4 27
-D:\Videos Database\Carpark Data\20161019\c2\20161019_113600.mp4 28
-D:\Videos Database\Carpark Data\20161019\c2\20161019_113600.mp4 29
-D:\Videos Database\Carpark Data\20161019\c2\20161019_113600.mp4 32
-D:\Videos Database\Carpark Data\20161019\c2\20161019_113600.mp4 33
-D:\Videos Database\Carpark Data\20161019\c2\20161019_114800.mp4 142
-D:\Videos Database\Carpark Data\20161019\c2\20161019_114800.mp4 143
-D:\Videos Database\Carpark Data\20161019\c2\20161019_114800.mp4 144
-D:\Videos Database\Carpark Data\20161019\c2\20161019_114800.mp4 296
-D:\Videos Database\Carpark Data\20161019\c2\20161019_114800.mp4 297
-D:\Videos Database\Carpark Data\20161019\c2\20161019_114800.mp4 298
-D:\Videos Database\Carpark Data\20161019\c2\20161019_115400.mp4 88
-D:\Videos Database\Carpark Data\20161019\c2\20161019_115400.mp4 89
-D:\Videos Database\Carpark Data\20161019\c2\20161019_115400.mp4 93
-D:\Videos Database\Carpark Data\20161019\c2\20161019_115400.mp4 245
-D:\Videos Database\Carpark Data\20161019\c2\20161019_115400.mp4 246
-D:\Videos Database\Carpark Data\20161019\c2\20161019_115400.mp4 294
-D:\Videos Database\Carpark Data\20161019\c2\20161019_115400.mp4 295
-D:\Videos Database\Carpark Data\20161019\c2\20161019_120000.mp4 50
-D:\Videos Database\Carpark Data\20161019\c2\20161019_120000.mp4 51
-D:\Videos Database\Carpark Data\20161019\c2\20161019_120600.mp4 113
-D:\Videos Database\Carpark Data\20161019\c2\20161019_120600.mp4 179
-D:\Videos Database\Carpark Data\20161019\c2\20161019_120600.mp4 180
-D:\Videos Database\Carpark Data\20161019\c2\20161019_120600.mp4 181
-D:\Videos Database\Carpark Data\20161019\c2\20161019_120600.mp4 182
-D:\Videos Database\Carpark Data\20161019\c2\20161019_120600.mp4 183
-D:\Videos Database\Carpark Data\20161019\c2\20161019_120600.mp4 184
-D:\Videos Database\Carpark Data\20161019\c2\20161019_120600.mp4 241
-D:\Videos Database\Carpark Data\20161019\c2\20161019_121200.mp4 72
-D:\Videos Database\Carpark Data\20161019\c2\20161019_121200.mp4 138
-D:\Videos Database\Carpark Data\20161019\c2\20161019_121200.mp4 139
-D:\Videos Database\Carpark Data\20161019\c2\20161019_121200.mp4 142
-D:\Videos Database\Carpark Data\20161019\c2\20161019_121200.mp4 143
-D:\Videos Database\Carpark Data\20161019\c2\20161019_121200.mp4 144
-D:\Videos Database\Carpark Data\20161019\c2\20161019_121200.mp4 145
-D:\Videos Database\Carpark Data\20161019\c2\20161019_121200.mp4 230
-D:\Videos Database\Carpark Data\20161019\c2\20161019_121200.mp4 237
-D:\Videos Database\Carpark Data\20161019\c2\20161019_121200.mp4 238
-D:\Videos Database\Carpark Data\20161019\c2\20161019_121200.mp4 239
-D:\Videos Database\Carpark Data\20161019\c2\20161019_121200.mp4 272
-D:\Videos Database\Carpark Data\20161019\c2\20161019_121200.mp4 273
-D:\Videos Database\Carpark Data\20161019\c2\20161019_121200.mp4 278
-D:\Videos Database\Carpark Data\20161019\c2\20161019_121200.mp4 279
-D:\Videos Database\Carpark Data\20161019\c2\20161019_121200.mp4 280
-D:\Videos Database\Carpark Data\20161019\c2\20161019_121200.mp4 281
-D:\Videos Database\Carpark Data\20161019\c2\20161019_121200.mp4 282
-D:\Videos Database\Carpark Data\20161019\c2\20161019_121800.mp4 325
-D:\Videos Database\Carpark Data\20161019\c2\20161019_121800.mp4 326
-D:\Videos Database\Carpark Data\20161019\c2\20161019_121800.mp4 327
-D:\Videos Database\Carpark Data\20161019\c2\20161019_121800.mp4 332
-D:\Videos Database\Carpark Data\20161019\c2\20161019_121800.mp4 333
-D:\Videos Database\Carpark Data\20161019\c2\20161019_121800.mp4 334
-D:\Videos Database\Carpark Data\20161019\c2\20161019_121800.mp4 335
-D:\Videos Database\Carpark Data\20161019\c2\20161019_123000.mp4 260
-D:\Videos Database\Carpark Data\20161019\c2\20161019_123000.mp4 261
-D:\Videos Database\Carpark Data\20161019\c2\20161019_123000.mp4 262
-D:\Videos Database\Carpark Data\20161019\c2\20161019_123000.mp4 263
-D:\Videos Database\Carpark Data\20161019\c2\20161019_123000.mp4 314
-D:\Videos Database\Carpark Data\20161019\c2\20161019_123000.mp4 315
-D:\Videos Database\Carpark Data\20161019\c2\20161019_123000.mp4 324
-D:\Videos Database\Carpark Data\20161019\c2\20161019_123000.mp4 325
-D:\Videos Database\Carpark Data\20161019\c2\20161019_123000.mp4 326
-D:\Videos Database\Carpark Data\20161019\c2\20161019_123000.mp4 330
-D:\Videos Database\Carpark Data\20161019\c2\20161019_123000.mp4 331
-D:\Videos Database\Carpark Data\20161019\c2\20161019_123000.mp4 332
-D:\Videos Database\Carpark Data\20161019\c2\20161019_123000.mp4 333
-D:\Videos Database\Carpark Data\20161019\c2\20161019_123600.mp4 208
-D:\Videos Database\Carpark Data\20161019\c2\20161019_123600.mp4 209
-D:\Videos Database\Carpark Data\20161019\c2\20161019_123600.mp4 210
-D:\Videos Database\Carpark Data\20161019\c2\20161019_124200.mp4 147
-D:\Videos Database\Carpark Data\20161019\c2\20161019_124200.mp4 148
-D:\Videos Database\Carpark Data\20161019\c2\20161019_124200.mp4 149
-D:\Videos Database\Carpark Data\20161019\c2\20161019_124800.mp4 188
-D:\Videos Database\Carpark Data\20161019\c2\20161019_124800.mp4 189
-D:\Videos Database\Carpark Data\20161019\c2\20161019_124800.mp4 237
-D:\Videos Database\Carpark Data\20161019\c2\20161019_124800.mp4 238
-D:\Videos Database\Carpark Data\20161019\c2\20161019_124800.mp4 307
-D:\Videos Database\Carpark Data\20161019\c2\20161019_124800.mp4 308
-D:\Videos Database\Carpark Data\20161019\c2\20161019_124800.mp4 314
-D:\Videos Database\Carpark Data\20161019\c2\20161019_124800.mp4 315
-D:\Videos Database\Carpark Data\20161019\c2\20161019_124800.mp4 319
-D:\Videos Database\Carpark Data\20161019\c2\20161019_124800.mp4 320
-D:\Videos Database\Carpark Data\20161019\c2\20161019_124800.mp4 321
-D:\Videos Database\Carpark Data\20161019\c2\20161019_124800.mp4 332
-D:\Videos Database\Carpark Data\20161019\c2\20161019_125400.mp4 160
-D:\Videos Database\Carpark Data\20161019\c2\20161019_125400.mp4 161
-D:\Videos Database\Carpark Data\20161019\c2\20161019_125400.mp4 230
-D:\Videos Database\Carpark Data\20161019\c2\20161019_125400.mp4 231
-D:\Videos Database\Carpark Data\20161019\c2\20161019_125400.mp4 232
-D:\Videos Database\Carpark Data\20161019\c2\20161019_130000.mp4 201
-D:\Videos Database\Carpark Data\20161019\c2\20161019_130600.mp4 2
-D:\Videos Database\Carpark Data\20161019\c2\20161019_130600.mp4 3
-D:\Videos Database\Carpark Data\20161019\c2\20161019_130600.mp4 92
-D:\Videos Database\Carpark Data\20161019\c2\20161019_130600.mp4 93
-D:\Videos Database\Carpark Data\20161019\c2\20161019_130600.mp4 94
-D:\Videos Database\Carpark Data\20161019\c2\20161019_130600.mp4 100
-D:\Videos Database\Carpark Data\20161019\c2\20161019_130600.mp4 101
-D:\Videos Database\Carpark Data\20161019\c2\20161019_130600.mp4 107
-D:\Videos Database\Carpark Data\20161019\c2\20161019_130600.mp4 108
-D:\Videos Database\Carpark Data\20161019\c2\20161019_130600.mp4 121
-D:\Videos Database\Carpark Data\20161019\c2\20161019_130600.mp4 294
-D:\Videos Database\Carpark Data\20161019\c2\20161019_130600.mp4 295
-D:\Videos Database\Carpark Data\20161019\c2\20161019_131200.mp4 106
-D:\Videos Database\Carpark Data\20161019\c2\20161019_131200.mp4 108
-D:\Videos Database\Carpark Data\20161019\c2\20161019_131200.mp4 109
-D:\Videos Database\Carpark Data\20161019\c2\20161019_131200.mp4 111
-D:\Videos Database\Carpark Data\20161019\c2\20161019_131200.mp4 114
-D:\Videos Database\Carpark Data\20161019\c2\20161019_131200.mp4 116
-D:\Videos Database\Carpark Data\20161019\c2\20161019_131800.mp4 152
-D:\Videos Database\Carpark Data\20161019\c2\20161019_131800.mp4 153
-D:\Videos Database\Carpark Data\20161019\c2\20161019_131800.mp4 156
-D:\Videos Database\Carpark Data\20161019\c2\20161019_131800.mp4 299
-D:\Videos Database\Carpark Data\20161019\c2\20161019_131800.mp4 300
-D:\Videos Database\Carpark Data\20161019\c2\20161019_132400.mp4 210
-D:\Videos Database\Carpark Data\20161019\c2\20161019_132400.mp4 211
-D:\Videos Database\Carpark Data\20161019\c2\20161019_132400.mp4 329
-D:\Videos Database\Carpark Data\20161019\c2\20161019_132400.mp4 330
-D:\Videos Database\Carpark Data\20161019\c2\20161019_133000.mp4 20
-D:\Videos Database\Carpark Data\20161019\c2\20161019_133000.mp4 21
-D:\Videos Database\Carpark Data\20161019\c2\20161019_133000.mp4 24
-D:\Videos Database\Carpark Data\20161019\c2\20161019_133000.mp4 176
-D:\Videos Database\Carpark Data\20161019\c2\20161019_133000.mp4 177
-D:\Videos Database\Carpark Data\20161019\c2\20161019_133000.mp4 206
-D:\Videos Database\Carpark Data\20161019\c2\20161019_133600.mp4 264
-D:\Videos Database\Carpark Data\20161019\c2\20161019_133600.mp4 265
-D:\Videos Database\Carpark Data\20161019\c2\20161019_133600.mp4 267
-D:\Videos Database\Carpark Data\20161019\c2\20161019_133600.mp4 270
-D:\Videos Database\Carpark Data\20161019\c2\20161019_133600.mp4 284
-D:\Videos Database\Carpark Data\20161019\c2\20161019_134200.mp4 188
-D:\Videos Database\Carpark Data\20161019\c2\20161019_134200.mp4 198
-D:\Videos Database\Carpark Data\20161019\c2\20161019_134200.mp4 258
-D:\Videos Database\Carpark Data\20161019\c2\20161019_134200.mp4 259
-D:\Videos Database\Carpark Data\20161019\c2\20161019_134200.mp4 304
-D:\Videos Database\Carpark Data\20161019\c2\20161019_134200.mp4 305
-D:\Videos Database\Carpark Data\20161019\c2\20161019_134800.mp4 71
-D:\Videos Database\Carpark Data\20161019\c2\20161019_134800.mp4 73
-D:\Videos Database\Carpark Data\20161019\c2\20161019_134800.mp4 330
-D:\Videos Database\Carpark Data\20161019\c2\20161019_134800.mp4 335
-D:\Videos Database\Carpark Data\20161019\c2\20161019_134800.mp4 336
-D:\Videos Database\Carpark Data\20161019\c2\20161019_134800.mp4 337
-D:\Videos Database\Carpark Data\20161019\c2\20161019_134800.mp4 344
-D:\Videos Database\Carpark Data\20161019\c2\20161019_134800.mp4 345
-D:\Videos Database\Carpark Data\20161019\c2\20161019_134800.mp4 353
-D:\Videos Database\Carpark Data\20161019\c2\20161019_134800.mp4 359
-D:\Videos Database\Carpark Data\20161019\c2\20161019_135400.mp4 0
-D:\Videos Database\Carpark Data\20161019\c2\20161019_135400.mp4 4
-D:\Videos Database\Carpark Data\20161019\c2\20161019_135400.mp4 40
-D:\Videos Database\Carpark Data\20161019\c2\20161019_135400.mp4 143
-D:\Videos Database\Carpark Data\20161019\c2\20161019_135400.mp4 144
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140000.mp4 54
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140000.mp4 55
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140000.mp4 56
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140000.mp4 86
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140000.mp4 158
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140000.mp4 159
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140000.mp4 160
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140000.mp4 186
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140000.mp4 187
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140000.mp4 188
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140000.mp4 237
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140000.mp4 238
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140000.mp4 269
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140000.mp4 270
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140000.mp4 271
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140000.mp4 273
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140000.mp4 305
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140000.mp4 306
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140000.mp4 311
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140000.mp4 312
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140000.mp4 313
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140000.mp4 352
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140000.mp4 353
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140600.mp4 10
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140600.mp4 11
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140600.mp4 78
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140600.mp4 79
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140600.mp4 96
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140600.mp4 167
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140600.mp4 172
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140600.mp4 174
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140600.mp4 176
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140600.mp4 177
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140600.mp4 180
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140600.mp4 181
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140600.mp4 182
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140600.mp4 247
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140600.mp4 250
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140600.mp4 250
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140600.mp4 251
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140600.mp4 255
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140600.mp4 256
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140600.mp4 256
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140600.mp4 258
-D:\Videos Database\Carpark Data\20161019\c2\20161019_141200.mp4 2
-D:\Videos Database\Carpark Data\20161019\c2\20161019_141200.mp4 3
-D:\Videos Database\Carpark Data\20161019\c2\20161019_141200.mp4 4
-D:\Videos Database\Carpark Data\20161019\c2\20161019_141200.mp4 5
-D:\Videos Database\Carpark Data\20161019\c2\20161019_141200.mp4 7
-D:\Videos Database\Carpark Data\20161019\c2\20161019_141200.mp4 32
-D:\Videos Database\Carpark Data\20161019\c2\20161019_141200.mp4 34
-D:\Videos Database\Carpark Data\20161019\c2\20161019_141200.mp4 124
-D:\Videos Database\Carpark Data\20161019\c2\20161019_141200.mp4 125
-D:\Videos Database\Carpark Data\20161019\c2\20161019_141200.mp4 126
-D:\Videos Database\Carpark Data\20161019\c2\20161019_141200.mp4 130
-D:\Videos Database\Carpark Data\20161019\c2\20161019_141200.mp4 131
-D:\Videos Database\Carpark Data\20161019\c2\20161019_141200.mp4 133
-D:\Videos Database\Carpark Data\20161019\c2\20161019_141200.mp4 135
-D:\Videos Database\Carpark Data\20161019\c2\20161019_141200.mp4 136
-D:\Videos Database\Carpark Data\20161019\c2\20161019_141200.mp4 137
-D:\Videos Database\Carpark Data\20161019\c2\20161019_141200.mp4 143
-D:\Videos Database\Carpark Data\20161019\c2\20161019_141200.mp4 144
-D:\Videos Database\Carpark Data\20161019\c2\20161019_141200.mp4 145
-D:\Videos Database\Carpark Data\20161019\c2\20161019_141200.mp4 210
-D:\Videos Database\Carpark Data\20161019\c2\20161019_141200.mp4 225
-D:\Videos Database\Carpark Data\20161019\c2\20161019_141200.mp4 262
-D:\Videos Database\Carpark Data\20161019\c2\20161019_141200.mp4 263
-D:\Videos Database\Carpark Data\20161019\c2\20161019_141200.mp4 267
-D:\Videos Database\Carpark Data\20161019\c2\20161019_141200.mp4 310
-D:\Videos Database\Carpark Data\20161019\c2\20161019_141200.mp4 312
-D:\Videos Database\Carpark Data\20161019\c2\20161019_141800.mp4 190
-D:\Videos Database\Carpark Data\20161019\c2\20161019_141800.mp4 191
-D:\Videos Database\Carpark Data\20161019\c2\20161019_141800.mp4 195
-D:\Videos Database\Carpark Data\20161019\c2\20161019_143000.mp4 93
-D:\Videos Database\Carpark Data\20161019\c2\20161019_143000.mp4 94
-D:\Videos Database\Carpark Data\20161019\c2\20161019_143000.mp4 250
-D:\Videos Database\Carpark Data\20161019\c2\20161019_143000.mp4 251
-D:\Videos Database\Carpark Data\20161019\c2\20161019_143600.mp4 301
-D:\Videos Database\Carpark Data\20161019\c2\20161019_143600.mp4 302
-D:\Videos Database\Carpark Data\20161019\c2\20161019_143600.mp4 303
-D:\Videos Database\Carpark Data\20161019\c2\20161019_143600.mp4 324
-D:\Videos Database\Carpark Data\20161019\c2\20161019_143600.mp4 325
-D:\Videos Database\Carpark Data\20161019\c2\20161019_143600.mp4 329
-D:\Videos Database\Carpark Data\20161019\c2\20161019_143600.mp4 330
-D:\Videos Database\Carpark Data\20161019\c2\20161019_144200.mp4 40
-D:\Videos Database\Carpark Data\20161019\c2\20161019_144200.mp4 41
-D:\Videos Database\Carpark Data\20161019\c2\20161019_144200.mp4 165
-D:\Videos Database\Carpark Data\20161019\c2\20161019_144200.mp4 166
-D:\Videos Database\Carpark Data\20161019\c2\20161019_144800.mp4 298
-D:\Videos Database\Carpark Data\20161019\c2\20161019_150000.mp4 207
-D:\Videos Database\Carpark Data\20161019\c2\20161019_150000.mp4 208
-D:\Videos Database\Carpark Data\20161019\c2\20161019_150000.mp4 209
-D:\Videos Database\Carpark Data\20161019\c2\20161019_150000.mp4 268
-D:\Videos Database\Carpark Data\20161019\c2\20161019_150600.mp4 177
-D:\Videos Database\Carpark Data\20161019\c2\20161019_150600.mp4 178
-D:\Videos Database\Carpark Data\20161019\c2\20161019_151200.mp4 20
-D:\Videos Database\Carpark Data\20161019\c2\20161019_151200.mp4 104
-D:\Videos Database\Carpark Data\20161019\c2\20161019_151800.mp4 12
-D:\Videos Database\Carpark Data\20161019\c2\20161019_153600.mp4 82
-D:\Videos Database\Carpark Data\20161019\c2\20161019_153600.mp4 83
-D:\Videos Database\Carpark Data\20161019\c2\20161019_153600.mp4 253
-D:\Videos Database\Carpark Data\20161019\c2\20161019_153600.mp4 254
-D:\Videos Database\Carpark Data\20161019\c2\20161019_154200.mp4 74
-D:\Videos Database\Carpark Data\20161019\c2\20161019_161800.mp4 187
-D:\Videos Database\Carpark Data\20161019\c2\20161019_163000.mp4 136
-D:\Videos Database\Carpark Data\20161019\c2\20161019_163000.mp4 138
-D:\Videos Database\Carpark Data\20161019\c2\20161019_164800.mp4 14
-D:\Videos Database\Carpark Data\20161019\c2\20161019_164800.mp4 15
-D:\Videos Database\Carpark Data\20161019\c2\20161019_165400.mp4 127
-D:\Videos Database\Carpark Data\20161019\c2\20161019_165400.mp4 128
-D:\Videos Database\Carpark Data\20161019\c2\20161019_165400.mp4 129
-D:\Videos Database\Carpark Data\20161019\c2\20161019_165400.mp4 233
-D:\Videos Database\Carpark Data\20161019\c2\20161019_165400.mp4 234
-D:\Videos Database\Carpark Data\20161019\c2\20161019_170600.mp4 30
-D:\Videos Database\Carpark Data\20161019\c2\20161019_170600.mp4 75
-D:\Videos Database\Carpark Data\20161019\c2\20161019_170600.mp4 79
-D:\Videos Database\Carpark Data\20161019\c2\20161019_170600.mp4 80
-D:\Videos Database\Carpark Data\20161019\c2\20161019_170600.mp4 81
-D:\Videos Database\Carpark Data\20161019\c2\20161019_171200.mp4 98
-D:\Videos Database\Carpark Data\20161019\c2\20161019_171200.mp4 99
-D:\Videos Database\Carpark Data\20161019\c2\20161019_171200.mp4 145
-D:\Videos Database\Carpark Data\20161019\c2\20161019_173000.mp4 134
-D:\Videos Database\Carpark Data\20161019\c2\20161019_173000.mp4 264
-D:\Videos Database\Carpark Data\20161019\c2\20161019_173000.mp4 265
-D:\Videos Database\Carpark Data\20161019\c2\20161019_173600.mp4 175
-D:\Videos Database\Carpark Data\20161019\c2\20161019_174800.mp4 11
-D:\Videos Database\Carpark Data\20161019\c2\20161019_174800.mp4 12
-D:\Videos Database\Carpark Data\20161019\c2\20161019_174800.mp4 217
-D:\Videos Database\Carpark Data\20161019\c2\20161019_174800.mp4 218
-D:\Videos Database\Carpark Data\20161019\c2\20161019_174800.mp4 222
-D:\Videos Database\Carpark Data\20161019\c2\20161019_181800.mp4 174
-D:\Videos Database\Carpark Data\20161019\c2\20161019_181800.mp4 175
-D:\Videos Database\Carpark Data\20161019\c2\20161019_181800.mp4 176
-D:\Videos Database\Carpark Data\20161019\c2\20161019_182400.mp4 150
-D:\Videos Database\Carpark Data\20161019\c2\20161019_182400.mp4 151
-
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4
-0
-44,82,86,87,88,119,120,121,122,163,164,166,167,168,214,215,296,297,299,300,330,331,332,346,347,354,355,358,
---- resultFromSingleVideo_grouped ---
-0
-44 
---- resultFromSingleVideo_grouped ---
-1
-82 86 87 88 
---- resultFromSingleVideo_grouped ---
-2
-119 120 121 122 
---- resultFromSingleVideo_grouped ---
-3
-163 164 166 167 168 
---- resultFromSingleVideo_grouped ---
-4
-214 215 
---- resultFromSingleVideo_grouped ---
-5
-296 297 299 300 
---- resultFromSingleVideo_grouped ---
-6
-330 331 332 
---- resultFromSingleVideo_grouped ---
-7
-346 347 
---- resultFromSingleVideo_grouped ---
-7
-354 355 358 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_083600.mp4
-1
-67,68,69,72,166,167,170,171,253,254,317,318,
---- resultFromSingleVideo_grouped ---
-0
-67 68 69 72 
---- resultFromSingleVideo_grouped ---
-1
-166 167 170 171 
---- resultFromSingleVideo_grouped ---
-2
-253 254 
---- resultFromSingleVideo_grouped ---
-2
-317 318 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084200.mp4
-2
-4,5,11,24,27,27,28,36,44,45,48,49,54,57,58,70,71,185,186,190,253,253,254,338,339,340,
---- resultFromSingleVideo_grouped ---
-0
-4 5 
---- resultFromSingleVideo_grouped ---
-1
-11 
---- resultFromSingleVideo_grouped ---
-2
-24 27 27 28 
---- resultFromSingleVideo_grouped ---
-3
-36 
---- resultFromSingleVideo_grouped ---
-4
-44 45 48 49 54 57 58 
---- resultFromSingleVideo_grouped ---
-5
-70 71 
---- resultFromSingleVideo_grouped ---
-6
-185 186 190 
---- resultFromSingleVideo_grouped ---
-7
-253 253 254 
---- resultFromSingleVideo_grouped ---
-7
-338 339 340 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_084800.mp4
-3
-125,126,137,138,255,256,256,313,314,315,316,
---- resultFromSingleVideo_grouped ---
-0
-125 126 
---- resultFromSingleVideo_grouped ---
-1
-137 138 
---- resultFromSingleVideo_grouped ---
-2
-255 256 256 
---- resultFromSingleVideo_grouped ---
-2
-313 314 315 316 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_085400.mp4
-4
-42,43,45,46,70,72,181,190,
---- resultFromSingleVideo_grouped ---
-0
-42 43 45 46 
---- resultFromSingleVideo_grouped ---
-1
-70 72 
---- resultFromSingleVideo_grouped ---
-2
-181 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_090000.mp4
-5
-123,124,160,171,
---- resultFromSingleVideo_grouped ---
-0
-123 124 
---- resultFromSingleVideo_grouped ---
-1
-160 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_090600.mp4
-6
-168,169,170,
---- resultFromSingleVideo_grouped ---
-0
-168 169 170 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_091200.mp4
-7
-332,333,
---- resultFromSingleVideo_grouped ---
-0
-332 333 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_091800.mp4
-8
-81,82,
---- resultFromSingleVideo_grouped ---
-0
-81 82 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_092400.mp4
-9
-134,135,
---- resultFromSingleVideo_grouped ---
-0
-134 135 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_093600.mp4
-10
-123,124,306,307,308,309,
---- resultFromSingleVideo_grouped ---
-0
-123 124 
---- resultFromSingleVideo_grouped ---
-0
-306 307 308 309 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_094800.mp4
-11
-28,29,91,92,93,
---- resultFromSingleVideo_grouped ---
-0
-28 29 
---- resultFromSingleVideo_grouped ---
-0
-91 92 93 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_095400.mp4
-12
-89,206,207,338,339,343,344,
---- resultFromSingleVideo_grouped ---
-0
-89 
---- resultFromSingleVideo_grouped ---
-1
-206 207 
---- resultFromSingleVideo_grouped ---
-1
-338 339 343 344 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_100000.mp4
-13
-148,149,214,
---- resultFromSingleVideo_grouped ---
-0
-148 149 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_101200.mp4
-14
-347,348,
---- resultFromSingleVideo_grouped ---
-0
-347 348 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_101800.mp4
-15
-245,246,247,
---- resultFromSingleVideo_grouped ---
-0
-245 246 247 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_103600.mp4
-16
-315,316,317,318,
---- resultFromSingleVideo_grouped ---
-0
-315 316 317 318 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_104800.mp4
-17
-59,
---- resultFromSingleVideo_grouped ---
-0
-59 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_110600.mp4
-18
-178,179,
---- resultFromSingleVideo_grouped ---
-0
-178 179 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_111200.mp4
-19
-192,193,194,225,226,
---- resultFromSingleVideo_grouped ---
-0
-192 193 194 
---- resultFromSingleVideo_grouped ---
-0
-225 226 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_111800.mp4
-20
-186,187,
---- resultFromSingleVideo_grouped ---
-0
-186 187 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_113000.mp4
-21
-15,154,155,169,170,320,
---- resultFromSingleVideo_grouped ---
-0
-15 
---- resultFromSingleVideo_grouped ---
-1
-154 155 
---- resultFromSingleVideo_grouped ---
-2
-169 170 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_113600.mp4
-22
-111,
---- resultFromSingleVideo_grouped ---
-0
-111 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_114800.mp4
-23
-30,31,143,351,352,
---- resultFromSingleVideo_grouped ---
-0
-30 31 
---- resultFromSingleVideo_grouped ---
-1
-143 
---- resultFromSingleVideo_grouped ---
-1
-351 352 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_120600.mp4
-24
-347,
---- resultFromSingleVideo_grouped ---
-0
-347 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_121200.mp4
-25
-82,83,174,175,
---- resultFromSingleVideo_grouped ---
-0
-82 83 
---- resultFromSingleVideo_grouped ---
-0
-174 175 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_122400.mp4
-26
-263,306,
---- resultFromSingleVideo_grouped ---
-0
-263 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_124200.mp4
-27
-143,144,145,257,258,
---- resultFromSingleVideo_grouped ---
-0
-143 144 145 
---- resultFromSingleVideo_grouped ---
-0
-257 258 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_124800.mp4
-28
-126,269,271,274,
---- resultFromSingleVideo_grouped ---
-0
-126 
---- resultFromSingleVideo_grouped ---
-0
-269 271 274 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_125400.mp4
-29
-34,
---- resultFromSingleVideo_grouped ---
-0
-34 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_130000.mp4
-30
-111,112,113,177,178,178,
---- resultFromSingleVideo_grouped ---
-0
-111 112 113 
---- resultFromSingleVideo_grouped ---
-0
-177 178 178 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_131800.mp4
-31
-255,256,
---- resultFromSingleVideo_grouped ---
-0
-255 256 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_132400.mp4
-32
-21,
---- resultFromSingleVideo_grouped ---
-0
-21 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_133000.mp4
-33
-8,
---- resultFromSingleVideo_grouped ---
-0
-8 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_133600.mp4
-34
-163,164,272,273,274,275,277,278,
---- resultFromSingleVideo_grouped ---
-0
-163 164 
---- resultFromSingleVideo_grouped ---
-0
-272 273 274 275 277 278 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_134200.mp4
-35
-87,88,91,92,93,119,120,
---- resultFromSingleVideo_grouped ---
-0
-87 88 91 92 93 
---- resultFromSingleVideo_grouped ---
-0
-119 120 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_134800.mp4
-36
-198,199,200,240,241,309,
---- resultFromSingleVideo_grouped ---
-0
-198 199 200 
---- resultFromSingleVideo_grouped ---
-1
-240 241 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_135400.mp4
-37
-168,169,317,
---- resultFromSingleVideo_grouped ---
-0
-168 169 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_140000.mp4
-38
-95,96,139,140,141,
---- resultFromSingleVideo_grouped ---
-0
-95 96 
---- resultFromSingleVideo_grouped ---
-0
-139 140 141 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_140600.mp4
-39
-103,174,175,
---- resultFromSingleVideo_grouped ---
-0
-103 
---- resultFromSingleVideo_grouped ---
-0
-174 175 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_141200.mp4
-40
-71,74,188,189,313,
---- resultFromSingleVideo_grouped ---
-0
-71 74 
---- resultFromSingleVideo_grouped ---
-1
-188 189 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_141800.mp4
-41
-121,122,
---- resultFromSingleVideo_grouped ---
-0
-121 122 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_142400.mp4
-42
-325,326,
---- resultFromSingleVideo_grouped ---
-0
-325 326 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_143600.mp4
-43
-296,
---- resultFromSingleVideo_grouped ---
-0
-296 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_144200.mp4
-44
-304,305,
---- resultFromSingleVideo_grouped ---
-0
-304 305 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_144800.mp4
-45
-80,109,
---- resultFromSingleVideo_grouped ---
-0
-80 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_151200.mp4
-46
-14,15,16,47,48,
---- resultFromSingleVideo_grouped ---
-0
-14 15 16 
---- resultFromSingleVideo_grouped ---
-0
-47 48 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_151800.mp4
-47
-198,204,
---- resultFromSingleVideo_grouped ---
-0
-198 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_153600.mp4
-48
-344,345,
---- resultFromSingleVideo_grouped ---
-0
-344 345 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_154800.mp4
-49
-247,248,249,
---- resultFromSingleVideo_grouped ---
-0
-247 248 249 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_155400.mp4
-50
-174,175,176,179,227,228,
---- resultFromSingleVideo_grouped ---
-0
-174 175 176 179 
---- resultFromSingleVideo_grouped ---
-0
-227 228 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_160000.mp4
-51
-173,174,
---- resultFromSingleVideo_grouped ---
-0
-173 174 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_160600.mp4
-52
-314,
---- resultFromSingleVideo_grouped ---
-0
-314 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_163600.mp4
-53
-24,277,
---- resultFromSingleVideo_grouped ---
-0
-24 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_165400.mp4
-54
-147,288,
---- resultFromSingleVideo_grouped ---
-0
-147 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_170000.mp4
-55
-6,
---- resultFromSingleVideo_grouped ---
-0
-6 
-
-D:\Videos Database\Carpark Data\20161018\c2\20161018_180600.mp4
-56
-224,
---- resultFromSingleVideo_grouped ---
-0
-224 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083000.mp4
-57
-14,15,24,95,96,99,99,101,103,104,217,298,299,303,316,317,318,
---- resultFromSingleVideo_grouped ---
-0
-14 15 
---- resultFromSingleVideo_grouped ---
-1
-24 
---- resultFromSingleVideo_grouped ---
-2
-95 96 99 99 101 103 104 
---- resultFromSingleVideo_grouped ---
-3
-217 
---- resultFromSingleVideo_grouped ---
-4
-298 299 303 
---- resultFromSingleVideo_grouped ---
-4
-316 317 318 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_083600.mp4
-58
-2,5,6,164,165,170,182,198,199,200,201,278,279,316,317,323,324,345,346,347,348,
---- resultFromSingleVideo_grouped ---
-0
-2 5 6 
---- resultFromSingleVideo_grouped ---
-1
-164 165 170 
---- resultFromSingleVideo_grouped ---
-2
-182 
---- resultFromSingleVideo_grouped ---
-3
-198 199 200 201 
---- resultFromSingleVideo_grouped ---
-4
-278 279 
---- resultFromSingleVideo_grouped ---
-5
-316 317 
---- resultFromSingleVideo_grouped ---
-6
-323 324 
---- resultFromSingleVideo_grouped ---
-6
-345 346 347 348 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_084200.mp4
-59
-51,52,54,114,115,123,159,161,305,306,307,
---- resultFromSingleVideo_grouped ---
-0
-51 52 54 
---- resultFromSingleVideo_grouped ---
-1
-114 115 
---- resultFromSingleVideo_grouped ---
-2
-123 
---- resultFromSingleVideo_grouped ---
-3
-159 161 
---- resultFromSingleVideo_grouped ---
-3
-305 306 307 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_084800.mp4
-60
-64,176,334,335,
---- resultFromSingleVideo_grouped ---
-0
-64 
---- resultFromSingleVideo_grouped ---
-1
-176 
---- resultFromSingleVideo_grouped ---
-1
-334 335 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_085400.mp4
-61
-219,269,270,344,345,
---- resultFromSingleVideo_grouped ---
-0
-219 
---- resultFromSingleVideo_grouped ---
-1
-269 270 
---- resultFromSingleVideo_grouped ---
-1
-344 345 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_090000.mp4
-62
-109,110,250,251,304,305,306,
---- resultFromSingleVideo_grouped ---
-0
-109 110 
---- resultFromSingleVideo_grouped ---
-1
-250 251 
---- resultFromSingleVideo_grouped ---
-1
-304 305 306 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_090600.mp4
-63
-80,81,82,83,175,176,177,253,254,255,256,317,318,
---- resultFromSingleVideo_grouped ---
-0
-80 81 82 83 
---- resultFromSingleVideo_grouped ---
-1
-175 176 177 
---- resultFromSingleVideo_grouped ---
-2
-253 254 255 256 
---- resultFromSingleVideo_grouped ---
-2
-317 318 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_091200.mp4
-64
-46,47,264,265,266,285,286,
---- resultFromSingleVideo_grouped ---
-0
-46 47 
---- resultFromSingleVideo_grouped ---
-1
-264 265 266 
---- resultFromSingleVideo_grouped ---
-1
-285 286 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_091800.mp4
-65
-56,157,158,220,221,224,229,230,338,
---- resultFromSingleVideo_grouped ---
-0
-56 
---- resultFromSingleVideo_grouped ---
-1
-157 158 
---- resultFromSingleVideo_grouped ---
-2
-220 221 224 229 230 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_092400.mp4
-66
-231,269,
---- resultFromSingleVideo_grouped ---
-0
-231 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_094200.mp4
-67
-166,241,242,243,278,279,282,297,298,342,346,347,348,
---- resultFromSingleVideo_grouped ---
-0
-166 
---- resultFromSingleVideo_grouped ---
-1
-241 242 243 
---- resultFromSingleVideo_grouped ---
-2
-278 279 282 
---- resultFromSingleVideo_grouped ---
-3
-297 298 
---- resultFromSingleVideo_grouped ---
-3
-342 346 347 348 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_094800.mp4
-68
-214,215,217,220,
---- resultFromSingleVideo_grouped ---
-0
-214 215 217 220 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_095400.mp4
-69
-38,107,108,110,
---- resultFromSingleVideo_grouped ---
-0
-38 
---- resultFromSingleVideo_grouped ---
-0
-107 108 110 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_100600.mp4
-70
-353,354,355,357,
---- resultFromSingleVideo_grouped ---
-0
-353 354 355 357 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_101200.mp4
-71
-42,148,156,157,
---- resultFromSingleVideo_grouped ---
-0
-42 
---- resultFromSingleVideo_grouped ---
-1
-148 
---- resultFromSingleVideo_grouped ---
-1
-156 157 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_102400.mp4
-72
-114,115,
---- resultFromSingleVideo_grouped ---
-0
-114 115 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_103000.mp4
-73
-177,178,
---- resultFromSingleVideo_grouped ---
-0
-177 178 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_105400.mp4
-74
-268,346,347,
---- resultFromSingleVideo_grouped ---
-0
-268 
---- resultFromSingleVideo_grouped ---
-0
-346 347 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_110000.mp4
-75
-93,94,97,98,
---- resultFromSingleVideo_grouped ---
-0
-93 94 97 98 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_110600.mp4
-76
-162,163,
---- resultFromSingleVideo_grouped ---
-0
-162 163 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_111800.mp4
-77
-78,
---- resultFromSingleVideo_grouped ---
-0
-78 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_112400.mp4
-78
-43,44,195,197,198,260,261,263,
---- resultFromSingleVideo_grouped ---
-0
-43 44 
---- resultFromSingleVideo_grouped ---
-1
-195 197 198 
---- resultFromSingleVideo_grouped ---
-1
-260 261 263 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_113000.mp4
-79
-211,212,213,305,306,316,
---- resultFromSingleVideo_grouped ---
-0
-211 212 213 
---- resultFromSingleVideo_grouped ---
-1
-305 306 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_113600.mp4
-80
-27,28,29,32,33,
---- resultFromSingleVideo_grouped ---
-0
-27 28 29 32 33 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_114800.mp4
-81
-142,143,144,296,297,298,
---- resultFromSingleVideo_grouped ---
-0
-142 143 144 
---- resultFromSingleVideo_grouped ---
-0
-296 297 298 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_115400.mp4
-82
-88,89,93,245,246,294,295,
---- resultFromSingleVideo_grouped ---
-0
-88 89 93 
---- resultFromSingleVideo_grouped ---
-1
-245 246 
---- resultFromSingleVideo_grouped ---
-1
-294 295 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_120000.mp4
-83
-50,51,
---- resultFromSingleVideo_grouped ---
-0
-50 51 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_120600.mp4
-84
-113,179,180,181,182,183,184,241,
---- resultFromSingleVideo_grouped ---
-0
-113 
---- resultFromSingleVideo_grouped ---
-1
-179 180 181 182 183 184 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_121200.mp4
-85
-72,138,139,142,143,144,145,230,237,238,239,272,273,278,279,280,281,282,
---- resultFromSingleVideo_grouped ---
-0
-72 
---- resultFromSingleVideo_grouped ---
-1
-138 139 142 143 144 145 
---- resultFromSingleVideo_grouped ---
-2
-230 
---- resultFromSingleVideo_grouped ---
-3
-237 238 239 
---- resultFromSingleVideo_grouped ---
-3
-272 273 278 279 280 281 282 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_121800.mp4
-86
-325,326,327,332,333,334,335,
---- resultFromSingleVideo_grouped ---
-0
-325 326 327 332 333 334 335 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_123000.mp4
-87
-260,261,262,263,314,315,324,325,326,330,331,332,333,
---- resultFromSingleVideo_grouped ---
-0
-260 261 262 263 
---- resultFromSingleVideo_grouped ---
-1
-314 315 
---- resultFromSingleVideo_grouped ---
-1
-324 325 326 330 331 332 333 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_123600.mp4
-88
-208,209,210,
---- resultFromSingleVideo_grouped ---
-0
-208 209 210 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_124200.mp4
-89
-147,148,149,
---- resultFromSingleVideo_grouped ---
-0
-147 148 149 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_124800.mp4
-90
-188,189,237,238,307,308,314,315,319,320,321,332,
---- resultFromSingleVideo_grouped ---
-0
-188 189 
---- resultFromSingleVideo_grouped ---
-1
-237 238 
---- resultFromSingleVideo_grouped ---
-2
-307 308 
---- resultFromSingleVideo_grouped ---
-3
-314 315 319 320 321 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_125400.mp4
-91
-160,161,230,231,232,
---- resultFromSingleVideo_grouped ---
-0
-160 161 
---- resultFromSingleVideo_grouped ---
-0
-230 231 232 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_130000.mp4
-92
-201,
---- resultFromSingleVideo_grouped ---
-0
-201 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_130600.mp4
-93
-2,3,92,93,94,100,101,107,108,121,294,295,
---- resultFromSingleVideo_grouped ---
-0
-2 3 
---- resultFromSingleVideo_grouped ---
-1
-92 93 94 
---- resultFromSingleVideo_grouped ---
-2
-100 101 
---- resultFromSingleVideo_grouped ---
-3
-107 108 
---- resultFromSingleVideo_grouped ---
-4
-121 
---- resultFromSingleVideo_grouped ---
-4
-294 295 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_131200.mp4
-94
-106,108,109,111,114,116,
---- resultFromSingleVideo_grouped ---
-0
-106 108 109 111 114 116 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_131800.mp4
-95
-152,153,156,299,300,
---- resultFromSingleVideo_grouped ---
-0
-152 153 156 
---- resultFromSingleVideo_grouped ---
-0
-299 300 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_132400.mp4
-96
-210,211,329,330,
---- resultFromSingleVideo_grouped ---
-0
-210 211 
---- resultFromSingleVideo_grouped ---
-0
-329 330 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_133000.mp4
-97
-20,21,24,176,177,206,
---- resultFromSingleVideo_grouped ---
-0
-20 21 24 
---- resultFromSingleVideo_grouped ---
-1
-176 177 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_133600.mp4
-98
-264,265,267,270,284,
---- resultFromSingleVideo_grouped ---
-0
-264 265 267 270 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_134200.mp4
-99
-188,198,258,259,304,305,
---- resultFromSingleVideo_grouped ---
-0
-188 
---- resultFromSingleVideo_grouped ---
-1
-198 
---- resultFromSingleVideo_grouped ---
-2
-258 259 
---- resultFromSingleVideo_grouped ---
-2
-304 305 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_134800.mp4
-100
-71,73,330,335,336,337,344,345,353,359,
---- resultFromSingleVideo_grouped ---
-0
-71 73 
---- resultFromSingleVideo_grouped ---
-1
-330 335 336 337 
---- resultFromSingleVideo_grouped ---
-2
-344 345 
---- resultFromSingleVideo_grouped ---
-3
-353 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_135400.mp4
-101
-0,4,40,143,144,
---- resultFromSingleVideo_grouped ---
-0
-0 4 
---- resultFromSingleVideo_grouped ---
-1
-40 
---- resultFromSingleVideo_grouped ---
-1
-143 144 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140000.mp4
-102
-54,55,56,86,158,159,160,186,187,188,237,238,269,270,271,273,305,306,311,312,313,352,353,
---- resultFromSingleVideo_grouped ---
-0
-54 55 56 
---- resultFromSingleVideo_grouped ---
-1
-86 
---- resultFromSingleVideo_grouped ---
-2
-158 159 160 
---- resultFromSingleVideo_grouped ---
-3
-186 187 188 
---- resultFromSingleVideo_grouped ---
-4
-237 238 
---- resultFromSingleVideo_grouped ---
-5
-269 270 271 273 
---- resultFromSingleVideo_grouped ---
-6
-305 306 311 312 313 
---- resultFromSingleVideo_grouped ---
-6
-352 353 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_140600.mp4
-103
-10,11,78,79,96,167,172,174,176,177,180,181,182,247,250,250,251,255,256,256,258,
---- resultFromSingleVideo_grouped ---
-0
-10 11 
---- resultFromSingleVideo_grouped ---
-1
-78 79 
---- resultFromSingleVideo_grouped ---
-2
-96 
---- resultFromSingleVideo_grouped ---
-3
-167 172 174 176 177 180 181 182 
---- resultFromSingleVideo_grouped ---
-3
-247 250 250 251 255 256 256 258 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_141200.mp4
-104
-2,3,4,5,7,32,34,124,125,126,130,131,133,135,136,137,143,144,145,210,225,262,263,267,310,312,
---- resultFromSingleVideo_grouped ---
-0
-2 3 4 5 7 
---- resultFromSingleVideo_grouped ---
-1
-32 34 
---- resultFromSingleVideo_grouped ---
-2
-124 125 126 130 131 133 135 136 137 
---- resultFromSingleVideo_grouped ---
-3
-143 144 145 
---- resultFromSingleVideo_grouped ---
-4
-210 
---- resultFromSingleVideo_grouped ---
-5
-225 
---- resultFromSingleVideo_grouped ---
-6
-262 263 267 
---- resultFromSingleVideo_grouped ---
-6
-310 312 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_141800.mp4
-105
-190,191,195,
---- resultFromSingleVideo_grouped ---
-0
-190 191 195 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_143000.mp4
-106
-93,94,250,251,
---- resultFromSingleVideo_grouped ---
-0
-93 94 
---- resultFromSingleVideo_grouped ---
-0
-250 251 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_143600.mp4
-107
-301,302,303,324,325,329,330,
---- resultFromSingleVideo_grouped ---
-0
-301 302 303 
---- resultFromSingleVideo_grouped ---
-0
-324 325 329 330 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_144200.mp4
-108
-40,41,165,166,
---- resultFromSingleVideo_grouped ---
-0
-40 41 
---- resultFromSingleVideo_grouped ---
-0
-165 166 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_144800.mp4
-109
-298,
---- resultFromSingleVideo_grouped ---
-0
-298 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_150000.mp4
-110
-207,208,209,268,
---- resultFromSingleVideo_grouped ---
-0
-207 208 209 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_150600.mp4
-111
-177,178,
---- resultFromSingleVideo_grouped ---
-0
-177 178 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_151200.mp4
-112
-20,104,
---- resultFromSingleVideo_grouped ---
-0
-20 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_151800.mp4
-113
-12,
---- resultFromSingleVideo_grouped ---
-0
-12 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_153600.mp4
-114
-82,83,253,254,
---- resultFromSingleVideo_grouped ---
-0
-82 83 
---- resultFromSingleVideo_grouped ---
-0
-253 254 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_154200.mp4
-115
-74,
---- resultFromSingleVideo_grouped ---
-0
-74 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_161800.mp4
-116
-187,
---- resultFromSingleVideo_grouped ---
-0
-187 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_163000.mp4
-117
-136,138,
---- resultFromSingleVideo_grouped ---
-0
-136 138 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_164800.mp4
-118
-14,15,
---- resultFromSingleVideo_grouped ---
-0
-14 15 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_165400.mp4
-119
-127,128,129,233,234,
---- resultFromSingleVideo_grouped ---
-0
-127 128 129 
---- resultFromSingleVideo_grouped ---
-0
-233 234 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_170600.mp4
-120
-30,75,79,80,81,
---- resultFromSingleVideo_grouped ---
-0
-30 
---- resultFromSingleVideo_grouped ---
-0
-75 79 80 81 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_171200.mp4
-121
-98,99,145,
---- resultFromSingleVideo_grouped ---
-0
-98 99 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_173000.mp4
-122
-134,264,265,
---- resultFromSingleVideo_grouped ---
-0
-134 
---- resultFromSingleVideo_grouped ---
-0
-264 265 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_173600.mp4
-123
-175,
---- resultFromSingleVideo_grouped ---
-0
-175 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_174800.mp4
-124
-11,12,217,218,222,
---- resultFromSingleVideo_grouped ---
-0
-11 12 
---- resultFromSingleVideo_grouped ---
-0
-217 218 222 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_181800.mp4
-125
-174,175,176,
---- resultFromSingleVideo_grouped ---
-0
-174 175 176 
-
-D:\Videos Database\Carpark Data\20161019\c2\20161019_182400.mp4
-126
-150,151,
---- resultFromSingleVideo_grouped ---
-0
+Program options: DBSurveillance.db: DB tables dropped & created
+Initialized DB tables
+Loading ... Color information
+AdaptiveBackgroundLearning()
+FrameDifferenceBGS()
+1755 1691 1752 1748 1644 1623 1482 1557 1516 1457 1280 
+1081 918 943 910 967 1020 939 845 871 1034 
+792 713 725 716 734 688 643 668 625 
+457 445 436 428 456 283 262 338 
+287 319 312 340 263 285 
+Please enter processing date (CCYYMMDD): Please enter number of processing dates: < !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! >
+
+@ Processing # of dates: 1
+1: 20161018
+< !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! >
+D:\Videos Database\Carpark Data\20161018\c2\
+100 files were found:
+1: D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4
+Press Enter to continue: --- [Creating new GlobalClass instance]---
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4
+prediction: 0
+prediction: 1
+Enter : 1
+
+Blob id:1 Index: 16878 , color value size: 14
+ Color value: 115.5
+ Color value: 123.5
+ Color value: 131.5
+ Color value: 0.132794
+ Color value: 0.167946
+ Color value: 0.035562
+ Color value: 0.369931
+ Color value: 0.058475
+ Color value: 0.012012
+ Color value: 0.041154
+ Color value: 0.048935
+ Color value: 0.018012
+ Color value: 0.04813
+ Color value: 0.067049
+Exit : 4
+
+Blob id:1 Index: 14763 , color value size: 14
+ Color value: 91.5
+ Color value: 107.5
+ Color value: 115.5
+ Color value: 0.145531
+ Color value: 0.233829
+ Color value: 0.030203
+ Color value: 0.279913
+ Color value: 0.10231
+ Color value: 0.012894
+ Color value: 0.030119
+ Color value: 0.036677
+ Color value: 0.021885
+ Color value: 0.033006
+ Color value: 0.073633
+Deleting : 1
+prediction: 0
+prediction: 1
+Start: new blob * B
+B: highMatchCounter : 372, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 483.5
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+E: highMatchCounter : 0, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 143.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+Deleting : 0
+prediction: 1
+prediction: 1
+Enter : 1
+
+Blob id:2 Index: 25499 , color value size: 14
+ Color value: 219.5
+ Color value: 227.5
+ Color value: 195.5
+ Color value: 0.036532
+ Color value: 0.062643
+ Color value: 0.115531
+ Color value: 0.021559
+ Color value: 0.193345
+ Color value: 0.046542
+ Color value: 0.045986
+ Color value: 0.064531
+ Color value: 0.068862
+ Color value: 0.168381
+ Color value: 0.176088
+Exit : 4
+
+Blob id:2 Index: 23387 , color value size: 14
+ Color value: 219.5
+ Color value: 211.5
+ Color value: 179.5
+ Color value: 0.031301
+ Color value: 0.040484
+ Color value: 0.182435
+ Color value: 0.052109
+ Color value: 0.109414
+ Color value: 0.084082
+ Color value: 0.076304
+ Color value: 0.044117
+ Color value: 0.071763
+ Color value: 0.114822
+ Color value: 0.19317
+prediction: 1
+Enter : 1
+
+Blob id:3 Index: 16878 , color value size: 14
+ Color value: 115.5
+ Color value: 123.5
+ Color value: 131.5
+ Color value: 0.132794
+ Color value: 0.167946
+ Color value: 0.035562
+ Color value: 0.369931
+ Color value: 0.058475
+ Color value: 0.012012
+ Color value: 0.041154
+ Color value: 0.048935
+ Color value: 0.018012
+ Color value: 0.04813
+ Color value: 0.067049
+Deleting : 2
+Exit : 4
+
+Blob id:3 Index: 27482 , color value size: 14
+ Color value: 211.5
+ Color value: 211.5
+ Color value: 211.5
+ Color value: 0.059339
+ Color value: 0.07699
+ Color value: 0.039223
+ Color value: 0.123632
+ Color value: 0.030598
+ Color value: 0.031754
+ Color value: 0.090073
+ Color value: 0.050891
+ Color value: 0.053134
+ Color value: 0.406443
+ Color value: 0.037923
+prediction: 1
+A: highMatchCounter : 860, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 622.8
+matching parked car : Lot A
+prediction: 1
+prediction: 1
+prediction: 0
+prediction: 0
+Deleting : 3
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+prediction: 1
+Enter : 1
+
+Blob id:4 Index: 16878 , color value size: 14
+ Color value: 115.5
+ Color value: 123.5
+ Color value: 131.5
+ Color value: 0.132794
+ Color value: 0.167946
+ Color value: 0.035562
+ Color value: 0.369931
+ Color value: 0.058475
+ Color value: 0.012012
+ Color value: 0.041154
+ Color value: 0.048935
+ Color value: 0.018012
+ Color value: 0.04813
+ Color value: 0.067049
+Exit : 4
+
+Blob id:4 Index: 17934 , color value size: 14
+ Color value: 115.5
+ Color value: 131.5
+ Color value: 139.5
+ Color value: 0.098037
+ Color value: 0.241852
+ Color value: 0.034276
+ Color value: 0.302838
+ Color value: 0.085827
+ Color value: 0.009977
+ Color value: 0.035618
+ Color value: 0.045255
+ Color value: 0.027662
+ Color value: 0.047332
+ Color value: 0.071326
+Deleting : 4
+prediction: 0
+Enter : 3
+
+Blob id:5 Index: 6344 , color value size: 14
+ Color value: 67.5
+ Color value: 51.5
+ Color value: 51.5
+ Color value: 0.237279
+ Color value: 0.023591
+ Color value: 0.231977
+ Color value: 0.141838
+ Color value: 0.028025
+ Color value: 0.051856
+ Color value: 0.063829
+ Color value: 0.11532
+ Color value: 0.06235
+ Color value: 0.01366
+ Color value: 0.030275
+Start: new blob * B
+B: highMatchCounter : 396, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 375.6
+matching parked car : Lot B
+prediction: 0
+prediction: 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Park - Vehicle 5Lot C2
+prediction: 0
+Deleting : 5
+prediction: 0
+Enter : 3
+
+Blob id:6 Index: 8390 , color value size: 14
+ Color value: 51.5
+ Color value: 51.5
+ Color value: 67.5
+ Color value: 0.316783
+ Color value: 0.136155
+ Color value: 0.029749
+ Color value: 0.14939
+ Color value: 0.036279
+ Color value: 0.020594
+ Color value: 0.034048
+ Color value: 0.179331
+ Color value: 0.050474
+ Color value: 0.009601
+ Color value: 0.037596
+Exit : 2
+
+Blob id:6 Index: 9479 , color value size: 14
+ Color value: 59.5
+ Color value: 67.5
+ Color value: 75.5
+ Color value: 0.359018
+ Color value: 0.143301
+ Color value: 0.034654
+ Color value: 0.223631
+ Color value: 0.061102
+ Color value: 0.017931
+ Color value: 0.025529
+ Color value: 0.04458
+ Color value: 0.029375
+ Color value: 0.017727
+ Color value: 0.043154
+prediction: 0
+Deleting : 6
+prediction: 0
+prediction: 0
+prediction: 0
+E: highMatchCounter : 271, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 142.5
+matching parked car : Lot E
+prediction: 0
+E: highMatchCounter : 54, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 156
+prediction: 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+C: highMatchCounter : 596, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 356.5
+matching parked car : Lot C
+prediction: 1
+Enter : 1
+
+Blob id:7 Index: 16878 , color value size: 14
+ Color value: 115.5
+ Color value: 123.5
+ Color value: 131.5
+ Color value: 0.132794
+ Color value: 0.167946
+ Color value: 0.035562
+ Color value: 0.369931
+ Color value: 0.058475
+ Color value: 0.012012
+ Color value: 0.041154
+ Color value: 0.048935
+ Color value: 0.018012
+ Color value: 0.04813
+ Color value: 0.067049
+Deleting : 0
+C: highMatchCounter : 652, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 356.5
+matching parked car : Lot C
+Deleting : 0
+prediction: 0
+A: highMatchCounter : 471, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 702
+prediction: 0
+prediction: 0
+Start: new blob * B
+B: highMatchCounter : 797, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 469.5
+matching parked car : Lot B
+prediction: 1
+C: highMatchCounter : 21, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 312.5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+C: highMatchCounter : 651, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 356.5
+matching parked car : Lot C
+Add to Miss Match State: 7
+Deleting : 7
+prediction: 1
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 1
+Deleting : 0
+prediction: 1
+prediction: 1
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 1
+vehicle 8 : leaving non tracking zone 1
+prediction: 1
+vehicle 8 : non tracking zone 1
+Deleting : 8
+prediction: 1
+vehicle 7 : non tracking zone 1
+Deleting : 7
+prediction: 1
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+Deleting : 0
+prediction: 0
+prediction: 1
+C: highMatchCounter : 681, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 356.5
+matching parked car : Lot C
+Deleting : 0
+prediction: 0
+Deleting : 0
+prediction: 0
+Deleting : 0
+prediction: 1
+prediction: 1
+prediction: 1
+prediction: 0
+Deleting : 0
+prediction: 1
+prediction: 1
+Enter : 1
+
+Blob id:9 Index: 21073 , color value size: 14
+ Color value: 139.5
+ Color value: 147.5
+ Color value: 163.5
+ Color value: 0.08585
+ Color value: 0.241728
+ Color value: 0.02893
+ Color value: 0.310041
+ Color value: 0.045005
+ Color value: 0.011252
+ Color value: 0.046634
+ Color value: 0.095321
+ Color value: 0.022613
+ Color value: 0.056136
+ Color value: 0.056491
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 6
+
+Blob id:10 Index: 25301 , color value size: 14
+ Color value: 171.5
+ Color value: 179.5
+ Color value: 195.5
+ Color value: 0.069638
+ Color value: 0.26339
+ Color value: 0.02825
+ Color value: 0.216394
+ Color value: 0.049698
+ Color value: 0.014823
+ Color value: 0.050953
+ Color value: 0.095489
+ Color value: 0.035396
+ Color value: 0.125567
+ Color value: 0.050401
+prediction: 0
+Deleting : 0
+prediction: 0
+prediction: 1
+Park - Vehicle 9Lot B5
+prediction: 1
+Leaving car park - Vehicle 9Lot B5
+prediction: 1
+Enter : 1
+
+Blob id:11 Index: 21105 , color value size: 14
+ Color value: 139.5
+ Color value: 155.5
+ Color value: 163.5
+ Color value: 0.073497
+ Color value: 0.274333
+ Color value: 0.032954
+ Color value: 0.265957
+ Color value: 0.08726
+ Color value: 0.014452
+ Color value: 0.039084
+ Color value: 0.055804
+ Color value: 0.033251
+ Color value: 0.061417
+ Color value: 0.061991
+Exit : 5
+
+Blob id:10 Index: 22163 , color value size: 14
+ Color value: 155.5
+ Color value: 163.5
+ Color value: 171.5
+ Color value: 0.077546
+ Color value: 0.209435
+ Color value: 0.035253
+ Color value: 0.321241
+ Color value: 0.061289
+ Color value: 0.015537
+ Color value: 0.046925
+ Color value: 0.065312
+ Color value: 0.028403
+ Color value: 0.087489
+ Color value: 0.05157
+Exit : 4
+
+Blob id:11 Index: 15852 , color value size: 14
+ Color value: 99.5
+ Color value: 123.5
+ Color value: 123.5
+ Color value: 0.096999
+ Color value: 0.218636
+ Color value: 0.048634
+ Color value: 0.224586
+ Color value: 0.190765
+ Color value: 0.006874
+ Color value: 0.031551
+ Color value: 0.031162
+ Color value: 0.039842
+ Color value: 0.036295
+ Color value: 0.074656
+Deleting : 11
+prediction: 0
+prediction: 1
+C: highMatchCounter : 656, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 358
+matching parked car : Lot C
+Deleting : 9
+prediction: 1
+Leaving car park - Vehicle 12Lot C4
+Deleting : 0
+prediction: 1
+Enter : 1
+
+Blob id:13 Index: 16878 , color value size: 14
+ Color value: 115.5
+ Color value: 123.5
+ Color value: 131.5
+ Color value: 0.132794
+ Color value: 0.167946
+ Color value: 0.035562
+ Color value: 0.369931
+ Color value: 0.058475
+ Color value: 0.012012
+ Color value: 0.041154
+ Color value: 0.048935
+ Color value: 0.018012
+ Color value: 0.04813
+ Color value: 0.067049
+prediction: 1
+Park - Vehicle 12Lot B4
+prediction: 1
+Deleting : 0
+Deleting : 12
+prediction: 1
+Enter : 1
+
+Blob id:14 Index: 21105 , color value size: 14
+ Color value: 139.5
+ Color value: 155.5
+ Color value: 163.5
+ Color value: 0.073497
+ Color value: 0.274333
+ Color value: 0.032954
+ Color value: 0.265957
+ Color value: 0.08726
+ Color value: 0.014452
+ Color value: 0.039084
+ Color value: 0.055804
+ Color value: 0.033251
+ Color value: 0.061417
+ Color value: 0.061991
+Exit : 4
+
+Blob id:13 Index: 16876 , color value size: 14
+ Color value: 99.5
+ Color value: 123.5
+ Color value: 131.5
+ Color value: 0.094423
+ Color value: 0.313689
+ Color value: 0.029556
+ Color value: 0.225354
+ Color value: 0.117228
+ Color value: 0.009874
+ Color value: 0.026334
+ Color value: 0.03482
+ Color value: 0.033997
+ Color value: 0.038425
+ Color value: 0.076301
+prediction: 1
+Enter : 5
+
+Blob id:13 Index: 16876 , color value size: 14
+ Color value: 99.5
+ Color value: 123.5
+ Color value: 131.5
+ Color value: 0.094423
+ Color value: 0.313689
+ Color value: 0.029556
+ Color value: 0.225354
+ Color value: 0.117228
+ Color value: 0.009874
+ Color value: 0.026334
+ Color value: 0.03482
+ Color value: 0.033997
+ Color value: 0.038425
+ Color value: 0.076301
+end of video
+EOF: Processing next video
+clear blob memory 
+2: D:\Videos Database\Carpark Data\20161018\c2\20161018_083600.mp4
+Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_083600.mp4
+Deleting : 10
+A: highMatchCounter : 1461, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 592.8
+matching parked car : Lot A
+A: highMatchCounter : 1427, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 592.8
+matching parked car : Lot A
+(Matching) start: merge!
+merged!
+merge jor 14 + 13
+(Matching) start: split!
+diff 1 : 160.961 diff 2 : 148.117
+diff 3 : 140.276 diff 4 : 127.421
+split jorrrrrrrrrrrrrrrrrrrrrrrrrrr
+Exit : 6
+
+Blob id:13 Index: 5252 , color value size: 14
+ Color value: 35.5
+ Color value: 35.5
+ Color value: 43.5
+ Color value: 0.390161
+ Color value: 0.101905
+ Color value: 0.052568
+ Color value: 0.119778
+ Color value: 0.047295
+ Color value: 0.040661
+ Color value: 0.043207
+ Color value: 0.110662
+ Color value: 0.044428
+ Color value: 0.012686
+ Color value: 0.036651
+Deleting : 13
+prediction: 1
+A: highMatchCounter : 1270, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 592.8
+matching parked car : Lot A
+Deleting : 0
+Exit : 6
+
+Blob id:14 Index: 20050 , color value size: 14
+ Color value: 147.5
+ Color value: 147.5
+ Color value: 155.5
+ Color value: 0.085626
+ Color value: 0.143136
+ Color value: 0.041087
+ Color value: 0.356808
+ Color value: 0.045189
+ Color value: 0.012897
+ Color value: 0.076236
+ Color value: 0.095967
+ Color value: 0.029565
+ Color value: 0.0645
+ Color value: 0.04899
+Deleting : 14
+Deleting : 0
+Deleting : 0
+prediction: 1
+Start: new blob * B
+B: highMatchCounter : 291, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 455
+Deleting : 0
+prediction: 0
+Start: new blob * B
+B: highMatchCounter : 50, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 471.5
+Deleting : 0
+prediction: 0
+prediction: 1
+Enter : 3
+Deleting : 0
+
+Blob id:15 Index: 8422 , color value size: 14
+ Color value: 51.5
+ Color value: 59.5
+ Color value: 67.5
+ Color value: 0.394713
+ Color value: 0.132025
+ Color value: 0.035501
+ Color value: 0.197568
+ Color value: 0.058048
+ Color value: 0.020399
+ Color value: 0.02514
+ Color value: 0.04577
+ Color value: 0.033938
+ Color value: 0.018559
+ Color value: 0.03834
+Deleting : 0
+Deleting : 0
+Exit : 4
+
+Blob id:15 Index: 10536 , color value size: 14
+ Color value: 67.5
+ Color value: 75.5
+ Color value: 83.5
+ Color value: 0.323995
+ Color value: 0.154218
+ Color value: 0.033805
+ Color value: 0.249593
+ Color value: 0.063976
+ Color value: 0.015531
+ Color value: 0.025909
+ Color value: 0.043428
+ Color value: 0.024954
+ Color value: 0.016812
+ Color value: 0.047779
+prediction: 0
+prediction: 1
+Enter : 5
+
+Blob id:15 Index: 10536 , color value size: 14
+ Color value: 67.5
+ Color value: 75.5
+ Color value: 83.5
+ Color value: 0.323995
+ Color value: 0.154218
+ Color value: 0.033805
+ Color value: 0.249593
+ Color value: 0.063976
+ Color value: 0.015531
+ Color value: 0.025909
+ Color value: 0.043428
+ Color value: 0.024954
+ Color value: 0.016812
+ Color value: 0.047779
+prediction: 1
+Enter : 2
+
+Blob id:16 Index: 4195 , color value size: 14
+ Color value: 27.5
+ Color value: 27.5
+ Color value: 35.5
+ Color value: 0.374186
+ Color value: 0.107857
+ Color value: 0.048367
+ Color value: 0.099046
+ Color value: 0.051443
+ Color value: 0.047293
+ Color value: 0.04876
+ Color value: 0.12509
+ Color value: 0.049048
+ Color value: 0.010796
+ Color value: 0.038114
+Exit : 6
+
+Blob id:15 Index: 7398 , color value size: 14
+ Color value: 51.5
+ Color value: 59.5
+ Color value: 59.5
+ Color value: 0.381805
+ Color value: 0.083384
+ Color value: 0.056314
+ Color value: 0.19209
+ Color value: 0.111965
+ Color value: 0.020887
+ Color value: 0.027823
+ Color value: 0.035921
+ Color value: 0.029234
+ Color value: 0.021919
+ Color value: 0.038657
+Exit : 3
+
+Blob id:16 Index: 4227 , color value size: 14
+ Color value: 27.5
+ Color value: 35.5
+ Color value: 35.5
+ Color value: 0.437761
+ Color value: 0.059814
+ Color value: 0.053425
+ Color value: 0.109563
+ Color value: 0.085178
+ Color value: 0.045322
+ Color value: 0.039877
+ Color value: 0.065403
+ Color value: 0.035548
+ Color value: 0.017112
+ Color value: 0.050997
+Deleting : 16
+prediction: 0
+Deleting : 15
+prediction: 1
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 6
+
+Blob id:17 Index: 4195 , color value size: 14
+ Color value: 27.5
+ Color value: 27.5
+ Color value: 35.5
+ Color value: 0.374186
+ Color value: 0.107857
+ Color value: 0.048367
+ Color value: 0.099046
+ Color value: 0.051443
+ Color value: 0.047293
+ Color value: 0.04876
+ Color value: 0.12509
+ Color value: 0.049048
+ Color value: 0.010796
+ Color value: 0.038114
+prediction: 1
+Start: new blob * B
+B: highMatchCounter : 830, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 510
+matching parked car : Lot B
+prediction: 1
+C: highMatchCounter : 9, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 312.5
+Deleting : 0
+Deleting : 0
+prediction: 0
+Deleting : 0
+prediction: 1
+Enter : 1
+
+Blob id:18 Index: 21105 , color value size: 14
+ Color value: 139.5
+ Color value: 155.5
+ Color value: 163.5
+ Color value: 0.073497
+ Color value: 0.274333
+ Color value: 0.032954
+ Color value: 0.265957
+ Color value: 0.08726
+ Color value: 0.014452
+ Color value: 0.039084
+ Color value: 0.055804
+ Color value: 0.033251
+ Color value: 0.061417
+ Color value: 0.061991
+Enter : 3
+
+Blob id:19 Index: 7400 , color value size: 14
+ Color value: 67.5
+ Color value: 59.5
+ Color value: 59.5
+ Color value: 0.330616
+ Color value: 0.031498
+ Color value: 0.135872
+ Color value: 0.207595
+ Color value: 0.034922
+ Color value: 0.03479
+ Color value: 0.052055
+ Color value: 0.080156
+ Color value: 0.04325
+ Color value: 0.015646
+ Color value: 0.033601
+prediction: 0
+A: highMatchCounter : 876, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 606.4
+matching parked car : Lot A
+Deleting : 17
+Exit : 2
+
+Blob id:19 Index: 4195 , color value size: 14
+ Color value: 27.5
+ Color value: 27.5
+ Color value: 35.5
+ Color value: 0.374186
+ Color value: 0.107857
+ Color value: 0.048367
+ Color value: 0.099046
+ Color value: 0.051443
+ Color value: 0.047293
+ Color value: 0.04876
+ Color value: 0.12509
+ Color value: 0.049048
+ Color value: 0.010796
+ Color value: 0.038114
+Deleting : 19
+prediction: 1
+Leaving car park - Vehicle 20Lot A9
+Deleting : 0
+Deleting : 0
+prediction: 1
+Park - Vehicle 18Lot C3
+prediction: 1
+Park - Vehicle 20Lot A8
+Deleting : 18
+prediction: 1
+A: highMatchCounter : 928, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 622.8
+matching parked car : Lot A
+prediction: 0
+Deleting : 0
+prediction: 1
+Deleting : 0
+Deleting : 20
+prediction: 1
+C: highMatchCounter : 302, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 356.5
+matching parked car : Lot C
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+prediction: 0
+prediction: 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+Deleting : 0
+prediction: 0
+Deleting : 0
+prediction: 1
+Enter : 1
+
+Blob id:21 Index: 16878 , color value size: 14
+ Color value: 115.5
+ Color value: 123.5
+ Color value: 131.5
+ Color value: 0.132794
+ Color value: 0.167946
+ Color value: 0.035562
+ Color value: 0.369931
+ Color value: 0.058475
+ Color value: 0.012012
+ Color value: 0.041154
+ Color value: 0.048935
+ Color value: 0.018012
+ Color value: 0.04813
+ Color value: 0.067049
+Deleting : 0
+Deleting : 0
+prediction: 1
+prediction: 0
+prediction: 1
+Enter : 2
+
+Blob id:22 Index: 4195 , color value size: 14
+ Color value: 27.5
+ Color value: 27.5
+ Color value: 35.5
+ Color value: 0.374186
+ Color value: 0.107857
+ Color value: 0.048367
+ Color value: 0.099046
+ Color value: 0.051443
+ Color value: 0.047293
+ Color value: 0.04876
+ Color value: 0.12509
+ Color value: 0.049048
+ Color value: 0.010796
+ Color value: 0.038114
+prediction: 1
+Enter : 6
+
+Blob id:23 Index: 6252 , color value size: 14
+ Color value: 99.5
+ Color value: 27.5
+ Color value: 51.5
+ Color value: 0.02846
+ Color value: 0.005194
+ Color value: 0.006668
+ Color value: 0.011156
+ Color value: 0.001358
+ Color value: 0.020299
+ Color value: 0.294771
+ Color value: 0.281048
+ Color value: 0.34136
+ Color value: 0.004087
+ Color value: 0.005598
+Exit : 3
+
+Blob id:22 Index: 5285 , color value size: 14
+ Color value: 43.5
+ Color value: 43.5
+ Color value: 43.5
+ Color value: 0.480181
+ Color value: 0.037221
+ Color value: 0.066686
+ Color value: 0.161789
+ Color value: 0.041547
+ Color value: 0.03462
+ Color value: 0.038525
+ Color value: 0.049381
+ Color value: 0.031634
+ Color value: 0.02
+ Color value: 0.038415
+Deleting : 22
+prediction: 1
+Park - Vehicle 21Lot C5
+prediction: 1
+Park - Vehicle 23Lot A9
+prediction: 1
+Deleting : 0
+prediction: 0
+Deleting : 0
+Deleting : 21
+Deleting : 23
+prediction: 0
+A: highMatchCounter : 249, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 606.4
+prediction: 0
+prediction: 1
+prediction: 1
+prediction: 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+C: highMatchCounter : 98, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 344
+Deleting : 0
+A: highMatchCounter : 396, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 700.8
+Deleting : 0
+prediction: 0
+prediction: 1
+Enter : 1
+
+Blob id:25 Index: 25333 , color value size: 14
+ Color value: 171.5
+ Color value: 187.5
+ Color value: 195.5
+ Color value: 0.066669
+ Color value: 0.263296
+ Color value: 0.034713
+ Color value: 0.1849
+ Color value: 0.085186
+ Color value: 0.02608
+ Color value: 0.040666
+ Color value: 0.0626
+ Color value: 0.033895
+ Color value: 0.13914
+ Color value: 0.062855
+Deleting : 0
+prediction: 1
+Enter : 2
+
+Blob id:26 Index: 29596 , color value size: 14
+ Color value: 227.5
+ Color value: 227.5
+ Color value: 227.5
+ Color value: 0.05679
+ Color value: 0.062076
+ Color value: 0.035602
+ Color value: 0.064967
+ Color value: 0.024649
+ Color value: 0.03909
+ Color value: 0.090654
+ Color value: 0.034729
+ Color value: 0.060804
+ Color value: 0.495836
+ Color value: 0.034803
+Exit : 3
+
+Blob id:26 Index: 23254 , color value size: 14
+ Color value: 179.5
+ Color value: 179.5
+ Color value: 179.5
+ Color value: 0.079938
+ Color value: 0.101852
+ Color value: 0.042732
+ Color value: 0.306049
+ Color value: 0.047135
+ Color value: 0.024343
+ Color value: 0.07843
+ Color value: 0.067117
+ Color value: 0.022634
+ Color value: 0.184784
+ Color value: 0.044985
+Add to Miss Match State: 24
+Deleting : 24
+prediction: 1
+C: highMatchCounter : 352, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 358
+matching parked car : Lot C
+Exit : 4
+
+Blob id:25 Index: 24276 , color value size: 14
+ Color value: 163.5
+ Color value: 179.5
+ Color value: 187.5
+ Color value: 0.066866
+ Color value: 0.269962
+ Color value: 0.033984
+ Color value: 0.206876
+ Color value: 0.0862
+ Color value: 0.022911
+ Color value: 0.040426
+ Color value: 0.061424
+ Color value: 0.034189
+ Color value: 0.115539
+ Color value: 0.061624
+Deleting : 0
+Deleting : 26
+Deleting : 25
+Deleting : 0
+prediction: 1
+C: highMatchCounter : 716, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 358
+matching parked car : Lot C
+Deleting : 0
+prediction: 1
+Enter : 4
+
+Blob id:27 Index: 25333 , color value size: 14
+ Color value: 171.5
+ Color value: 187.5
+ Color value: 195.5
+ Color value: 0.066669
+ Color value: 0.263296
+ Color value: 0.034713
+ Color value: 0.1849
+ Color value: 0.085186
+ Color value: 0.02608
+ Color value: 0.040666
+ Color value: 0.0626
+ Color value: 0.033895
+ Color value: 0.13914
+ Color value: 0.062855

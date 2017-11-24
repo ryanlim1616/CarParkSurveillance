@@ -105,7 +105,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>false</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\Ryan\Source\Repos\CarParkSurveillance\CarParkSurveillance\CarParkSurveillance\3rdparty\include;C:\Users\Clarence\Documents\GitHub\CarParkSurveillance\CarParkSurveillance\CarParkSurveillance\3rdparty\include;C:\opencv\build\include;C:\sqlite-snapshot-201701170010;D:\OpenCV\V2.4.13\opencv\build\include;C:\opencv_2.4.9\opencv\build\include;..\..\3rdparty\include;%(AdditionalIncludeDirectories);$(CudaToolkitIncludeDir);$(cudnn)\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Ryan\Source\Repos\CarParkSurveillance\CarParkSurveillance\CarParkSurveillance\3rdparty\include;C:\Users\Clarence\Documents\GitHub\CarParkSurveillance\CarParkSurveillance\CarParkSurveillance\3rdparty\include;C:\opencv\build\include;C:\sqlite-snapshot-201701170010;D:\OpenCV\V2.4.13\opencv\build\include;C:\opencv_2.4.9\opencv\build\include;..\..\3rdparty\include;%(AdditionalIncludeDirectories);$(CudaToolkitIncludeDir);$(cudnn)\include;C:\Users\Clarence\Documents\GitHub\ffmpeg\ffmpeg</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>OPENCV;GPU;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -172,6 +172,7 @@
     <ClCompile Include="CarParkSurveillance.cpp" />
     <ClCompile Include="CarParkTrackExporter.cpp" />
     <ClCompile Include="classification.cpp" />
+    <ClCompile Include="firefly.cpp" />
     <ClCompile Include="FrameDifferenceBGS.cpp" />
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="sqlite3.c" />
@@ -246,6 +247,8 @@
     <ClInclude Include="Blob.h" />
     <ClInclude Include="CarParkTrackExporter.h" />
     <ClInclude Include="dirent.h" />
+    <ClInclude Include="ffmpegVideo.h" />
+    <ClInclude Include="firefly.h" />
     <ClInclude Include="FrameDifferenceBGS.h" />
     <ClInclude Include="GetSetLog.hxx" />
     <ClInclude Include="GlobalClass.h" />

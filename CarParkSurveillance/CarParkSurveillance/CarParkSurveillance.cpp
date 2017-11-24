@@ -51,6 +51,11 @@
 #include <thread>
 #include "alphanum.h"
 
+//#include "firefly.h"
+
+
+//#include "ffmpegVideo.h"
+
 
 extern "C" {
 #include "darknet.c"
@@ -96,7 +101,7 @@ void getIOU(std::vector<Blob> &identifiedBlob, std::vector<Blob> &newBlob0, int 
 void drawCarCountOnImage(int &carCount, cv::Mat &imgFrame2Copy);
 void drawCarDensityOnImage(double &carCount, cv::Mat &imgFrame2Copy);
 void drawRegion(cv::Size imageSize, cv::vector<cv::Point2f> points, cv::Mat imageCopy);
-void matchCurrentFrameBlobsToExistingBlobs2(std::vector<Blob> &existingBlobs, std::vector<Blob> &currentFrameBlobs, std::vector<ColorTerm> &colorsList);
+void matchCurrentFrameBlobsToExistingBlobs2(std::vector<Blob> &existingBlobs, std::vector<Blob> &currentFrameBlobs, std::vector<ColorTerm> &colorsList, CarParkTrackExporter &openDB, int &frameCount, int &vidLength);
 void CallBackFunc(int event, int x, int y, int flags, void* userdata);
 void printNumberofCar(int entrance, bool entExt);
 void addBlobToGroupState(Blob &currentFrameBlob, std::vector<Blob> &existingBlobs, int &intIndex, int &intIndex2, std::vector<ColorTerm> &colorsList);
@@ -113,6 +118,12 @@ void getBlobMotion(std::vector<Blob> &blobs);
 
 
 void QueryModule(CarParkTrackExporter &openDB);
+
+
+
+template<typename Out>
+void split(const std::string &s, char delim, Out result);
+std::vector<std::string> split(const std::string &s, char delim);
 
 //void getNumOfTrajs(CarParkTrackExporter &openDB);
 int getOption();
@@ -356,6 +367,13 @@ static void onMouse(int event, int x, int y, int, void*)
 
 
 #define WINDOW_NAME "Retrieval / Query GUI"
+#define LINE_LENGTH 1024
+char inputLine[LINE_LENGTH + 1];
+
+
+
+//Firefly firefly;
+std::vector<std::vector<double>> w2c;
 
 int main(void) {
 
@@ -379,11 +397,6 @@ int main(void) {
 
 	//std::thread threadObj1(check_vehicles);
 	//	threadObj1.join();
-
-	
-
-
-
 
 
 	//run Get_options function
@@ -444,6 +457,58 @@ int main(void) {
 	std::vector<ColorTerm> colorsList;
 	colorsList = allColors.loadHSVtoTerms(colorsList);
 
+
+	// load new color terms
+
+	//heavier version of w2c
+	//std::ifstream infile("w2c.txt");
+	// std::ifstream infile("w2c_4096.txt");
+
+	std::cout << "Loading ... Color information" << std::endl;
+
+	std::ifstream infile("w2c.txt");
+	std::string line;
+	std::vector<std::string> x;
+
+	//try creating a global var
+	//std::vector<std::vector<double>> w2c;
+	
+
+	if (infile.is_open())
+	{
+		int ref = 0;
+		w2c.resize(32768);
+		while (std::getline(infile, line))
+		{
+
+			x = split(line, ' ');
+
+			for (int i = 0; i < x.size(); i++)
+			{
+				w2c[ref].push_back(stod(x[i]));
+			}
+
+
+	/*		r_input = stod(x[0]);
+			g_input = stod(x[1]);
+			b_input = stod(x[2]);
+
+			black_val	= stod(x[3]);
+			blue_val	= stod(x[4]);
+			brown_val	= stod(x[5]);
+			gray_val	= stod(x[6]);
+			green_val	= stod(x[7]);
+			orange_val	= stod(x[8]);
+			pink_val	= stod(x[9]);
+			purple_val	= stod(x[10]);
+			red_val		= stod(x[11]);
+			white_val	= stod(x[12]);
+			yellow_val	= stod(x[13]);*/
+
+
+			ref++;
+		}
+	}
 
 	//load color term end
 
@@ -853,8 +918,13 @@ int main(void) {
 					return(0);
 				}
 
+
+
+
+
 				capVideo.read(imgFrame1);
 				capVideo.read(imgFrame2);
+
 
 
 
@@ -1171,8 +1241,8 @@ int main(void) {
 							else {
 								updateFrameCounter = 0;
 								//	std::cout << "Start: Blobs Matching!\n";
-
-								matchCurrentFrameBlobsToExistingBlobs2(blobs, currentFrameBlobs, colorsList);
+								
+								matchCurrentFrameBlobsToExistingBlobs2(blobs, currentFrameBlobs, colorsList, openDB, frameCount, vidLength);
 								//std::cout << "End: Blobs Matching!\n";
 
 							}
@@ -1309,6 +1379,8 @@ int main(void) {
 					if ((capVideo.get(CV_CAP_PROP_POS_FRAMES) + 1) < (capVideo.get(CV_CAP_PROP_FRAME_COUNT))) {
 						capVideo.read(imgFrame2);
 
+
+		
 
 						if (imgFrame2.empty())
 						{
@@ -1661,7 +1733,7 @@ void drawRegion(cv::Size imageSize, cv::vector<cv::Point2f> points, cv::Mat imag
 		cv::imshow("sdsd", countingRegion);
 }
 
-void matchCurrentFrameBlobsToExistingBlobs2(std::vector<Blob> &existingBlobs, std::vector<Blob> &currentFrameBlobs, std::vector<ColorTerm> &colorsList) {
+void matchCurrentFrameBlobsToExistingBlobs2(std::vector<Blob> &existingBlobs, std::vector<Blob> &currentFrameBlobs, std::vector<ColorTerm> &colorsList, CarParkTrackExporter &openDB, int &frameCount, int &vidLength) {
 
 	//std::cout << "Start: Matching temp blobs!\n";
 	std::vector<Blob> tempBlob;
@@ -1985,7 +2057,7 @@ void matchCurrentFrameBlobsToExistingBlobs2(std::vector<Blob> &existingBlobs, st
 
 	//std::cout << "End: Matching!\n";
 	//std::cout << "Start: check to delete!\n";
-	for (int i = 0; i < existingBlobs.size(); i++) {
+	for (unsigned int i = 0; i < existingBlobs.size(); i++) {
 		//std::cout << "check to delete 1!\n";
 		if (existingBlobs[i].blnCurrentMatchFoundOrNewBlob == false) {
 
@@ -2011,6 +2083,7 @@ void matchCurrentFrameBlobsToExistingBlobs2(std::vector<Blob> &existingBlobs, st
 			missMatchBlob.push_back(existingBlobs[i]);
 			existingBlobs[i].blnStillBeingTracked = false;
 			std::cout << "Add to Miss Match State: " << existingBlobs[i].unitID << "\n";
+			openDB.writeToDB_missmatch(existingBlobs, i, frameCount, vidLength, 1);
 		}
 		//std::cout << "check to delete 4!\n";
 		if (existingBlobs[i].nonTrackParkingZone == true && existingBlobs[i].nonTrackZoneDelay == 0) {
@@ -2121,11 +2194,16 @@ void addBlobToGroupState(Blob &currentFrameBlob, std::vector<Blob> &existingBlob
 	existingBlobs[intIndex2].mergeid = existingBlobs[intIndex].unitID;
 
 	if (existingBlobs[intIndex].enter == true) {
-		existingBlobs[intIndex].getAverageColor(colorsList);
+//		existingBlobs[intIndex].getAverageColor(colorsList, firefly);
+		//existingBlobs[intIndex].getAverageColor(colorsList);
+		existingBlobs[intIndex].getAverageColor(w2c);
 	}
 
 	if (existingBlobs[intIndex2].enter == true) {
-		existingBlobs[intIndex2].getAverageColor(colorsList);
+//		existingBlobs[intIndex2].getAverageColor(colorsList, firefly);
+		//existingBlobs[intIndex2].getAverageColor(colorsList);
+		existingBlobs[intIndex2].getAverageColor(w2c);
+
 	}
 	std::cout << "merged!\n";
 
@@ -2322,7 +2400,11 @@ void addBlobToExistingBlobs(Blob &currentFrameBlob, std::vector<Blob> &existingB
 	existingBlobs[intIndex].existInSceen++;
 
 	if (existingBlobs[intIndex].enter == true) {
-		existingBlobs[intIndex].getAverageColor(colorsList);
+	//	existingBlobs[intIndex].getAverageColor(colorsList, firefly);
+		//existingBlobs[intIndex].getAverageColor(colorsList);
+		existingBlobs[intIndex].getAverageColor(w2c);
+
+
 	}
 
 	if (existingBlobs[intIndex].enter == true && existingBlobs[intIndex].unitID == 0 && existingBlobs[intIndex].park == false) {
@@ -2358,7 +2440,11 @@ void addBlobToExistingBlobs(Blob &currentFrameBlob, std::vector<Blob> &existingB
 				existingBlobs[k].existInSceen++;
 
 				if (existingBlobs[k].enter == true) {
-					existingBlobs[k].getAverageColor(colorsList);
+					//existingBlobs[k].getAverageColor(colorsList, firefly);
+					//existingBlobs[k].getAverageColor(colorsList);
+					existingBlobs[k].getAverageColor(w2c);
+
+
 				}
 				break;
 			}
@@ -4831,7 +4917,11 @@ void addBlobToExistingBlobsMissMatch(Blob &currentFrameBlob, std::vector<Blob> &
 	existingBlobs[intIndex].existInSceen++;
 
 	if (existingBlobs[intIndex].enter == true) {
-		existingBlobs[intIndex].getAverageColor(colorsList);
+		//existingBlobs[intIndex].getAverageColor(colorsList, firefly);
+		//existingBlobs[intIndex].getAverageColor(colorsList);
+		existingBlobs[intIndex].getAverageColor(w2c);
+
+
 	}
 
 	if (existingBlobs[intIndex].enter == true && existingBlobs[intIndex].unitID == 0 && existingBlobs[intIndex].park == false) {
@@ -4867,7 +4957,11 @@ void addBlobToExistingBlobsMissMatch(Blob &currentFrameBlob, std::vector<Blob> &
 				existingBlobs[k].existInSceen++;
 
 				if (existingBlobs[k].enter == true) {
-					existingBlobs[k].getAverageColor(colorsList);
+					//existingBlobs[k].getAverageColor(colorsList, firefly);
+					//existingBlobs[k].getAverageColor(colorsList);
+					existingBlobs[k].getAverageColor(w2c);
+
+
 				}
 				break;
 			}
@@ -4983,6 +5077,11 @@ void getBlobMotion(std::vector<Blob> &blobs) {
 	std::string direction_X = "";
 	std::string direction_Y = "";
 
+	double directionCoordinate[2] = {0,0};
+
+
+
+	int displace_x = 5, displace_y = 5;
 
 	for (int i = 0; i < blobs.size(); i++) {
 
@@ -4991,7 +5090,7 @@ void getBlobMotion(std::vector<Blob> &blobs) {
 
 		//std::cout << "blob x,y = " << blobs[i].centerPositions[blobs.size()].x << blobs[i].centerPositions[blobs.size()].y << std::endl;
 
-		if (blobs[i].centerPositions.size() > 12)
+		if (blobs[i].centerPositions.size() > 10)
 		{
 
 
@@ -5000,21 +5099,43 @@ void getBlobMotion(std::vector<Blob> &blobs) {
 			direction_X = "";
 			direction_Y = "";
 
-			if (abs(diff_X) > 5)
+
+			//std::cout << "diff_x, Diff_y" << diff_X << " ," << diff_Y << std::endl;
+
+
+			if (abs(diff_X) > displace_x)
 			{
 				if (diff_X > 0)
+				{
+					directionCoordinate[0] = 1;
 					direction_X = "left";
+				}
 				else
+				{
+					directionCoordinate[0] = -1;
 					direction_X = "right";
+				}
 			}
 
-			if (abs(diff_Y) > 5)
+			if (abs(diff_Y) > displace_y)
 			{
 				if (diff_Y > 0)
+				{
+					directionCoordinate[1] = 1;
 					direction_Y = "up";
+				}
 				else
+				{
+					directionCoordinate[1] = -1;
 					direction_Y = "down";
+				}
+					
 			}
+
+
+			blobs[i].directionCoor[0] = directionCoordinate[0];
+			blobs[i].directionCoor[1] = directionCoordinate[1];
+
 
 			//handle when both directions are non - empty
 			if ((direction_X != "") && (direction_Y != ""))
@@ -5035,6 +5156,8 @@ void getBlobMotion(std::vector<Blob> &blobs) {
 				else
 				{
 					blobs[i].motion = "motionless";
+					blobs[i].directionCoor[0] = 0;
+					blobs[i].directionCoor[1] = 0;
 				}
 
 			}
@@ -5068,7 +5191,7 @@ int getOption() {
 	std::cout << "|  Kindly select program options:         |\n";
 	std::cout << "|  1) Recovery Mode                       |\n";
 	std::cout << "|  2) State Extraction (Batch)            |\n";
-	std::cout << "|  3) Retrieval Module (Batch)            |\n";
+	std::cout << "|  3) Retrieval Module                    |\n";
 	std::cout << "|  4) Debugging Mode                      |\n";
 	std::cout << "|                                         |\n";
 	std::cout << "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" << std::endl;
@@ -5104,32 +5227,47 @@ cv::Rect enlargeROI(cv::Mat frm, cv::Rect boundingBox, int padding) {
 }
 
 
-std::vector<std::string> dim_flat(std::string v, std::vector<std::string> const &)
-{
-	return std::vector<std::string>(1, v);
-}
+//std::vector<std::string> dim_flat(std::string v, std::vector<std::string> const &)
+//{
+//	return std::vector<std::string>(1, v);
+//}
+//
+//std::vector<std::string> dim_flat(std::vector<std::string> const & v)
+//{
+//	return v;
+//}
+//
+//template <typename T>
+//std::vector<std::string> dim_flat(std::vector<std::vector<T>> const & v)
+//{
+//	std::vector<std::string>  ret;
+//
+//	for (auto const & e : v)
+//	{
+//		auto s = dim_flat(e);
+//
+//		ret.reserve(ret.size() + s.size());
+//		ret.insert(ret.end(), s.cbegin(), s.cend());
+//	}
+//
+//	return ret;
+//}
 
-std::vector<std::string> dim_flat(std::vector<std::string> const & v)
-{
-	return v;
-}
-
-template <typename T>
-std::vector<std::string> dim_flat(std::vector<std::vector<T>> const & v)
-{
-	std::vector<std::string>  ret;
-
-	for (auto const & e : v)
-	{
-		auto s = dim_flat(e);
-
-		ret.reserve(ret.size() + s.size());
-		ret.insert(ret.end(), s.cbegin(), s.cend());
+template<typename Out>
+void split(const std::string &s, char delim, Out result) {
+	std::stringstream ss;
+	ss.str(s);
+	std::string item;
+	while (std::getline(ss, item, delim)) {
+		*(result++) = item;
 	}
-
-	return ret;
 }
 
+std::vector<std::string> split(const std::string &s, char delim) {
+	std::vector<std::string> elems;
+	split(s, delim, std::back_inserter(elems));
+	return elems;
+}
 
 
 
@@ -5161,13 +5299,16 @@ void QueryModule(CarParkTrackExporter &openDB) {
 	bool find_blue = false;
 	bool find_brown = false;
 	bool find_green = false;
-	bool find_grey_silver = false;
+	bool find_gray = false;
 	bool find_orange = false;
 	bool find_pink = false;
 	bool find_purple = false;
 	bool find_red = false;
 	bool find_white = false;
 	bool find_yellow = false;
+
+	bool find_any = false;
+
 
 
 
@@ -5190,7 +5331,7 @@ void QueryModule(CarParkTrackExporter &openDB) {
 
 	bool queryArroworCircle = 1;
 	int numbOfQueryinput = 0;
-	int trackbarValue = 70;
+	int trackbarValue = 90;
 
 	//std::vector<cv::Point> queryLine;
 
@@ -5198,7 +5339,7 @@ void QueryModule(CarParkTrackExporter &openDB) {
 
 	while (true) {
 		int display_x = 30;
-		int display_y = 80;
+		int display_y = 73;
 		int display_gap = 18;
 
 
@@ -5232,7 +5373,7 @@ void QueryModule(CarParkTrackExporter &openDB) {
 		display_y = display_y + display_gap;
 		cvui::checkbox(RetrievalMod, display_x, display_y, "Green", &find_green);
 		display_y = display_y + display_gap;
-		cvui::checkbox(RetrievalMod, display_x, display_y, "Grey/Silver", &find_grey_silver);
+		cvui::checkbox(RetrievalMod, display_x, display_y, "Gray", &find_gray);
 		display_y = display_y + display_gap;
 		cvui::checkbox(RetrievalMod, display_x, display_y, "Orange", &find_orange);
 		display_y = display_y + display_gap;
@@ -5245,6 +5386,11 @@ void QueryModule(CarParkTrackExporter &openDB) {
 		cvui::checkbox(RetrievalMod, display_x, display_y, "White", &find_white);
 		display_y = display_y + display_gap;
 		cvui::checkbox(RetrievalMod, display_x, display_y, "Yellow", &find_yellow);
+		display_y = display_y + display_gap;
+		cvui::checkbox(RetrievalMod, display_x, display_y, "Any", &find_any);
+
+
+
 
 
 
@@ -5757,10 +5903,30 @@ void QueryModule(CarParkTrackExporter &openDB) {
 					//std::cout << "Selected rects are: " << atom_x << ", " << atom_y << std::endl;
 
 					queryCondition_where =  "where atom_x = " + std::to_string(atom_x) + " and atom_y = " + std::to_string(atom_y);
+					if (find_any)
+					{
+						find_black = false;
+						find_blue = false;
+						find_brown = false;
+						find_green = false;
+						find_gray = false;
+						find_orange = false;
+						find_pink = false;
+						find_purple = false;
+						find_red = false;
+						find_white = false;
+						find_yellow = false;
+						
+						queryCondition_table += "select filename, atom_t, obj_id from " + query_dir_table[atom_x][atom_y];
+						queryCondition_table += " " + queryCondition_where + ";";
 
+
+
+					}
+					
 					if (find_black)
 					{
-						queryCondition_table += "select filename, atom_t from " + query_dir_table[atom_x][atom_y];
+						queryCondition_table += "select filename, atom_t, obj_id from " + query_dir_table[atom_x][atom_y];
 						queryCondition_table += " where atom_x = (select atom_x from color_black " + queryCondition_where + ") and atom_y = (select atom_y from color_black " + queryCondition_where + ");";
 
 					}
@@ -5768,70 +5934,70 @@ void QueryModule(CarParkTrackExporter &openDB) {
 					if (find_blue)
 					{
 
-						queryCondition_table += "select filename, atom_t from " + query_dir_table[atom_x][atom_y];
+						queryCondition_table += "select filename, atom_t, obj_id from " + query_dir_table[atom_x][atom_y];
 						queryCondition_table += " where atom_x = (select atom_x from color_blue " + queryCondition_where + ") and atom_y = (select atom_y from color_blue " + queryCondition_where + ");";
 					}
 
 					if (find_brown)
 					{
 
-						queryCondition_table += "select filename, atom_t from " + query_dir_table[atom_x][atom_y];
+						queryCondition_table += "select filename, atom_t, obj_id from " + query_dir_table[atom_x][atom_y];
 						queryCondition_table += " where atom_x = (select atom_x from color_brown " + queryCondition_where + ") and atom_y = (select atom_y from color_brown " + queryCondition_where + ");";
 					}
 
 					if (find_green)
 					{
 
-						queryCondition_table += "select filename, atom_t from " + query_dir_table[atom_x][atom_y];
+						queryCondition_table += "select filename, atom_t, obj_id from " + query_dir_table[atom_x][atom_y];
 						queryCondition_table += " where atom_x = (select atom_x from color_green " + queryCondition_where + ") and atom_y = (select atom_y from color_green " + queryCondition_where + ");";
 					}
 
-					if (find_grey_silver)
+					if (find_gray)
 					{
 
-						queryCondition_table += "select filename, atom_t from " + query_dir_table[atom_x][atom_y];
-						queryCondition_table += " where atom_x = (select atom_x from color_grey_silver " + queryCondition_where + ") and atom_y = (select atom_y from color_grey_silver " + queryCondition_where + ");";
+						queryCondition_table += "select filename, atom_t, obj_id from " + query_dir_table[atom_x][atom_y];
+						queryCondition_table += " where atom_x = (select atom_x from color_gray " + queryCondition_where + ") and atom_y = (select atom_y from color_gray " + queryCondition_where + ");";
 					}
 
 					if (find_orange)
 					{
 
-						queryCondition_table += "select filename, atom_t from " + query_dir_table[atom_x][atom_y];
+						queryCondition_table += "select filename, atom_t, obj_id from " + query_dir_table[atom_x][atom_y];
 						queryCondition_table += " where atom_x = (select atom_x from color_orange " + queryCondition_where + ") and atom_y = (select atom_y from color_orange " + queryCondition_where + ");";
 					}
 
 					if (find_pink)
 					{
 
-						queryCondition_table += "select filename, atom_t from " + query_dir_table[atom_x][atom_y];
+						queryCondition_table += "select filename, atom_t, obj_id from " + query_dir_table[atom_x][atom_y];
 						queryCondition_table += " where atom_x = (select atom_x from color_pink " + queryCondition_where + ") and atom_y = (select atom_y from color_pink " + queryCondition_where + ");";
 					}
 
 					if (find_purple)
 					{
 
-						queryCondition_table += "select filename, atom_t from " + query_dir_table[atom_x][atom_y];
+						queryCondition_table += "select filename, atom_t, obj_id from " + query_dir_table[atom_x][atom_y];
 						queryCondition_table += " where atom_x = (select atom_x from color_purple " + queryCondition_where + ") and atom_y = (select atom_y from color_purple " + queryCondition_where + ");";
 					}
 
 					if (find_red)
 					{
 
-						queryCondition_table += "select filename, atom_t from " + query_dir_table[atom_x][atom_y];
+						queryCondition_table += "select filename, atom_t, obj_id from " + query_dir_table[atom_x][atom_y];
 						queryCondition_table += " where atom_x = (select atom_x from color_red " + queryCondition_where + ") and atom_y = (select atom_y from color_red " + queryCondition_where + ");";
 					}
 
 					if (find_white)
 					{
 
-						queryCondition_table += "select filename, atom_t from " + query_dir_table[atom_x][atom_y];
+						queryCondition_table += "select filename, atom_t, obj_id from " + query_dir_table[atom_x][atom_y];
 						queryCondition_table += " where atom_x = (select atom_x from color_white " + queryCondition_where + ") and atom_y = (select atom_y from color_white " + queryCondition_where + ");";
 					}
 
 					if (find_yellow)
 					{
 
-						queryCondition_table += "select filename, atom_t from " + query_dir_table[atom_x][atom_y];
+						queryCondition_table += "select filename, atom_t, obj_id from " + query_dir_table[atom_x][atom_y];
 						queryCondition_table += " where atom_x = (select atom_x from color_yellow " + queryCondition_where + ") and atom_y = (select atom_y from color_yellow " + queryCondition_where + ");";
 					}
 
@@ -5883,7 +6049,7 @@ void QueryModule(CarParkTrackExporter &openDB) {
 
 		trackbarValue = round(trackbarValue);
 		cvui::beginColumn(RetrievalMod, 20, 315, -1, -1, 6);
-		cvui::trackbar(150, &trackbarValue,30, 100,1,"%.1Lf", cvui::TRACKBAR_DISCRETE,10);
+		cvui::trackbar(150, &trackbarValue,70, 100,1,"%.1Lf", cvui::TRACKBAR_DISCRETE,5);
 	
 		//cvui::trackbar(RetrievalMod, 20, 315, 150, &trackbarValue, 30., 100.0);
 		cvui::endColumn();
@@ -5897,10 +6063,7 @@ void QueryModule(CarParkTrackExporter &openDB) {
 
 
 
-			//create a MAT to display all the results
-
-
-
+			
 
 			numbOfQueryinput = 0;
 			//count number of query input given
@@ -5919,9 +6082,18 @@ void QueryModule(CarParkTrackExporter &openDB) {
 
 			std::string queryInput;
 			queryInput = queryCondition_table;
+
+			int resultNumber = 0;
 			
-			if(debug_on)
+			if (debug_on || 1)
+			{
+				system("cd retrievalResults & del *.* / s / q");
+				system("cls");
+				resultNumber = 0;
 				std::cout << queryInput << std::endl;
+				cv::imwrite("../retrievalResults/Query.jpg", queryInputMat);
+			}
+				
 
 			openDB.searchdatabase(queryInput);
 
@@ -5942,7 +6114,22 @@ void QueryModule(CarParkTrackExporter &openDB) {
 				std::cout << "--- NO RESULTS FOUND!" <<std::endl;
 			else
 			{
-				std::cout << std::endl << "--------------------" << std::endl;
+
+				if (debug_on || 1)
+				{
+					
+					std::cout << "--------------------" << std::endl;
+
+				}
+
+				
+
+
+
+
+				//create a MAT to display all the results
+
+				//RE VISIT HERE
 
 
 
@@ -5964,7 +6151,7 @@ void QueryModule(CarParkTrackExporter &openDB) {
 
 				for (int i = 0; i < openDB.r_result.size(); i++)
 				{
-					v.push_back(openDB.r_result[i][0] + "," + openDB.r_result[i][1]);
+					v.push_back(openDB.r_result[i][0] + "," + openDB.r_result[i][1] + "," + openDB.r_result[i][2]);
 				}
 
 				// now sort the vector with the algorithm
@@ -5975,6 +6162,7 @@ void QueryModule(CarParkTrackExporter &openDB) {
 					std::copy(v.begin(), v.end(), std::ostream_iterator<std::string>(std::cout, "\n"));
 				}
 
+				std::cout << "\n";
 
 				//create sorted vector:
 				struct grouppedResults {
@@ -5982,7 +6170,7 @@ void QueryModule(CarParkTrackExporter &openDB) {
 					std::string resultFileName = "";
 					int groupNum = 0;
 					std::vector<int> frameNums = {};
-
+					int obj_id = 0;
 
 
 					int size()
@@ -6001,19 +6189,31 @@ void QueryModule(CarParkTrackExporter &openDB) {
 				grouppedResults singlegrouppedResults;
 				std::vector<grouppedResults> resultsFromDB;
 
-				std::cout << " \n\n TEST \n\n";
+				std::vector<std::string> x;
+				x = split(v[0], ',');
 
-				std::string firstFilename = openDB.r_result[0][0] = v[0].substr(0, 63);
+				//std::string firstFilename = openDB.r_result[0][0] = v[0].substr(0, 63);
+				std::string firstFilename = x[0];
+				int firstObjID = std::stoi(x[2]);
+
 				int resultGroupNum = 0;
 
 
 				for (int i = 0; i < openDB.r_result.size(); i++)
 				{
-					openDB.r_result[i][0] = v[i].substr(0, 63);
-					openDB.r_result[i][1] = v[i].substr(64, std::string::npos);
+					
+					x = split(v[i], ',');
+
+					//openDB.r_result[i][0] = v[i].substr(0, 63);
+					//openDB.r_result[i][1] = v[i].substr(64, std::string::npos);
+
+					openDB.r_result[i][0] = x[0];
+					openDB.r_result[i][1] = x[1];
+					openDB.r_result[i][2] = x[2];
 
 
-					std::cout << openDB.r_result[i][0] << " " << openDB.r_result[i][1] << std::endl;
+					if(debug_on)
+						std::cout << openDB.r_result[i][0] << " " << openDB.r_result[i][1] << " " << openDB.r_result[i][2] << std::endl;
 
 					//since its sorted here already, ill group them up here.
 					
@@ -6022,10 +6222,20 @@ void QueryModule(CarParkTrackExporter &openDB) {
 
 						//std::cout << "grouping items ";
 
+						/*if (firstObjID == std::stoi(openDB.r_result[i][2]))
+						{*/
+							
 
-						singlegrouppedResults.resultFileName = openDB.r_result[i][0];
-						singlegrouppedResults.groupNum = resultGroupNum;
-						singlegrouppedResults.frameNums.push_back(std::stoi(openDB.r_result[i][1]));
+							singlegrouppedResults.resultFileName = openDB.r_result[i][0];
+							singlegrouppedResults.groupNum = resultGroupNum;
+							singlegrouppedResults.obj_id = std::stoi(openDB.r_result[i][2]);
+							singlegrouppedResults.frameNums.push_back(std::stoi(openDB.r_result[i][1]));
+						/*}
+						else
+						{
+							
+							firstObjID = std::stoi(openDB.r_result[i][2]);
+						}*/
 
 						
 						// push back last group
@@ -6042,10 +6252,12 @@ void QueryModule(CarParkTrackExporter &openDB) {
 
 						singlegrouppedResults.frameNums.clear();
 						firstFilename = openDB.r_result[i][0];
+						//firstObjID = std::stoi(openDB.r_result[i][2]);
 
 						//set first occurance
 						singlegrouppedResults.resultFileName = openDB.r_result[i][0];
 						singlegrouppedResults.groupNum = resultGroupNum;
+						singlegrouppedResults.obj_id = std::stoi(openDB.r_result[i][2]);
 						singlegrouppedResults.frameNums.push_back(std::stoi(openDB.r_result[i][1]));
 
 						//std::cout << "\n new group:  " << openDB.r_result[i][0] << std::endl;
@@ -6055,7 +6267,7 @@ void QueryModule(CarParkTrackExporter &openDB) {
 				}
 
 
-				std::cout << "\n\n";
+				//std::cout << "\n\n";
 
 
 				//all the grouped items are here.. now find out if it fulfils the CV% value (individual small groups)
@@ -6065,8 +6277,8 @@ void QueryModule(CarParkTrackExporter &openDB) {
 				{
 
 						
-						std::cout << resultsFromDB[i].resultFileName << std::endl;
-						std::cout << resultsFromDB[i].groupNum << std::endl;
+						//std::cout << resultsFromDB[i].resultFileName << std::endl;
+						//std::cout << resultsFromDB[i].groupNum << std::endl;
 
 						int firstAtomT = 0;
 						int passedCV = 0;
@@ -6082,7 +6294,11 @@ void QueryModule(CarParkTrackExporter &openDB) {
 
 						for (int j = 0; j < resultsFromDB[i].frameNums.size(); j++)
 						{
-							std::cout << resultsFromDB[i].frameNums[j] << ",";
+							if (debug_on)
+							{
+								std::cout << resultsFromDB[i].frameNums[j] << ",";
+
+							}
 
 							if (j == 0)
 							{
@@ -6092,6 +6308,7 @@ void QueryModule(CarParkTrackExporter &openDB) {
 							if (resultsFromDB[i].frameNums[j] <= firstAtomT + 5)
 							{
 								resultFromSingleVideo.frameNums.push_back(resultsFromDB[i].frameNums[j]);
+								resultFromSingleVideo.obj_id = resultsFromDB[i].obj_id;
 								firstAtomT = resultsFromDB[i].frameNums[j];
 
 								if (j == (resultsFromDB[i].frameNums.size() - 1))
@@ -6112,6 +6329,7 @@ void QueryModule(CarParkTrackExporter &openDB) {
 
 								firstAtomT = resultsFromDB[i].frameNums[j];
 								resultFromSingleVideo.frameNums.push_back(resultsFromDB[i].frameNums[j]);
+								resultFromSingleVideo.obj_id = resultsFromDB[i].obj_id;
 
 								/*
 									resultsFromDB.push_back(singlegrouppedResults);
@@ -6136,14 +6354,56 @@ void QueryModule(CarParkTrackExporter &openDB) {
 
 						for (int k = 0; k < resultFromSingleVideo_grouped.size(); k++)
 						{
-							std::cout << "\n--- resultFromSingleVideo_grouped ---\n";
-							std::cout << resultFromSingleVideo_grouped[k].groupNum << std::endl;
 
+							/*system("");*/
+
+							//std::cout << "\n--- resultFromSingleVideo_grouped ---\n";
+							//std::cout << "Group: " << resultFromSingleVideo_grouped[k].groupNum << std::endl;
+
+							
+							
+
+							std::sort(resultFromSingleVideo_grouped[k].frameNums.begin(), resultFromSingleVideo_grouped[k].frameNums.end());
+							resultFromSingleVideo_grouped[k].frameNums.erase(unique(resultFromSingleVideo_grouped[k].frameNums.begin(), resultFromSingleVideo_grouped[k].frameNums.end()), resultFromSingleVideo_grouped[k].frameNums.end());
+
+							
+
+							//std::cout << "current trackbarValue =" << trackbarValue << std::endl;
+
+							if ((((double)resultFromSingleVideo_grouped[k].frameNums.size() / double(numbOfQueryinput)) * 100) > double(trackbarValue))
+							{
+								
+								/*
 								for (int g = 0; g < resultFromSingleVideo_grouped[k].frameNums.size(); g++)
 								{
 									std::cout << resultFromSingleVideo_grouped[k].frameNums[g] << " ";
 
+								}*/
+								
+
+								std::cout << 
+									 resultFromSingleVideo_grouped[k].resultFileName << " 0"
+									<< std::to_string((resultFromSingleVideo_grouped[k].frameNums.front() / 60)) << ":" 
+									<< std::to_string((resultFromSingleVideo_grouped[k].frameNums.front() % 60)) << std::endl;
+
+								std::string ffmpeg_runThis;
+
+																
+								if (0)
+								{
+								
+									ffmpeg_runThis = "cd retrievalResults & ffmpeg -i \"" + resultFromSingleVideo_grouped[k].resultFileName + "\" -ss 00:0"
+										+ std::to_string((resultFromSingleVideo_grouped[k].frameNums.front() / 60)) + ":" + std::to_string((resultFromSingleVideo_grouped[k].frameNums.front() % 60)) + ".0 -to 00:0"
+										+ std::to_string((resultFromSingleVideo_grouped[k].frameNums.back() / 60)) + ":" + std::to_string((resultFromSingleVideo_grouped[k].frameNums.back() % 60)) 
+										+ ".0 " + "result_"+ std::to_string(resultNumber) + ".mp4 -y";
+
+
+									system(ffmpeg_runThis.c_str());
 								}
+
+								resultNumber++;
+							}
+								
 
 							
 						/*std::cout << "resultFromSingleVideo_grouped[k].frameNums.size() / numbOfQueryinput : " << resultFromSingleVideo_grouped[k].frameNums.size() << "/" << numbOfQueryinput << "\n";
@@ -6153,37 +6413,11 @@ void QueryModule(CarParkTrackExporter &openDB) {
 
 						}
 
-
-
-							
-
-
-
 						
-
-						std::cout << "\n\n";
-
-					
-
-					//test to display all first
-
-					
-
-
 
 				}
 				
-
-
-
-
-
-
-
-
-
-
-
+				std::cout << "\n- All results retrieved -" << std::endl;
 
 			}
 
@@ -6215,5 +6449,4 @@ void QueryModule(CarParkTrackExporter &openDB) {
 openDB.countTraj();
 std::cin.get();
 }
-
 

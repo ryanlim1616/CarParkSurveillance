@@ -240,6 +240,9 @@
     <ClCompile Include="ColorTerms.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="firefly.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Blob.h">
@@ -426,6 +429,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="alphanum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ffmpegVideo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="firefly.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
