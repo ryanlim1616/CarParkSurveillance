@@ -4,7 +4,7 @@
 #include "Switches.h"
 
 // set imshow_display to 1 to turn on all imshow, 0 to turn off.
-bool imshow_display = 1;
+bool imshow_display = 0;
 
 // set resumeFromError = 1 to resume from a particular video
 bool resumeFromError = 0;

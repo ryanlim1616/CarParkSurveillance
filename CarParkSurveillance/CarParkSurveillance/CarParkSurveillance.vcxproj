@@ -244,6 +244,7 @@
     <ClInclude Include="AdaptiveBackgroundLearning.h" />
     <ClInclude Include="Blob.h" />
     <ClInclude Include="CarParkTrackExporter.h" />
+    <ClInclude Include="cvui.h" />
     <ClInclude Include="dirent.h" />
     <ClInclude Include="FrameDifferenceBGS.h" />
     <ClInclude Include="GetSetLog.hxx" />

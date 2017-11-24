@@ -425,6 +425,9 @@
     <ClInclude Include="src\cuda.h">
       <Filter>Header Files\yolo</Filter>
     </ClInclude>
+    <ClInclude Include="cvui.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CudaCompile Include="src\avgpool_layer_kernels.cu" />
