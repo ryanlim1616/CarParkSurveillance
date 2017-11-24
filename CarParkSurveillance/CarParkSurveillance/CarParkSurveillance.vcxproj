@@ -172,7 +172,6 @@
     <ClCompile Include="CarParkSurveillance.cpp" />
     <ClCompile Include="CarParkTrackExporter.cpp" />
     <ClCompile Include="classification.cpp" />
-    <ClCompile Include="firefly.cpp" />
     <ClCompile Include="FrameDifferenceBGS.cpp" />
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="sqlite3.c" />
@@ -248,7 +247,6 @@
     <ClInclude Include="CarParkTrackExporter.h" />
     <ClInclude Include="dirent.h" />
     <ClInclude Include="ffmpegVideo.h" />
-    <ClInclude Include="firefly.h" />
     <ClInclude Include="FrameDifferenceBGS.h" />
     <ClInclude Include="GetSetLog.hxx" />
     <ClInclude Include="GlobalClass.h" />
