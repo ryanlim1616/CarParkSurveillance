@@ -1740,6 +1740,9 @@ namespace cvui
 
 			// Render the border
 			cv::rectangle(theBlock.where, thePos, aBorder, 1, CVUI_ANTIALISED);
+
+
+
 		}
 
 		void sparkline(cvui_block_t& theBlock, std::vector<double>& theValues, cv::Rect &theRect, double theMin, double theMax, unsigned int theColor) {

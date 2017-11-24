@@ -1,7 +1,7 @@
 ﻿cls
 
-#$gt = Import-Csv C:\powershell\gt.csv
-$gt = Import-Csv C:\powershell\gt1vid.csv
+$gt = Import-Csv C:\powershell\gt.csv
+#$gt = Import-Csv C:\powershell\gt1vid.csv
 
 
 
@@ -12,7 +12,7 @@ $gt = Import-Csv C:\powershell\gt1vid.csv
 
 #290317db.csv
 
-$db = Import-Csv C:\powershell\withYOLO2.csv
+$db = Import-Csv C:\powershell\d15062017.csv
 $time_window = [timespan]('00:00:05') 
 $time_dec = [timespan]('00:00:05')
 $write = $false

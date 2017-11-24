@@ -51,9 +51,6 @@
     <ClCompile Include="Switches.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Trajectory.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\activation_layer.c">
       <Filter>Source Files\yolo</Filter>
     </ClCompile>
@@ -240,6 +237,9 @@
     <ClCompile Include="src\yolo.c">
       <Filter>Source Files\yolo</Filter>
     </ClCompile>
+    <ClCompile Include="ColorTerms.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Blob.h">
@@ -279,9 +279,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GetSetLog.hxx">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Trajectory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\activation_layer.h">
@@ -425,7 +422,17 @@
     <ClInclude Include="src\cuda.h">
       <Filter>Header Files\yolo</Filter>
     </ClInclude>
+<<<<<<< HEAD
+    <ClInclude Include="ColorTerms.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="alphanum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ffmpegVideo.h">
+=======
     <ClInclude Include="cvui.h">
+>>>>>>> refs/remotes/ryanlim1616/master
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,0 +1,1 @@
+for %%A IN (*.mp4) DO ffmpeg -i "%%A" -i overlayMask2.png -filter_complex "overlay=(W-w)/2:(H-h)/2" -codec:a copy "%%A_mask.mp4"

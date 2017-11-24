@@ -13,8 +13,16 @@
 #include<opencv2/nonfree/nonfree.hpp>
 #include<opencv2/gpu/gpu.hpp>
 
+
 #include<iostream>
 #include<conio.h> 
+#include"ColorTerms.h"
+
+#include "Switches.h"
+#include <algorithm>
+
+//#include "firefly.h"
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 class Blob {
@@ -56,9 +64,11 @@ public:
 
 	std::string motion = "";
 
+	double directionCoor[2] = { 0,0 };
+
+
 	int previous_park_frame = 0;
 	int previous_park_frame_counter = 0;
-
 
 
 	// member variables ///////////////////////////////////////////////////////////////////////////
@@ -71,7 +81,8 @@ public:
 	std::vector<cv::Point> centerPositions;
 	std::vector<cv::Scalar> AvgColor;
 	cv::Scalar AvgColorScalar;
-
+	std::string ColorInTerms = "";
+	std::string tempColorTerm = "";
 
 	cv::Scalar avgColorBeforeMerge;
 	cv::Mat image;
@@ -103,6 +114,20 @@ public:
 
 	bool addornot;
 
+	std::vector<std::string> executeColorSQL;
+
+	int finalIndex_im = 0;
+	std::vector<double> colorValues;
+
+	/*int meanValue_min = 0;
+	int RGBGRAYDiff_min = 0;
+	double L2error_min = 0.0;
+
+	int meanValue_max = 0;
+	int RGBGRAYDiff_max = 0;
+	double L2error_max = 0.0;*/
+
+
 	// function prototypes ////////////////////////////////////////////////////////////////////////
 	Blob(std::vector<cv::Point> _contour);
 	~Blob();
@@ -120,9 +145,18 @@ public:
 	void setEnter();
 	void setExit();
 	void setPark();
-	void getAverageColor();
+	//void getAverageColor();
+	//void getAverageColor(std::vector<ColorTerm> &inputColorVector, Firefly &firefly);
+	//void getAverageColor(std::vector<ColorTerm> &inputColorVector);
+	void getAverageColor(std::vector<std::vector<double>> &w2c);
+
 	void getAverageColorLast();
 	cv::Scalar getAverageColorOnce();
+	double getSimilarity(const cv::Mat A, const cv::Mat B);
+	void setChannel(cv::Mat &mat, unsigned int channel, unsigned char value);
+	//void SimplestCB(cv::Mat& in, cv::Mat& out, float percent);
+	//void balance_white(cv::Mat &mat);
+	cv::Mat equalizeIntensity(const cv::Mat& inputImage);
 
 };
 
