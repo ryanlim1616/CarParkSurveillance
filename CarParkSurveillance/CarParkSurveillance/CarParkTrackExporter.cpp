@@ -229,24 +229,6 @@ bool CarParkTrackExporter::writeToDB(std::vector<Blob> &blobs, unsigned int &i, 
 
 }
 
-bool CarParkTrackExporter::writeToDB_missmatch() {
-	// add miss match state to the database
-	bool succes = false;
-	mSQLManager = new SQLiteManager(mFilePath);
-	if (mSQLManager->isConnected()) {
-
-		succes = mSQLManager->beginTransaction();
-
-
-	}
-
-
-	
-	return succes;
-
-
-}
-
 
 
 bool CarParkTrackExporter::writeToDB_entExt(std::vector<Blob> &blobs, unsigned int &i, int &frameCount, int &vidLength, int entrance, bool entExt)

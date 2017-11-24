@@ -36,12 +36,7 @@ public:
 	bool writeToDB(std::vector<Blob> &blobs, unsigned int &i, int &frameCount, int &vidLength);
 	bool writeToDB_entExt(std::vector<Blob> &blobs, unsigned int &i, int &frameCount, int &vidLength, int entrance, bool entExt);
 	bool writeToDB_park(std::vector<Blob> &blobs, unsigned int &i, int &frameCount, int &vidLength, std::string parkzone);
-<<<<<<< HEAD
 	bool writeToDB_missmatch(std::vector<Blob> &blobs, unsigned int &i, int &frameCount, int &vidLength, int condition);
-=======
-	bool writeToDB_missmatch();
->>>>>>> refs/remotes/ryanlim1616/master
-
 	bool countTraj();
 	bool searchdatabase(std::string QueryInput);
 

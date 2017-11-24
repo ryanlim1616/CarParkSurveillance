@@ -435,11 +435,6 @@ int main(void) {
 	//std::thread threadObj1(check_vehicles);
 	//	threadObj1.join();
 
-	std::cout << "start yolo \n";
-	Init_YOLO(0, 0);
-
-	std::cout << "end yolo";
-	
 
 	//run Get_options function
 	int getOptionReturn = getOption();
@@ -466,7 +461,7 @@ int main(void) {
 		else if (getOptionReturn == 2)
 		{
 			invalid = false;
-			//Init_YOLO(0, 0);
+			Init_YOLO(0, 0);
 			//do nothing
 		}
 		else if (getOptionReturn == 3)
@@ -1127,9 +1122,9 @@ int main(void) {
 			std::cout << "\n@ Processing # of dates: " << listOfDates.size() << std::endl;
 			for (int i = 0; i < listOfDates.size(); i++)	// used unsigned to appease compiler warnings
 			{
-				std::cout << i + 1 << ": " << listOfDates[i] << std::endl;
+				std::cout << i + 1 << ": " << listOfDates[i] << std::endl;;
 			}
-			std::cout << "< !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! >" << std::endl;
+			std::cout << "< !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! >" << std::endl;;
 
 
 		}
@@ -2548,7 +2543,7 @@ void matchCurrentFrameBlobsToExistingBlobs2(std::vector<Blob> &existingBlobs, st
 				else {
 					
 
-					addNewBlob(currentFrameBlobs[j], existingBlobs, colorsList);
+					addNewBlob(currentFrameBlobs[j], existingBlobs);
 				}
 			}
 		}
@@ -3639,6 +3634,13 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 						blobs[i].entExt = 1;
 						blobs[i].changed = true;
 						blobs[i].IO_indicator = false;
+						/*if (debug_on)
+						{
+							std::cout << "Blob stats: " << blobs[i].unitID << " color: " << blobs[i].ColorInTerms << std::endl;
+							std::cout << "  " << " [Diff min/max]: " << blobs[i].RGBGRAYDiff_min << "/" << blobs[i].RGBGRAYDiff_max << " | " << blobs[i].RGBGRAYDiff_max - blobs[i].RGBGRAYDiff_min << std::endl;
+							std::cout << "  " << " [Mean min/max]: " << blobs[i].meanValue_min << "/" << blobs[i].meanValue_max << " | " << blobs[i].meanValue_max - blobs[i].meanValue_min << std::endl;
+							std::cout << "  " << " [ L2  min/max]: " << blobs[i].L2error_min << "/" << blobs[i].L2error_max <<  " | " << blobs[i].L2error_max  - blobs[i].L2error_min << std::endl;
+						}*/
 
 
 
@@ -3689,7 +3691,13 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 							blobs[i].entExt = 2;
 							blobs[i].changed = true;
 							blobs[i].IO_indicator = false;
-							
+							/*if (debug_on)
+							{
+								std::cout << "Blob stats: " << blobs[i].unitID << " color: " << blobs[i].ColorInTerms << std::endl;
+								std::cout << "  " << " [Diff min/max]: " << blobs[i].RGBGRAYDiff_min << "/" << blobs[i].RGBGRAYDiff_max << " | " << blobs[i].RGBGRAYDiff_max - blobs[i].RGBGRAYDiff_min << std::endl;
+								std::cout << "  " << " [Mean min/max]: " << blobs[i].meanValue_min << "/" << blobs[i].meanValue_max << " | " << blobs[i].meanValue_max - blobs[i].meanValue_min << std::endl;
+								std::cout << "  " << " [ L2  min/max]: " << blobs[i].L2error_min << "/" << blobs[i].L2error_max << " | " << blobs[i].L2error_max - blobs[i].L2error_min << std::endl;
+							}*/
 
 						}
 					}
@@ -3738,7 +3746,13 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 								blobs[i].entExt = 3;
 								blobs[i].changed = true;
 								blobs[i].IO_indicator = false;
-								
+								/*if (debug_on)
+								{
+									std::cout << "Blob stats: " << blobs[i].unitID << " color: " << blobs[i].ColorInTerms << std::endl;
+									std::cout << "  " << " [Diff min/max]: " << blobs[i].RGBGRAYDiff_min << "/" << blobs[i].RGBGRAYDiff_max << " | " << blobs[i].RGBGRAYDiff_max - blobs[i].RGBGRAYDiff_min << std::endl;
+									std::cout << "  " << " [Mean min/max]: " << blobs[i].meanValue_min << "/" << blobs[i].meanValue_max << " | " << blobs[i].meanValue_max - blobs[i].meanValue_min << std::endl;
+									std::cout << "  " << " [ L2  min/max]: " << blobs[i].L2error_min << "/" << blobs[i].L2error_max << " | " << blobs[i].L2error_max - blobs[i].L2error_min << std::endl;
+								}*/
 
 							}
 						}
@@ -3786,7 +3800,13 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 									blobs[i].entExt = 4;
 									blobs[i].changed = true;
 									blobs[i].IO_indicator = false;
-									
+									/*if (debug_on)
+									{
+										std::cout << "Blob stats: " << blobs[i].unitID << " color: " << blobs[i].ColorInTerms << std::endl;
+										std::cout << "  " << " [Diff min/max]: " << blobs[i].RGBGRAYDiff_min << "/" << blobs[i].RGBGRAYDiff_max << " | " << blobs[i].RGBGRAYDiff_max - blobs[i].RGBGRAYDiff_min << std::endl;
+										std::cout << "  " << " [Mean min/max]: " << blobs[i].meanValue_min << "/" << blobs[i].meanValue_max << " | " << blobs[i].meanValue_max - blobs[i].meanValue_min << std::endl;
+										std::cout << "  " << " [ L2  min/max]: " << blobs[i].L2error_min << "/" << blobs[i].L2error_max << " | " << blobs[i].L2error_max - blobs[i].L2error_min << std::endl;
+									}*/
 
 								}
 
@@ -3836,7 +3856,13 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 										blobs[i].entExt = 5;
 										blobs[i].changed = true;
 										blobs[i].IO_indicator = false;
-										
+										/*if (debug_on)
+										{
+											std::cout << "Blob stats: " << blobs[i].unitID << " color: " << blobs[i].ColorInTerms << std::endl;
+											std::cout << "  " << " [Diff min/max]: " << blobs[i].RGBGRAYDiff_min << "/" << blobs[i].RGBGRAYDiff_max << " | " << blobs[i].RGBGRAYDiff_max - blobs[i].RGBGRAYDiff_min << std::endl;
+											std::cout << "  " << " [Mean min/max]: " << blobs[i].meanValue_min << "/" << blobs[i].meanValue_max << " | " << blobs[i].meanValue_max - blobs[i].meanValue_min << std::endl;
+											std::cout << "  " << " [ L2  min/max]: " << blobs[i].L2error_min << "/" << blobs[i].L2error_max << " | " << blobs[i].L2error_max - blobs[i].L2error_min << std::endl;
+										}*/
 
 									}
 								}
@@ -3886,7 +3912,13 @@ bool checkIfBlobsCrossedTheLine(std::vector<Blob> &blobs, int &intHorizontalLine
 											blobs[i].entExt = 6;
 											blobs[i].changed = true;
 											blobs[i].IO_indicator = false;
-											
+											/*if (debug_on)
+											{
+												std::cout << "Blob stats: " << blobs[i].unitID << " color: " << blobs[i].ColorInTerms << std::endl;
+												std::cout << "  " << " [Diff min/max]: " << blobs[i].RGBGRAYDiff_min << "/" << blobs[i].RGBGRAYDiff_max << " | " << blobs[i].RGBGRAYDiff_max - blobs[i].RGBGRAYDiff_min << std::endl;
+												std::cout << "  " << " [Mean min/max]: " << blobs[i].meanValue_min << "/" << blobs[i].meanValue_max << " | " << blobs[i].meanValue_max - blobs[i].meanValue_min << std::endl;
+												std::cout << "  " << " [ L2  min/max]: " << blobs[i].L2error_min << "/" << blobs[i].L2error_max << " | " << blobs[i].L2error_max - blobs[i].L2error_min << std::endl;
+											}*/
 
 
 										}
@@ -5581,7 +5613,7 @@ void matchCurrentFrameBlobsToExistingBlobs(std::vector<Blob> &existingBlobs, std
 		}
 
 		else {
-			addNewBlob(currentFrameBlobs[j], existingBlobs, colorsList);
+			addNewBlob(currentFrameBlobs[j], existingBlobs);
 
 		}
 
