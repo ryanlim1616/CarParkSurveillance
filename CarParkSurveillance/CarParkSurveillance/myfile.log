@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 Start of job: 11:26:4
+=======
+Start of job: 15:26:32
+>>>>>>> refs/remotes/ryanlim1616/master
 CarParkTrackExporter()
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 |              S H E R L O C K            =
@@ -8,13 +12,14 @@ CarParkTrackExporter()
 |  2) State Extraction (Batch)            |
 |  3) Retrieval Module                    |
 |  4) Debugging Mode                      |
-|                                         |
+|  5) Live Stream                         |
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 Program options: DBSurveillance.db: DB tables dropped & created
 Initialized DB tables
 Loading ... Color information
 AdaptiveBackgroundLearning()
 FrameDifferenceBGS()
+<<<<<<< HEAD
 1755 1691 1752 1748 1644 1623 1482 1557 1516 1457 1280 
 1081 918 943 910 967 1020 939 845 871 1034 
 792 713 725 716 734 688 643 668 625 
@@ -25,10 +30,19 @@ Please enter processing date (CCYYMMDD): Please enter number of processing dates
 @ Processing # of dates: 1
 1: 20161018
 < !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! >
+=======
+1 1 1 1 0 1 0 0 1 1 0 
+0 1 1 0 1 1 0 0 1 1 
+1 1 1 1 1 1 1 1 1 
+1 1 1 0 1 0 0 0 
+0 1 0 0 0 0 
+test1
+>>>>>>> refs/remotes/ryanlim1616/master
 D:\Videos Database\Carpark Data\20161018\c2\
 100 files were found:
 1: D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4
 Press Enter to continue: --- [Creating new GlobalClass instance]---
+<<<<<<< HEAD
 Processing file: D:\Videos Database\Carpark Data\20161018\c2\20161018_083000.mp4
 prediction: 0
 prediction: 1
@@ -168,12 +182,537 @@ prediction: 1
 prediction: 0
 prediction: 0
 Deleting : 3
+=======
+Error: [0 x 0]
+Error: [0 x 0]
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 1
+Deleting : 0
+Deleting : 0
+Deleting : 0
+tracking new blob
+prediction: 1
+Deleting : 0
+tracking new blob
+prediction: 1
+Deleting : 0
+Deleting : 0
+tracking new blob
+prediction: 0
+tracking new blob
+prediction: 1
+Deleting : 0
+Deleting : 0
+tracking new blob
+prediction: 1
+prediction: 1
+Enter : 4
+prediction: 1
+Enter : 5
+(Matching) start: merge!
+merged!
+merge jor 2 + 1
+Add to Miss Match State: 2
+Deleting : 2
+Add to Miss Match State: 1
+Deleting : 1
+tracking new blob
+prediction: 1
+Deleting : 0
+tracking new blob
+prediction: 1
+Deleting : 0
+tracking new blob
+prediction: 1
+prediction: 1
+vehicle 3 : leaving non tracking zone 1
+Exit : 1
+Deleting : 3
+Error2: [0 x 0]
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 1
+Deleting : 0
+tracking new blob
+prediction: 1
+Deleting : 0
+Deleting : 0
+tracking new blob
+prediction: 1
+Enter : 3
+Exit : 2
+Deleting : 4
+tracking new blob
+prediction: 0
+Deleting : 0
+tracking new blob
+prediction: 1
+Deleting : 0
+tracking new blob
+prediction: 1
+Deleting : 0
+tracking new blob
+prediction: 1
+prediction: 1
+Enter : 6
+tracking new blob
+prediction: 1
+Exit : 6
+Deleting : 0
+Deleting : 5
+tracking new blob
+prediction: 1
+Enter : 3
+tracking new blob
+prediction: 1
+Exit : 2
+Deleting : 6
+Enter : 3
+Exit : 2
+Deleting : 7
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+tracking new blob
+prediction: 1
+Deleting : 0
+tracking new blob
+prediction: 1
+Enter : 3
+Exit : 2
+Deleting : 8
+tracking new blob
+prediction: 1
+Deleting : 0
+tracking new blob
+prediction: 1
+Start: new blob * B
+B: highMatchCounter : 705, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 459
+matching parked car : Lot B
+prediction: 1
+Differnet: 2280.15
+tracking new blob
+prediction: 0
+Deleting : 0
+tracking new blob
+prediction: 1
+Deleting : 0
+Deleting : 0
+Enter : 3
+Exit : 3
+tracking new blob
+prediction: 1
+Deleting : 9
+tracking new blob
+prediction: 1
+Deleting : 0
+Deleting : 0
+tracking new blob
+prediction: 1
+Enter : 3
+prediction: 1
+vehicle 10 : non tracking zone 1
+Deleting : 10
+tracking new blob
+prediction: 0
+prediction: 1
+Enter : 5
+Add to Miss Match State: 11
+Deleting : 11
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 0
+Start: new blob * B
+B: highMatchCounter : 198, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 455
+tracking new blob
+prediction: 1
+A: highMatchCounter : 342, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 622.8
+tracking new blob
+prediction: 1
 Deleting : 0
 Deleting : 0
 Deleting : 0
 Deleting : 0
 Deleting : 0
 Deleting : 0
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 1
+C: highMatchCounter : 652, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 344
+matching parked car : Lot C
+Deleting : 0
+Deleting : 0
+tracking new blob
+prediction: 1
+C: highMatchCounter : 642, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 344
+matching parked car : Lot C
+prediction: 1
+Differnet: 4680.26
+Leaving car park - Vehicle 12Lot C6
+tracking new blob
+prediction: 1
+Deleting : 0
+tracking new blob
+prediction: 1
+Deleting : 0
+tracking new blob
+prediction: 1
+Deleting : 0
+Exit : 3
+Deleting : 12
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 1
+Deleting : 0
+tracking new blob
+prediction: 1
+Deleting : 0
+Deleting : 0
+tracking new blob
+prediction: 1
+Enter : 3
+Exit : 2
+Deleting : 13
+Deleting : 0
+tracking new blob
+prediction: 1
+Enter : 3
+Exit : 2
+Deleting : 14
+Deleting : 0
+tracking new blob
+prediction: 1
+Deleting : 0
+tracking new blob
+prediction: 1
+Deleting : 0
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 1
+Enter : 3
+Deleting : 0
+Deleting : 0
+prediction: 1
+Leaving car park - Vehicle 0DANGER ZONE-1
+Exit : 2
+Deleting : 16
+tracking new blob
+prediction: 1
+Add to Miss Match State: 15
+Deleting : 15
+Deleting : 0
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 1
+Start: new blob * B
+B: highMatchCounter : 265, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 364
+Deleting : 0
+Deleting : 0
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 0
+prediction: 1
+vehicle 10 : leaving non tracking zone 1
+Exit : 1
+Deleting : 0
+Deleting : 10
+A: highMatchCounter : 397, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 622.8
+prediction: 1
+prediction: 1
+Park - Vehicle 15Lot A8
+tracking new blob
+prediction: 1
+A: highMatchCounter : 1543, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 622.8
+matching parked car : Lot AA
+Deleting : 15
+tracking new blob
+prediction: 1
+A: highMatchCounter : 321, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 622.8
+Deleting : 0
+Deleting : 0
+prediction: 1
+Enter : 6
+Deleting : 0
+tracking new blob
+prediction: 1
+A: highMatchCounter : 429, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 606.4
+Deleting : 0
+tracking new blob
+prediction: 1
+A: highMatchCounter : 236, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 606.4
+tracking new blob
+prediction: 1
+prediction: 1
+prediction: 1
+Park - Vehicle 11Lot A9
+Deleting : 11
+Deleting : 0
+Add to Miss Match State: 17
+Deleting : 17
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 0
+Deleting : 0
+prediction: 1
+Enter : 5
+tracking new blob
+prediction: 1
+A: highMatchCounter : 1077, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 700.8
+matching parked car : Lot AA
+prediction: 0
+Deleting : 18
+Deleting : 0
+tracking new blob
+prediction: 1
+Deleting : 0
+tracking new blob
+prediction: 1
+Deleting : 0
+tracking new blob
+prediction: 1
+prediction: 0
+tracking new blob
+prediction: 1
+A: highMatchCounter : 1752, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 700.8
+matching parked car : Lot AA
+Deleting : 0
+tracking new blob
+prediction: 1
+Deleting : 0
+Deleting : 0
+tracking new blob
+prediction: 1
+A: highMatchCounter : 927, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 622.8
+matching parked car : Lot AA
+tracking new blob
+prediction: 1
+Deleting : 0
+Deleting : 0
+tracking new blob
+prediction: 1
+A: highMatchCounter : 895, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 622.8
+matching parked car : Lot AA
+prediction: 1
+Differnet: 0
+tracking new blob
+prediction: 1
+A: highMatchCounter : 900, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 622.8
+matching parked car : Lot AA
+Deleting : 0
+prediction: 0
+Differnet: 326.435
+tracking new blob
+prediction: 0
+Deleting : 0
+prediction: 1
+Enter : 1
+tracking new blob
+prediction: 1
+Deleting : 0
+prediction: 0
+prediction: 0
+prediction: 0
+Exit : 4
+Deleting : 19
+tracking new blob
+prediction: 1
+Deleting : 0
+Deleting : 0
+tracking new blob
+prediction: 1
+Deleting : 0
+tracking new blob
+prediction: 1
+prediction: 1
+Enter : 1
+prediction: 1
+vehicle 20 : non tracking zone 1
+Deleting : 20
+tracking new blob
+prediction: 1
+Deleting : 0
+tracking new blob
+prediction: 1
+A: highMatchCounter : 188, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 700.8
+tracking new blob
+prediction: 1
+Deleting : 0
+Deleting : 0
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 1
+A: highMatchCounter : 531, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 700.8
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 1
+Enter : 4
+Deleting : 0
+tracking new blob
+prediction: 1
+Deleting : 0
+Add to Miss Match State: 21
+Deleting : 21
+tracking new blob
+prediction: 1
+prediction: 1
+Enter : 1
+Exit : 4
+Deleting : 22
+tracking new blob
+prediction: 1
+prediction: 1
+Enter : 1
+prediction: 1
+Park - Vehicle 23DANGER ZONE!
+Deleting : 23
+tracking new blob
+prediction: 1
+D: highMatchCounter : 187, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 228.5
+matching parked car : Lot D
+Deleting : 0
+tracking new blob
+prediction: 0
+Deleting : 0
+tracking new blob
+prediction: 0
+prediction: 1
+prediction: 1
+Park - Vehicle 17Lot A6
+tracking new blob
+prediction: 1
+A: highMatchCounter : 603, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 649.2
+Deleting : 17
+Deleting : 0
+tracking new blob
+prediction: 1
+D: highMatchCounter : 440, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 228.5
+matching parked car : Lot D
+prediction: 1
+Differnet: 1982.75
+Deleting : 0
+tracking new blob
+prediction: 1
+Deleting : 0
+tracking new blob
+prediction: 1
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 6
+prediction: 1
+vehicle 24 : non tracking zone 2
+24
+tracking new blob
+prediction: 1
+Deleting : 0
+Deleting : 24
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 1
+Deleting : 0
+tracking new blob
+prediction: 1
+Deleting : 0
+tracking new blob
+prediction: 1
+A: highMatchCounter : 213, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 592.8
+Deleting : 0
+tracking new blob
+prediction: 1
+Start: new blob * B
+B: highMatchCounter : 161, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 338
+prediction: 1
+Deleting : 0
+prediction: 1
+Park - Vehicle 2Lot B8
+Deleting : 2
+tracking new blob
+prediction: 1
+A: highMatchCounter : 150, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 622.8
+Deleting : 0
+tracking new blob
+prediction: 1
+A: highMatchCounter : 197, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 622.8
+Deleting : 0
+prediction: 1
+A: highMatchCounter : 212, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 649.2
+prediction: 1
+Park - Vehicle 1Lot A7
+Deleting : 1
+tracking new blob
+prediction: 1
+A: highMatchCounter : 161, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 592.8
+tracking new blob
+prediction: 1
+Deleting : 0
+Deleting : 0
+tracking new blob
+prediction: 1
+prediction: 1
+Enter : 1
+Enter : 3
+Exit : 2
+Exit : 4
+Deleting : 26
+Deleting : 0
+prediction: 1
+Enter : 5
+tracking new blob
+prediction: 1
+A: highMatchCounter : 183, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 622.8
+Deleting : 0
+Exit : 6
+tracking new blob
+prediction: 1
+A: highMatchCounter : 244, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 622.8
+tracking new blob
+prediction: 0
+Deleting : 0
+Deleting : 0
+Enter : 3
+Deleting : 25
+Exit : 2
+Deleting : 0
+Deleting : 27
+tracking new blob
+prediction: 1
+prediction: 1
+Enter : 6
+Deleting : 0
+Exit : 6
+Deleting : 28
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 1
+>>>>>>> refs/remotes/ryanlim1616/master
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+<<<<<<< HEAD
 prediction: 1
 prediction: 1
 Enter : 1
@@ -291,11 +830,269 @@ matching parked car : Lot E
 prediction: 0
 E: highMatchCounter : 54, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 156
 prediction: 0
+=======
+tracking new blob
+prediction: 1
+Deleting : 0
+tracking new blob
+prediction: 1
+Deleting : 0
+tracking new blob
+prediction: 1
+Deleting : 0
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 1
+Deleting : 0
+prediction: 1
+Enter : 1
+tracking new blob
+prediction: 1
+prediction: 0
+Exit : 4
+Deleting : 0
+Deleting : 29
+Deleting : 0
+tracking new blob
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 5
+tracking new blob
+prediction: 1
+Deleting : 0
+Exit : 6
+prediction: 0
+Deleting : 0
+tracking new blob
+prediction: 1
+Deleting : 30
+tracking new blob
+prediction: 1
+Deleting : 0
+tracking new blob
+prediction: 1
+A: highMatchCounter : 1482, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 592.8
+matching parked car : Lot AA
+Deleting : 0
+tracking new blob
+prediction: 1
+Deleting : 0
+tracking new blob
+prediction: 1
+Enter : 3
+tracking new blob
+prediction: 1
+Deleting : 0
+Enter : 3
+(Matching) start: merge!
+merged!
+merge jor 32 + 31
+Start: new blob * B
+B: highMatchCounter : 667, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 338
+matching parked car : Lot B
+(Matching) start: split!
+diff 1 : 97.7891 diff 2 : 55.2331
+diff 3 : 166.893 diff 4 : 124.361
+this else
+split jorrrrrrrrrrrrrrrrrrrrrrrrrrr
+tracking new blob
+prediction: 1
+Deleting : 0
+prediction: 0
+Differnet: 16108.3
+Deleting : 0
+Enter : 3
+Deleting : 0
+tracking new blob
+prediction: 1
+Deleting : 0
+Deleting : 0
+Add to Miss Match State: 33
+Deleting : 33
+tracking new blob
+prediction: 1
+Start: new blob * B
+B: highMatchCounter : 434, highMatch : 9zoneAlot[highMatch].countNZero * 0.6 : 517
+matching parked car : Lot B
+Deleting : 0
+tracking new blob
+prediction: 1
+Start: new blob * B
+B: highMatchCounter : 320, highMatch : 9zoneAlot[highMatch].countNZero * 0.6 : 517
+Deleting : 0
+tracking new blob
+prediction: 1
+A: highMatchCounter : 50, highMatch : 9zoneAlot[highMatch].countNZero * 0.6 : 582.8
+Deleting : 0
+prediction: 1
+Park - Vehicle 32Lot B2
+tracking new blob
+prediction: 1
+Start: new blob * B
+B: highMatchCounter : 794, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 459
+matching parked car : Lot B
+Deleting : 32
+Deleting : 0
+Exit : 3
+tracking new blob
+prediction: 1
+Start: new blob * B
+B: highMatchCounter : 566, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 459
+matching parked car : Lot B
+tracking new blob
+prediction: 1
+Start: new blob * B
+B: highMatchCounter : 559, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 459
+matching parked car : Lot B
+Deleting : 0
+Deleting : 0
+tracking new blob
+prediction: 1
+Deleting : 31
+prediction: 1
+Leaving car park - Vehicle 0DANGER ZONE-1
+tracking new blob
+prediction: 1
+A: highMatchCounter : 327, highMatch : 8zoneAlot[highMatch].countNZero * 0.6 : 606.4
+Add to Miss Match State: 34
+Deleting : 34
+tracking new blob
+prediction: 1
+Start: new blob * B
+B: highMatchCounter : 584, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 459
+matching parked car : Lot B
+prediction: 0
+prediction: 0
+prediction: 0
+prediction: 1
+Enter : 5
+A: highMatchCounter : 320, highMatch : 10zoneAlot[highMatch].countNZero * 0.6 : 512
+Deleting : 0
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 36
+prediction: 1
+Park - Vehicle 35Lot A3
+Deleting : 35
+tracking new blob
+prediction: 1
+prediction: 1
+Enter : 1
+prediction: 0
+prediction: 0
+prediction: 1
+vehicle 37 : non tracking zone 1
+Exit : 4
+Deleting : 37
+tracking new blob
+prediction: 1
+prediction: 1
+Enter : 5
+A: highMatchCounter : 856, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 592.8
+matching parked car : Lot A
+Deleting : 0
+Add to Miss Match State: 38
+Deleting : 38
+tracking new blob
+prediction: 1
+A: highMatchCounter : 272, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 622.8
+prediction: 1
+tracking new blob
+prediction: 1
+Deleting : 0
+tracking new blob
+prediction: 1
+Exit : 5
+tracking new blob
+prediction: 1
+Deleting : 0
+Deleting : 38
+prediction: 0
+tracking new blob
+prediction: 0
+Deleting : 0
+tracking new blob
+prediction: 0
+Deleting : 0
+Deleting : 0
+tracking new blob
+prediction: 1
+Deleting : 0
+Enter : 3
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 1
+Deleting : 0
+Deleting : 0
+Exit : 2
+prediction: 0
+tracking new blob
+prediction: 0
+Deleting : 0
+Deleting : 39
+Deleting : 0
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 1
+Deleting : 0
+Deleting : 0
+tracking new blob
+prediction: 1
+Deleting : 0
+prediction: 0
+prediction: 1
+Enter : 5
+Deleting : 0
+Add to Miss Match State: 40
+Deleting : 40
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 1
+D: highMatchCounter : 332, highMatch : 7zoneAlot[highMatch].countNZero * 0.6 : 169
+matching parked car : Lot D
+prediction: 1
+Differnet: 0
+Deleting : 0
+prediction: 1
+Enter : 1
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 0
+prediction: 0
+Exit : 4
+Deleting : 41
+tracking new blob
+prediction: 1
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 42
+tracking new blob
+prediction: 1
+Enter : 3
+A: highMatchCounter : 368, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 699.2
+tracking new blob
+prediction: 1
+D: highMatchCounter : 100, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 218
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 1
+>>>>>>> refs/remotes/ryanlim1616/master
 Deleting : 0
 Deleting : 0
 Deleting : 0
 Deleting : 0
 Deleting : 0
+<<<<<<< HEAD
 Deleting : 0
 Deleting : 0
 prediction: 1
@@ -864,11 +1661,327 @@ prediction: 0
 prediction: 0
 Deleting : 0
 Deleting : 0
+=======
+tracking new blob
+prediction: 1
+Add to Miss Match State: 43
+Deleting : 43
+Deleting : 0
+tracking new blob
+prediction: 1
+Deleting : 0
+tracking new blob
+prediction: 0
+prediction: 1
+prediction: 1
+Park - Vehicle 43Lot C3
+C: highMatchCounter : 698, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 362.5
+matching parked car : Lot C
+Deleting : 43
+Deleting : 0
+prediction: 1
+Differnet: 1400.23
+tracking new blob
+prediction: 0
+Deleting : 0
+tracking new blob
+prediction: 1
+Deleting : 0
+tracking new blob
+prediction: 1
+D: highMatchCounter : 230, highMatch : 0zoneAlot[highMatch].countNZero * 0.6 : 228.5
+matching parked car : Lot D
+Deleting : 0
+D: highMatchCounter : 219, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 218
+matching parked car : Lot D
+C: highMatchCounter : 725, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 362.5
+matching parked car : Lot C
+Deleting : 0
+C: highMatchCounter : 353, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 362.5
+matching parked car : Lot C
+Deleting : 0
+C: highMatchCounter : 655, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 362.5
+matching parked car : Lot C
+Deleting : 0
+Deleting : 0
+D: highMatchCounter : 385, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 214
+matching parked car : Lot D
+Deleting : 0
+Deleting : 0
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 1
+prediction: 1
+Enter : 1
+tracking new blob
+prediction: 1
+C: highMatchCounter : 330, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 358
+matching parked car : Lot C
+Deleting : 0
+prediction: 1
+Differnet: 0
+tracking new blob
+prediction: 1
+Deleting : 0
+Deleting : 0
+Add to Miss Match State: 44
+Deleting : 44
+tracking new blob
+prediction: 1
+Deleting : 0
+tracking new blob
+prediction: 1
+prediction: 1
+Enter : 1
+Deleting : 0
+Exit : 4
+Deleting : 45
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 0
+Enter : 3
+Deleting : 0
+Exit : 2
+Deleting : 46
+Deleting : 0
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 0
+prediction: 1
+Enter : 5
+Deleting : 0
+tracking new blob
+prediction: 0
+Exit : 6
+Deleting : 0
+tracking new blob
+prediction: 1
+Deleting : 0
+Deleting : 47
+Deleting : 0
+Deleting : 0
+tracking new blob
+prediction: 1
+Start: new blob * B
+B: highMatchCounter : 908, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 455
+matching parked car : Lot B
+tracking new blob
+prediction: 1
+Start: new blob * B
+B: highMatchCounter : 697, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 455
+matching parked car : Lot B
+Deleting : 0
+Deleting : 0
+tracking new blob
+prediction: 1
+Enter : 3
+tracking new blob
+prediction: 1
+Deleting : 0
+tracking new blob
+prediction: 1
+Start: new blob * B
+B: highMatchCounter : 526, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 455
+matching parked car : Lot B
+Exit : 2
+Deleting : 0
+Deleting : 48
+tracking new blob
+prediction: 1
+prediction: 1
+Enter : 1
+tracking new blob
+prediction: 1
+Deleting : 0
+Deleting : 0
+tracking new blob
+prediction: 1
+prediction: 1
+vehicle 49 : non tracking zone 1
+Deleting : 49
+tracking new blob
+prediction: 1
+Deleting : 0
+prediction: 1
+Enter : 1
+prediction: 1
+prediction: 1
+Park - Vehicle 44Lot C6
+tracking new blob
+prediction: 1
+C: highMatchCounter : 706, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 367
+matching parked car : Lot C
+Deleting : 44
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 1
+C: highMatchCounter : 688, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 344
+matching parked car : Lot C
+Deleting : 0
+Deleting : 0
+tracking new blob
+prediction: 1
+Deleting : 0
+prediction: 1
+vehicle 50 : non tracking zone 1
+Deleting : 50
+tracking new blob
+prediction: 1
+Deleting : 0
+prediction: 1
+Enter : 5
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 1
+Deleting : 0
+Deleting : 0
+Deleting : 0
+tracking new blob
+prediction: 1
+A: highMatchCounter : 671, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 649.2
+matching parked car : Lot AA
+Deleting : 0
+Exit : 6
+tracking new blob
+prediction: 1
+A: highMatchCounter : 284, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 649.2
+Deleting : 0
+tracking new blob
+prediction: 1
+A: highMatchCounter : 210, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 649.2
+Deleting : 51
+Deleting : 0
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 1
+Start: new blob * B
+B: highMatchCounter : 309, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 459
+Deleting : 0
+tracking new blob
+prediction: 1
+Start: new blob * B
+B: highMatchCounter : 537, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 459
+matching parked car : Lot B
+Deleting : 0
+Enter : 3
+Deleting : 0
+prediction: 1
+Leaving car park - Vehicle 0DANGER ZONE-1
+Exit : 2
+Deleting : 53
+Add to Miss Match State: 52
+Deleting : 52
+Deleting : 0
+tracking new blob
+prediction: 0
+prediction: 1
+Enter : 1
+Start: new blob * B
+B: highMatchCounter : 695, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 367.2
+matching parked car : Lot B
+prediction: 0
+Differnet: 1111.87
+tracking new blob
+prediction: 1
+Deleting : 0
+Enter : 3
+Exit : 2
+prediction: 1
+Park - Vehicle 54Lot B6
+Deleting : 54
+Deleting : 55
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 1
+A: highMatchCounter : 535, highMatch : 4zoneAlot[highMatch].countNZero * 0.6 : 657.6
+Enter : 3
+Deleting : 0
+Exit : 2
+prediction: 1
+prediction: 1
+Park - Vehicle 33Lot A5
+tracking new blob
+prediction: 0
+Deleting : 33
+Deleting : 56
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Enter : 3
+Exit : 2
+Deleting : 57
+prediction: 1
+Enter : 1
+Deleting : 0
+Exit : 4
+tracking new blob
+prediction: 1
+A: highMatchCounter : 257, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 592.8
+Deleting : 0
+tracking new blob
+prediction: 1
+Deleting : 0
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 1
+Deleting : 58
+Deleting : 0
+tracking new blob
+prediction: 1
+prediction: 1
+Add to Miss Match State: 52
+Deleting : 52
+Deleting : 0
+tracking new blob
+prediction: 1
+Deleting : 0
+Deleting : 0
+tracking new blob
+prediction: 1
+prediction: 1
+vehicle 20 : leaving non tracking zone 1
+Exit : 1
+tracking new blob
+prediction: 1
+A: highMatchCounter : 478, highMatch : 6zoneAlot[highMatch].countNZero * 0.6 : 592.8
+Deleting : 20
+prediction: 1
+Exit : 6
+tracking new blob
+prediction: 1
+Deleting : 0
+Enter : 3
+Deleting : 52
+Exit : 2
+Deleting : 59
+tracking new blob
+prediction: 1
+prediction: 1
+Enter : 1
+Enter : 3
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 1
+>>>>>>> refs/remotes/ryanlim1616/master
 Deleting : 0
 Deleting : 0
 Deleting : 0
 Deleting : 0
 Deleting : 0
+<<<<<<< HEAD
 Deleting : 0
 Deleting : 0
 prediction: 0
@@ -1078,3 +2191,144 @@ Blob id:27 Index: 25333 , color value size: 14
  Color value: 0.033895
  Color value: 0.13914
  Color value: 0.062855
+=======
+Exit : 2
+Exit : 4
+Deleting : 61
+prediction: 1
+Enter : 5
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+vehicle 60 : non tracking zone 2
+60
+Deleting : 60
+tracking new blob
+prediction: 1
+prediction: 0
+tracking new blob
+prediction: 1
+A: highMatchCounter : 1752, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 700.8
+matching parked car : Lot AA
+Deleting : 0
+tracking new blob
+prediction: 1
+Deleting : 0
+Deleting : 0
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 0
+tracking new blob
+prediction: 1
+Deleting : 0
+Deleting : 0
+A: highMatchCounter : 179, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 700.8
+prediction: 1
+prediction: 1
+Park - Vehicle 40Lot A2
+tracking new blob
+prediction: 1
+A: highMatchCounter : 712, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 676.4
+matching parked car : Lot AA
+Deleting : 40
+prediction: 1
+Differnet: 233.896
+Deleting : 0
+tracking new blob
+prediction: 1
+Deleting : 0
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 1
+Deleting : 0
+tracking new blob
+prediction: 1
+Deleting : 0
+Deleting : 0
+tracking new blob
+prediction: 1
+C: highMatchCounter : 687, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 344
+matching parked car : Lot C
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 1
+prediction: 1
+Differnet: 1479.57
+Deleting : 0
+Deleting : 0
+Deleting : 0
+tracking new blob
+prediction: 1
+prediction: 1
+A: highMatchCounter : 328, highMatch : 3zoneAlot[highMatch].countNZero * 0.6 : 699.2
+Deleting : 0
+Add to Miss Match State: 34
+Deleting : 34
+tracking new blob
+prediction: 0
+tracking new blob
+prediction: 1
+Deleting : 0
+Deleting : 0
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 1
+Deleting : 0
+Deleting : 0
+tracking new blob
+prediction: 1
+C: highMatchCounter : 518, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 344
+matching parked car : Lot C
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 1
+Start: new blob * B
+B: highMatchCounter : 921, highMatch : 2zoneAlot[highMatch].countNZero * 0.6 : 471.5
+matching parked car : Lot B
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 0
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 1
+tracking new blob
+prediction: 1
+E: highMatchCounter : 285, highMatch : 1zoneAlot[highMatch].countNZero * 0.6 : 159.5
+matching parked car : Lot E
+C: highMatchCounter : 541, highMatch : 5zoneAlot[highMatch].countNZero * 0.6 : 344
+matching parked car : Lot C
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+Deleting : 0
+prediction: 1
+Differnet: 3757.78
+tracking new blob
+prediction: 1
+Deleting : 0
+prediction: 0
+prediction: 1
+Enter
+>>>>>>> refs/remotes/ryanlim1616/master

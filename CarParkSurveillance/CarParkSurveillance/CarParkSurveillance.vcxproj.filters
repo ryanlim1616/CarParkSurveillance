@@ -422,6 +422,7 @@
     <ClInclude Include="src\cuda.h">
       <Filter>Header Files\yolo</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="ColorTerms.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -429,6 +430,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ffmpegVideo.h">
+=======
+    <ClInclude Include="cvui.h">
+>>>>>>> refs/remotes/ryanlim1616/master
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -218,6 +218,7 @@ bool draw_detections(image im, int num, float thresh, box *boxes, float **probs,
 			float blue = get_color(0, offset, classes);
 			float rgb[3];
 
+
 			//width = prob*20+2;
 
 			rgb[0] = red;
@@ -279,7 +280,7 @@ bool draw_detections(image im, int num, float thresh, box *boxes, float **probs,
 				exit(1);
 			}
 
-			//fprintf(f, "D %3d %3d %3d %3d %.0f %s\n", left, top, right, bot, prob * 100, names[class]);
+//			fprintf(f, "D %3d %3d %3d %3d %.0f %s\n", left, top, right, bot, prob * 100, names[class]);
 			fclose(f);
 
 			//printf("%3d\t%3d\t%3d\t%3d\t%.0f\t%s\n", left, top, right, bot, prob * 100, names[class]);
@@ -288,6 +289,7 @@ bool draw_detections(image im, int num, float thresh, box *boxes, float **probs,
 	}
 
 	if ((strcmp(object, "car") == 0 || 
+		strcmp(object, "") == 0 ||
 		strcmp(object, "truck") == 0 || 
 		strcmp(object, "bus") == 0 || 
 		strcmp(object, "boat") == 0 ||
@@ -298,6 +300,8 @@ bool draw_detections(image im, int num, float thresh, box *boxes, float **probs,
 		strcmp(object, "cake") == 0 ||
 		strcmp(object, "sandwich") == 0 ||
 		strcmp(object, "cup") == 0 ||
+		strcmp(object, "laptop") == 0 ||
+		strcmp(object, "bench") == 0 ||
 		strcmp(object, "keyboard") == 0) && temp_object == true) {
 
 		//printf("Yes Got it\n");

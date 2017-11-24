@@ -49,9 +49,27 @@ public:
 
 	void set_InputFileName(std::string inp_name)
 	{
-		InputFileName = inp_name;
-		InputDate_old = InputFileName.substr(44, 8);
-		InputTime_old = InputFileName.substr(53, 6);
+		
+
+		if (inp_name.find("LIVE") != std::string::npos) {
+			InputFileName = "Live_Stream";
+
+			InputDate_old = inp_name.substr(4, 8);
+			
+			
+			InputTime_old = inp_name.substr(13, 6);
+	
+		
+		}
+		else {
+			InputFileName = inp_name;
+			InputDate_old = InputFileName.substr(44, 8);
+			InputTime_old = InputFileName.substr(53, 6);
+		}
+
+
+		
+		
 	}
 
 	std::string get_InputFileName()
